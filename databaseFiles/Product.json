@@ -1,11 +1,13 @@
 "product" {
   "price" : 40.00,
-  "name" : "Reclaimed Wood Floating Shelf",
-  "description" : String,
-  "specifications" : [String],
-  "reviews" : [String],
-  "imageURL" : "http://rk.weimgs.com/weimgs/rk/images/wcm/products/201651/0014/reclaimed-wood-floating-shelf-o.jpg",
-  "storyCategory" : String, //tags below
-  "roomCategory" : [String],
-  "productCategory" : [String]
+  "name" : "Pigs Burlap Pillow",
+  "description" : "Handmade charming throw pillow. Made in the USA by TheWatsonShop. 
+TheWatsonShop is a mother-son duo that began this venture in May 2012. With the combined skills of this pair, they decided to focus on home decor, designing, and producing decorative pillows. They work from their studio in Gibsonton, Florida and have a blast surrounded by creativity and are constantly coming up with new designs for upcoming products. Handcrafted in the USA with burlap fabric. ",
+  "specifications" : ["\"W 24\" / D 6\" / H 15\" / 2 lb \"", "Burlap" ],
+  "reviews" : ["Liked the pillow", "Will definitely buy more of these"],
+  "imageURL" : "https://st.hzcdn.com/simgs/b5d161e9072cfee5_8-9908/farmhouse-decorative-pillows.jpg",
+  "storyCategory" : "Farmhouse"
+  "roomCategory" : ["Bedroom"],
+  "productCategory" : ["Textile"]
 }
+
