@@ -1,11 +1,11 @@
 "product" {
   "price" : 40.00,
   "name" : "Reclaimed Wood Floating Shelf",
-  "description" : String,
-  "specifications" : [String],
-  "reviews" : [String],
+  "description" : "Brown very expensive shelf",
+  "specifications" : ["2' Shelf","Mahogany"],
+  "reviews" : [],
   "imageURL" : "http://rk.weimgs.com/weimgs/rk/images/wcm/products/201651/0014/reclaimed-wood-floating-shelf-o.jpg",
-  "storyCategory" : String, //tags below
-  "roomCategory" : [String],
-  "productCategory" : [String]
+  "storyCategory" : "Rustic", //tags below
+  "roomCategory" : ["Kitchen", "Dining"],
+  "productCategory" : ["Furniture"]
 }
