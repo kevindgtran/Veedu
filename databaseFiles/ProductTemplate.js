@@ -1,6 +1,7 @@
 "product" {
-  "price" : Double,
   "name" : String,
+  "productID" : String,
+  "price" : Double,
   "description" : String,
   "specifications" : [String],
   "reviews" : [String],
