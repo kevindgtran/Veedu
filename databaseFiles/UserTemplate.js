@@ -1,5 +1,7 @@
 "user" {
-  "name" : String,
+  "firstName" : String,
+  "lastName" : String,
+  "userName" : String,
   "password" : String,
   "billing" : String,
   "shipping" : String,

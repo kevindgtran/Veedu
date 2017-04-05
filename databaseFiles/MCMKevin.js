@@ -51,7 +51,7 @@
   "reviews" : [],
   "imageURL" : "http://rk.weimgs.com/weimgs/rk/images/wcm/products/201703/0002/grid-tufted-upholstered-tapered-leg-bed-in-heathered-cross-c.jpg",
   "storyCategory" : "midCenturyModern",
-  "roomCategory" : ["bedroom"],
+  "roomCategory" : ["bedRoom"],
   "productCategory" : ["furniture"]
 }, {
   "name" : "Area Bedding Kline Design",
@@ -62,7 +62,7 @@
   "reviews" : [],
   "imageURL" : "http://modernplanet.com/media/catalog/product/cache/2/image/1800x/040ec09b1e35df139433887a97daa66f/k/l/kline_2.jpg",
   "storyCategory" : "midCenturyModern",
-  "roomCategory" : ["bedroom"],
+  "roomCategory" : ["bedRoom"],
   "productCategory" : ["textile"]
 }, {
   "name" : "Springfield Linen Shade Ceiling Light",
@@ -73,7 +73,7 @@
   "reviews" : [],
   "imageURL" : "https://s-media-cache-ak0.pinimg.com/736x/86/25/53/8625532470cef0603cb9c7d0b314c7c8.jpg",
   "storyCategory" : "midCenturyModern",
-  "roomCategory" : ["bedroom"],
+  "roomCategory" : ["bedRoom"],
   "productCategory" : ["lighting"]
 }, {
   "name" : "Penelope Nightstand – Acorn",
@@ -84,6 +84,6 @@
   "reviews" : [],
   "imageURL" : "http://ab.weimgs.com/weimgs/ab/images/wcm/products/201639/0085/penelope-nightstand-acorn-c.jpg",
   "storyCategory" : "midCenturyModern",
-  "roomCategory" : ["bedroom"],
+  "roomCategory" : ["bedRoom"],
   "productCategory" : ["accessory"]
 }]
