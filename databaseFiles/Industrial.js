@@ -6,9 +6,9 @@
   "specifications" : ["18in L x 18in W x 25in H · Chair extends to 30inch H","Wood, Steel"],
   "reviews" : [],
   "imageURL" : "https://cdn.shopify.com/s/files/1/1386/1639/products/12648_grande.jpg?v=1471977535",
-  "storyCategory" : "Industrial",
-  "roomCategory" : ["Kitchen&Dining", "Living"],
-  "productCategory" : ["Furniture"]
+  "storyCategory" : "industrial",
+  "roomCategory" : ["kitchenDiningRoom", "livingRoom"],
+  "productCategory" : ["furniture"]
 }, {
   "name" : "Watering Hole Stool",
   "productID" : "f12638",
@@ -17,9 +17,9 @@
   "specifications" : ["18in W x 38in H", "Seat adjusts from 25H to 30H", "Silver, Woodgrain"],
   "reviews" : ["Love the look of this bar stool!", "Looks great at my breakfast bar. Purchasing two more!"],
   "imageURL" : "https://cdn.shopify.com/s/files/1/0189/1672/products/12638_530x.jpg?v=1482002903",
-  "storyCategory" : "Industrial",
-  "roomCategory" : ["Kitchen&Dining"],
-  "productCategory" : ["Furniture"]
+  "storyCategory" : "industrial",
+  "roomCategory" : ["kitchenDiningRoom"],
+  "productCategory" : ["furniture"]
 }, {
   "name" : "Industrial Storage Coffee Table",
   "productID" : "f12640",
@@ -28,9 +28,9 @@
   "specifications" : ["Overall product dimensions: 36in W x 26in D x 17.75in H (25in H when open)", "Interior compartment: 32in W x 22in D x 6.5in H", "Cafe, Black Powdercoated Metal"],
   "reviews" : ["Perfect for my small studio."],
   "imageURL" : "http://rk.weimgs.com/weimgs/rk/images/wcm/products/201711/0141/industrial-storage-coffee-table-c.jpg",
-  "storyCategory" : "Industrial",
-  "roomCategory" : ["LivingRoom"],
-  "productCategory" : ["Furniture"]
+  "storyCategory" : "industrial",
+  "roomCategory" : ["livingRoom"],
+  "productCategory" : ["furniture"]
 }, {
   "name" : "Metalwork 6-Drawer Dresser - Hot-Rolled Steel Finish",
   "productID" : "f12610",
@@ -39,9 +39,9 @@
   "specifications" : ["55.1in w x 18in d x 32.4in h.", "Metal in a Hot-Rolled Steel finish."],
   "reviews" : ["Heavy as hell but looks great in my bedroom. Looking forward to seeing it patina a bit.", "If I had room, I would get the matching side dressers."],
   "imageURL" : "http://rk.weimgs.com/weimgs/rk/images/wcm/products/201709/0002/metalwork-6-drawer-dresser-hot-rolled-steel-finish-c.jpg",
-  "storyCategory" : "Industrial",
-  "roomCategory" : ["Bedroom"],
-  "productCategory" : ["Furniture"]
+  "storyCategory" : "industrial",
+  "roomCategory" : ["bedroomRoom"],
+  "productCategory" : ["furniture"]
 }, {
   "name" : "Massaro Metal-Wrapped 6-Drawer Dresser - Hot-Rolled Steel",
   "productID" : "f01638",
@@ -50,9 +50,9 @@
   "specifications" : ["56in w x 18in d x 26.1in h.", "Oak veneer over solid wood drawers in an Umber finish.", "Metal case and hardware in a Hot-Rolled Steel finish."],
   "reviews" : ["Amazing!!", "Thought this dresser would look too industrial, but the wood drawers paired with steel really make it!"],
   "imageURL" : "http://rk.weimgs.com/weimgs/rk/images/wcm/products/201709/0007/massaro-metal-wrapped-6-drawer-dresser-c.jpg",
-  "storyCategory" : "Industrial",
-  "roomCategory" : ["Bedroom"],
-  "productCategory" : ["Furniture"]
+  "storyCategory" : "industrial",
+  "roomCategory" : ["bedroomRoom"],
+  "productCategory" : ["furniture"]
 }, {
   "name" : "Logan Platform Bed - Smoked Brown",
   "productID" : "f00638",
@@ -61,9 +61,9 @@
   "specifications" : ["Queen: 73in w x 87.5in d x 48.2in h.", "Solid acacia wood in a Smoked Brown finish"],
   "reviews" : ["Sturdy!", "Simple design. Looks great in my loft but I need to figure out how to keep the mattress from slipping on the platform."],
   "imageURL" : "http://rk.weimgs.com/weimgs/rk/images/wcm/products/201646/0005/logan-platform-bed-smoked-brown-1-c.jpg",
-  "storyCategory" : "Industrial",
-  "roomCategory" : ["Bedroom"],
-  "productCategory" : ["Furniture"]
+  "storyCategory" : "industrial",
+  "roomCategory" : ["bedroomRoom"],
+  "productCategory" : ["furniture"]
 }, {
   "name" : "Faceted Stone Table Lamp",
   "productID" : "l12345",
@@ -72,9 +72,9 @@
   "specifications" : ["13in diam. x 23in h.", "Accommodates a 13W CFL bulb (included) or 60W incandescent bulb (not included).", "Rotary On/Off switch."],
   "reviews" : ["Love this table lamp!", "Wish this came as a white base, but the black stone is still stunning. Happy with my purchase."],
   "imageURL" : "http://rk.weimgs.com/weimgs/rk/images/wcm/products/201711/0091/faceted-stone-table-lamp-c.jpg",
-  "storyCategory" : "Industrial",
-  "roomCategory" : ["LivingRoom", "Bedroom"],
-  "productCategory" : ["Lighting"]
+  "storyCategory" : "industrial",
+  "roomCategory" : ["livingRoom", "bedRoom"],
+  "productCategory" : ["lighting"]
 }, {
   "name" : "Industrial Task Table Lamp + USB",
   "productID" : "l02112",
@@ -83,9 +83,9 @@
   "specifications" : ["7in diam. x 33in h.", "Adjustable arm locks at two angles.", "Does the job.  What can I say?"],
   "reviews" : ["Great task lamp and look.", "Looks great at my breakfast bar. Purchasing two more!"],
   "imageURL" : "http://rk.weimgs.com/weimgs/rk/images/wcm/products/201652/0021/industrial-task-table-lamp-usb-1-c.jpg",
-  "storyCategory" : "Industrial",
-  "roomCategory" : ["LivingRoom", "Bedroom"],
-  "productCategory" : ["Lighting"]
+  "storyCategory" : "industrial",
+  "roomCategory" : ["livingRoom", "bedRoom"],
+  "productCategory" : ["lighting"]
 }, {
   "name" : "Bontok Theatre Floor Lamp",
   "productID" : "l12222",
@@ -94,9 +94,9 @@
   "specifications" : ["71in H x 12in diam.", "Iron black coating."],
   "reviews" : ["Yay, light in my living room!", "Not what I expected.  Nice lamp, but will be returning."],
   "imageURL" : "http://www.ikea.com/us/en/images/products/hektar-floor-lamp-gray__0149974_PE308131_S4.JPG",
-  "storyCategory" : "Industrial",
-  "roomCategory" : ["LivingRoom"],
-  "productCategory" : ["Lighting"]
+  "storyCategory" : "industrial",
+  "roomCategory" : ["livingRoom"],
+  "productCategory" : ["lighting"]
 }, {
   "name" : "Sol Duvet Cover",
   "productID" : "t11110",
@@ -105,9 +105,9 @@
   "specifications" : ["Queen: 80in x 89in.", "300 Thread Count.", "Sateen Weave, Single Ply."],
   "reviews" : ["warm and cozy", "Lovely Blue Duvet Cover", "expectations were met","So soft and comfortable. Love that it's organic cotton. Wish there were ties to keep the duvet in place."],
   "imageURL" : "https://cdn.shopify.com/s/files/1/1094/4634/products/Duvet-Cover-Blue_aad01783-9e87-407f-bca9-a365699da9ee_2048x2048.jpg?v=1483720142",
-  "storyCategory" : "nil",
-  "roomCategory" : ["Bedroom"],
-  "productCategory" : ["Textiles"]
+  "storyCategory" : nil,
+  "roomCategory" : ["bedRoom"],
+  "productCategory" : ["textile"]
 }, {
   "name" : "Hemmed Sheet Set",
   "productID" : "t12118",
@@ -116,9 +116,9 @@
   "specifications" : ["Ultra Soft Fine Long Staple", "100% Certified Organic Cotton", "300 Thread Count"],
   "reviews" : ["We are very happy with the feel of these sheets. They are soft and light weight. Will definitly order another set.", "Overall, we are pleased, and ordered a 2nd set + additional pillow cases. We aren't blown away by their immediate hand; even after a delicate cold wash and no-heat dry, the sheets don't feel that soft to the touch. Gliding your hand over them, they almost have an abbrasiveness. Surprisingly, we still find them very comfortable to sleep in. They drape lightly and breath well. The ethical production of them is more important to us then having the softest feeling sheets ever"],
   "imageURL" : "https://cdn.shopify.com/s/files/1/1094/4634/products/Folded-sheets-white_7d97d006-352c-4adb-a438-b544cc915dfc_2048x2048.jpg?v=1488223990",
-  "storyCategory" : "nil",
-  "roomCategory" : ["Bedroom"],
-  "productCategory" : ["Textiles"]
+  "storyCategory" : nil,
+  "roomCategory" : ["bedRoom"],
+  "productCategory" : ["textile"]
 }, {
   "name" : "Quilted Madison Sham",
   "productID" : "t77638",
@@ -127,9 +127,9 @@
   "specifications" : ["Standard Size", "100% extra-fine weave microfiber", "Hypo-allergenic"],
   "reviews" : ["This sham is a sham!", "Found these to be as nice as described - beautiful, very soft and high quality, accurate color depiction. Luxurious feel."],
   "imageURL" : "https://images.costco-static.com/ImageDelivery/imageService?profileId=12026540&itemId=100026869-847&recipeName=344",
-  "storyCategory" : "nil",
-  "roomCategory" : ["Bedroom"],
-  "productCategory" : ["Textiles"]
+  "storyCategory" : nil,
+  "roomCategory" : ["bedRoom"],
+  "productCategory" : ["textile"]
 }, {
   "name" : "Mediteranean Bath Towels - Set of 4",
   "productID" : "t12228",
@@ -138,9 +138,9 @@
   "specifications" : ["Traditional lightweight Turkish bath towels with a high/low weave for excellent absorption.", "Cotton is 100% organic, and sourced and woven in Turkey."],
   "reviews" : ["It took me a while to get used to the idea that a thinner towel could be as absorbent as a thick or plush towel but once I got my head around that, I was hooked. I was given a beach towel from a friend and although I would not normally travel with my own towel, I'm absolutely sure I would make room in my bag for this one. It's practical & beautiful for any sunny holiday!", "Clean beautiful design."],
   "imageURL" : "http://bpc.h-cdn.co/assets/16/01/768x384/landscape-1452115931-turkish-bath-towels.jpg",
-  "storyCategory" : "nil",
-  "roomCategory" : ["Bathroom"],
-  "productCategory" : ["Textiles"]
+  "storyCategory" : nil,
+  "roomCategory" : ["bathRoom"],
+  "productCategory" : ["textile"]
 }, {
   "name" : "Warmest Throw – Yarn Dyed",
   "productID" : "t13333",
@@ -149,9 +149,9 @@
   "specifications" : ["44in l x 56in w.", "100% acrylic.", "Fringed ends."],
   "reviews" : ["Super soft!!", "Got as a gift and I love it!"],
   "imageURL" : "http://rk.weimgs.com/weimgs/rk/images/wcm/products/201651/0010/warmest-throw-yarn-dyed-o.jpg",
-  "storyCategory" : "nil",
-  "roomCategory" : ["LivingRoom", "Bedroom"],
-  "productCategory" : ["Textiles"]
+  "storyCategory" : nil,
+  "roomCategory" : ["livingRoom", "bedRoom"],
+  "productCategory" : ["textile"]
 }, {
   "name" : "Symmetry Objects",
   "productID" : "a00123",
@@ -160,9 +160,9 @@
   "specifications" : ["Small: 6.75in sq. 6.5in h.", "Iron in Antique Brass."],
   "reviews" : [],
   "imageURL" : "http://rk.weimgs.com/weimgs/rk/images/wcm/products/201711/0030/symmetry-objects-c.jpg",
-  "storyCategory" : "Industrial",
-  "roomCategory" : ["Bedroom", "LivingRoom"],
-  "productCategory" : ["Accents"]
+  "storyCategory" : "industrial",
+  "roomCategory" : ["bedRoom", "livingRoom"],
+  "productCategory" : ["accessory"]
 }, {
   "name" : "Boos Edge-Grain Rectangular Cutting Board, Walnut",
   "productID" : "c71223",
@@ -171,9 +171,9 @@
   "specifications" : ["20in x 15in x 1 1/2in thick; 10 lb.", "Crafted in the USA from sustainably harvested North American walnut.", "Edge-grain construction holds up to years of slicing and chopping."],
   "reviews" : ["Purchased it as a gift and he loved it!", "Beautiful cutting board. I almost don't want to use it."],
   "imageURL" : "http://ab.wsimgs.com/wsimgs/ab/images/dp/wcm/201704/0035/img91c.jpg",
-  "storyCategory" : "nil",
-  "roomCategory" : ["Kitchen&DiningRoom"],
-  "productCategory" : ["Cookware"]
+  "storyCategory" : nil,
+  "roomCategory" : ["kitchenDiningRoom"],
+  "productCategory" : ["cookware"]
 }, {
   "name" : "Enclume Sig Steel & Tigerwood Chef's Rack",
   "productID" : "f12255",
@@ -182,20 +182,20 @@
   "specifications" : ["17in x 36in x 13in high.", "Includes 6 straight and 12 angled hooks.", "Includes moungting hardware."],
   "reviews" : [],
   "imageURL" : "http://ab.wsimgs.com/wsimgs/ab/images/dp/wcm/201702/0006/img35c.jpg",
-  "storyCategory" : "nil",
-  "roomCategory" : ["Kitchen&DiningRoom"],
-  "productCategory" : ["Furniture"]
+  "storyCategory" : nil,
+  "roomCategory" : ["kitchenDiningRoom"],
+  "productCategory" : ["furniture"]
 }, {
-  "name" : "KitchenAid® 4 oz. Blade Coffee Grinder",
+  "name" : "KitchenAid 4 oz. Blade Coffee Grinder",
   "productID" : "sa13344",
   "price" : 25.00,
   "description" : "Features a blade grinding mechanism that rapidly and easily grinds with minimal noise level. It offers easy fingertip control and 1 - 4 cup versatile brew cycle function.",
   "specifications" : ["44in l x 4.25in w x 8.75in h", "Steel construction.", "Bowl, blade and top are dishwasher safe; Wipe exterior clean."],
   "reviews" : ["The KitchenAid Blade Coffee Grinder is very easy to use and clean. It will always grind your coffee to your liking."],
   "imageURL" : "https://s7d1.scene7.com/is/image/BedBathandBeyond/96116818546191p?$478$",
-  "storyCategory" : "nil",
-  "roomCategory" : ["Kitchen$DiningRoom"],
-  "productCategory" : ["SmallAppliances"]
+  "storyCategory" : nil,
+  "roomCategory" : ["kitchenDiningRoom"],
+  "productCategory" : ["smallAppliance"]
 }, {
   "name" : "Peralta Full Dinnerware Set, Chez Panisse Line - Set for 2",
   "productID" : "t13333",
@@ -204,8 +204,8 @@
   "specifications" : ["Full Dinnerware Set.", "Set for 2.", "10 piece set."],
   "reviews" : [],
   "imageURL" : "http://rk.weimgs.com/weimgs/rk/images/wcm/products/201651/0010/warmest-throw-yarn-dyed-o.jpg",
-  "storyCategory" : "nil",
-  "roomCategory" : ["Kitchen$DiningRoom"],
-  "productCategory" : ["Dinnerware"]
+  "storyCategory" : nil,
+  "roomCategory" : ["kitchenDiningRoom"],
+  "productCategory" : ["diningware"]
 
 }]
