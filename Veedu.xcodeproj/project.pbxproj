@@ -27,6 +27,8 @@
 		65B734F21E9602BA00506B1F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B734F11E9602BA00506B1F /* ProfileViewController.swift */; };
 		65B734F41E96084300506B1F /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B734F31E96084300506B1F /* FavoritesTableViewCell.swift */; };
 		AB763F286B3ABAC2FCA653C6 /* Pods_VeeduTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68EF2E5115204607A907A9E /* Pods_VeeduTests.framework */; };
+		C453B00B1E96C48A0088E827 /* ProductsPerCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B00A1E96C48A0088E827 /* ProductsPerCategoryVC.swift */; };
+		C453B00D1E96C55C0088E827 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B00C1E96C55C0088E827 /* ProductCollectionViewCell.swift */; };
 		D5EA9E4067EC803D0C75C18E /* Pods_Veedu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADC4B53D548E43EEBBE13E1 /* Pods_Veedu.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +82,8 @@
 		99198D5149E7C5A0620DC2A4 /* Pods-VeeduUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VeeduUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VeeduUITests/Pods-VeeduUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9C95596C7056B142BB97C8DE /* Pods-Veedu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Veedu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Veedu/Pods-Veedu.debug.xcconfig"; sourceTree = "<group>"; };
 		BADC4B53D548E43EEBBE13E1 /* Pods_Veedu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Veedu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C453B00A1E96C48A0088E827 /* ProductsPerCategoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsPerCategoryVC.swift; sourceTree = "<group>"; };
+		C453B00C1E96C55C0088E827 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		C68EF2E5115204607A907A9E /* Pods_VeeduTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VeeduTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -194,6 +198,8 @@
 			isa = PBXGroup;
 			children = (
 				65B734E41E95DCA800506B1F /* PrathibaMain.storyboard */,
+				C453B00A1E96C48A0088E827 /* ProductsPerCategoryVC.swift */,
+				C453B00C1E96C55C0088E827 /* ProductCollectionViewCell.swift */,
 			);
 			name = PrathibaFiles;
 			sourceTree = "<group>";
@@ -517,8 +523,10 @@
 			files = (
 				6595D9D01E95C1EA007E29FF /* Item.swift in Sources */,
 				65B734F41E96084300506B1F /* FavoritesTableViewCell.swift in Sources */,
+				C453B00D1E96C55C0088E827 /* ProductCollectionViewCell.swift in Sources */,
 				65A5A6AB1E9473200056D42F /* Veedu.xcdatamodeld in Sources */,
 				65B734F01E9602AC00506B1F /* CartViewController.swift in Sources */,
+				C453B00B1E96C48A0088E827 /* ProductsPerCategoryVC.swift in Sources */,
 				65A5A6A51E9473200056D42F /* ViewController.swift in Sources */,
 				6595D9CE1E95BB97007E29FF /* MainTableViewCell.swift in Sources */,
 				65B734EE1E96028B00506B1F /* FavoritesUIViewController.swift in Sources */,
