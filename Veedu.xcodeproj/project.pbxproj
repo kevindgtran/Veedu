@@ -22,6 +22,10 @@
 		65B734E51E95DCA800506B1F /* PrathibaMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B734E41E95DCA800506B1F /* PrathibaMain.storyboard */; };
 		65B734E71E95DCBA00506B1F /* JoyMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B734E61E95DCBA00506B1F /* JoyMain.storyboard */; };
 		65B734E91E95DCD000506B1F /* KevinMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B734E81E95DCD000506B1F /* KevinMain.storyboard */; };
+		65B734EE1E96028B00506B1F /* FavoritesUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B734ED1E96028B00506B1F /* FavoritesUIViewController.swift */; };
+		65B734F01E9602AC00506B1F /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B734EF1E9602AC00506B1F /* CartViewController.swift */; };
+		65B734F21E9602BA00506B1F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B734F11E9602BA00506B1F /* ProfileViewController.swift */; };
+		65B734F41E96084300506B1F /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B734F31E96084300506B1F /* FavoritesTableViewCell.swift */; };
 		AB763F286B3ABAC2FCA653C6 /* Pods_VeeduTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68EF2E5115204607A907A9E /* Pods_VeeduTests.framework */; };
 		D5EA9E4067EC803D0C75C18E /* Pods_Veedu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADC4B53D548E43EEBBE13E1 /* Pods_Veedu.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +71,10 @@
 		65B734E41E95DCA800506B1F /* PrathibaMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PrathibaMain.storyboard; sourceTree = "<group>"; };
 		65B734E61E95DCBA00506B1F /* JoyMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = JoyMain.storyboard; sourceTree = "<group>"; };
 		65B734E81E95DCD000506B1F /* KevinMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KevinMain.storyboard; sourceTree = "<group>"; };
+		65B734ED1E96028B00506B1F /* FavoritesUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesUIViewController.swift; sourceTree = "<group>"; };
+		65B734EF1E9602AC00506B1F /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		65B734F11E9602BA00506B1F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		65B734F31E96084300506B1F /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		6B620D00CCEDE04C4F668473 /* Pods-VeeduTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VeeduTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VeeduTests/Pods-VeeduTests.release.xcconfig"; sourceTree = "<group>"; };
 		8A37C32EA5C692D5C6E6FB32 /* Pods-VeeduUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VeeduUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VeeduUITests/Pods-VeeduUITests.release.xcconfig"; sourceTree = "<group>"; };
 		99198D5149E7C5A0620DC2A4 /* Pods-VeeduUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VeeduUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VeeduUITests/Pods-VeeduUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,12 +139,12 @@
 				6595D9CB1E95B78D007E29FF /* GoogleService-Info.plist */,
 				65A5A6A21E9473200056D42F /* AppDelegate.swift */,
 				65A5A6A41E9473200056D42F /* ViewController.swift */,
+				6595D9CD1E95BB97007E29FF /* MainTableViewCell.swift */,
 				6595D9CF1E95C1EA007E29FF /* Item.swift */,
 				65A5A6A61E9473200056D42F /* Main.storyboard */,
 				65B734EC1E95DD1600506B1F /* PrathibaFiles */,
 				65B734EB1E95DD0E00506B1F /* JoyFiles */,
 				65B734EA1E95DD0100506B1F /* KevinFiles */,
-				6595D9CD1E95BB97007E29FF /* MainTableViewCell.swift */,
 				65A5A6AC1E9473200056D42F /* Assets.xcassets */,
 				65A5A6AE1E9473200056D42F /* LaunchScreen.storyboard */,
 				65A5A6B11E9473200056D42F /* Info.plist */,
@@ -167,6 +175,9 @@
 			isa = PBXGroup;
 			children = (
 				65B734E81E95DCD000506B1F /* KevinMain.storyboard */,
+				65B734EF1E9602AC00506B1F /* CartViewController.swift */,
+				65B734F11E9602BA00506B1F /* ProfileViewController.swift */,
+				65B734F51E9608B000506B1F /* FavoritesViewController */,
 			);
 			name = KevinFiles;
 			sourceTree = "<group>";
@@ -185,6 +196,15 @@
 				65B734E41E95DCA800506B1F /* PrathibaMain.storyboard */,
 			);
 			name = PrathibaFiles;
+			sourceTree = "<group>";
+		};
+		65B734F51E9608B000506B1F /* FavoritesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				65B734F31E96084300506B1F /* FavoritesTableViewCell.swift */,
+				65B734ED1E96028B00506B1F /* FavoritesUIViewController.swift */,
+			);
+			name = FavoritesViewController;
 			sourceTree = "<group>";
 		};
 		8A4BEE35C0204789D2220543 /* Frameworks */ = {
@@ -496,9 +516,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6595D9D01E95C1EA007E29FF /* Item.swift in Sources */,
+				65B734F41E96084300506B1F /* FavoritesTableViewCell.swift in Sources */,
 				65A5A6AB1E9473200056D42F /* Veedu.xcdatamodeld in Sources */,
+				65B734F01E9602AC00506B1F /* CartViewController.swift in Sources */,
 				65A5A6A51E9473200056D42F /* ViewController.swift in Sources */,
 				6595D9CE1E95BB97007E29FF /* MainTableViewCell.swift in Sources */,
+				65B734EE1E96028B00506B1F /* FavoritesUIViewController.swift in Sources */,
+				65B734F21E9602BA00506B1F /* ProfileViewController.swift in Sources */,
 				65A5A6A31E9473200056D42F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
