@@ -139,12 +139,12 @@
 				6595D9CB1E95B78D007E29FF /* GoogleService-Info.plist */,
 				65A5A6A21E9473200056D42F /* AppDelegate.swift */,
 				65A5A6A41E9473200056D42F /* ViewController.swift */,
+				6595D9CD1E95BB97007E29FF /* MainTableViewCell.swift */,
 				6595D9CF1E95C1EA007E29FF /* Item.swift */,
 				65A5A6A61E9473200056D42F /* Main.storyboard */,
 				65B734EC1E95DD1600506B1F /* PrathibaFiles */,
 				65B734EB1E95DD0E00506B1F /* JoyFiles */,
 				65B734EA1E95DD0100506B1F /* KevinFiles */,
-				6595D9CD1E95BB97007E29FF /* MainTableViewCell.swift */,
 				65A5A6AC1E9473200056D42F /* Assets.xcassets */,
 				65A5A6AE1E9473200056D42F /* LaunchScreen.storyboard */,
 				65A5A6B11E9473200056D42F /* Info.plist */,
@@ -175,9 +175,9 @@
 			isa = PBXGroup;
 			children = (
 				65B734E81E95DCD000506B1F /* KevinMain.storyboard */,
-				65B734F51E9608B000506B1F /* FavoritesViewController */,
 				65B734EF1E9602AC00506B1F /* CartViewController.swift */,
 				65B734F11E9602BA00506B1F /* ProfileViewController.swift */,
+				65B734F51E9608B000506B1F /* FavoritesViewController */,
 			);
 			name = KevinFiles;
 			sourceTree = "<group>";

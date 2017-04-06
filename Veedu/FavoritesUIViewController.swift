@@ -10,8 +10,8 @@ import UIKit
 
 class FavoritesUIViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var tempArray = [String]()
-    //var tempArray = ["couch"]
+    //var tempArray = [String]()
+    var tempArray = ["couch", "table", "arm chair"]
     
     //MARK: properties
     @IBOutlet weak var itemsAmountLabel: UILabel!
