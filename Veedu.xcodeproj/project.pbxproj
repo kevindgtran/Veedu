@@ -19,6 +19,9 @@
 		65A5A6B01E9473200056D42F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65A5A6AE1E9473200056D42F /* LaunchScreen.storyboard */; };
 		65A5A6BB1E9473200056D42F /* VeeduTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5A6BA1E9473200056D42F /* VeeduTests.swift */; };
 		65A5A6C61E9473200056D42F /* VeeduUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5A6C51E9473200056D42F /* VeeduUITests.swift */; };
+		65B734E51E95DCA800506B1F /* PrathibaMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B734E41E95DCA800506B1F /* PrathibaMain.storyboard */; };
+		65B734E71E95DCBA00506B1F /* JoyMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B734E61E95DCBA00506B1F /* JoyMain.storyboard */; };
+		65B734E91E95DCD000506B1F /* KevinMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B734E81E95DCD000506B1F /* KevinMain.storyboard */; };
 		AB763F286B3ABAC2FCA653C6 /* Pods_VeeduTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68EF2E5115204607A907A9E /* Pods_VeeduTests.framework */; };
 		D5EA9E4067EC803D0C75C18E /* Pods_Veedu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADC4B53D548E43EEBBE13E1 /* Pods_Veedu.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +64,9 @@
 		65A5A6C11E9473200056D42F /* VeeduUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VeeduUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A5A6C51E9473200056D42F /* VeeduUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeeduUITests.swift; sourceTree = "<group>"; };
 		65A5A6C71E9473200056D42F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65B734E41E95DCA800506B1F /* PrathibaMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PrathibaMain.storyboard; sourceTree = "<group>"; };
+		65B734E61E95DCBA00506B1F /* JoyMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = JoyMain.storyboard; sourceTree = "<group>"; };
+		65B734E81E95DCD000506B1F /* KevinMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KevinMain.storyboard; sourceTree = "<group>"; };
 		6B620D00CCEDE04C4F668473 /* Pods-VeeduTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VeeduTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VeeduTests/Pods-VeeduTests.release.xcconfig"; sourceTree = "<group>"; };
 		8A37C32EA5C692D5C6E6FB32 /* Pods-VeeduUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VeeduUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VeeduUITests/Pods-VeeduUITests.release.xcconfig"; sourceTree = "<group>"; };
 		99198D5149E7C5A0620DC2A4 /* Pods-VeeduUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VeeduUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VeeduUITests/Pods-VeeduUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +133,9 @@
 				65A5A6A41E9473200056D42F /* ViewController.swift */,
 				6595D9CF1E95C1EA007E29FF /* Item.swift */,
 				65A5A6A61E9473200056D42F /* Main.storyboard */,
+				65B734EC1E95DD1600506B1F /* PrathibaFiles */,
+				65B734EB1E95DD0E00506B1F /* JoyFiles */,
+				65B734EA1E95DD0100506B1F /* KevinFiles */,
 				6595D9CD1E95BB97007E29FF /* MainTableViewCell.swift */,
 				65A5A6AC1E9473200056D42F /* Assets.xcassets */,
 				65A5A6AE1E9473200056D42F /* LaunchScreen.storyboard */,
@@ -152,6 +161,30 @@
 				65A5A6C71E9473200056D42F /* Info.plist */,
 			);
 			path = VeeduUITests;
+			sourceTree = "<group>";
+		};
+		65B734EA1E95DD0100506B1F /* KevinFiles */ = {
+			isa = PBXGroup;
+			children = (
+				65B734E81E95DCD000506B1F /* KevinMain.storyboard */,
+			);
+			name = KevinFiles;
+			sourceTree = "<group>";
+		};
+		65B734EB1E95DD0E00506B1F /* JoyFiles */ = {
+			isa = PBXGroup;
+			children = (
+				65B734E61E95DCBA00506B1F /* JoyMain.storyboard */,
+			);
+			name = JoyFiles;
+			sourceTree = "<group>";
+		};
+		65B734EC1E95DD1600506B1F /* PrathibaFiles */ = {
+			isa = PBXGroup;
+			children = (
+				65B734E41E95DCA800506B1F /* PrathibaMain.storyboard */,
+			);
+			name = PrathibaFiles;
 			sourceTree = "<group>";
 		};
 		8A4BEE35C0204789D2220543 /* Frameworks */ = {
@@ -294,8 +327,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				65A5A6B01E9473200056D42F /* LaunchScreen.storyboard in Resources */,
+				65B734E91E95DCD000506B1F /* KevinMain.storyboard in Resources */,
 				65A5A6AD1E9473200056D42F /* Assets.xcassets in Resources */,
 				65A5A6A81E9473200056D42F /* Main.storyboard in Resources */,
+				65B734E51E95DCA800506B1F /* PrathibaMain.storyboard in Resources */,
+				65B734E71E95DCBA00506B1F /* JoyMain.storyboard in Resources */,
 				6595D9CC1E95B78D007E29FF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
