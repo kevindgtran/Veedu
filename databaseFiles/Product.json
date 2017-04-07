@@ -106,7 +106,7 @@
             "specifications": ["Queen: 80in x 89in.", "300 Thread Count.", "Sateen Weave, Single Ply."],
             "reviews": [],
             "imageURL": "https://cdn.shopify.com/s/files/1/1094/4634/products/Duvet-Cover-Blue_aad01783-9e87-407f-bca9-a365699da9ee_2048x2048.jpg?v=1483720142",
-            "storyCategory": "",
+            "storyCategory": "industrial",
             "roomCategory": ["bedRoom"],
             "productCategory": ["textile"]
         }, {
@@ -117,7 +117,7 @@
             "specifications": ["Ultra Soft Fine Long Staple", "100% Certified Organic Cotton", "300 Thread Count"],
             "reviews": [],
             "imageURL": "https://cdn.shopify.com/s/files/1/1094/4634/products/Folded-sheets-white_7d97d006-352c-4adb-a438-b544cc915dfc_2048x2048.jpg?v=1488223990",
-            "storyCategory": "",
+            "storyCategory": "industrial",
             "roomCategory": ["bedRoom"],
             "productCategory": ["textile"]
         }, {
@@ -128,7 +128,7 @@
             "specifications": ["Standard Size", "100% extra-fine weave microfiber", "Hypo-allergenic"],
             "reviews": ["This sham is a sham!", "Found these to be as nice as described - beautiful, very soft and high quality, accurate color depiction. Luxurious feel."],
             "imageURL": "https://images.costco-static.com/ImageDelivery/imageService?profileId=12026540&itemId=100026869-847&recipeName=344",
-            "storyCategory": "",
+            "storyCategory": "industrial",
             "roomCategory": ["bedRoom"],
             "productCategory": ["textile"]
         }, {
@@ -139,7 +139,7 @@
             "specifications": ["Traditional lightweight Turkish bath towels with a high/low weave for excellent absorption.", "Cotton is 100% organic, and sourced and woven in Turkey."],
             "reviews": ["It took me a while to get used to the idea that a thinner towel could be as absorbent as a thick or plush towel but once I got my head around that, I was hooked. I was given a beach towel from a friend and although I would not normally travel with my own towel, I'm absolutely sure I would make room in my bag for this one. It's practical & beautiful for any sunny holiday!", "Clean beautiful design."],
             "imageURL": "http://bpc.h-cdn.co/assets/16/01/768x384/landscape-1452115931-turkish-bath-towels.jpg",
-            "storyCategory": "",
+            "storyCategory": "industrial",
             "roomCategory": ["bathRoom"],
             "productCategory": ["textile"]
         }, {
@@ -150,7 +150,7 @@
             "specifications": ["44in l x 56in w.", "100% acrylic.", "Fringed ends."],
             "reviews": ["Super soft!!", "Got as a gift and I love it!"],
             "imageURL": "http://rk.weimgs.com/weimgs/rk/images/wcm/products/201651/0010/warmest-throw-yarn-dyed-o.jpg",
-            "storyCategory": "",
+            "storyCategory": "industrial",
             "roomCategory": ["livingRoom", "bedRoom"],
             "productCategory": ["textile"]
         }, {
@@ -172,7 +172,7 @@
             "specifications": ["20in x 15in x 1 1/2in thick; 10 lb.", "Crafted in the USA from sustainably harvested North American walnut.", "Edge-grain construction holds up to years of slicing and chopping."],
             "reviews": ["Purchased it as a gift and he loved it!", "Beautiful cutting board. I almost don't want to use it."],
             "imageURL": "http://ab.wsimgs.com/wsimgs/ab/images/dp/wcm/201704/0035/img91c.jpg",
-            "storyCategory": "",
+            "storyCategory": "farmhouse",
             "roomCategory": ["kitchenDiningRoom"],
             "productCategory": ["cookware"]
         }, {
@@ -183,7 +183,7 @@
             "specifications": ["17in x 36in x 13in high.", "Includes 6 straight and 12 angled hooks.", "Includes moungting hardware."],
             "reviews": [],
             "imageURL": "http://ab.wsimgs.com/wsimgs/ab/images/dp/wcm/201702/0006/img35c.jpg",
-            "storyCategory": "",
+            "storyCategory": "industrial",
             "roomCategory": ["kitchenDiningRoom"],
             "productCategory": ["furniture"]
         }, {
@@ -194,7 +194,7 @@
             "specifications": ["44in l x 4.25in w x 8.75in h", "Steel construction.", "Bowl, blade and top are dishwasher safe; Wipe exterior clean."],
             "reviews": ["The KitchenAid Blade Coffee Grinder is very easy to use and clean. It will always grind your coffee to your liking."],
             "imageURL": "https://s7d1.scene7.com/is/image/BedBathandBeyond/96116818546191p?$478$",
-            "storyCategory": "",
+            "storyCategory": "midCenturyModern",
             "roomCategory": ["kitchenDiningRoom"],
             "productCategory": ["smallAppliance"]
         }, {
@@ -205,7 +205,7 @@
             "specifications": ["Full Dinnerware Set.", "Set for 2.", "10 piece set."],
             "reviews": [],
             "imageURL": "http://rk.weimgs.com/weimgs/rk/images/wcm/products/201651/0010/warmest-throw-yarn-dyed-o.jpg",
-            "storyCategory": "",
+            "storyCategory": "industrial",
             "roomCategory": ["kitchenDiningRoom"],
             "productCategory": ["diningware"]
         }, {
