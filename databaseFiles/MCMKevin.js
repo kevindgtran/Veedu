@@ -87,3 +87,72 @@
   "roomCategory" : ["bedRoom"],
   "productCategory" : ["accessory"]
 }]
+
+
+"allProducts2": [{
+  "name" : "Modern Urban Sofa",
+  "productID" : "",
+  "price" : 479,
+  "description" : "The Urban's simple silhouette and sink-right-in comfort make it a classic choice for the family room.",
+  "specifications" : ["Wood frame", "84.5\"w x 39\"d x 31\"h"],
+  "reviews" : [],
+  "imageURL" : "https://s-media-cache-ak0.pinimg.com/564x/c7/93/6a/c7936a40e4959398a2e2a5f861c4dfd2.jpg",
+  "storyCategory" : "midCenturyModern",
+  "roomCategory" : ["livingRoom"],
+  "productCategory" : ["furniture"]
+}, {
+  "name" : "Modern Circles Area Rug",
+  "productID" : "",
+  "price" : 125.24,
+  "description" : "This beautiful rug is unique, stylish and ready to accent your decor with authentic elegance.",
+  "specifications" : ["Made of Polypropylene", "Machine made in Turkey"],
+  "reviews" : [],
+  "imageURL" : "http://www.homedepot.com/catalog/productImages/1000/68/68ed6c08-3a19-4600-8c7d-ea8fb972724f_1000.jpg",
+  "storyCategory" : "midCenturyModern",
+  "roomCategory" : ["livingRoom"],
+  "productCategory" : ["textile"]
+}, {
+  "name" : "Discus Ceiling Light",
+  "productID" : "",
+  "price" : 115.40,
+  "description" : "The Discus lighting collection ceiling fixture features a clean modern living flair.",
+  "specifications" : ["1-light semi-flushmount ceiling fixture in nickel finish", "Black shade"],
+  "reviews" : [],
+  "imageURL" : "http://www.homedepot.com/catalog/productImages/1000/4b/4be1e63e-736e-4ffa-b096-e1c8ae425b8d_1000.jpg",
+  "storyCategory" : "midCenturyModern",
+  "roomCategory" : ["livingRoom"],
+  "productCategory" : ["lighting"]
+}, {
+  "name" : "Reeded Sea Glass Wall Mirror",
+  "productID" : "",
+  "price" : 45.79,
+  "description" : "This frameless aqua/blue mosaic tile composition resembles aged sea glass.",
+  "specifications" : ["Beautiful aqua/blue mosaic tile design", "Hand crafted"],
+  "reviews" : [],
+  "imageURL" : "http://www.homedepot.com/catalog/productImages/400/99/99460b0a-0dbc-4925-a3af-d9b537fe8903_400.jpg",
+  "storyCategory" : "midCenturyModern",
+  "roomCategory" : ["livingRoom"],
+  "productCategory" : ["accessory"]
+}, {
+  "name" : "Jacquard Egyptian Cotton 6-Piece Towel Set, Blue Stone",
+  "productID" : "",
+  "price" : 28.04,
+  "description" : "Enjoy comfort and style with these beautiful double ply 100-percent Egyptian cotton.",
+  "specifications" : ["100-percent Egyptian cotton", "Machine washable"],
+  "reviews" : [],
+  "imageURL" : "https://st.hzcdn.com/fimgs/5dd14af60804be88_0428-w233-h233-b1-p10--modern-bath-towels.jpg",
+  "storyCategory" : "midCenturyModern",
+  "roomCategory" : ["bathRoom"],
+  "productCategory" : ["textile"]
+}, {
+  "name" : "Modern Bathroom Glass & Metal Set",
+  "productID" : "",
+  "price" : 28.85,
+  "description" : "Sleek & chic. In beautiful glass and stainless steel with clean, contemporary lines",
+  "specifications" : ["glass set"],
+  "reviews" : [],
+  "imageURL" : "http://teaone.net/uploads/fotos/modern-bathroom-accessories-sets_513_750_595.jpg",
+  "storyCategory" : "midCenturyModern",
+  "roomCategory" : ["bathRoom"],
+  "productCategory" : ["accessory"]
+}]
