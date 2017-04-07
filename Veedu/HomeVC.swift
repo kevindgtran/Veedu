@@ -12,6 +12,10 @@ class HomeVC: UIViewController {
 
     var storyCategories = Story.stories
     
+//    var storyCategory = Story()
+    
+    var selectedIndexPath: IndexPath?
+    
     @IBOutlet weak var storyTableView: UITableView!
     
     override func viewDidLoad() {
@@ -41,7 +45,7 @@ class HomeVC: UIViewController {
 
 // MARK: DATA SOURCE
 
-extension HomeVC: UITableViewDataSource {
+extension HomeVC: UITableViewDataSource, UITableViewDelegate {
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,6 +58,8 @@ extension HomeVC: UITableViewDataSource {
             return UITableViewCell()
         }
         
+//        let storyCategory = storyCategories[indexPath.row]
+
         // Story Images in TableView
         if let storyImage = self.storyCategories[indexPath.row].storyImage {
             cell.storyImageView.image = UIImage(named: storyImage)
@@ -67,4 +73,23 @@ extension HomeVC: UITableViewDataSource {
         return cell
 
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // user selected a story category.
+        selectedIndexPath = indexPath
+        
+        // connect to Prathiba's ProductsPerCategoryVC
+        performSegue(withIdentifier: "ProductCell", sender: self)
+    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let destination = segue.destination as? ProductsPerCategoryVC {
+//            if let selectedIndexPath = selectedIndexPath {
+//                destination.
+//            }
+//        }
+//    }
+//    
+    
+    
 }
