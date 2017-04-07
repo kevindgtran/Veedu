@@ -12,8 +12,6 @@ class HomeVC: UIViewController {
 
     var storyCategories = Story.stories
     
-//    var storyCategory = Story()
-    
     var selectedIndexPath: IndexPath?
     
     @IBOutlet weak var storyTableView: UITableView!
@@ -85,7 +83,6 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate {
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if let destination = segue.destination as? ProductsPerCategoryVC {
 //            if let selectedIndexPath = selectedIndexPath {
-//                destination.
 //            }
 //        }
 //    }

@@ -97,25 +97,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="186" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZiX-Eq-sk8">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="287" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZiX-Eq-sk8">
                                 <rect key="frame" x="0.0" y="243" width="375" height="375"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StoryCell" rowHeight="186" id="yZe-Tl-ICO" customClass="StoryTableViewCell" customModule="Veedu" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="186"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StoryCell" rowHeight="287" id="yZe-Tl-ICO" customClass="StoryTableViewCell" customModule="Veedu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="287"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yZe-Tl-ICO" id="FJa-et-pri">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="186"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="286.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALA-Jw-ORS">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="186"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="287"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Industrial" translatesAutoresizingMaskIntoConstraints="NO" id="Nd2-0Z-lxQ">
-                                                            <rect key="frame" x="5" y="5" width="365" height="176"/>
+                                                            <rect key="frame" x="5" y="5" width="365" height="277"/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0j-OK-uvp">
-                                                            <rect key="frame" x="177" y="22" width="96" height="45"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0j-OK-uvp">
+                                                            <rect key="frame" x="18" y="205" width="219" height="45"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="45" id="Bj6-nS-zvD"/>
                                                                 <constraint firstAttribute="width" constant="96" id="WGm-4a-Ime"/>
