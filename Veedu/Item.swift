@@ -14,6 +14,7 @@ class Product {
     var productName: String
     var productPrice: Double
     var productImageURL: String
+    var productImage: UIImage?
     
     init(_ productName: String, _ productPrice: Double, _ productImageURL: String) {
         self.productName = productName
@@ -34,6 +35,7 @@ class Product {
                 print("download image - second - guard - else")
                 return
             }
+            print("Fetched Image")
             completion(image)
         }
         task.resume()

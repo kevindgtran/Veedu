@@ -20,4 +20,10 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @IBAction func addFavorite(_ sender: Any) {
         
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        productImage.image = nil
+    }
 }

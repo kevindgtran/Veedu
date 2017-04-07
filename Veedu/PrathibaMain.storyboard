@@ -22,13 +22,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PiL-we-Tya">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oYU-i8-i8p">
                                     <size key="itemSize" width="167" height="180"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="5" minY="5" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductCell" id="GaM-cD-z9J" customClass="ProductCollectionViewCell" customModule="Veedu" customModuleProvider="target">
@@ -38,27 +38,30 @@
                                             <rect key="frame" x="0.0" y="0.0" width="167" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dkD-ID-qcW">
-                                                    <rect key="frame" x="0.0" y="-9" width="167" height="151"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dkD-ID-qcW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="167" height="151"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="151" id="T32-Ei-KET"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tER-b4-kel">
-                                                    <rect key="frame" x="0.0" y="147" width="143" height="13"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tER-b4-kel">
+                                                    <rect key="frame" x="0.0" y="151" width="149" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlA-Sz-n5L">
-                                                    <rect key="frame" x="0.0" y="163" width="167" height="17"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlA-Sz-n5L">
+                                                    <rect key="frame" x="0.0" y="165.5" width="167" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="11"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOd-ry-1IM">
-                                                    <rect key="frame" x="151" y="145" width="16" height="15"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOd-ry-1IM">
+                                                    <rect key="frame" x="149" y="159" width="18" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="1cr-D9-HsY"/>
+                                                        <constraint firstAttribute="width" constant="18" id="SEi-bu-hip"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <state key="normal" title="♡">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -69,6 +72,22 @@
                                                 </button>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="cOd-ry-1IM" secondAttribute="trailing" id="0hh-g7-5zy"/>
+                                            <constraint firstItem="cOd-ry-1IM" firstAttribute="leading" secondItem="tER-b4-kel" secondAttribute="trailing" id="1eJ-L3-1MN"/>
+                                            <constraint firstAttribute="trailing" secondItem="dkD-ID-qcW" secondAttribute="trailing" id="85i-10-z1m"/>
+                                            <constraint firstItem="rlA-Sz-n5L" firstAttribute="top" secondItem="tER-b4-kel" secondAttribute="bottom" id="9wq-jb-hKa"/>
+                                            <constraint firstItem="cOd-ry-1IM" firstAttribute="top" secondItem="dkD-ID-qcW" secondAttribute="bottom" constant="8" symbolic="YES" id="9zO-Pp-sph"/>
+                                            <constraint firstItem="dkD-ID-qcW" firstAttribute="top" secondItem="GaM-cD-z9J" secondAttribute="top" id="CNh-YG-pQF"/>
+                                            <constraint firstItem="tER-b4-kel" firstAttribute="leading" secondItem="GaM-cD-z9J" secondAttribute="leading" id="NzG-iB-eih"/>
+                                            <constraint firstItem="rlA-Sz-n5L" firstAttribute="leading" secondItem="GaM-cD-z9J" secondAttribute="leading" id="TE8-SA-aOs"/>
+                                            <constraint firstItem="rlA-Sz-n5L" firstAttribute="top" secondItem="tER-b4-kel" secondAttribute="bottom" id="bZp-Ng-mfp"/>
+                                            <constraint firstAttribute="bottom" secondItem="rlA-Sz-n5L" secondAttribute="bottom" id="dHy-3o-rQe"/>
+                                            <constraint firstItem="tER-b4-kel" firstAttribute="top" secondItem="dkD-ID-qcW" secondAttribute="bottom" id="eBd-K9-GER"/>
+                                            <constraint firstItem="tER-b4-kel" firstAttribute="height" secondItem="cOd-ry-1IM" secondAttribute="height" id="spH-7L-596"/>
+                                            <constraint firstAttribute="trailing" secondItem="rlA-Sz-n5L" secondAttribute="trailing" id="xZm-q6-716"/>
+                                            <constraint firstItem="dkD-ID-qcW" firstAttribute="leading" secondItem="GaM-cD-z9J" secondAttribute="leading" id="yBC-dI-LJN"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="favoriteButton" destination="cOd-ry-1IM" id="pmZ-0T-xLz"/>
                                             <outlet property="productImage" destination="dkD-ID-qcW" id="yIh-aT-o5f"/>
@@ -87,7 +106,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="PiL-we-Tya" secondAttribute="trailing" id="Fcx-Xl-arP"/>
                             <constraint firstItem="PiL-we-Tya" firstAttribute="leading" secondItem="5ax-AT-I0g" secondAttribute="leading" id="H7N-V1-kPg"/>
-                            <constraint firstItem="PiL-we-Tya" firstAttribute="top" secondItem="d7y-hh-dn6" secondAttribute="bottom" id="mwv-mZ-k6Y"/>
+                            <constraint firstItem="PiL-we-Tya" firstAttribute="top" secondItem="d7y-hh-dn6" secondAttribute="bottom" constant="-64" id="mwv-mZ-k6Y"/>
                             <constraint firstItem="t5N-y6-llk" firstAttribute="top" secondItem="PiL-we-Tya" secondAttribute="bottom" id="yIE-iG-Zvt"/>
                         </constraints>
                     </view>
@@ -107,7 +126,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rGy-DJ-8xK" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qZC-2o-r4U">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qZC-2o-r4U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
