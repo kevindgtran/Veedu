@@ -1,0 +1,52 @@
+allReviews: [
+	{
+		  "reviewID" : "rev1",
+  		"productID" : "f12638",
+  		"rating" : 5,
+  		"title" : "Loved it!",
+  		"review" : "Love the look of this bar stool!"
+	},
+	{
+		  "reviewID" : "rev2",
+  		"productID" : "f12638",
+  		"rating" : 5,
+  		"title" : "Purchasing more!!",
+  		"review" : "Looks great at my breakfast bar. Purchasing two more!"
+	},
+	{
+		  "reviewID" : "rev3",
+  		"productID" : "f12640",
+  		"rating" : 5,
+  		"title" : "Perfect!",
+  		"review" : ["Perfect for my small studio."]
+	},
+	{
+		  "reviewID" : "rev4",
+  		"productID" : "f12610",
+  		"rating" : 4,
+  		"title" : "Heavy!",
+  		"review" : ["Heavy as hell but looks great in my bedroom. Looking forward to seeing it patina a bit."]
+	},
+	{
+		  "reviewID" : "rev5",
+  		"productID" : "f12610",
+  		"rating" : 5,
+  		"title" : "Great product!",
+  		"review" : ["If I had room, I would get the matching side dressers."]
+	},
+	{
+		  "reviewID" : "rev6",
+  		"productID" : "f01638",
+  		"rating" : 5,
+  		"title" : "Amazing!",
+  		"review" : ["Thought this dresser would look too industrial, but the wood drawers paired with steel really make it!"]
+	},
+	{
+		  "reviewID" : "rev7",
+  		"productID" : "f00638",
+  		"rating" : 5,
+  		"title" : "Sturdy!",
+  		"review" : ["Simple and sturdy design. Looks great in my loft but I need to figure out how to keep the mattress from slipping on the platform."]
+	}
+
+]
