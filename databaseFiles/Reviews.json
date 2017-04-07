@@ -1,52 +1,87 @@
-allReviews: [
-	{
-		  "reviewID" : "rev1",
-  		"productID" : "f12638",
-  		"rating" : 5,
-  		"title" : "Loved it!",
-  		"review" : "Love the look of this bar stool!"
-	},
-	{
-		  "reviewID" : "rev2",
-  		"productID" : "f12638",
-  		"rating" : 5,
-  		"title" : "Purchasing more!!",
-  		"review" : "Looks great at my breakfast bar. Purchasing two more!"
-	},
-	{
-		  "reviewID" : "rev3",
-  		"productID" : "f12640",
-  		"rating" : 5,
-  		"title" : "Perfect!",
-  		"review" : ["Perfect for my small studio."]
-	},
-	{
-		  "reviewID" : "rev4",
-  		"productID" : "f12610",
-  		"rating" : 4,
-  		"title" : "Heavy!",
-  		"review" : ["Heavy as hell but looks great in my bedroom. Looking forward to seeing it patina a bit."]
-	},
-	{
-		  "reviewID" : "rev5",
-  		"productID" : "f12610",
-  		"rating" : 5,
-  		"title" : "Great product!",
-  		"review" : ["If I had room, I would get the matching side dressers."]
-	},
-	{
-		  "reviewID" : "rev6",
-  		"productID" : "f01638",
-  		"rating" : 5,
-  		"title" : "Amazing!",
-  		"review" : ["Thought this dresser would look too industrial, but the wood drawers paired with steel really make it!"]
-	},
-	{
-		  "reviewID" : "rev7",
-  		"productID" : "f00638",
-  		"rating" : 5,
-  		"title" : "Sturdy!",
-  		"review" : ["Simple and sturdy design. Looks great in my loft but I need to figure out how to keep the mattress from slipping on the platform."]
-	}
-
-]
+{
+    "allReviews": [{
+        "reviewID": "rev1",
+        "productID": "f12638",
+        "rating": 5,
+        "title": "Loved it!",
+        "review": "Love the look of this bar stool!"
+    }, {
+        "reviewID": "rev2",
+        "productID": "f12638",
+        "rating": 5,
+        "title": "Purchasing more!!",
+        "review": "Looks great at my breakfast bar. Purchasing two more!"
+    }, {
+        "reviewID": "rev3",
+        "productID": "f12640",
+        "rating": 5,
+        "title": "Perfect!",
+        "review": "Perfect for my small studio."
+    }, {
+        "reviewID": "rev4",
+        "productID": "f12610",
+        "rating": 4,
+        "title": "Heavy!",
+        "review": "Heavy as hell but looks great in my bedroom. Looking forward to seeing it patina a bit."
+    }, {
+        "reviewID": "rev5",
+        "productID": "f12610",
+        "rating": 5,
+        "title": "Great product!",
+        "review": "If I had room, I would get the matching side dressers."
+    }, {
+        "reviewID": "rev6",
+        "productID": "f01638",
+        "rating": 5,
+        "title": "Amazing!",
+        "review": "Thought this dresser would look too industrial, but the wood drawers paired with steel really make it!"
+    }, {
+        "reviewID": "rev7",
+        "productID": "f00638",
+        "rating": 5,
+        "title": "Sturdy!",
+        "review": "Simple and sturdy design. Looks great in my loft but I need to figure out how to keep the mattress from slipping on the platform."
+    }, {
+        "reviewID": "krev001",
+        "productID": "kpro001",
+        "rating": 4,
+        "title": "Good table!",
+        "review": "Everyone loved it at the dinner party! Shipping was fast and assembly took less than 30 minutes"
+    }, {
+        "reviewID": "krev002",
+        "productID": "kpro002",
+        "rating": 4,
+        "title": "Solid dining set",
+        "review": "With three kids, these dishes have held up after multiple spills, drops and knockovers. Solid dishes."
+    }, {
+        "reviewID": "krev003",
+        "productID": "kpro003",
+        "rating": 5,
+        "title": "Life changing bed.",
+        "review": "Great bed. Solid construction and beautifully designed. The fabirc easily cleans and extremely soft to the touch. I've been getting much better sleep and feel better than ever!"
+    }, {
+        "reviewID": "krev004",
+        "productID": "kpro004",
+        "rating": 3,
+        "title": "Nice design but not very bright",
+        "review": "The lighting shade material is very thick and covers alot of the light being transmitted. This makes for a low amount of light even after we tried ultra white light bulbs. Looks great but not very bright."
+    }, {
+        "reviewID": "krev005",
+        "productID": "kpro005",
+        "rating": 4,
+        "title": "Elegant nightstand",
+        "review": "Recieved this as a gift and love how elegant it looks. Puts a smile on my face every morning I wake up to it."
+    }, {
+        "reviewID": "krev006",
+        "productID": "kpro006",
+        "rating": 2,
+        "title": "Thin rug",
+        "review": "We expected a bit thicker rug for the price. So thin some of the fabric material is starting to rub off after 4-5 months of light traffic. Wouldn't buy this rug again."
+    }, {
+        "reviewID": "krev007",
+        "productID": "kpro007",
+        "rating": 1,
+        "title": "Cracked after one hot summer day...",
+        "review": "Summers can get very hot here in Texas, my husband and I went on vacation and when we came back the heat must have cracked the mirror glass."
+    }]
+}
