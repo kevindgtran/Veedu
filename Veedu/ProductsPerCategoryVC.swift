@@ -15,7 +15,7 @@ class ProductsPerCategoryVC: UIViewController {
     
     //MARK: properties
     var ref: FIRDatabaseReference!
-    var productsFromFirebase: [FIRDataSnapshot]! = []
+    //var productsFromFirebase: [FIRDataSnapshot]! = []
     var storageRef: FIRStorageReference!
     var remoteConfig: FIRRemoteConfig!
     var keyboardOnScreen = false
@@ -23,21 +23,13 @@ class ProductsPerCategoryVC: UIViewController {
     fileprivate var _authHandle: FIRAuthStateDidChangeListenerHandle!
     var user: FIRUser?
     
-    var products =  [Product]()
+    var products = [Product]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureDatabase()
         configureStorage()
-        //self.signedInStatus(isSignedIn: true)
-    }
-    
-    //not used
-    func signedInStatus(isSignedIn: Bool) {
-        
-        if (isSignedIn) {
-            
-        }
     }
     
     func  configureDatabase() {
@@ -45,8 +37,22 @@ class ProductsPerCategoryVC: UIViewController {
         ref = FIRDatabase.database().reference()
         
         _refHandle = ref.child("allProducts").observe(.childAdded) { (snapshot: FIRDataSnapshot) in
-            self.productsFromFirebase.append(snapshot)
-            self.productCollectionView.insertItems(at: [IndexPath(row: self.productsFromFirebase.count - 1, section: 0)])
+            //A Product from Firebase
+            let product = snapshot.value as! [String:Any]
+            let name = product[Product.ProductKeys.name] ?? "[name]"
+            let price = product[Product.ProductKeys.price] ?? "[price]"
+            let imageURL = product[Product.ProductKeys.imageURL] ?? "[imageURL]"
+            
+            //Creating Product Instance
+            guard let nameInString = name as? String else {return}
+            guard let priceInString = price as? Double else {return}
+            guard let imageURLInString = imageURL as? String else {return}
+            
+            //to cache the downloaded images
+            let newProduct = Product(nameInString, priceInString, imageURLInString)
+            self.products.append(newProduct)
+            
+            self.productCollectionView.insertItems(at: [IndexPath(row: self.products.count - 1, section: 0)])
         }
     }
     
@@ -62,8 +68,12 @@ class ProductsPerCategoryVC: UIViewController {
 
 extension ProductsPerCategoryVC: UICollectionViewDataSource {
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return productsFromFirebase.count
+        return products.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -73,26 +83,21 @@ extension ProductsPerCategoryVC: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        //Product from Firebase
-        let productSnapshot: FIRDataSnapshot! = productsFromFirebase[indexPath.row]
-        let product = productSnapshot.value as! [String:Any]
-        let name = product[Product.ProductKeys.name] ?? "[name]"
-        let price = product[Product.ProductKeys.price] ?? "[price]"
-        let imageURL = product[Product.ProductKeys.imageURL] ?? "[imageURL]"
-
         //Displaying on Collection view
-        Product.downloadImage((imageURL as? String)!) { (image) in
-            if self.productCollectionView.indexPathsForVisibleItems.contains(indexPath) == true {
-                //self.articlesListArray[indexPath.row].image = image
+        if let productImage = self.products[indexPath.row].productImage {
+            cell.productImage.image = productImage
+        }
+        else{
+            Product.downloadImage(products[indexPath.row].productImageURL) { (image) in
+                self.products[indexPath.row].productImage = image
                 DispatchQueue.main.async {
-                    cell.productImage.image = image
-                }
+                    cell.productImage.image = self.products[indexPath.row].productImage
+                }                
             }
         }
-        cell.productName.text = name as? String
-        guard let priceInString = price as? Double else {return UICollectionViewCell()}
-        cell.productPrice.text = String(describing: priceInString)
-
+        
+        cell.productName.text = products[indexPath.row].productName
+        cell.productPrice.text = String(products[indexPath.row].productPrice)
         
         return cell
     }
