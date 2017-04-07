@@ -28,6 +28,10 @@ class ProductsPerCategoryVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //collection view constraints
+        let width = productCollectionView!.frame.width / 2
+        //let layout = collectionViewLayout as! UICollectionViewLayout
+        
         configureDatabase()
         configureStorage()
     }
