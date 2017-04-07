@@ -325,6 +325,7 @@
 				TargetAttributes = {
 					65A5A69E1E9473200056D42F = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = HE7TTXQ758;
 						ProvisioningStyle = Automatic;
 					};
 					65A5A6B51E9473200056D42F = {
@@ -702,6 +703,7 @@
 			baseConfigurationReference = 9C95596C7056B142BB97C8DE /* Pods-Veedu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HE7TTXQ758;
 				INFOPLIST_FILE = Veedu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Veedu;
@@ -715,6 +717,7 @@
 			baseConfigurationReference = 234F2E22451543174FB5CADF /* Pods-Veedu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HE7TTXQ758;
 				INFOPLIST_FILE = Veedu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Veedu;
