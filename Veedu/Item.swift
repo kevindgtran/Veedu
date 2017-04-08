@@ -11,15 +11,26 @@ import UIKit
 
 class Product {
     
+    var productID: String
     var productName: String
     var productPrice: Double
     var productImageURL: String
     var productImage: UIImage?
+    var productDescription: String
+    var productMeasurements: String
+    var productMaterial: String
+    //var produsctReviews: [Reviews]
     
-    init(_ productName: String, _ productPrice: Double, _ productImageURL: String) {
+    init(_ productID: String, _ productName: String, _ productPrice: Double, _ productImageURL: String, _ productDescription: String, _ productMeasurements: String, _ productMaterial: String) {
+        
+        self.productID = productID
         self.productName = productName
         self.productPrice = productPrice
         self.productImageURL = productImageURL
+        self.productDescription = productDescription
+        self.productMeasurements = productMeasurements
+        self.productMaterial = productMaterial
+        
     }
     
     static func downloadImage(_ imageURL: String, _ completion: @escaping(UIImage) -> Void) {
@@ -43,9 +54,13 @@ class Product {
     }
     
     struct ProductKeys {
+        static let productID = "productID"
         static let name = "name"
         static let price = "price"
         static let imageURL = "imageURL"
+        static let description = "description"
+        static let measurements = "measurements"
+        static let material = "material"
     }
 
 }
