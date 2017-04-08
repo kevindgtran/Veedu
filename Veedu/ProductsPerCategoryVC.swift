@@ -19,7 +19,6 @@ class ProductsPerCategoryVC: UIViewController {
     var remoteConfig: FIRRemoteConfig!
     var keyboardOnScreen = false
     fileprivate var _refHandle: FIRDatabaseHandle!
-    //fileprivate var _refHandleChild: FIRDatabaseHandle!
     fileprivate var _authHandle: FIRAuthStateDidChangeListenerHandle!
     var user: FIRUser?
     
@@ -38,14 +37,10 @@ class ProductsPerCategoryVC: UIViewController {
         ref = FIRDatabase.database().reference()
         
         _refHandle = ref.child("data").child("0").child("allProducts").observe(.childAdded) { (snapshot: FIRDataSnapshot) in
-            //All data from firebase
-            //let data = snapshot.value as! [String: Any]
             
             //A Product from Firebase
-           // self._refHandleChild = self.ref.child("allProducts").observe(.childAdded) { (snapshot: FIRDataSnapshot) in
-            print(snapshot.value)
+            //print(snapshot.value)
             let product = snapshot.value as! [String:Any]
-            
             
             let productID = product[Product.ProductKeys.productID] ?? "productID"
             let name = product[Product.ProductKeys.name] ?? "[name]"
@@ -70,7 +65,7 @@ class ProductsPerCategoryVC: UIViewController {
             self.products.append(newProduct)
             
             self.productCollectionView.insertItems(at: [IndexPath(row: self.products.count - 1, section: 0)])
-            //}
+            
         }
     }
     
