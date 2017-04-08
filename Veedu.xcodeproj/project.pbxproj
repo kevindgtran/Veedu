@@ -34,6 +34,7 @@
 		C461DE0C1E9724DD008AE663 /* ReviewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C461DE0A1E9724DD008AE663 /* ReviewsCell.xib */; };
 		C461DE0F1E97250C008AE663 /* ProductDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461DE0D1E97250C008AE663 /* ProductDetailsCell.swift */; };
 		C461DE101E97250C008AE663 /* ProductDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C461DE0E1E97250C008AE663 /* ProductDetailsCell.xib */; };
+		C461DE661E984051008AE663 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461DE651E984051008AE663 /* Review.swift */; };
 		D5EA9E4067EC803D0C75C18E /* Pods_Veedu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADC4B53D548E43EEBBE13E1 /* Pods_Veedu.framework */; };
 		E06B6AE21E97C90300E12419 /* HomeVC_Joy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6AE11E97C90300E12419 /* HomeVC_Joy.swift */; };
 		E06B6AE41E97C92500E12419 /* BrowseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6AE31E97C92500E12419 /* BrowseVC.swift */; };
@@ -98,6 +99,7 @@
 		C461DE0A1E9724DD008AE663 /* ReviewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewsCell.xib; sourceTree = "<group>"; };
 		C461DE0D1E97250C008AE663 /* ProductDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailsCell.swift; sourceTree = "<group>"; };
 		C461DE0E1E97250C008AE663 /* ProductDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductDetailsCell.xib; sourceTree = "<group>"; };
+		C461DE651E984051008AE663 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		C68EF2E5115204607A907A9E /* Pods_VeeduTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VeeduTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E06B6AE11E97C90300E12419 /* HomeVC_Joy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC_Joy.swift; sourceTree = "<group>"; };
 		E06B6AE31E97C92500E12419 /* BrowseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseVC.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				C461DE0A1E9724DD008AE663 /* ReviewsCell.xib */,
 				C461DE0D1E97250C008AE663 /* ProductDetailsCell.swift */,
 				C461DE0E1E97250C008AE663 /* ProductDetailsCell.xib */,
+				C461DE651E984051008AE663 /* Review.swift */,
 			);
 			name = PrathibaFiles;
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 				C453B00D1E96C55C0088E827 /* ProductCollectionViewCell.swift in Sources */,
 				65A5A6AB1E9473200056D42F /* Veedu.xcdatamodeld in Sources */,
 				C461DE0B1E9724DD008AE663 /* ReviewsCell.swift in Sources */,
+				C461DE661E984051008AE663 /* Review.swift in Sources */,
 				65B734F01E9602AC00506B1F /* CartViewController.swift in Sources */,
 				C461DE081E972454008AE663 /* ProductDetailsVC.swift in Sources */,
 				C453B00B1E96C48A0088E827 /* ProductsPerCategoryVC.swift in Sources */,

@@ -134,17 +134,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IyO-UI-a8P">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dTk-xJ-nIo">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="SLK-Vu-ZEA" id="NEj-vm-pBY"/>
+                                    <outlet property="delegate" destination="SLK-Vu-ZEA" id="WjX-Jd-odE"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Product Details" id="2JK-2h-ldb"/>
                     <connections>
-                        <outlet property="productTableView" destination="IyO-UI-a8P" id="BK8-x8-O1i"/>
+                        <outlet property="productTableView" destination="dTk-xJ-nIo" id="fFL-Ah-q2S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XTD-hT-QW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
