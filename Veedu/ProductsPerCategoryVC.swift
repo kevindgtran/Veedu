@@ -15,7 +15,6 @@ class ProductsPerCategoryVC: UIViewController {
     
     //MARK: properties
     var ref: FIRDatabaseReference!
-    //var productsFromFirebase: [FIRDataSnapshot]! = []
     var storageRef: FIRStorageReference!
     var remoteConfig: FIRRemoteConfig!
     var keyboardOnScreen = false
@@ -24,13 +23,10 @@ class ProductsPerCategoryVC: UIViewController {
     var user: FIRUser?
     
     var products = [Product]()
+    var selectedIndexPath: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //collection view constraints
-        let width = productCollectionView!.frame.width / 2
-        //let layout = collectionViewLayout as! UICollectionViewLayout
         
         configureDatabase()
         configureStorage()
@@ -40,23 +36,36 @@ class ProductsPerCategoryVC: UIViewController {
         
         ref = FIRDatabase.database().reference()
         
-        _refHandle = ref.child("allProducts").observe(.childAdded) { (snapshot: FIRDataSnapshot) in
+        _refHandle = ref.child("data").child("0").child("allProducts").observe(.childAdded) { (snapshot: FIRDataSnapshot) in
+            
             //A Product from Firebase
+            //print(snapshot.value)
             let product = snapshot.value as! [String:Any]
+            
+            let productID = product[Product.ProductKeys.productID] ?? "productID"
             let name = product[Product.ProductKeys.name] ?? "[name]"
             let price = product[Product.ProductKeys.price] ?? "[price]"
             let imageURL = product[Product.ProductKeys.imageURL] ?? "[imageURL]"
+            let description = product[Product.ProductKeys.description] ?? "[imageURL]"
+            let measurements = product[Product.ProductKeys.measurements] ?? "[imageURL]"
+            let material = product[Product.ProductKeys.material] ?? "[imageURL]"
             
             //Creating Product Instance
+            guard let productIDAsString = productID as? String else {return}
             guard let nameInString = name as? String else {return}
             guard let priceInString = price as? Double else {return}
             guard let imageURLInString = imageURL as? String else {return}
+            guard let descriptionInString = description as? String else {return}
+            guard let measurementsInString = measurements as? String else {return}
+            guard let materialInString = material as? String else {return}
+            
             
             //to cache the downloaded images
-            let newProduct = Product(nameInString, priceInString, imageURLInString)
+            let newProduct = Product(productIDAsString, nameInString, priceInString, imageURLInString, descriptionInString, measurementsInString, materialInString)
             self.products.append(newProduct)
             
             self.productCollectionView.insertItems(at: [IndexPath(row: self.products.count - 1, section: 0)])
+            
         }
     }
     
@@ -104,5 +113,25 @@ extension ProductsPerCategoryVC: UICollectionViewDataSource {
         cell.productPrice.text = String(products[indexPath.row].productPrice)
         
         return cell
+    }
+}
+
+extension ProductsPerCategoryVC: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("In didSelectItemAt")
+        selectedIndexPath = indexPath
+        
+        performSegue(withIdentifier: "ToProductDetails", sender: "self")
+
+    }
+        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("In prepare")
+        if let destination = segue.destination as? ProductDetailsVC {
+            if let selectedIndexPath = selectedIndexPath {
+                destination.product = products[selectedIndexPath.row]
+            }
+        }
     }
 }
