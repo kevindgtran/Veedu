@@ -39,6 +39,7 @@
 		E06B6AE41E97C92500E12419 /* BrowseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6AE31E97C92500E12419 /* BrowseVC.swift */; };
 		E06B6AE61E97D8D100E12419 /* StoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6AE51E97D8D100E12419 /* StoryTableViewCell.swift */; };
 		E06B6AE81E97DF7400E12419 /* Story_Joy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6AE71E97DF7400E12419 /* Story_Joy.swift */; };
+		E06B6B521E9853A300E12419 /* BrowseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6B511E9853A300E12419 /* BrowseCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		E06B6AE31E97C92500E12419 /* BrowseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseVC.swift; sourceTree = "<group>"; };
 		E06B6AE51E97D8D100E12419 /* StoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryTableViewCell.swift; sourceTree = "<group>"; };
 		E06B6AE71E97DF7400E12419 /* Story_Joy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story_Joy.swift; sourceTree = "<group>"; };
+		E06B6B511E9853A300E12419 /* BrowseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 				E06B6AE11E97C90300E12419 /* HomeVC_Joy.swift */,
 				E06B6AE31E97C92500E12419 /* BrowseVC.swift */,
 				E06B6AE51E97D8D100E12419 /* StoryTableViewCell.swift */,
+				E06B6B511E9853A300E12419 /* BrowseCollectionViewCell.swift */,
 			);
 			name = JoyFiles;
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 				C453B00D1E96C55C0088E827 /* ProductCollectionViewCell.swift in Sources */,
 				65A5A6AB1E9473200056D42F /* Veedu.xcdatamodeld in Sources */,
 				C461DE0B1E9724DD008AE663 /* ReviewsCell.swift in Sources */,
+				E06B6B521E9853A300E12419 /* BrowseCollectionViewCell.swift in Sources */,
 				65B734F01E9602AC00506B1F /* CartViewController.swift in Sources */,
 				C461DE081E972454008AE663 /* ProductDetailsVC.swift in Sources */,
 				C453B00B1E96C48A0088E827 /* ProductsPerCategoryVC.swift in Sources */,
