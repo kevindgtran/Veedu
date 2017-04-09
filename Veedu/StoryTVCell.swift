@@ -1,5 +1,5 @@
 //
-//  StoryTableViewCell.swift
+//  StoryStoryTVCell.swift
 //  Veedu
 //
 //  Created by Joy Umali on 4/7/17.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class StoryTableViewCell: UITableViewCell {
+class StoryTVCell: UITableViewCell {
 
-    @IBOutlet weak var storyImageView: UIImageView!
+    @IBOutlet weak var storyImage: UIImageView!
     
     @IBOutlet weak var storyNameLabel: UILabel!
     
@@ -28,7 +28,7 @@ class StoryTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        storyImageView.image = nil
+        storyImage.image = nil
     }
 
 }

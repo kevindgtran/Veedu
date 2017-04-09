@@ -1,5 +1,5 @@
 //
-//  BrowseCollectionViewCell.swift
+//  RoomTabCVCell.swift
 //  Veedu
 //
 //  Created by Joy Umali on 4/7/17.
@@ -8,14 +8,15 @@
 
 import UIKit
 
-class BrowseCollectionViewCell: UICollectionViewCell {
+class RoomTabCVCell: UICollectionViewCell {
     
+    @IBOutlet weak var roomTabLabel: UILabel!
     
     
     override func prepareForReuse() {
         super.prepareForReuse()
         
-//        productImage.image = nil
+        roomTabLabel.text = nil
     }
     
     

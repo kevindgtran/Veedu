@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aPb-5C-Cl0">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aPb-5C-Cl0" userLabel="ProductCategory_CollectionView">
                                 <rect key="frame" x="0.0" y="132" width="375" height="486"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -32,7 +32,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ZTd-1H-6WJ">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductCategoryCell" id="ZTd-1H-6WJ" customClass="ProductCategoryCVCell" customModule="Veedu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="157" height="155"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -41,7 +41,28 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PQH-s1-gGk">
                                                     <rect key="frame" x="0.0" y="0.0" width="157" height="155"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cookware" translatesAutoresizingMaskIntoConstraints="NO" id="VqN-71-fOX">
+                                                            <rect key="frame" x="5" y="5" width="147" height="145"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ProductCategory" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iq0-Uw-lH9">
+                                                            <rect key="frame" x="13" y="67" width="131" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="VqN-71-fOX" firstAttribute="centerX" secondItem="PQH-s1-gGk" secondAttribute="centerX" id="4of-tt-ilM"/>
+                                                        <constraint firstItem="VqN-71-fOX" firstAttribute="centerY" secondItem="PQH-s1-gGk" secondAttribute="centerY" id="Hel-am-wZN"/>
+                                                        <constraint firstItem="VqN-71-fOX" firstAttribute="leading" secondItem="PQH-s1-gGk" secondAttribute="leading" constant="5" id="Naz-i3-WFe"/>
+                                                        <constraint firstItem="Iq0-Uw-lH9" firstAttribute="centerX" secondItem="PQH-s1-gGk" secondAttribute="centerX" id="YM8-Hw-Sia"/>
+                                                        <constraint firstItem="Iq0-Uw-lH9" firstAttribute="centerY" secondItem="PQH-s1-gGk" secondAttribute="centerY" id="Yk0-C9-HQA"/>
+                                                        <constraint firstItem="VqN-71-fOX" firstAttribute="top" secondItem="PQH-s1-gGk" secondAttribute="top" constant="5" id="eWR-Dc-q9O"/>
+                                                        <constraint firstAttribute="bottom" secondItem="VqN-71-fOX" secondAttribute="bottom" constant="5" id="l5N-cg-aUF"/>
+                                                        <constraint firstAttribute="trailing" secondItem="VqN-71-fOX" secondAttribute="trailing" constant="5" id="lDH-9Q-7eb"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                         </view>
@@ -51,6 +72,10 @@
                                             <constraint firstItem="PQH-s1-gGk" firstAttribute="top" secondItem="ZTd-1H-6WJ" secondAttribute="top" id="o3N-ZP-y23"/>
                                             <constraint firstItem="PQH-s1-gGk" firstAttribute="leading" secondItem="ZTd-1H-6WJ" secondAttribute="leading" id="qek-js-y3h"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="prodCategoryImage" destination="VqN-71-fOX" id="HMB-s9-Bpl"/>
+                                            <outlet property="prodCategoryLabel" destination="Iq0-Uw-lH9" id="6Mt-iw-fVQ"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -63,24 +88,48 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s5F-Fk-lEA">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s5F-Fk-lEA" userLabel="RoomTab_CollectionView">
                                 <rect key="frame" x="0.0" y="72" width="375" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Uh9-Vd-4nF">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="159" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="b0o-BB-uev">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RoomTabCell" id="b0o-BB-uev" customClass="RoomTabCVCell" customModule="Veedu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="159" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="159" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dY6-Uq-6Hl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="159" height="50"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Room" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtP-lP-KdT">
+                                                            <rect key="frame" x="4" y="15" width="147" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="dY6-Uq-6Hl" firstAttribute="leading" secondItem="b0o-BB-uev" secondAttribute="leading" id="Oe4-z6-aoP"/>
+                                            <constraint firstAttribute="trailing" secondItem="dY6-Uq-6Hl" secondAttribute="trailing" id="S9a-P6-JMr"/>
+                                            <constraint firstItem="dY6-Uq-6Hl" firstAttribute="top" secondItem="b0o-BB-uev" secondAttribute="top" id="YmJ-XV-d4m"/>
+                                            <constraint firstAttribute="bottom" secondItem="dY6-Uq-6Hl" secondAttribute="bottom" id="yC7-j1-fir"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="roomTabLabel" destination="mtP-lP-KdT" id="eIG-9X-aDv"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -92,6 +141,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Browse" id="0Eg-Ri-jfN"/>
+                    <connections>
+                        <outlet property="productCategoryCollectionView" destination="aPb-5C-Cl0" id="KV6-bw-U8A"/>
+                        <outlet property="roomTabCollectionView" destination="s5F-Fk-lEA" id="Iew-c7-9b5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xMi-qM-fCk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -113,7 +166,7 @@
                                 <rect key="frame" x="0.0" y="243" width="375" height="375"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StoryCell" rowHeight="287" id="yZe-Tl-ICO" customClass="StoryTableViewCell" customModule="Veedu" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StoryCell" rowHeight="287" id="yZe-Tl-ICO" customClass="StoryTVCell" customModule="Veedu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="287"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yZe-Tl-ICO" id="FJa-et-pri">
@@ -156,7 +209,7 @@
                                             <constraint firstAttribute="bottom" secondItem="ALA-Jw-ORS" secondAttribute="bottom" id="aa7-W5-USC"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="storyImageView" destination="Nd2-0Z-lxQ" id="Asq-dM-OWZ"/>
+                                            <outlet property="storyImage" destination="Nd2-0Z-lxQ" id="vby-xa-0Ds"/>
                                             <outlet property="storyNameLabel" destination="j0j-OK-uvp" id="qZR-wM-2bh"/>
                                         </connections>
                                     </tableViewCell>
@@ -221,6 +274,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Cookware" width="256" height="197"/>
         <image name="Industrial" width="2034" height="1550"/>
     </resources>
 </document>
