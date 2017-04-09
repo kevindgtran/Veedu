@@ -12,6 +12,7 @@ import FirebaseAuthUI
 
 class ProfileViewController: UIViewController {
     
+    //MARK: properties
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var signOutButton: UIButton!
     @IBOutlet weak var welcomeLabel: UILabel!
