@@ -39,8 +39,14 @@
 		D5EA9E4067EC803D0C75C18E /* Pods_Veedu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADC4B53D548E43EEBBE13E1 /* Pods_Veedu.framework */; };
 		E06B6AE21E97C90300E12419 /* HomeVC_Joy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6AE11E97C90300E12419 /* HomeVC_Joy.swift */; };
 		E06B6AE41E97C92500E12419 /* BrowseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6AE31E97C92500E12419 /* BrowseVC.swift */; };
-		E06B6AE61E97D8D100E12419 /* StoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6AE51E97D8D100E12419 /* StoryTableViewCell.swift */; };
+		E06B6AE61E97D8D100E12419 /* StoryTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6AE51E97D8D100E12419 /* StoryTVCell.swift */; };
 		E06B6AE81E97DF7400E12419 /* Story_Joy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6AE71E97DF7400E12419 /* Story_Joy.swift */; };
+		E06B6B521E9853A300E12419 /* RoomTabCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6B511E9853A300E12419 /* RoomTabCVCell.swift */; };
+		E06B6B571E99FCB600E12419 /* ProductCategoryCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6B561E99FCB600E12419 /* ProductCategoryCVCell.swift */; };
+		E06B6B591E9A063C00E12419 /* RoomCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6B581E9A063C00E12419 /* RoomCategory.swift */; };
+		E0DDD96B1E9A34C3000CFB9D /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DDD96A1E9A34C3000CFB9D /* ProductCategory.swift */; };
+		E0E1C5B21E9BCBD0001597E0 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E1C5B11E9BCBD0001597E0 /* Helpers.swift */; };
+		E0E1C5B61E9BE77E001597E0 /* ActiveCellCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E1C5B51E9BE77E001597E0 /* ActiveCellCVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,8 +111,14 @@
 		C68EF2E5115204607A907A9E /* Pods_VeeduTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VeeduTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E06B6AE11E97C90300E12419 /* HomeVC_Joy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC_Joy.swift; sourceTree = "<group>"; };
 		E06B6AE31E97C92500E12419 /* BrowseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseVC.swift; sourceTree = "<group>"; };
-		E06B6AE51E97D8D100E12419 /* StoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryTableViewCell.swift; sourceTree = "<group>"; };
+		E06B6AE51E97D8D100E12419 /* StoryTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryTVCell.swift; sourceTree = "<group>"; };
 		E06B6AE71E97DF7400E12419 /* Story_Joy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story_Joy.swift; sourceTree = "<group>"; };
+		E06B6B511E9853A300E12419 /* RoomTabCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomTabCVCell.swift; sourceTree = "<group>"; };
+		E06B6B561E99FCB600E12419 /* ProductCategoryCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCategoryCVCell.swift; sourceTree = "<group>"; };
+		E06B6B581E9A063C00E12419 /* RoomCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomCategory.swift; sourceTree = "<group>"; };
+		E0DDD96A1E9A34C3000CFB9D /* ProductCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
+		E0E1C5B11E9BCBD0001597E0 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		E0E1C5B51E9BE77E001597E0 /* ActiveCellCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveCellCVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,11 +223,10 @@
 		65B734EB1E95DD0E00506B1F /* JoyFiles */ = {
 			isa = PBXGroup;
 			children = (
-				E06B6AE71E97DF7400E12419 /* Story_Joy.swift */,
 				65B734E61E95DCBA00506B1F /* JoyMain.storyboard */,
-				E06B6AE11E97C90300E12419 /* HomeVC_Joy.swift */,
-				E06B6AE31E97C92500E12419 /* BrowseVC.swift */,
-				E06B6AE51E97D8D100E12419 /* StoryTableViewCell.swift */,
+				E0E1C5B31E9BE72C001597E0 /* Tools */,
+				E06B6B541E99FBF200E12419 /* Home */,
+				E06B6B551E99FC2D00E12419 /* Browse */,
 			);
 			name = JoyFiles;
 			sourceTree = "<group>";
@@ -275,6 +286,69 @@
 				8A37C32EA5C692D5C6E6FB32 /* Pods-VeeduUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E06B6B541E99FBF200E12419 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E06B6B5A1E9A068F00E12419 /* Model_Home */,
+				E06B6B5B1E9A06D700E12419 /* Controller_Home */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		E06B6B551E99FC2D00E12419 /* Browse */ = {
+			isa = PBXGroup;
+			children = (
+				E06B6B5D1E9A06F700E12419 /* Model_Browse */,
+				E06B6B5C1E9A06EE00E12419 /* Controller_Browse */,
+			);
+			name = Browse;
+			sourceTree = "<group>";
+		};
+		E06B6B5A1E9A068F00E12419 /* Model_Home */ = {
+			isa = PBXGroup;
+			children = (
+				E06B6AE71E97DF7400E12419 /* Story_Joy.swift */,
+			);
+			name = Model_Home;
+			sourceTree = "<group>";
+		};
+		E06B6B5B1E9A06D700E12419 /* Controller_Home */ = {
+			isa = PBXGroup;
+			children = (
+				E06B6AE11E97C90300E12419 /* HomeVC_Joy.swift */,
+				E06B6AE51E97D8D100E12419 /* StoryTVCell.swift */,
+			);
+			name = Controller_Home;
+			sourceTree = "<group>";
+		};
+		E06B6B5C1E9A06EE00E12419 /* Controller_Browse */ = {
+			isa = PBXGroup;
+			children = (
+				E06B6AE31E97C92500E12419 /* BrowseVC.swift */,
+				E06B6B511E9853A300E12419 /* RoomTabCVCell.swift */,
+				E06B6B561E99FCB600E12419 /* ProductCategoryCVCell.swift */,
+			);
+			name = Controller_Browse;
+			sourceTree = "<group>";
+		};
+		E06B6B5D1E9A06F700E12419 /* Model_Browse */ = {
+			isa = PBXGroup;
+			children = (
+				E06B6B581E9A063C00E12419 /* RoomCategory.swift */,
+				E0DDD96A1E9A34C3000CFB9D /* ProductCategory.swift */,
+			);
+			name = Model_Browse;
+			sourceTree = "<group>";
+		};
+		E0E1C5B31E9BE72C001597E0 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				E0E1C5B11E9BCBD0001597E0 /* Helpers.swift */,
+				E0E1C5B51E9BE77E001597E0 /* ActiveCellCVC.swift */,
+			);
+			name = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,7 +428,7 @@
 				TargetAttributes = {
 					65A5A69E1E9473200056D42F = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = WC2JB3CT65;
+						DevelopmentTeam = L8R43DTS44;
 						ProvisioningStyle = Automatic;
 					};
 					65A5A6B51E9473200056D42F = {
@@ -570,6 +644,7 @@
 				C453B00D1E96C55C0088E827 /* ProductCollectionViewCell.swift in Sources */,
 				65A5A6AB1E9473200056D42F /* Veedu.xcdatamodeld in Sources */,
 				C461DE0B1E9724DD008AE663 /* ReviewsCell.swift in Sources */,
+				E06B6B521E9853A300E12419 /* RoomTabCVCell.swift in Sources */,
 				C461DE661E984051008AE663 /* Review.swift in Sources */,
 				65B734F01E9602AC00506B1F /* CartViewController.swift in Sources */,
 				65ED5F301E9AB344003DA680 /* CartTableViewCell.swift in Sources */,
@@ -580,10 +655,15 @@
 				C461DE0F1E97250C008AE663 /* ProductDetailsCell.swift in Sources */,
 				E06B6AE41E97C92500E12419 /* BrowseVC.swift in Sources */,
 				65B734EE1E96028B00506B1F /* FavoritesUIViewController.swift in Sources */,
+				E0E1C5B61E9BE77E001597E0 /* ActiveCellCVC.swift in Sources */,
+				E06B6B571E99FCB600E12419 /* ProductCategoryCVCell.swift in Sources */,
 				E06B6AE21E97C90300E12419 /* HomeVC_Joy.swift in Sources */,
 				65B734F21E9602BA00506B1F /* ProfileViewController.swift in Sources */,
+				E0DDD96B1E9A34C3000CFB9D /* ProductCategory.swift in Sources */,
+				E0E1C5B21E9BCBD0001597E0 /* Helpers.swift in Sources */,
 				65A5A6A31E9473200056D42F /* AppDelegate.swift in Sources */,
-				E06B6AE61E97D8D100E12419 /* StoryTableViewCell.swift in Sources */,
+				E06B6AE61E97D8D100E12419 /* StoryTVCell.swift in Sources */,
+				E06B6B591E9A063C00E12419 /* RoomCategory.swift in Sources */,
 				E06B6AE81E97DF7400E12419 /* Story_Joy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -739,8 +819,9 @@
 			baseConfigurationReference = 9C95596C7056B142BB97C8DE /* Pods-Veedu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = WC2JB3CT65;
+				DEVELOPMENT_TEAM = L8R43DTS44;
 				INFOPLIST_FILE = Veedu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Veedu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -753,8 +834,9 @@
 			baseConfigurationReference = 234F2E22451543174FB5CADF /* Pods-Veedu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = WC2JB3CT65;
+				DEVELOPMENT_TEAM = L8R43DTS44;
 				INFOPLIST_FILE = Veedu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Veedu;
 				PRODUCT_NAME = "$(TARGET_NAME)";

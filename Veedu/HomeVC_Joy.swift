@@ -22,23 +22,6 @@ class HomeVC: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    
 }
 
 // MARK: DATA SOURCE
@@ -51,7 +34,7 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = storyTableView.dequeueReusableCell(withIdentifier: "StoryCell", for: indexPath) as?StoryTableViewCell else {
+        guard let cell = storyTableView.dequeueReusableCell(withIdentifier: "StoryCell", for: indexPath) as? StoryTVCell else {
             print("***Error with StoryCell***")
             return UITableViewCell()
         }
@@ -60,7 +43,7 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate {
 
         // Story Images in TableView
         if let storyImage = self.storyCategories[indexPath.row].storyImage {
-            cell.storyImageView.image = UIImage(named: storyImage)
+            cell.storyImage.image = UIImage(named: storyImage)
         } else {
             print("***Error retrieving image from assets.***")
         }

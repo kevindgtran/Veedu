@@ -7,10 +7,12 @@ target 'Veedu' do
 
   # Pods for Veedu
     pod 'Firebase/Core'
-    pod ‘Firebase/Storage’
-    pod ‘Firebase/Database’
-    pod ‘Firebase/RemoteConfig’
-    pod ‘FirebaseUI’
+    pod 'Firebase/Storage'
+    pod 'Firebase/Database'
+    pod 'Firebase/RemoteConfig'
+    pod 'FirebaseUI'
+    
+    pod 'XLPagerTabStrip'
 
   target 'VeeduTests' do
     inherit! :search_paths
