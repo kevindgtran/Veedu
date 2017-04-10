@@ -26,6 +26,8 @@ class BrowseVC: UIViewController {
     let sampleTabs = ["Living", "Bed", "Dining", "Bath"]
     var sampleImages = [String?]()
     
+    var previousTab = UICollectionViewCell()
+    
     let allSampleImages = [
         ["LivingFurniture", "LivingAccessories", "LivingLighting", "LivingThrows", "LivingPillows", "LivingRugs"],
         ["BedAccessories", "BedFurniture", "BedLighting", "BedTextiles"],
@@ -44,6 +46,7 @@ class BrowseVC: UIViewController {
 //        productCategoryCollectionView.delegate = self
 //        productCategoryCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "ProductCategoryCell")
         self.sampleImages = allSampleImages[0]
+        
 
     }
 }
@@ -83,6 +86,15 @@ extension BrowseVC: UICollectionViewDataSource, UICollectionViewDelegate {
             cell.roomTabLabel.text = sampleTabs[indexPath.row] //testing
             print(cell.roomTabLabel.text)
 //            cell.roomTabLabel.text = roomCategories[indexPath.row].roomName
+            
+            // 'highlight' on first active tab which is at index 0. 
+            // TODO: change to underline
+            if indexPath.row == 0 {
+                cell.layer.borderWidth = 2.0
+                cell.layer.borderColor = UIColor.red.cgColor
+                previousTab = cell // this removes the highlight on the previousTab
+            }
+        
 
             return cell
         }
@@ -112,7 +124,18 @@ extension BrowseVC: UICollectionViewDataSource, UICollectionViewDelegate {
         if collectionView == self.roomTabCollectionView {
         sampleImages = allSampleImages[indexPath.row]
             productCategoryCollectionView.reloadData()
-        
+            
+            
+            //changing the border to indicate the tab selected
+            let cell = collectionView.cellForItem(at: indexPath)
+            
+            previousTab.layer.borderWidth = 0
+            
+            cell?.layer.borderWidth = 2.0
+            cell?.layer.borderColor = UIColor.red.cgColor
+            
+            previousTab = cell!
+            
         }
         
         

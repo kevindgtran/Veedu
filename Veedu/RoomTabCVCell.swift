@@ -12,11 +12,11 @@ class RoomTabCVCell: UICollectionViewCell {
     
     @IBOutlet weak var roomTabLabel: UILabel!
     
-//    override func prepareForReuse() {
-//        super.prepareForReuse()
-//        
-//        roomTabLabel.text = nil
-//    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        roomTabLabel.text = nil
+    }
     
     
 }
