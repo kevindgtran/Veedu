@@ -345,8 +345,8 @@
 		E0E1C5B31E9BE72C001597E0 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				E0E1C5B11E9BCBD0001597E0 /* Helpers.swift */,
 				E0E1C5B51E9BE77E001597E0 /* ActiveCellCVC.swift */,
+				E0E1C5B11E9BCBD0001597E0 /* Helpers.swift */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
