@@ -17,19 +17,19 @@ class Product {
     var productImageURL: String
     var productImage: UIImage?
     var productDescription: String
-    var productMeasurements: String
-    var productMaterial: String
-    //var produsctReviews: [Reviews]
+    var productSpecifications: [String]
     
-    init(_ productID: String, _ productName: String, _ productPrice: Double, _ productImageURL: String, _ productDescription: String, _ productMeasurements: String, _ productMaterial: String) {
+    //var produsctReviews: [String]
+    
+    init(_ productID: String, _ productName: String, _ productPrice: Double, _ productImageURL: String, _ productDescription: String, _ productSpecifications: [String]) {
         
         self.productID = productID
         self.productName = productName
         self.productPrice = productPrice
         self.productImageURL = productImageURL
         self.productDescription = productDescription
-        self.productMeasurements = productMeasurements
-        self.productMaterial = productMaterial
+        self.productSpecifications = productSpecifications
+        
         
     }
     
@@ -59,8 +59,7 @@ class Product {
         static let price = "price"
         static let imageURL = "imageURL"
         static let description = "description"
-        static let measurements = "measurements"
-        static let material = "material"
+        static let measurements = "specifications"
     }
 
 }

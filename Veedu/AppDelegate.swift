@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FIRApp.configure()
+        PayPalMobile .initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction: "Ae0RZ16Hy80TAJbxRG8KhZgupoMreiOzfPbTDG_yFRWHeZr6XiNDpYwtt8EoivbMu6KiI0hKGMwYq51T",
+                                                                PayPalEnvironmentSandbox: "kevin2005tran-facilitator@yahoo.com"])
+        
         return true
     }
 

@@ -46,22 +46,19 @@ class ProductsPerCategoryVC: UIViewController {
             let name = product[Product.ProductKeys.name] ?? "[name]"
             let price = product[Product.ProductKeys.price] ?? "[price]"
             let imageURL = product[Product.ProductKeys.imageURL] ?? "[imageURL]"
-            let description = product[Product.ProductKeys.description] ?? "[imageURL]"
-            let measurements = product[Product.ProductKeys.measurements] ?? "[imageURL]"
-            let material = product[Product.ProductKeys.material] ?? "[imageURL]"
+            let description = product[Product.ProductKeys.description] ?? "[description]"
+            let measurements = product[Product.ProductKeys.measurements] ?? "[specifications]"
             
             //Creating Product Instance
             guard let productIDAsString = productID as? String else {return}
             guard let nameInString = name as? String else {return}
-            guard let priceInString = price as? Double else {return}
+            guard let priceInDouble = price as? Double else {return}
             guard let imageURLInString = imageURL as? String else {return}
             guard let descriptionInString = description as? String else {return}
-            guard let measurementsInString = measurements as? String else {return}
-            guard let materialInString = material as? String else {return}
-            
+            guard let measurementsInStringArray = measurements as? [String] else {return}
             
             //to cache the downloaded images
-            let newProduct = Product(productIDAsString, nameInString, priceInString, imageURLInString, descriptionInString, measurementsInString, materialInString)
+            let newProduct = Product(productIDAsString, nameInString, priceInDouble, imageURLInString, descriptionInString, measurementsInStringArray)
             self.products.append(newProduct)
             
             self.productCollectionView.insertItems(at: [IndexPath(row: self.products.count - 1, section: 0)])
@@ -74,7 +71,7 @@ class ProductsPerCategoryVC: UIViewController {
     }
     
     deinit {
-        ref.child("allProducts").removeObserver(withHandle: _refHandle)
+        ref.child("data").child("0").child("allProducts").removeObserver(withHandle: _refHandle)
     }
     
 }
@@ -119,7 +116,6 @@ extension ProductsPerCategoryVC: UICollectionViewDataSource {
 extension ProductsPerCategoryVC: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("In didSelectItemAt")
         selectedIndexPath = indexPath
         
         performSegue(withIdentifier: "ToProductDetails", sender: "self")
@@ -127,7 +123,6 @@ extension ProductsPerCategoryVC: UICollectionViewDelegate {
     }
         
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("In prepare")
         if let destination = segue.destination as? ProductDetailsVC {
             if let selectedIndexPath = selectedIndexPath {
                 destination.product = products[selectedIndexPath.row]

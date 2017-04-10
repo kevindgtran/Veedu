@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		1FFC4EAA2214FC05C10D377C /* Pods_VeeduUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D7B1F57FAA843F3BFA327D7 /* Pods_VeeduUITests.framework */; };
+		655FB7B11E9C2BBC0051AA8D /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655FB7B01E9C2BBC0051AA8D /* PaymentViewController.swift */; };
+		655FB7BB1E9C2E530051AA8D /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655FB7B21E9C2E530051AA8D /* Accelerate.framework */; };
+		655FB7BC1E9C2E530051AA8D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655FB7B31E9C2E530051AA8D /* AudioToolbox.framework */; };
+		655FB7BD1E9C2E530051AA8D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655FB7B41E9C2E530051AA8D /* AVFoundation.framework */; };
+		655FB7BE1E9C2E530051AA8D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655FB7B51E9C2E530051AA8D /* CoreLocation.framework */; };
+		655FB7BF1E9C2E530051AA8D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655FB7B61E9C2E530051AA8D /* CoreMedia.framework */; };
+		655FB7C01E9C2E530051AA8D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655FB7B71E9C2E530051AA8D /* MessageUI.framework */; };
+		655FB7C11E9C2E530051AA8D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655FB7B81E9C2E530051AA8D /* MobileCoreServices.framework */; };
+		655FB7C21E9C2E530051AA8D /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655FB7B91E9C2E530051AA8D /* SafariServices.framework */; };
+		655FB7C31E9C2E530051AA8D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655FB7BA1E9C2E530051AA8D /* SystemConfiguration.framework */; };
 		6595D9CC1E95B78D007E29FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6595D9CB1E95B78D007E29FF /* GoogleService-Info.plist */; };
 		6595D9CE1E95BB97007E29FF /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6595D9CD1E95BB97007E29FF /* MainTableViewCell.swift */; };
 		6595D9D01E95C1EA007E29FF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6595D9CF1E95C1EA007E29FF /* Item.swift */; };
@@ -28,13 +38,12 @@
 		65B734F41E96084300506B1F /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B734F31E96084300506B1F /* FavoritesTableViewCell.swift */; };
 		65ED5F301E9AB344003DA680 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ED5F2F1E9AB344003DA680 /* CartTableViewCell.swift */; };
 		AB763F286B3ABAC2FCA653C6 /* Pods_VeeduTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68EF2E5115204607A907A9E /* Pods_VeeduTests.framework */; };
+		C40313621E9C1A9300108A5A /* ReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40313611E9C1A9300108A5A /* ReviewsViewController.swift */; };
 		C453B00B1E96C48A0088E827 /* ProductsPerCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B00A1E96C48A0088E827 /* ProductsPerCategoryVC.swift */; };
 		C453B00D1E96C55C0088E827 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B00C1E96C55C0088E827 /* ProductCollectionViewCell.swift */; };
 		C461DE081E972454008AE663 /* ProductDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461DE071E972454008AE663 /* ProductDetailsVC.swift */; };
 		C461DE0B1E9724DD008AE663 /* ReviewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461DE091E9724DD008AE663 /* ReviewsCell.swift */; };
 		C461DE0C1E9724DD008AE663 /* ReviewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C461DE0A1E9724DD008AE663 /* ReviewsCell.xib */; };
-		C461DE0F1E97250C008AE663 /* ProductDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461DE0D1E97250C008AE663 /* ProductDetailsCell.swift */; };
-		C461DE101E97250C008AE663 /* ProductDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C461DE0E1E97250C008AE663 /* ProductDetailsCell.xib */; };
 		C461DE661E984051008AE663 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461DE651E984051008AE663 /* Review.swift */; };
 		D5EA9E4067EC803D0C75C18E /* Pods_Veedu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADC4B53D548E43EEBBE13E1 /* Pods_Veedu.framework */; };
 		E06B6AE21E97C90300E12419 /* HomeVC_Joy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6AE11E97C90300E12419 /* HomeVC_Joy.swift */; };
@@ -69,6 +78,17 @@
 		0D7B1F57FAA843F3BFA327D7 /* Pods_VeeduUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VeeduUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		234F2E22451543174FB5CADF /* Pods-Veedu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Veedu.release.xcconfig"; path = "Pods/Target Support Files/Pods-Veedu/Pods-Veedu.release.xcconfig"; sourceTree = "<group>"; };
 		237EACF766333F376CE136F0 /* Pods-VeeduTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VeeduTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VeeduTests/Pods-VeeduTests.debug.xcconfig"; sourceTree = "<group>"; };
+		655FB7B01E9C2BBC0051AA8D /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		655FB7B21E9C2E530051AA8D /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		655FB7B31E9C2E530051AA8D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		655FB7B41E9C2E530051AA8D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		655FB7B51E9C2E530051AA8D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		655FB7B61E9C2E530051AA8D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		655FB7B71E9C2E530051AA8D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		655FB7B81E9C2E530051AA8D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		655FB7B91E9C2E530051AA8D /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		655FB7BA1E9C2E530051AA8D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		655FB7C41E9C2EF20051AA8D /* Veedu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Veedu-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		6595D9CB1E95B78D007E29FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6595D9CD1E95BB97007E29FF /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		6595D9CF1E95C1EA007E29FF /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -99,13 +119,12 @@
 		99198D5149E7C5A0620DC2A4 /* Pods-VeeduUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VeeduUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VeeduUITests/Pods-VeeduUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9C95596C7056B142BB97C8DE /* Pods-Veedu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Veedu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Veedu/Pods-Veedu.debug.xcconfig"; sourceTree = "<group>"; };
 		BADC4B53D548E43EEBBE13E1 /* Pods_Veedu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Veedu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C40313611E9C1A9300108A5A /* ReviewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsViewController.swift; sourceTree = "<group>"; };
 		C453B00A1E96C48A0088E827 /* ProductsPerCategoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsPerCategoryVC.swift; sourceTree = "<group>"; };
 		C453B00C1E96C55C0088E827 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		C461DE071E972454008AE663 /* ProductDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailsVC.swift; sourceTree = "<group>"; };
 		C461DE091E9724DD008AE663 /* ReviewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsCell.swift; sourceTree = "<group>"; };
 		C461DE0A1E9724DD008AE663 /* ReviewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewsCell.xib; sourceTree = "<group>"; };
-		C461DE0D1E97250C008AE663 /* ProductDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailsCell.swift; sourceTree = "<group>"; };
-		C461DE0E1E97250C008AE663 /* ProductDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductDetailsCell.xib; sourceTree = "<group>"; };
 		C461DE651E984051008AE663 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		C68EF2E5115204607A907A9E /* Pods_VeeduTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VeeduTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E06B6AE11E97C90300E12419 /* HomeVC_Joy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC_Joy.swift; sourceTree = "<group>"; };
@@ -124,6 +143,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				655FB7BB1E9C2E530051AA8D /* Accelerate.framework in Frameworks */,
+				655FB7BC1E9C2E530051AA8D /* AudioToolbox.framework in Frameworks */,
+				655FB7BD1E9C2E530051AA8D /* AVFoundation.framework in Frameworks */,
+				655FB7BE1E9C2E530051AA8D /* CoreLocation.framework in Frameworks */,
+				655FB7BF1E9C2E530051AA8D /* CoreMedia.framework in Frameworks */,
+				655FB7C01E9C2E530051AA8D /* MessageUI.framework in Frameworks */,
+				655FB7C11E9C2E530051AA8D /* MobileCoreServices.framework in Frameworks */,
+				655FB7C21E9C2E530051AA8D /* SafariServices.framework in Frameworks */,
+				655FB7C31E9C2E530051AA8D /* SystemConfiguration.framework in Frameworks */,
 				D5EA9E4067EC803D0C75C18E /* Pods_Veedu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,7 +238,9 @@
 		65B734EA1E95DD0100506B1F /* KevinFiles */ = {
 			isa = PBXGroup;
 			children = (
+				655FB7C41E9C2EF20051AA8D /* Veedu-Bridging-Header.h */,
 				65B734E81E95DCD000506B1F /* KevinMain.storyboard */,
+				655FB7B01E9C2BBC0051AA8D /* PaymentViewController.swift */,
 				65B734F11E9602BA00506B1F /* ProfileViewController.swift */,
 				65ED5F311E9AB34B003DA680 /* CartViewControllers */,
 				65B734F51E9608B000506B1F /* FavoritesViewControllers */,
@@ -233,13 +263,12 @@
 			isa = PBXGroup;
 			children = (
 				65B734E41E95DCA800506B1F /* PrathibaMain.storyboard */,
+				C40313611E9C1A9300108A5A /* ReviewsViewController.swift */,
 				C461DE071E972454008AE663 /* ProductDetailsVC.swift */,
 				C453B00A1E96C48A0088E827 /* ProductsPerCategoryVC.swift */,
 				C453B00C1E96C55C0088E827 /* ProductCollectionViewCell.swift */,
 				C461DE091E9724DD008AE663 /* ReviewsCell.swift */,
 				C461DE0A1E9724DD008AE663 /* ReviewsCell.xib */,
-				C461DE0D1E97250C008AE663 /* ProductDetailsCell.swift */,
-				C461DE0E1E97250C008AE663 /* ProductDetailsCell.xib */,
 				C461DE651E984051008AE663 /* Review.swift */,
 			);
 			name = PrathibaFiles;
@@ -266,6 +295,15 @@
 		8A4BEE35C0204789D2220543 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				655FB7B21E9C2E530051AA8D /* Accelerate.framework */,
+				655FB7B31E9C2E530051AA8D /* AudioToolbox.framework */,
+				655FB7B41E9C2E530051AA8D /* AVFoundation.framework */,
+				655FB7B51E9C2E530051AA8D /* CoreLocation.framework */,
+				655FB7B61E9C2E530051AA8D /* CoreMedia.framework */,
+				655FB7B71E9C2E530051AA8D /* MessageUI.framework */,
+				655FB7B81E9C2E530051AA8D /* MobileCoreServices.framework */,
+				655FB7B91E9C2E530051AA8D /* SafariServices.framework */,
+				655FB7BA1E9C2E530051AA8D /* SystemConfiguration.framework */,
 				BADC4B53D548E43EEBBE13E1 /* Pods_Veedu.framework */,
 				C68EF2E5115204607A907A9E /* Pods_VeeduTests.framework */,
 				0D7B1F57FAA843F3BFA327D7 /* Pods_VeeduUITests.framework */,
@@ -426,6 +464,7 @@
 					65A5A69E1E9473200056D42F = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = L8R43DTS44;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					65A5A6B51E9473200056D42F = {
@@ -467,7 +506,6 @@
 			files = (
 				65A5A6B01E9473200056D42F /* LaunchScreen.storyboard in Resources */,
 				65B734E91E95DCD000506B1F /* KevinMain.storyboard in Resources */,
-				C461DE101E97250C008AE663 /* ProductDetailsCell.xib in Resources */,
 				65A5A6AD1E9473200056D42F /* Assets.xcassets in Resources */,
 				65A5A6A81E9473200056D42F /* Main.storyboard in Resources */,
 				65B734E51E95DCA800506B1F /* PrathibaMain.storyboard in Resources */,
@@ -649,9 +687,9 @@
 				C453B00B1E96C48A0088E827 /* ProductsPerCategoryVC.swift in Sources */,
 				65A5A6A51E9473200056D42F /* ViewController.swift in Sources */,
 				6595D9CE1E95BB97007E29FF /* MainTableViewCell.swift in Sources */,
-				C461DE0F1E97250C008AE663 /* ProductDetailsCell.swift in Sources */,
 				E06B6AE41E97C92500E12419 /* BrowseVC.swift in Sources */,
 				65B734EE1E96028B00506B1F /* FavoritesUIViewController.swift in Sources */,
+				655FB7B11E9C2BBC0051AA8D /* PaymentViewController.swift in Sources */,
 				E0E1C5B61E9BE77E001597E0 /* ActiveCellCVC.swift in Sources */,
 				E06B6B571E99FCB600E12419 /* ProductCategoryCVCell.swift in Sources */,
 				E06B6AE21E97C90300E12419 /* HomeVC_Joy.swift in Sources */,
@@ -661,6 +699,7 @@
 				E06B6AE61E97D8D100E12419 /* StoryTVCell.swift in Sources */,
 				E06B6B591E9A063C00E12419 /* RoomCategory.swift in Sources */,
 				E06B6AE81E97DF7400E12419 /* Story_Joy.swift in Sources */,
+				C40313621E9C1A9300108A5A /* ReviewsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -815,12 +854,15 @@
 			baseConfigurationReference = 9C95596C7056B142BB97C8DE /* Pods-Veedu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = L8R43DTS44;
 				INFOPLIST_FILE = Veedu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Veedu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Veedu-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -830,12 +872,14 @@
 			baseConfigurationReference = 234F2E22451543174FB5CADF /* Pods-Veedu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = L8R43DTS44;
 				INFOPLIST_FILE = Veedu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Veedu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Veedu-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
