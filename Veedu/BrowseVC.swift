@@ -15,24 +15,21 @@ class BrowseVC: UIViewController {
     @IBOutlet weak var productCategoryCollectionView: UICollectionView!
     
     var selectedIndexPath: IndexPath?
-
+    
     // Instance for Room Tab Collection View
     let textForTabs = RoomCategory.rooms
     
-    // Instances for Main Collection View
+    // Instance for Main Collection View
     var productCategories = [ProductCategory?]()
-    let livingRoomProdCategories = ProductCategory.livingRoomProdCategories
-    let bedroomProdCategories = ProductCategory.bedroomProdCategories
-    let kitchenDiningProdCategories = ProductCategory.kitchenDiningProdCategories
-    let bathroomProdCategories = ProductCategory.bathroomProdCategories
     
     // Temp instance for active tab cell.
-    var previousTab = UICollectionViewCell()
+    var previousTab = ActiveCellCVC()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.productCategories = ProductCategory.livingRoomProdCategories
+        self.productCategoryCollectionView.allowsMultipleSelection = false
         
     }
 }
@@ -66,15 +63,10 @@ extension BrowseVC: UICollectionViewDataSource {
             }
             cell.roomTabLabel.text = textForTabs[indexPath.row].roomName //testing
             print(cell.roomTabLabel.text!)
-            //            cell.roomTabLabel.text = roomCategories[indexPath.row].roomName
-            
-            // 'highlight' on first active tab which is at index 0.
-            // TODO: change to underline
+
+            // Signify first active tab is the first one.
             if indexPath.row == 0 {
-                
-                //                cell.underlined()
-                //                cell.layer.borderWidth = 2.0
-                //                cell.layer.borderColor = UIColor.red.cgColor
+                cell.underlined()
                 previousTab = cell // this removes the highlight on the previousTab
             }
             return cell
@@ -86,21 +78,12 @@ extension BrowseVC: UICollectionViewDataSource {
                 print("***Error creating ProductCategoryCell.***")
                 return UICollectionViewCell()
             }
-
+            
             if let prodCategoryImage = self.productCategories[indexPath.row]?.productCategoryImage {
                 cell.prodCategoryImage.image = UIImage(named: prodCategoryImage)
             } else {
                 print("***Error retrieving image from assets.***")
             }
-            
-            // depending on index path, choose method from ProductCategory
-            //            var selectedRoom: String
-            //            switch selectedRoom {
-            //            case (indexPath.row == 0):
-            //            selectedRoom = ProductCategory.livingRoomProdCategories,
-            //
-            //            }
-            
             
             cell.prodCategoryLabel.text = productCategories[indexPath.row]?.productCategoryName
             print(cell.prodCategoryLabel.text)
@@ -121,58 +104,55 @@ extension BrowseVC: UICollectionViewDelegate {
             
             switch indexPath.row {
             case 0:
-                productCategories = livingRoomProdCategories
+                productCategories = ProductCategory.livingRoomProdCategories
             case 1:
-                productCategories = bedroomProdCategories
+                productCategories = ProductCategory.bedroomProdCategories
             case 2:
-                productCategories = kitchenDiningProdCategories
+                productCategories = ProductCategory.kitchenDiningProdCategories
             case 3:
-                productCategories = bathroomProdCategories
+                productCategories = ProductCategory.bathroomProdCategories
             default:
                 print("Error selecting array of product categories depending on room selected.")
             }
-
+            
             productCategoryCollectionView.reloadData()
-
+            
+            // Active Cell is underlined and darker grey
+            
+            let cell = collectionView.cellForItem(at: indexPath) as! ActiveCellCVC
+            
+            previousTab.didDeselectCell()
+            
+            cell.underlined()
+            
+            previousTab = cell
+        }
+        
         
     }
+    
 }
-}
+
+
+
+
 // MARK: DelegateFlowLayout for ProductCategoriesPerRoom
 //extension BrowseVC: UICollectionViewDelegateFlowLayout {
+//    
+//    
+//    
+//    
 //}
 
 
-// MARK: Underline for Tab Bar
-// insert in its own View Class?
 
-//subclass the label. border.ishidden = true
-//extension UILabel {
-//
-//    override func underlined(){
-//        let border = CALayer()
-//        let width = CGFloat(3.0)
-//        border.borderColor = UIColor.red.cgColor
-//        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width:  self.frame.size.width, height: self.frame.size.height)
-//        border.borderWidth = width
-//        self.layer.addSublayer(border)
-//        self.layer.masksToBounds = true
-////        border.isHidden = true
-//    }
-//
-//    override func removeUnderlined(){
-//        _ = CALayer()
-//        _ = CGFloat(0)
-//
-//    }
-//}
 
 
 
 // MARK: Delegate
-
+//
 //extension BrowseVC: UICollectionViewDelegate {
-
+//
 //    // Delegate from Selected Product Category to Product List
 //    // To link to Prathiba's ProductsPerCategory Scene
 //    // to create data source for ProductCategoryCollectionView
@@ -193,6 +173,6 @@ extension BrowseVC: UICollectionViewDelegate {
 //            }
 //        }
 //    }
-
-
+//
+//
 //}

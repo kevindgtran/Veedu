@@ -12,8 +12,6 @@ target 'Veedu' do
     pod 'Firebase/RemoteConfig'
     pod 'FirebaseUI'
     
-    pod 'XLPagerTabStrip'
-
   target 'VeeduTests' do
     inherit! :search_paths
     # Pods for testing

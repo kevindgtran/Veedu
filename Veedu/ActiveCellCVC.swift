@@ -16,7 +16,36 @@ class ActiveCellCVC: UICollectionViewCell {
     
     //need property that keeps track of the border. then ishidden...
     
-    // fuction for darker gray
     
     
+    func underlined(){
+        
+        let border = CALayer()
+        let width = CGFloat(3.0)
+        border.borderColor = UIColor.black.cgColor
+        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width:  self.frame.size.width, height: self.frame.size.height)
+        border.borderWidth = width
+        self.layer.addSublayer(border)
+        self.layer.masksToBounds = true
+        
+//        border.isHidden = false
+    }
+    
+    func didDeselectCell(){
+        
+        let border = CALayer()
+        let width = CGFloat(3)
+        border.borderColor = UIColor.white.cgColor
+        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width:  self.frame.size.width, height: self.frame.size.height)
+        border.borderWidth = width
+        self.layer.addSublayer(border)
+        self.layer.masksToBounds = true
+        
+    }
+    
+    func darkenLabel() {
+        
+        
+    }
 }
+
