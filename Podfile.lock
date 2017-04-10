@@ -5,6 +5,7 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - CardIO (5.4.1)
   - Fabric (1.6.11)
   - FBSDKCoreKit (4.21.0):
     - Bolts (~> 1.7)
@@ -93,6 +94,12 @@ PODS:
   - GTMSessionFetcher/Core (1.1.9)
   - GTMSessionFetcher/Full (1.1.9):
     - GTMSessionFetcher/Core (= 1.1.9)
+  - PayPal-iOS-SDK (2.16.3):
+    - PayPal-iOS-SDK/CardIO (= 2.16.3)
+    - PayPal-iOS-SDK/Core (= 2.16.3)
+  - PayPal-iOS-SDK/CardIO (2.16.3):
+    - CardIO (~> 5.4.1)
+  - PayPal-iOS-SDK/Core (2.16.3)
   - Protobuf (3.2.1)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
@@ -109,10 +116,12 @@ DEPENDENCIES:
   - Firebase/RemoteConfig
   - Firebase/Storage
   - FirebaseUI
+  - PayPal-iOS-SDK
   - XLPagerTabStrip
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   FBSDKCoreKit: 8a372ab194b5c7c26355c1920ef52dbeb44bc222
   FBSDKLoginKit: a1a5f4b4ac445823a020fbeeaf5f03714a67ff9c
@@ -129,12 +138,13 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
+  PayPal-iOS-SDK: db237a752c0b388b93a0b9915b30e26878732bdb
   Protobuf: 2ccbaf193f6c65adc67745453ca0c13234c32796
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   TwitterCore: e959987be23c767004d29eb7fab8d85d8585a2e5
   TwitterKit: 3b6044a7320340326a4098f3e37aa1dbaeb94942
   XLPagerTabStrip: 9be80a66c6b7d60306b2c0a6004965016d68f813
 
-PODFILE CHECKSUM: 46ca8485c1c490a177cc5f5f36eee5edba5c8501
+PODFILE CHECKSUM: ea72405b9e8c63a98597f7a38968a9931f397dd5
 
 COCOAPODS: 1.2.0

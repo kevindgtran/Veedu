@@ -13,7 +13,8 @@ target 'Veedu' do
     pod 'FirebaseUI'
     
     pod 'XLPagerTabStrip'
-
+    pod 'PayPal-iOS-SDK'
+    
   target 'VeeduTests' do
     inherit! :search_paths
     # Pods for testing
