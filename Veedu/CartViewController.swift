@@ -11,11 +11,12 @@ import CoreData
 
 class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var coreDataProductNameArray: [NSManagedObject] = []
+    var CartProductNameArray: [NSManagedObject] = []
     
     //MARK: properties
     @IBOutlet weak var cartItemCountLabel: UILabel!
     @IBOutlet weak var cartTableView: UITableView!
+    @IBOutlet weak var emptyBagImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,27 +35,44 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CartProduct")
         do {
             //create fetch request from NSManagedObject and store objects directly into array
-            coreDataProductNameArray = try managedContext.fetch(fetchRequest)
+            CartProductNameArray = try managedContext.fetch(fetchRequest)
         } catch let error as NSError {
             print("Could not fetch data")
         }
         
-        self.cartItemCountLabel.text = "\(self.coreDataProductNameArray.count)"
+        //update total items counter
+        if CartProductNameArray.count > 0 {
+            self.cartItemCountLabel.text = "\(self.CartProductNameArray.count)"
+        } else {
+            self.cartItemCountLabel.text = "0"
+            cartTableView.isHidden = true
+            emptyBagImageView.isHidden = false
+        }
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return coreDataProductNameArray.count
+        return CartProductNameArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = cartTableView.dequeueReusableCell(withIdentifier: "cartCell", for: indexPath) as! CartTableViewCell
         
         //update the table with the newly created NSManaged item
-        let someStuff: NSManagedObject = coreDataProductNameArray[indexPath.row]
+        let someStuff: NSManagedObject = CartProductNameArray[indexPath.row]
         cell.cartTitleLabel?.text = someStuff.value(forKeyPath: "name") as? String
         
         return cell
+    }
+    
+    //swipe to delete and custom color
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let remove = UITableViewRowAction(style: .normal, title: "Delete") { (action, indexPath) in
+            self.CartProductNameArray.remove(at: indexPath.row)
+            self.cartTableView.reloadData()
+        }
+        remove.backgroundColor = UIColor(red:0.91, green:0.29, blue:0.24, alpha:1.0)
+        return[remove]
     }
     
     //save function
@@ -75,7 +93,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         //save new product to our NSManagedObjects and add to our array
         do {
             try managedContext.save()
-            coreDataProductNameArray.append(newProductName)
+            CartProductNameArray.append(newProductName)
         } catch let error as NSError {
             print("Could not save product name to array")
         }
@@ -94,8 +112,10 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             
             self.save(name: nameToSave)
+            self.cartTableView.isHidden = false
+            self.emptyBagImageView.isHidden = true
             self.cartTableView.reloadData()
-            self.cartItemCountLabel.text = "\(self.coreDataProductNameArray.count)"
+            self.cartItemCountLabel.text = "\(self.CartProductNameArray.count)"
             
         }
         
@@ -117,12 +137,12 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
  Setup Core Data - persist data upon loading
  1. import core data (app delegate & view controllers)
  2. (in app delegate)
-    add persist container variable
+ add persist container variable
  3. create data model and attributes
  4. (in view controller)
-    create empty array of type NSManagedObject
-    create save function, setvalue function, save/ print error, reload table
-    create view will appear function - create fetch, data populate, refresh data
+ create empty array of type NSManagedObject
+ create save function, setvalue function, save/ print error, reload table
+ create view will appear function - create fetch, data populate, refresh data
  5. (in view controller)
-    create add function for button action to save
+ create add function for button action to save
  */

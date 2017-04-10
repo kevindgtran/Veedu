@@ -87,6 +87,16 @@ class FavoritesUIViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
+    //swipe to delete and custom color
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let remove = UITableViewRowAction(style: .normal, title: "Delete") { (action, indexPath) in
+            self.favoritesProductNameArray.remove(at: indexPath.row)
+            self.favoritesTableView.reloadData()
+        }
+        remove.backgroundColor = UIColor(red:0.91, green:0.29, blue:0.24, alpha:1.0)
+        return[remove]
+    }
+    
     //MARK: actions
     @IBAction func addFavoriteButton(_ sender: UIButton) {
         let alert = UIAlertController(title: "New Favorite", message: "Add new item", preferredStyle: .alert)
