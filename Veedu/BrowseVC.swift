@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import XLPagerTabStrip
 
-class BrowseVC: UIViewController {
+class BrowseVC: ButtonBarPagerTabStripViewController {
     
     // MARK: IBOUTLETS
     @IBOutlet weak var roomTabCollectionView: UICollectionView!
@@ -35,38 +36,56 @@ class BrowseVC: UIViewController {
         ["BathAccessories", "BathTextiles"]
     ]
     
+    let purpleInspireColor = UIColor(red:0.13, green:0.03, blue:0.25, alpha:1.0)
+   
     override func viewDidLoad() {
+        
+        // change selected bar color
+        settings.style.buttonBarBackgroundColor = .white
+        settings.style.buttonBarItemBackgroundColor = .white
+        settings.style.selectedBarBackgroundColor = purpleInspireColor
+        settings.style.buttonBarItemFont = .boldSystemFont(ofSize: 14)
+        settings.style.selectedBarHeight = 2.0
+        settings.style.buttonBarMinimumLineSpacing = 0
+        settings.style.buttonBarItemTitleColor = .black
+        settings.style.buttonBarItemsShouldFillAvailiableWidth = true
+        settings.style.buttonBarLeftContentInset = 0
+        settings.style.buttonBarRightContentInset = 0
+        
+        changeCurrentIndexProgressive = { [weak self] (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
+            guard changeCurrentIndex == true else { return }
+            oldCell?.label.textColor = .black
+            newCell?.label.textColor = self?.purpleInspireColor
+        }
+        
         super.viewDidLoad()
         
-//        roomTabCollectionView.dataSource = self
-//        roomTabCollectionView.delegate = self
-//        roomTabCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "RoomTabCell")
-//        
-//        productCategoryCollectionView.dataSource = self
-//        productCategoryCollectionView.delegate = self
-//        productCategoryCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "ProductCategoryCell")
         self.sampleImages = allSampleImages[0]
         
-
+        
     }
-}
 
-
-
-extension BrowseVC: UICollectionViewDataSource, UICollectionViewDelegate {
+    func viewControllers(for pagerTabStripController: UICollectionViewController) -> [UIViewController] {
+        let child_1 = UIStoryboard(name: "JoyMain", bundle: nil).instantiateViewController(withIdentifier: "ProductCategoryCell")
+//        let child_2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "child2")
+        return [child_1]
+    }
     
+    
+    
+
     // MARK: DataSource
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var count: Int?
         
         if collectionView == self.roomTabCollectionView {
             count = sampleTabs.count // test
-//            count = roomCategories.count
+            //            count = roomCategories.count
             print("**Number of Room Tabs: \(String(describing: count))")
         }
         
         if collectionView == self.productCategoryCollectionView {
-//            count = roomProductCategories.count
+            //            count = roomProductCategories.count
             count = sampleImages.count //testing
             print("**Number of product categories: \(String(describing: count))") // add name of room in print statement
         }
@@ -74,8 +93,8 @@ extension BrowseVC: UICollectionViewDataSource, UICollectionViewDelegate {
         return count!
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        var cell: RoomTabCVCell
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        //        var cell: RoomTabCVCell
         
         if collectionView == self.roomTabCollectionView {
             guard let cell = roomTabCollectionView.dequeueReusableCell(withReuseIdentifier: "RoomTabCell", for: indexPath) as? RoomTabCVCell else {
@@ -85,17 +104,17 @@ extension BrowseVC: UICollectionViewDataSource, UICollectionViewDelegate {
             
             cell.roomTabLabel.text = sampleTabs[indexPath.row] //testing
             print(cell.roomTabLabel.text)
-//            cell.roomTabLabel.text = roomCategories[indexPath.row].roomName
+            //            cell.roomTabLabel.text = roomCategories[indexPath.row].roomName
             
-            // 'highlight' on first active tab which is at index 0. 
+            // 'highlight' on first active tab which is at index 0.
             // TODO: change to underline
             if indexPath.row == 0 {
                 cell.layer.borderWidth = 2.0
                 cell.layer.borderColor = UIColor.red.cgColor
                 previousTab = cell // this removes the highlight on the previousTab
             }
-        
-
+            
+            
             return cell
         }
         
@@ -110,19 +129,19 @@ extension BrowseVC: UICollectionViewDataSource, UICollectionViewDelegate {
             } else {
                 print("***Error retrieving image from assets.***")
             }
-                cell.prodCategoryLabel.text = sampleImages[indexPath.row]
+            cell.prodCategoryLabel.text = sampleImages[indexPath.row]
             print(cell.prodCategoryLabel.text)
-
-//                cell.prodCategoryLabel.text = roomProductCategories[indexPath.row].productCategoryName
+            
+            //                cell.prodCategoryLabel.text = roomProductCategories[indexPath.row].productCategoryName
             return cell
-
+            
         }
         return UICollectionViewCell()
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.roomTabCollectionView {
-        sampleImages = allSampleImages[indexPath.row]
+            sampleImages = allSampleImages[indexPath.row]
             productCategoryCollectionView.reloadData()
             
             
@@ -139,40 +158,40 @@ extension BrowseVC: UICollectionViewDataSource, UICollectionViewDelegate {
         }
         
         
-//        if collectionView == self.productCategoryCollectionView {
-//            
-//            
-//            
-//        }
-//    }
-    
-}
+        //        if collectionView == self.productCategoryCollectionView {
+        //
+        //
+        //
+        //        }
+        //    }
+        
+    }
 }
 
 // MARK: Delegate
 
 //extension BrowseVC: UICollectionViewDelegate {
 
-    //    // Delegate from Selected Product Category to Product List
-    //    // To link to Prathiba's ProductsPerCategory Scene
-    //    // to create data source for ProductCategoryCollectionView
-    //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    //        print("***Product Category Selected: \(roomCategories[indexPath.row].productCategory)***")
-    //        selectedIndexPath = indexPath
-    //
-    //        // Segue name may change.
-    //        performSegue(withIdentifier: "ToProductPerCategoryList", sender: self)
-    //    }
-    //
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        print("***Preparing to Segue to \(roomCategories[indexPath.row].productCategory)***")
-    //
-    //        if let destination = segue.destination as? ProductsPerCategoryVC {
-    //            if let selectedIndexPath = selectedIndexPath {
-    //                destination. =
-    //            }
-    //        }
-    //    }
-    
-    
+//    // Delegate from Selected Product Category to Product List
+//    // To link to Prathiba's ProductsPerCategory Scene
+//    // to create data source for ProductCategoryCollectionView
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        print("***Product Category Selected: \(roomCategories[indexPath.row].productCategory)***")
+//        selectedIndexPath = indexPath
+//
+//        // Segue name may change.
+//        performSegue(withIdentifier: "ToProductPerCategoryList", sender: self)
+//    }
+//
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        print("***Preparing to Segue to \(roomCategories[indexPath.row].productCategory)***")
+//
+//        if let destination = segue.destination as? ProductsPerCategoryVC {
+//            if let selectedIndexPath = selectedIndexPath {
+//                destination. =
+//            }
+//        }
+//    }
+
+
 //}
