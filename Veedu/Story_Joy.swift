@@ -15,14 +15,14 @@ struct Story {
     let storyImage: String?
     
     static let stories: [Story] = [
-    
-    // some are placeholder names and images
-    Story(storyName: "Industrial", storyImage: "Industrial"),
-    Story(storyName: "Rustic", storyImage: "Rustic"),
-    Story(storyName: "Mid-Century Modern", storyImage: "Beijing"),
-    Story(storyName: "New Frontier", storyImage: "NewFrontier"),
-    Story(storyName: "SomethingOrOther", storyImage: "Other"),
-    ]
+        
+        // some are placeholder names and images
+        Story(storyName: "Industrial", storyImage: "Industrial"),
+        Story(storyName: "Rustic", storyImage: "Rustic"),
+        Story(storyName: "Mid-Century Modern", storyImage: "Beijing"),
+        Story(storyName: "New Frontier", storyImage: "NewFrontier"),
+        Story(storyName: "SomethingOrOther", storyImage: "Other"),
+        ]
     
     
 }

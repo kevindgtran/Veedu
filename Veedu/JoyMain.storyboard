@@ -89,44 +89,51 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s5F-Fk-lEA" userLabel="RoomTab_CollectionView">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s5F-Fk-lEA" userLabel="RoomTab_CollectionView">
                                 <rect key="frame" x="0.0" y="72" width="375" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Uh9-Vd-4nF">
-                                    <size key="itemSize" width="89" height="50"/>
+                                    <size key="itemSize" width="135" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RoomTabCell" id="b0o-BB-uev" customClass="RoomTabCVCell" customModule="Veedu" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1" width="89" height="50"/>
+                                        <rect key="frame" x="0.0" y="1" width="135" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="89" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="135" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dY6-Uq-6Hl">
-                                                    <rect key="frame" x="0.0" y="0.0" width="89" height="50"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="135" height="50"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Room" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtP-lP-KdT">
-                                                            <rect key="frame" x="4" y="15" width="63" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KITCHEN &amp; DINING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtP-lP-KdT">
+                                                            <rect key="frame" x="2" y="16.5" width="131" height="17"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="mtP-lP-KdT" firstAttribute="centerY" secondItem="dY6-Uq-6Hl" secondAttribute="centerY" id="2gw-rK-Gio"/>
+                                                        <constraint firstItem="mtP-lP-KdT" firstAttribute="centerX" secondItem="dY6-Uq-6Hl" secondAttribute="centerX" id="U9X-iL-gvb"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="dY6-Uq-6Hl" firstAttribute="leading" secondItem="b0o-BB-uev" secondAttribute="leading" id="Oe4-z6-aoP"/>
                                             <constraint firstAttribute="trailing" secondItem="dY6-Uq-6Hl" secondAttribute="trailing" id="S9a-P6-JMr"/>
+                                            <constraint firstItem="dY6-Uq-6Hl" firstAttribute="centerY" secondItem="b0o-BB-uev" secondAttribute="centerY" id="TH9-F1-Xr0"/>
+                                            <constraint firstItem="dY6-Uq-6Hl" firstAttribute="centerY" secondItem="b0o-BB-uev" secondAttribute="centerY" id="W3p-IG-Uq1"/>
                                             <constraint firstItem="dY6-Uq-6Hl" firstAttribute="top" secondItem="b0o-BB-uev" secondAttribute="top" id="YmJ-XV-d4m"/>
+                                            <constraint firstItem="dY6-Uq-6Hl" firstAttribute="centerX" secondItem="b0o-BB-uev" secondAttribute="centerX" id="apz-zx-Nyf"/>
+                                            <constraint firstItem="dY6-Uq-6Hl" firstAttribute="centerX" secondItem="b0o-BB-uev" secondAttribute="centerX" id="dY8-ml-3sd"/>
                                             <constraint firstAttribute="bottom" secondItem="dY6-Uq-6Hl" secondAttribute="bottom" id="yC7-j1-fir"/>
                                         </constraints>
                                         <connections>

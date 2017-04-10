@@ -12,6 +12,8 @@ class RoomTabCVCell: UICollectionViewCell {
     
     @IBOutlet weak var roomTabLabel: UILabel!
     
+    
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         
