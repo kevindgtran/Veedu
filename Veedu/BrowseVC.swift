@@ -23,88 +23,114 @@ class BrowseVC: UIViewController {
     
     var selectedIndexPath: IndexPath?
     
+    let sampleTabs = ["Living", "Bed", "Dining", "Bath"]
+    var sampleImages = [String?]()
+    
+    let allSampleImages = [
+        ["LivingFurniture", "LivingAccessories", "LivingLighting", "LivingThrows", "LivingPillows", "LivingRugs"],
+        ["BedAccessories", "BedFurniture", "BedLighting", "BedTextiles"],
+        ["Cookware", "DiningFurniture", "Diningware", "DiningBarware", "SmallAppliances"],
+        ["BathAccessories", "BathTextiles"]
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        roomTabCollectionView.dataSource = self
-        roomTabCollectionView.delegate = self
-        roomTabCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "RoomTabCell")
-        
-        productCategoryCollectionView.delegate = self
-        productCategoryCollectionView.delegate = self
-        productCategoryCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "ProductCategoryCell")
-        
+//        roomTabCollectionView.dataSource = self
+//        roomTabCollectionView.delegate = self
+//        roomTabCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "RoomTabCell")
+//        
+//        productCategoryCollectionView.dataSource = self
+//        productCategoryCollectionView.delegate = self
+//        productCategoryCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "ProductCategoryCell")
+        self.sampleImages = allSampleImages[0]
+
     }
-    
 }
 
 
-extension BrowseVC: UICollectionViewDelegate, UICollectionViewDataSource {
+
+extension BrowseVC: UICollectionViewDataSource, UICollectionViewDelegate {
     
     // MARK: DataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         var count: Int?
         
         if collectionView == self.roomTabCollectionView {
-            count = roomCategories.count
+            count = sampleTabs.count // test
+//            count = roomCategories.count
+            print("**Number of Room Tabs: \(String(describing: count))")
         }
         
         if collectionView == self.productCategoryCollectionView {
-            count = roomProductCategories.count
+//            count = roomProductCategories.count
+            count = sampleImages.count //testing
+            print("**Number of product categories: \(String(describing: count))") // add name of room in print statement
         }
         
-        //        return roomCategories.count
         return count!
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        var cell: UICollectionViewCell?
+//        var cell: RoomTabCVCell
         
         if collectionView == self.roomTabCollectionView {
             guard let cell = roomTabCollectionView.dequeueReusableCell(withReuseIdentifier: "RoomTabCell", for: indexPath) as? RoomTabCVCell else {
-                print("***Error creating RoomTabCell.***")
+                print("***Error creating RoomTabCell at \(indexPath.row).***")
                 return UICollectionViewCell()
             }
-            cell.roomTabLabel.text = "tabTESTING"
-            //        cell.roomTabLabel.text = roomCategories[indexPath.row].roomName
             
+            cell.roomTabLabel.text = sampleTabs[indexPath.row] //testing
+            print(cell.roomTabLabel.text)
+//            cell.roomTabLabel.text = roomCategories[indexPath.row].roomName
+
+            return cell
         }
-        
-        
-/*        if let storyImage = self.storyCategories[indexPath.row].storyImage {
-            cell.storyImage.image = UIImage(named: storyImage)
-        } else {
-            print("***Error retrieving image from assets.***")
-        }
-        
-  */
-        
-        
-        
-        
-        
-        
-        
         
         if collectionView == self.productCategoryCollectionView {
             guard let cell = productCategoryCollectionView.dequeueReusableCell(withReuseIdentifier: "ProductCategoryCell", for: indexPath) as? ProductCategoryCVCell else {
-                print("***Error creating ProductCategoryCVCell.***")
+                print("***Error creating ProductCategoryCell.***")
                 return UICollectionViewCell()
             }
-            cell.prodCategoryLabel.text = "TESTING"
-            cell.prodCategoryImage.image = "TESTING"
-
-            //        cell.roomTabLabel.text = roomCategories[indexPath.row].roomName
             
+            if let prodCategoryImage = self.sampleImages[indexPath.row] {
+                cell.prodCategoryImage.image = UIImage(named: prodCategoryImage)
+            } else {
+                print("***Error retrieving image from assets.***")
+            }
+                cell.prodCategoryLabel.text = sampleImages[indexPath.row]
+            print(cell.prodCategoryLabel.text)
+
+//                cell.prodCategoryLabel.text = roomProductCategories[indexPath.row].productCategoryName
+            return cell
+
         }
-        
-        return cell!
-        
+        return UICollectionViewCell()
     }
     
-    //    // MARK: Delegate from Selected Product Category to Product List
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == self.roomTabCollectionView {
+        sampleImages = allSampleImages[indexPath.row]
+            productCategoryCollectionView.reloadData()
+        
+        }
+        
+        
+//        if collectionView == self.productCategoryCollectionView {
+//            
+//            
+//            
+//        }
+//    }
+    
+}
+}
+
+// MARK: Delegate
+
+//extension BrowseVC: UICollectionViewDelegate {
+
+    //    // Delegate from Selected Product Category to Product List
     //    // To link to Prathiba's ProductsPerCategory Scene
     //    // to create data source for ProductCategoryCollectionView
     //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -126,4 +152,4 @@ extension BrowseVC: UICollectionViewDelegate, UICollectionViewDataSource {
     //    }
     
     
-}
+//}

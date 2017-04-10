@@ -11,7 +11,7 @@ import Foundation
 struct ProductCategory {
     
     let productCategoryName: String
-    let productCategoryImage: String
+    let productCategoryImage: String?
     
     static let livingRoomProdCategories: [ProductCategory] = [
         // LivingRoom
