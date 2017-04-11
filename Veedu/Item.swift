@@ -19,8 +19,11 @@ class Product {
     var productDescription: String
     var productSpecifications: [String]
     var productReviews: [String]?
+    var storyCategory: String
+    var roomCategory: [String]
+    var productCategory: [String]
     
-    init(_ productID: String, _ productName: String, _ productPrice: Double, _ productImageURL: String, _ productDescription: String, _ productSpecifications: [String], _ productReviews: [String]?) {
+    init(_ productID: String, _ productName: String, _ productPrice: Double, _ productImageURL: String, _ productDescription: String, _ productSpecifications: [String], _ productReviews: [String]?, _ storyCategory: String, _ roomCategory: [String], _ productCategory: [String]) {
         
         self.productID = productID
         self.productName = productName
@@ -29,6 +32,9 @@ class Product {
         self.productDescription = productDescription
         self.productSpecifications = productSpecifications
         self.productReviews = productReviews
+        self.storyCategory = storyCategory
+        self.roomCategory = roomCategory
+        self.productCategory = productCategory
         
     }
     
@@ -60,6 +66,9 @@ class Product {
         static let description = "description"
         static let measurements = "specifications"
         static let productReviews = "productReviews"
+        static let productCategory = "productCategory"
+        static let roomCategory = "roomCategory"
+        static let storyCategory = "storyCategory"
     }
 
 }
