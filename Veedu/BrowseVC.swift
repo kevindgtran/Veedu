@@ -37,8 +37,17 @@ class BrowseVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        createSearchBar()
         self.productCategories = ProductCategory.livingRoomProdCategories
     }
+    
+//    func createSearchBar() {
+//        let searchBar = UISearchBar()
+//        searchBar.showsCancelButton = false
+//        searchBar.placeholder = "Enter search here..."
+//        searchBar.delegate = self as! UISearchBarDelegate
+//        self.navigationItem.titleView = searchBar
+//    }
 }
 
 // MARK: DataSource
