@@ -34,7 +34,7 @@ class ReviewsViewController: UIViewController {
         
         productName.text = product.productName
         productPrice.text = String(describing: product.productPrice)
-                
+        
         getReviews()
         configureStorage()
         
@@ -48,24 +48,29 @@ class ReviewsViewController: UIViewController {
             //A Review from Firebase
             let review = snapshot.value as! [String:Any]
             
-            let productID = review[Review.ReviewKeys.productID] ?? "[productID]"
-            let title = review[Review.ReviewKeys.title] ?? "[title]"
-            let content = review[Review.ReviewKeys.content] ?? "[review]"
-            let rating = review[Review.ReviewKeys.rating] ?? "[rating]"
+            let newProductID = review[Review.ReviewKeys.productID] ?? "[productID]"
             
-            //Creating Review Instance
-            guard let productIDInString = productID as? String else {return}
-            guard let titleInString = title as? String else {return}
-            guard let contentInString = content as? String else {return}
-            guard let ratingInDouble = rating as? Double else {return}
+            guard let productIDInString = newProductID as? String else {return}
+            guard let productID = self.product?.productID else {return}
             
-            //to cache the reviews
-            let newReview = Review(productIDInString, titleInString, ratingInDouble, contentInString)
-            self.reviews.append(newReview)
-            
-            self.productTableView.beginUpdates()
-            self.productTableView.insertRows(at: [IndexPath(row: self.reviews.count - 1, section: 0)], with: UITableViewRowAnimation.automatic)
-            self.productTableView.endUpdates()
+            if productIDInString ==  productID{
+                let title = review[Review.ReviewKeys.title] ?? "[title]"
+                let content = review[Review.ReviewKeys.content] ?? "[review]"
+                let rating = review[Review.ReviewKeys.rating] ?? "[rating]"
+                
+                //Creating Review Instance
+                guard let titleInString = title as? String else {return}
+                guard let contentInString = content as? String else {return}
+                guard let ratingInDouble = rating as? Double else {return}
+                
+                //to cache the reviews
+                let newReview = Review(productIDInString, titleInString, ratingInDouble, contentInString)
+                self.reviews.append(newReview)
+                
+                self.productTableView.beginUpdates()
+                self.productTableView.insertRows(at: [IndexPath(row: self.reviews.count - 1, section: 0)], with: UITableViewRowAnimation.automatic)
+                self.productTableView.endUpdates()
+            }            
             
         }
         
