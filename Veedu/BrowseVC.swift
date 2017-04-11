@@ -28,11 +28,16 @@ class BrowseVC: UIViewController {
     // Temp instance for active tab cell.
     var previousTab = ActiveCellCVC()
     
+    // CollectionDelegateFlowLayout constants
+    let columns: CGFloat = 2.0
+    let inset: CGFloat = 8.0
+    let spacing: CGFloat = 4.0
+    let lineSpacing: CGFloat = 8.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.productCategories = ProductCategory.livingRoomProdCategories
-        
     }
 }
 
@@ -63,7 +68,7 @@ extension BrowseVC: UICollectionViewDataSource {
                 print("***Error creating RoomTabCell at \(indexPath.row).***")
                 return UICollectionViewCell()
             }
-            cell.roomTabLabel.text = textForTabs[indexPath.row].roomName //testing
+            cell.roomTabLabel.text = textForTabs[indexPath.row].roomName
             print(cell.roomTabLabel.text!)
             
             // Signify first active tab is the first one.
@@ -100,7 +105,6 @@ extension BrowseVC: UICollectionViewDataSource {
 // MARK: Delegates
 extension BrowseVC: UICollectionViewDelegate {
     
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.roomTabCollectionView {
             
@@ -120,46 +124,51 @@ extension BrowseVC: UICollectionViewDelegate {
             productCategoryCollectionView.reloadData()
             
             // Active Cell is underlined and darker grey
-            
             let cell = collectionView.cellForItem(at: indexPath) as! ActiveCellCVC
-            
-            previousTab.didDeselectCell()
-            
             cell.underlined()
-            
+            previousTab.didDeselectCell()
             previousTab = cell
         }
         
         // MARK: Segue from Browse to ProductsPerCategory
         if collectionView == self.productCategoryCollectionView {
-        selectedIndexPath = indexPath
+            selectedIndexPath = indexPath
             
             performSegue(withIdentifier: "ToProductList", sender: self)
-        
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as?
-            ProductsPerCategoryVC {
-            if let selectedIndexPath = selectedIndexPath {
-
-            }
-        }
-    }
+    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //        <#code#>
+    //    }
     
 }
 
 
+//// MARK: DelegateFlowLayout for ProductCategoriesPerRoom
+extension BrowseVC: UICollectionViewDelegateFlowLayout {
+    
+    // assign these functions only to the productCategoryCollectionView
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+//        if collectionView == self.roomTabCollectionView {
 
-
-// MARK: DelegateFlowLayout for ProductCategoriesPerRoom
-//extension BrowseVC: UICollectionViewDelegateFlowLayout {
-//
-//
-//
-//
-//}
+        let width = Int((productCategoryCollectionView.frame.width / columns) -  (inset + spacing))
+            return CGSize(width: width, height: width)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return spacing
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return lineSpacing
+    }
+}
 
 
 
