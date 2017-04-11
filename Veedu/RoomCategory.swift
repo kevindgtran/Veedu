@@ -13,13 +13,14 @@ import UIKit
 struct RoomCategory {
     
     let roomName: String
+    let firebaseName: String
     
     static let rooms: [RoomCategory] = [
     
-        RoomCategory(roomName: "Living Room"),
-        RoomCategory(roomName: "Bedroom"),
-        RoomCategory(roomName: "Kitchen & Dining"),
-        RoomCategory(roomName: "Bathroom")
+        RoomCategory(roomName: "Living Room", firebaseName: "livingRoom"),
+        RoomCategory(roomName: "Bedroom", firebaseName: "bedRoom"),
+        RoomCategory(roomName: "Kitchen & Dining", firebaseName: "kitchenDiningRoom"),
+        RoomCategory(roomName: "Bathroom", firebaseName: "bathRoom")
 //        RoomCategory(roomName: "Garden"),
 //        RoomCategory(roomName: "Office")
     ]

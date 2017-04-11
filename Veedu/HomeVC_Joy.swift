@@ -42,11 +42,11 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate {
 //        let storyCategory = storyCategories[indexPath.row]
 
         // Story Images in TableView
-        if let storyImage = self.storyCategories[indexPath.row].storyImage {
-            cell.storyImage.image = UIImage(named: storyImage)
-        } else {
-            print("***Error retrieving image from assets.***")
-        }
+        let storyImage = self.storyCategories[indexPath.row].storyImage
+        cell.storyImage.image = UIImage(named: storyImage)
+//        } else {
+//            print("***Error retrieving image from assets.***")
+//        }
         
         // Story Labels in TableView
         cell.storyNameLabel.text = storyCategories[indexPath.row].storyName
@@ -59,8 +59,17 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate {
         // user selected a story category.
         selectedIndexPath = indexPath
         
-        // connect to Prathiba's ProductsPerCategoryVC
-        performSegue(withIdentifier: "ProductCell", sender: self)
+         // connect to Prathiba's ProductsPerCategoryVC
+        let storyboard = UIStoryboard(name: "PrathibaMain", bundle: nil)
+        guard let navController = storyboard.instantiateViewController(withIdentifier: "PrathibaHomeVC") as? UINavigationController else { return }
+        guard let viewController = navController.viewControllers.first as? ProductsPerCategoryVC else { return }
+        
+        if let selectedIndexPath = selectedIndexPath {
+            viewController.storyCategory = self.storyCategories[selectedIndexPath.row].firebaseStoryName
+            present(navController, animated: true, completion: nil)
+        }
+       
+        
     }
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -69,7 +78,7 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate {
 //            }
 //        }
 //    }
-//    
+    
     
     
 }
