@@ -127,7 +127,7 @@
             "price": 15.00,
             "description": "Made from an extra-fine weave microfiber, the modern quilted design offers texture and style to your décor. The sham is wrinkle-resistant and easy to wash, allowing your bed to look picture perfect every day.",
             "specifications": ["Standard Size", "100% extra-fine weave microfiber", "Hypo-allergenic"],
-            "reviews": ["", ""],
+            "reviews": ["new05", "new06"],
             "imageURL": "https://images.costco-static.com/ImageDelivery/imageService?profileId=12026540&itemId=100026869-847&recipeName=344",
             "storyCategory": "industrial",
             "roomCategory": ["bedRoom"],
@@ -171,7 +171,7 @@
             "price": 45.00,
             "description": "An exceptionally hard cutting board provides a stable work surface and also helps protect finely honed blades. Sturdy construction – with the edge grain creating the work surface – gives this board a commercial-quality toughness to withstand years of use.",
             "specifications": ["20in x 15in x 1 1/2in thick; 10 lb.", "Crafted in the USA from sustainably harvested North American walnut.", "Edge-grain construction holds up to years of slicing and chopping."],
-            "reviews": ["Purchased it as a gift and he loved it!", "Beautiful cutting board. I almost don't want to use it."],
+            "reviews": ["new013", "new014"],
             "imageURL": "http://ab.wsimgs.com/wsimgs/ab/images/dp/wcm/201704/0035/img91c.jpg",
             "storyCategory": "farmhouse",
             "roomCategory": ["kitchenDiningRoom"],
@@ -193,7 +193,7 @@
             "price": 25.00,
             "description": "Features a blade grinding mechanism that rapidly and easily grinds with minimal noise level. It offers easy fingertip control and 1 - 4 cup versatile brew cycle function.",
             "specifications": ["44in l x 4.25in w x 8.75in h", "Steel construction.", "Bowl, blade and top are dishwasher safe; Wipe exterior clean."],
-            "reviews": ["The KitchenAid Blade Coffee Grinder is very easy to use and clean. It will always grind your coffee to your liking."],
+            "reviews": ["new015"],
             "imageURL": "https://s7d1.scene7.com/is/image/BedBathandBeyond/96116818546191p?$478$",
             "storyCategory": "midCenturyModern",
             "roomCategory": ["kitchenDiningRoom"],
@@ -868,7 +868,24 @@
             "rating": 5,
             "title": "Stunning!",
             "review": "Wish this came as a white base, but the black stone is still stunning. Happy with my purchase."
-        }
-  ]
+        }, {
+            "reviewID": "new013",
+            "productID": "c71223",
+            "rating": 4,
+            "title": "Love it!",
+            "review": "Purchased it as a gift and he loved it!"
+        }, {
+            "reviewID": "new014",
+            "productID": "c71223",
+            "rating": 5,
+            "title": "Beautiful!",
+            "review": "Beautiful cutting board. I almost don't want to use it!"
+        }, {
+            "reviewID": "new015",
+            "productID": "sa13344",
+            "rating": 5,
+            "title": "Easy to Use!",
+            "review": "The KitchenAid Blade Coffee Grinder is very easy to use and clean. It will always grind your coffee to your liking."
+        }]
     }]
 }
