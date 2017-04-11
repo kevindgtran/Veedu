@@ -16,6 +16,9 @@ class BrowseVC: UIViewController {
     
     var selectedIndexPath: IndexPath?
     
+    // Instance of array of products with the selected 'room tag' && 'product category'
+    // TO DO:
+    
     // Instance for Room Tab Collection View
     let textForTabs = RoomCategory.rooms
     
@@ -29,7 +32,6 @@ class BrowseVC: UIViewController {
         super.viewDidLoad()
         
         self.productCategories = ProductCategory.livingRoomProdCategories
-        self.productCategoryCollectionView.allowsMultipleSelection = false
         
     }
 }
@@ -63,7 +65,7 @@ extension BrowseVC: UICollectionViewDataSource {
             }
             cell.roomTabLabel.text = textForTabs[indexPath.row].roomName //testing
             print(cell.roomTabLabel.text!)
-
+            
             // Signify first active tab is the first one.
             if indexPath.row == 0 {
                 cell.underlined()
@@ -86,7 +88,7 @@ extension BrowseVC: UICollectionViewDataSource {
             }
             
             cell.prodCategoryLabel.text = productCategories[indexPath.row]?.productCategoryName
-            print(cell.prodCategoryLabel.text)
+            print(cell.prodCategoryLabel.text!)
             
             return cell
             
@@ -128,7 +130,22 @@ extension BrowseVC: UICollectionViewDelegate {
             previousTab = cell
         }
         
+        // MARK: Segue from Browse to ProductsPerCategory
+        if collectionView == self.productCategoryCollectionView {
+        selectedIndexPath = indexPath
+            
+            performSegue(withIdentifier: "ToProductList", sender: self)
         
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as?
+            ProductsPerCategoryVC {
+            if let selectedIndexPath = selectedIndexPath {
+
+            }
+        }
     }
     
 }
@@ -138,10 +155,10 @@ extension BrowseVC: UICollectionViewDelegate {
 
 // MARK: DelegateFlowLayout for ProductCategoriesPerRoom
 //extension BrowseVC: UICollectionViewDelegateFlowLayout {
-//    
-//    
-//    
-//    
+//
+//
+//
+//
 //}
 
 

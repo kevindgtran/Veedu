@@ -13,7 +13,7 @@ target 'Veedu' do
     pod 'FirebaseUI'
 
     pod 'PayPal-iOS-SDK'
-    
+
   target 'VeeduTests' do
     inherit! :search_paths
     # Pods for testing
