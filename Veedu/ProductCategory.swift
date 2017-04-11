@@ -12,7 +12,7 @@ import Foundation
 struct ProductCategory {
     
     let productCategoryName: String
-    let productCategoryImage: String?
+    let productCategoryImage: String
     
     // Index0 - LivingRoom
     static let livingRoomProdCategories: [ProductCategory] = [
@@ -20,7 +20,7 @@ struct ProductCategory {
         ProductCategory(productCategoryName: "Furniture", productCategoryImage: "LivingFurniture"),
         ProductCategory(productCategoryName: "Lighting", productCategoryImage: "LivingLighting"),
         ProductCategory(productCategoryName: "Textiles", productCategoryImage: "LivingThrows"),
-        ProductCategory(productCategoryName: "PIllows", productCategoryImage: "LivingPillows"),
+        ProductCategory(productCategoryName: "Pillows", productCategoryImage: "LivingPillows"),
         ProductCategory(productCategoryName: "Rugs", productCategoryImage: "LivingRugs"),
 
         ]
