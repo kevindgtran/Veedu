@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RoomTabCVCell: UICollectionViewCell {
+class RoomTabCVCell: ActiveCellCVC {
     
     @IBOutlet weak var roomTabLabel: UILabel!
     

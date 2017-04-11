@@ -54,7 +54,6 @@
 		E06B6B571E99FCB600E12419 /* ProductCategoryCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6B561E99FCB600E12419 /* ProductCategoryCVCell.swift */; };
 		E06B6B591E9A063C00E12419 /* RoomCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6B581E9A063C00E12419 /* RoomCategory.swift */; };
 		E0DDD96B1E9A34C3000CFB9D /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DDD96A1E9A34C3000CFB9D /* ProductCategory.swift */; };
-		E0E1C5B21E9BCBD0001597E0 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E1C5B11E9BCBD0001597E0 /* Helpers.swift */; };
 		E0E1C5B61E9BE77E001597E0 /* ActiveCellCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E1C5B51E9BE77E001597E0 /* ActiveCellCVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -136,7 +135,6 @@
 		E06B6B561E99FCB600E12419 /* ProductCategoryCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCategoryCVCell.swift; sourceTree = "<group>"; };
 		E06B6B581E9A063C00E12419 /* RoomCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomCategory.swift; sourceTree = "<group>"; };
 		E0DDD96A1E9A34C3000CFB9D /* ProductCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
-		E0E1C5B11E9BCBD0001597E0 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		E0E1C5B51E9BE77E001597E0 /* ActiveCellCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveCellCVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -383,7 +381,6 @@
 		E0E1C5B31E9BE72C001597E0 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				E0E1C5B11E9BCBD0001597E0 /* Helpers.swift */,
 				E0E1C5B51E9BE77E001597E0 /* ActiveCellCVC.swift */,
 			);
 			name = Tools;
@@ -698,7 +695,6 @@
 				E06B6AE21E97C90300E12419 /* HomeVC_Joy.swift in Sources */,
 				65B734F21E9602BA00506B1F /* ProfileViewController.swift in Sources */,
 				E0DDD96B1E9A34C3000CFB9D /* ProductCategory.swift in Sources */,
-				E0E1C5B21E9BCBD0001597E0 /* Helpers.swift in Sources */,
 				65A5A6A31E9473200056D42F /* AppDelegate.swift in Sources */,
 				E06B6AE61E97D8D100E12419 /* StoryTVCell.swift in Sources */,
 				E06B6B591E9A063C00E12419 /* RoomCategory.swift in Sources */,
