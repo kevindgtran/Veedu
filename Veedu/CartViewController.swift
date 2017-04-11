@@ -18,6 +18,13 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var cartTableView: UITableView!
     @IBOutlet weak var emptyBagImageView: UIImageView!
     
+    //checkout area
+    @IBOutlet weak var subtotalLabel: UILabel!
+    @IBOutlet weak var greyBackGround: UIView!
+    @IBOutlet weak var dollarSignLabel: UILabel!
+    @IBOutlet weak var subtotalTextLabel: UILabel!
+    @IBOutlet weak var checkoutButtonLabel: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -43,10 +50,20 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         //update total items counter
         if CartProductNameArray.count > 0 {
             self.cartItemCountLabel.text = "\(self.CartProductNameArray.count)"
+            subtotalLabel.isHidden = false
+            greyBackGround.isHidden = false
+            dollarSignLabel.isHidden = false
+            subtotalTextLabel.isHidden = false
+            checkoutButtonLabel.isHidden = false
         } else {
             self.cartItemCountLabel.text = "0"
             cartTableView.isHidden = true
             emptyBagImageView.isHidden = false
+            subtotalLabel.isHidden = true
+            greyBackGround.isHidden = true
+            dollarSignLabel.isHidden = true
+            subtotalTextLabel.isHidden = true
+            checkoutButtonLabel.isHidden = true
         }
         
     }
@@ -101,6 +118,10 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     //MARK: actions
+    @IBAction func checkoutButton(_ sender: UIButton) {
+        
+    }
+    
     @IBAction func tempAddButton(_ sender: UIButton) {
         let alert = UIAlertController(title: "New Item", message: "Add a new item", preferredStyle: .alert)
         
@@ -116,6 +137,13 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.emptyBagImageView.isHidden = true
             self.cartTableView.reloadData()
             self.cartItemCountLabel.text = "\(self.CartProductNameArray.count)"
+            
+            //update the checkout section after adding new cart item
+            self.subtotalLabel.isHidden = false
+            self.greyBackGround.isHidden = false
+            self.dollarSignLabel.isHidden = false
+            self.subtotalTextLabel.isHidden = false
+            self.checkoutButtonLabel.isHidden = false
             
         }
         

@@ -218,7 +218,7 @@
             "reviews": [],
             "imageURL": "http://rk.weimgs.com/weimgs/rk/images/wcm/products/201711/0060/mid-century-expandable-dining-table-o.jpg",
             "storyCategory": "midCenturyModern",
-            "roomCategory": ["kitchen"],
+            "roomCategory": ["kitchenDiningRoom"],
             "productCategory": ["furniture"]
         }, {
             "name": "Handle Me Cast Iron Cookware",
@@ -229,7 +229,7 @@
             "reviews": [],
             "imageURL": "http://www.newyorkmarkt.com/pictures/Contemporary-Cast-Iron-Cookware-for-Kitchenware-Design-Handle-Me-by-Angell-Wyller-Aarseth-1.jpg",
             "storyCategory": "midCenturyModern",
-            "roomCategory": ["kitchen"],
+            "roomCategory": ["kitchenDiningRoom"],
             "productCategory": ["cookware"]
         }, {
             "name": "4-Piece Square Place Setting",
@@ -240,7 +240,7 @@
             "reviews": [],
             "imageURL": "https://s7d9.scene7.com/is/image/BedBathandBeyond/79250246191090p",
             "storyCategory": "midCenturyModern",
-            "roomCategory": ["kitchen"],
+            "roomCategory": ["kitchenDiningRoom"],
             "productCategory": ["diningware"]
         }, {
             "name": "Bread Maker",
@@ -251,7 +251,7 @@
             "reviews": [],
             "imageURL": "https://st.hzcdn.com/simgs/5e61530407d99141_4-4738/modern-small-kitchen-appliances.jpg",
             "storyCategory": "midCenturyModern",
-            "roomCategory": ["kitchen"],
+            "roomCategory": ["kitchenDiningRoom"],
             "productCategory": ["smallAppliance"]
         }, {
             "name": "Grid-Tufted Upholstered Tapered Leg Bed",
