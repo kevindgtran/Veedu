@@ -38,14 +38,43 @@ class ProductDetailsVC: UIViewController {
     }
     
     @IBAction func addToCartAction(_ sender: Any) {
+        
+        if let user = User.shared {
+            guard let product = product else {return}
+            user.addToCart(product)
+
+        }
+        else {
+            alertForLogin()
+        }
     }
     
     @IBAction func favoriteAction(_ sender: Any) {
+        
+        if let user = User.shared {
+            guard let product = product else {return}
+            user.addToFavorite(product)
+        }
+        else {
+            alertForLogin()
+        }
+        
     }
     
     @IBAction func reviews(_ sender: Any) {
         
         performSegue(withIdentifier: "ToReviews", sender: "self")
+
+    }
+    
+    func alertForLogin() {
+        
+        let alert = UIAlertController(title: "Hello!", message: "Please login to continue!", preferredStyle: .alert)
+        
+        let saveAction = UIAlertAction(title: "Got it!", style: .default)
+        alert.addAction(saveAction)
+        
+        present(alert, animated: true)
 
     }
     
