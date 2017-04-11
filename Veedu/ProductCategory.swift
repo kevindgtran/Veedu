@@ -12,37 +12,38 @@ import Foundation
 struct ProductCategory {
     
     let productCategoryName: String
-    let productCategoryImage: String?
+    let productCategoryImage: String
+    let firebaseCategoryName: String
     
     // Index0 - LivingRoom
     static let livingRoomProdCategories: [ProductCategory] = [
         // LivingRoom
-        ProductCategory(productCategoryName: "Furniture", productCategoryImage: "LivingFurniture"),
-        ProductCategory(productCategoryName: "Lighting", productCategoryImage: "LivingLighting"),
-        ProductCategory(productCategoryName: "Textiles", productCategoryImage: "LivingThrows"),
-        ProductCategory(productCategoryName: "PIllows", productCategoryImage: "LivingPillows"),
-        ProductCategory(productCategoryName: "Rugs", productCategoryImage: "LivingRugs"),
+        ProductCategory(productCategoryName: "Furniture", productCategoryImage: "LivingFurniture", firebaseCategoryName: "furniture"),
+        ProductCategory(productCategoryName: "Lighting", productCategoryImage: "LivingLighting", firebaseCategoryName: "lighting"),
+        ProductCategory(productCategoryName: "Textiles", productCategoryImage: "LivingThrows", firebaseCategoryName: "textile")
+//        ProductCategory(productCategoryName: "PIllows", productCategoryImage: "LivingPillows", firebaseCategoryName: ""),
+//        ProductCategory(productCategoryName: "Rugs", productCategoryImage: "LivingRugs"),
 
         ]
     
     // Index1 - BedRoom
     static let bedroomProdCategories: [ProductCategory] = [
         // Bedroom
-        ProductCategory(productCategoryName: "Furniture", productCategoryImage: "BedFurniture"),
-        ProductCategory(productCategoryName: "Bedding", productCategoryImage: "BedTextiles"),
-        ProductCategory(productCategoryName: "Lighting", productCategoryImage: "BedLighting"),
-        ProductCategory(productCategoryName: "Accessories", productCategoryImage: "BedAccessories")
+        ProductCategory(productCategoryName: "Furniture", productCategoryImage: "BedFurniture", firebaseCategoryName: "furniture"),
+        ProductCategory(productCategoryName: "Bedding", productCategoryImage: "BedTextiles", firebaseCategoryName: "textile"),
+        ProductCategory(productCategoryName: "Lighting", productCategoryImage: "BedLighting", firebaseCategoryName: "lighting"),
+        ProductCategory(productCategoryName: "Accessories", productCategoryImage: "BedAccessories", firebaseCategoryName: "accessory")
         
     ]
     
     // Index2 - Kitchen&Dining
     static let kitchenDiningProdCategories: [ProductCategory] = [
         // Kitchen&Dining
-        ProductCategory(productCategoryName: "Furniture", productCategoryImage: "DiningFurniture"),
-        ProductCategory(productCategoryName: "Diningware", productCategoryImage: "Diningware"),
-        ProductCategory(productCategoryName: "Cookware", productCategoryImage: "Cookware"),
-        ProductCategory(productCategoryName: "Small Appliances", productCategoryImage: "SmallAppliances"),
-        ProductCategory(productCategoryName: "Barware", productCategoryImage: "DiningBarware")
+        ProductCategory(productCategoryName: "Furniture", productCategoryImage: "DiningFurniture", firebaseCategoryName: "furniture"),
+        ProductCategory(productCategoryName: "Diningware", productCategoryImage: "Diningware", firebaseCategoryName: "diningware"),
+        ProductCategory(productCategoryName: "Cookware", productCategoryImage: "Cookware", firebaseCategoryName: "cookware"),
+        ProductCategory(productCategoryName: "Small Appliances", productCategoryImage: "SmallAppliances", firebaseCategoryName: "smallAppliance")
+       // ProductCategory(productCategoryName: "Barware", productCategoryImage: "DiningBarware")
 
         
         ]
@@ -52,8 +53,8 @@ struct ProductCategory {
     static let bathroomProdCategories: [ProductCategory] = [
         // Bathroom
      // ProductCategory(productCategoryName: "Furniture", productCategoryImage: "BathFurniture"),
-        ProductCategory(productCategoryName: "Textiles", productCategoryImage: "BathTextiles"),
-        ProductCategory(productCategoryName: "Accessories", productCategoryImage: "BathAccessories")
+        ProductCategory(productCategoryName: "Textiles", productCategoryImage: "BathTextiles",firebaseCategoryName : "textile"),
+        ProductCategory(productCategoryName: "Accessories", productCategoryImage: "BathAccessories", firebaseCategoryName: "accessory")
         
     ]
     

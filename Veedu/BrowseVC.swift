@@ -23,7 +23,7 @@ class BrowseVC: UIViewController {
     let textForTabs = RoomCategory.rooms
     
     // Instance for Main Collection View
-    var productCategories = [ProductCategory?]()
+    var productCategories = [ProductCategory]()
     
     // Temp instance for active tab cell.
     var previousTab = ActiveCellCVC()
@@ -45,19 +45,23 @@ class BrowseVC: UIViewController {
 extension BrowseVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        var count: Int?
+        //var count: Int
         
         if collectionView == self.roomTabCollectionView {
-            count = textForTabs.count
-            print("**Number of Room Tabs: \(String(describing: count))")
+            //print("**Number of Room Tabs: \(String(describing: count))")
+            return textForTabs.count
+            
+        }
+        else {
+            return productCategories.count
         }
         
-        if collectionView == self.productCategoryCollectionView {
-            count = productCategories.count
-            print("**Number of product categories: \(String(describing: count))") // add name of room in print statement
-        }
+//        if collectionView == self.productCategoryCollectionView {
+//            //print("**Number of product categories: \(String(describing: count))") // add name of room in print statement
+//            return productCategories.count
+//        }
         
-        return count!
+        //return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -86,13 +90,13 @@ extension BrowseVC: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
             
-            if let prodCategoryImage = self.productCategories[indexPath.row]?.productCategoryImage {
-                cell.prodCategoryImage.image = UIImage(named: prodCategoryImage)
-            } else {
-                print("***Error retrieving image from assets.***")
-            }
+            let prodCategoryImage = self.productCategories[indexPath.row].productCategoryImage
+            cell.prodCategoryImage.image = UIImage(named: prodCategoryImage)
+//           else {
+//                print("***Error retrieving image from assets.***")
+//            }
             
-            cell.prodCategoryLabel.text = productCategories[indexPath.row]?.productCategoryName
+            cell.prodCategoryLabel.text = productCategories[indexPath.row].productCategoryName
             print(cell.prodCategoryLabel.text!)
             
             return cell
@@ -134,13 +138,18 @@ extension BrowseVC: UICollectionViewDelegate {
         if collectionView == self.productCategoryCollectionView {
             selectedIndexPath = indexPath
             
-            performSegue(withIdentifier: "ToProductList", sender: self)
+            let storyboard = UIStoryboard(name: "PrathibaMain", bundle: nil)
+            guard let navController = storyboard.instantiateViewController(withIdentifier: "PrathibaHomeVC") as? UINavigationController else { return }
+            guard let viewController = navController.viewControllers.first as? ProductsPerCategoryVC else { return }
+            
+            if let selectedIndexPath = selectedIndexPath {
+                viewController.roomCategory = self.textForTabs[selectedIndexPath.row].firebaseName
+                viewController.productCategory = self.productCategories[selectedIndexPath.row].firebaseCategoryName
+                
+                present(navController, animated: true, completion: nil)
+            }            
         }
     }
-    
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        <#code#>
-    //    }
     
 }
 

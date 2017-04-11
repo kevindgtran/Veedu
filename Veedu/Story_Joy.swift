@@ -12,16 +12,17 @@ import UIKit
 struct Story {
     
     let storyName: String
-    let storyImage: String?
+    let storyImage: String
+    let firebaseStoryName: String
     
     static let stories: [Story] = [
         
         // some are placeholder names and images
-        Story(storyName: "Industrial", storyImage: "Industrial"),
-        Story(storyName: "Rustic", storyImage: "Rustic"),
-        Story(storyName: "Mid-Century Modern", storyImage: "Beijing"),
-        Story(storyName: "New Frontier", storyImage: "NewFrontier"),
-        Story(storyName: "SomethingOrOther", storyImage: "Other"),
+        Story(storyName: "Industrial", storyImage: "Industrial",firebaseStoryName: "industrial"),
+        Story(storyName: "Farmhouse", storyImage: "Rustic", firebaseStoryName: "farmhouse"),
+        Story(storyName: "Mid-Century Modern", storyImage: "Beijing", firebaseStoryName: "midCenturyModern")
+//        Story(storyName: "New Frontier", storyImage: "NewFrontier"),
+//        Story(storyName: "SomethingOrOther", storyImage: "Other"),
         ]
     
     

@@ -38,7 +38,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="175" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dkD-ID-qcW">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dkD-ID-qcW">
                                                     <rect key="frame" x="0.0" y="0.0" width="175" height="145"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="145" id="T32-Ei-KET"/>
@@ -72,6 +72,7 @@
                                                 </button>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="cOd-ry-1IM" secondAttribute="trailing" id="0hh-g7-5zy"/>
                                             <constraint firstItem="cOd-ry-1IM" firstAttribute="leading" secondItem="tER-b4-kel" secondAttribute="trailing" id="1eJ-L3-1MN"/>
@@ -342,7 +343,7 @@
         <!--Navigation Controller-->
         <scene sceneID="YZS-e1-BM6">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rGy-DJ-8xK" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="PrathibaHomeVC" automaticallyAdjustsScrollViewInsets="NO" id="rGy-DJ-8xK" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qZC-2o-r4U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
