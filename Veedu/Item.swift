@@ -18,10 +18,9 @@ class Product {
     var productImage: UIImage?
     var productDescription: String
     var productSpecifications: [String]
+    var productReviews: [String]?
     
-    //var produsctReviews: [String]
-    
-    init(_ productID: String, _ productName: String, _ productPrice: Double, _ productImageURL: String, _ productDescription: String, _ productSpecifications: [String]) {
+    init(_ productID: String, _ productName: String, _ productPrice: Double, _ productImageURL: String, _ productDescription: String, _ productSpecifications: [String], _ productReviews: [String]?) {
         
         self.productID = productID
         self.productName = productName
@@ -29,7 +28,7 @@ class Product {
         self.productImageURL = productImageURL
         self.productDescription = productDescription
         self.productSpecifications = productSpecifications
-        
+        self.productReviews = productReviews
         
     }
     
@@ -60,6 +59,7 @@ class Product {
         static let imageURL = "imageURL"
         static let description = "description"
         static let measurements = "specifications"
+        static let productReviews = "productReviews"
     }
 
 }

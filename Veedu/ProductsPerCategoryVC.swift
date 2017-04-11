@@ -48,6 +48,7 @@ class ProductsPerCategoryVC: UIViewController {
             let imageURL = product[Product.ProductKeys.imageURL] ?? "[imageURL]"
             let description = product[Product.ProductKeys.description] ?? "[description]"
             let measurements = product[Product.ProductKeys.measurements] ?? "[specifications]"
+            let reviews = product[Product.ProductKeys.productReviews] ?? "[reviews]"
             
             //Creating Product Instance
             guard let productIDAsString = productID as? String else {return}
@@ -56,9 +57,10 @@ class ProductsPerCategoryVC: UIViewController {
             guard let imageURLInString = imageURL as? String else {return}
             guard let descriptionInString = description as? String else {return}
             guard let measurementsInStringArray = measurements as? [String] else {return}
+            let reviewsInStringArray = reviews as? [String] 
             
             //to cache the downloaded images
-            let newProduct = Product(productIDAsString, nameInString, priceInDouble, imageURLInString, descriptionInString, measurementsInStringArray)
+            let newProduct = Product(productIDAsString, nameInString, priceInDouble, imageURLInString, descriptionInString, measurementsInStringArray, reviewsInStringArray)
             self.products.append(newProduct)
             
             self.productCollectionView.insertItems(at: [IndexPath(row: self.products.count - 1, section: 0)])
