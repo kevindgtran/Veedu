@@ -24,7 +24,6 @@
 		65A5A6A31E9473200056D42F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5A6A21E9473200056D42F /* AppDelegate.swift */; };
 		65A5A6A51E9473200056D42F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5A6A41E9473200056D42F /* ViewController.swift */; };
 		65A5A6A81E9473200056D42F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65A5A6A61E9473200056D42F /* Main.storyboard */; };
-		65A5A6AB1E9473200056D42F /* Veedu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65A5A6A91E9473200056D42F /* Veedu.xcdatamodeld */; };
 		65A5A6AD1E9473200056D42F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65A5A6AC1E9473200056D42F /* Assets.xcassets */; };
 		65A5A6B01E9473200056D42F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65A5A6AE1E9473200056D42F /* LaunchScreen.storyboard */; };
 		65A5A6BB1E9473200056D42F /* VeeduTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5A6BA1E9473200056D42F /* VeeduTests.swift */; };
@@ -97,7 +96,6 @@
 		65A5A6A21E9473200056D42F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65A5A6A41E9473200056D42F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		65A5A6A71E9473200056D42F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		65A5A6AA1E9473200056D42F /* Veedu.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Veedu.xcdatamodel; sourceTree = "<group>"; };
 		65A5A6AC1E9473200056D42F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65A5A6AF1E9473200056D42F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65A5A6B11E9473200056D42F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -214,7 +212,6 @@
 				65A5A6AC1E9473200056D42F /* Assets.xcassets */,
 				65A5A6AE1E9473200056D42F /* LaunchScreen.storyboard */,
 				65A5A6B11E9473200056D42F /* Info.plist */,
-				65A5A6A91E9473200056D42F /* Veedu.xcdatamodeld */,
 			);
 			path = Veedu;
 			sourceTree = "<group>";
@@ -681,7 +678,6 @@
 				6595D9D01E95C1EA007E29FF /* Item.swift in Sources */,
 				65B734F41E96084300506B1F /* FavoritesTableViewCell.swift in Sources */,
 				C453B00D1E96C55C0088E827 /* ProductCollectionViewCell.swift in Sources */,
-				65A5A6AB1E9473200056D42F /* Veedu.xcdatamodeld in Sources */,
 				C461DE0B1E9724DD008AE663 /* ReviewsCell.swift in Sources */,
 				E06B6B521E9853A300E12419 /* RoomTabCVCell.swift in Sources */,
 				C461DE661E984051008AE663 /* Review.swift in Sources */,
@@ -986,19 +982,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		65A5A6A91E9473200056D42F /* Veedu.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				65A5A6AA1E9473200056D42F /* Veedu.xcdatamodel */,
-			);
-			currentVersion = 65A5A6AA1E9473200056D42F /* Veedu.xcdatamodel */;
-			path = Veedu.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 65A5A6971E9473200056D42F /* Project object */;
 }

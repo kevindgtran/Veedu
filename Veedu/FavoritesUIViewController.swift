@@ -24,55 +24,55 @@ class FavoritesUIViewController: UIViewController, UITableViewDelegate, UITableV
     
     //save function
     func save(name: String) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        
-        let managedContext = appDelegate.persistentContainer.viewContext
-        
-        let entity = NSEntityDescription.entity(forEntityName: "FavoritesProduct", in: managedContext)!
-        
-        let newFavoritesProductName = NSManagedObject(entity: entity, insertInto: managedContext)
-        
-        //set the new product name to the NSManagedObject
-        newFavoritesProductName.setValue(name, forKeyPath: "name")
-        
-        //save new product to our NSManagedObjects and add to our array
-        do {
-            try managedContext.save()
-            favoritesProductNameArray.append(newFavoritesProductName)
-        } catch let error as NSError {
-            print("Could not save product name to array")
-        }
+//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+//            return
+//        }
+//        
+//        let managedContext = appDelegate.persistentContainer.viewContext
+//        
+//        let entity = NSEntityDescription.entity(forEntityName: "FavoritesProduct", in: managedContext)!
+//        
+//        let newFavoritesProductName = NSManagedObject(entity: entity, insertInto: managedContext)
+//        
+//        //set the new product name to the NSManagedObject
+//        newFavoritesProductName.setValue(name, forKeyPath: "name")
+//        
+//        //save new product to our NSManagedObjects and add to our array
+//        do {
+//            try managedContext.save()
+//            favoritesProductNameArray.append(newFavoritesProductName)
+//        } catch let error as NSError {
+//            print("Could not save product name to array")
+//        }
     }
     
     //update will appear function
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        //fetch the data from the NSManagedObject and populate when the page appears
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        
-        let managedContext = appDelegate.persistentContainer.viewContext
-        
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavoritesProduct")
-        do {
-            //create fetch request from NSManagedObject and store objects directly into array
-            favoritesProductNameArray = try managedContext.fetch(fetchRequest)
-        } catch let error as NSError {
-            print("Could not fetch data")
-        }
-        
-        //update total items counter
-        if favoritesProductNameArray.count > 0 {
-            self.itemsAmountLabel.text = "\(self.favoritesProductNameArray.count)"
-        } else {
-            self.itemsAmountLabel.text = "0"
-            favoritesTableView.isHidden = true
-            sadFaceImage.isHidden = false
-        }
+//        //fetch the data from the NSManagedObject and populate when the page appears
+//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+//            return
+//        }
+//        
+//        let managedContext = appDelegate.persistentContainer.viewContext
+//        
+//        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavoritesProduct")
+//        do {
+//            //create fetch request from NSManagedObject and store objects directly into array
+//            favoritesProductNameArray = try managedContext.fetch(fetchRequest)
+//        } catch let error as NSError {
+//            print("Could not fetch data")
+//        }
+//        
+//        //update total items counter
+//        if favoritesProductNameArray.count > 0 {
+//            self.itemsAmountLabel.text = "\(self.favoritesProductNameArray.count)"
+//        } else {
+//            self.itemsAmountLabel.text = "0"
+//            favoritesTableView.isHidden = true
+//            sadFaceImage.isHidden = false
+//        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

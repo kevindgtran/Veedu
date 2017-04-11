@@ -33,38 +33,38 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewWillAppear(animated)
         
         //fetch the data from the NSManagedObject and populate when the page appears
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        
-        let managedContext = appDelegate.persistentContainer.viewContext
-        
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CartProduct")
-        do {
-            //create fetch request from NSManagedObject and store objects directly into array
-            CartProductNameArray = try managedContext.fetch(fetchRequest)
-        } catch let error as NSError {
-            print("Could not fetch data")
-        }
-        
-        //update total items counter
-        if CartProductNameArray.count > 0 {
-            self.cartItemCountLabel.text = "\(self.CartProductNameArray.count)"
-            subtotalLabel.isHidden = false
-            greyBackGround.isHidden = false
-            dollarSignLabel.isHidden = false
-            subtotalTextLabel.isHidden = false
-            checkoutButtonLabel.isHidden = false
-        } else {
-            self.cartItemCountLabel.text = "0"
-            cartTableView.isHidden = true
-            emptyBagImageView.isHidden = false
-            subtotalLabel.isHidden = true
-            greyBackGround.isHidden = true
-            dollarSignLabel.isHidden = true
-            subtotalTextLabel.isHidden = true
-            checkoutButtonLabel.isHidden = true
-        }
+//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+//            return
+//        }
+//        
+//        let managedContext = appDelegate.persistentContainer.viewContext
+//        
+//        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CartProduct")
+//        do {
+//            //create fetch request from NSManagedObject and store objects directly into array
+//            CartProductNameArray = try managedContext.fetch(fetchRequest)
+//        } catch let error as NSError {
+//            print("Could not fetch data")
+//        }
+//        
+//        //update total items counter
+//        if CartProductNameArray.count > 0 {
+//            self.cartItemCountLabel.text = "\(self.CartProductNameArray.count)"
+//            subtotalLabel.isHidden = false
+//            greyBackGround.isHidden = false
+//            dollarSignLabel.isHidden = false
+//            subtotalTextLabel.isHidden = false
+//            checkoutButtonLabel.isHidden = false
+//        } else {
+//            self.cartItemCountLabel.text = "0"
+//            cartTableView.isHidden = true
+//            emptyBagImageView.isHidden = false
+//            subtotalLabel.isHidden = true
+//            greyBackGround.isHidden = true
+//            dollarSignLabel.isHidden = true
+//            subtotalTextLabel.isHidden = true
+//            checkoutButtonLabel.isHidden = true
+//        }
         
     }
     
@@ -94,26 +94,26 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     //save function
     func save(name: String) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        
-        let managedContext = appDelegate.persistentContainer.viewContext
-        
-        let entity = NSEntityDescription.entity(forEntityName: "CartProduct", in: managedContext)!
-        
-        let newProductName = NSManagedObject(entity: entity, insertInto: managedContext)
-        
-        //set the new product name to the NSManagedObject
-        newProductName.setValue(name, forKeyPath: "name")
-        
-        //save new product to our NSManagedObjects and add to our array
-        do {
-            try managedContext.save()
-            CartProductNameArray.append(newProductName)
-        } catch let error as NSError {
-            print("Could not save product name to array")
-        }
+//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+//            return
+//        }
+//        
+//        let managedContext = appDelegate.persistentContainer.viewContext
+//        
+//        let entity = NSEntityDescription.entity(forEntityName: "CartProduct", in: managedContext)!
+//        
+//        let newProductName = NSManagedObject(entity: entity, insertInto: managedContext)
+//        
+//        //set the new product name to the NSManagedObject
+//        newProductName.setValue(name, forKeyPath: "name")
+//        
+//        //save new product to our NSManagedObjects and add to our array
+//        do {
+//            try managedContext.save()
+//            CartProductNameArray.append(newProductName)
+//        } catch let error as NSError {
+//            print("Could not save product name to array")
+//        }
         
     }
     
