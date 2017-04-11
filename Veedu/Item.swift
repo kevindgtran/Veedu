@@ -51,7 +51,7 @@ class Product {
                 print("download image - second - guard - else")
                 return
             }
-            print("Fetched Image")
+            //print("Fetched Image")
             completion(image)
         }
         task.resume()

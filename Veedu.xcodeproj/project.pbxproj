@@ -39,7 +39,7 @@
 		65ED5F301E9AB344003DA680 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ED5F2F1E9AB344003DA680 /* CartTableViewCell.swift */; };
 		AB763F286B3ABAC2FCA653C6 /* Pods_VeeduTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68EF2E5115204607A907A9E /* Pods_VeeduTests.framework */; };
 		C40313621E9C1A9300108A5A /* ReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40313611E9C1A9300108A5A /* ReviewsViewController.swift */; };
-		C453B00B1E96C48A0088E827 /* ProductsPerCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B00A1E96C48A0088E827 /* ProductsPerCategoryVC.swift */; };
+		C453B00B1E96C48A0088E827 /* ProductsPerCategoryAnd StoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B00A1E96C48A0088E827 /* ProductsPerCategoryAnd StoryVC.swift */; };
 		C453B00D1E96C55C0088E827 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453B00C1E96C55C0088E827 /* ProductCollectionViewCell.swift */; };
 		C461DE081E972454008AE663 /* ProductDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461DE071E972454008AE663 /* ProductDetailsVC.swift */; };
 		C461DE0B1E9724DD008AE663 /* ReviewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461DE091E9724DD008AE663 /* ReviewsCell.swift */; };
@@ -121,7 +121,7 @@
 		9C95596C7056B142BB97C8DE /* Pods-Veedu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Veedu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Veedu/Pods-Veedu.debug.xcconfig"; sourceTree = "<group>"; };
 		BADC4B53D548E43EEBBE13E1 /* Pods_Veedu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Veedu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40313611E9C1A9300108A5A /* ReviewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsViewController.swift; sourceTree = "<group>"; };
-		C453B00A1E96C48A0088E827 /* ProductsPerCategoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsPerCategoryVC.swift; sourceTree = "<group>"; };
+		C453B00A1E96C48A0088E827 /* ProductsPerCategoryAnd StoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProductsPerCategoryAnd StoryVC.swift"; sourceTree = "<group>"; };
 		C453B00C1E96C55C0088E827 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		C461DE071E972454008AE663 /* ProductDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailsVC.swift; sourceTree = "<group>"; };
 		C461DE091E9724DD008AE663 /* ReviewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsCell.swift; sourceTree = "<group>"; };
@@ -267,7 +267,7 @@
 				65B734E41E95DCA800506B1F /* PrathibaMain.storyboard */,
 				C40313611E9C1A9300108A5A /* ReviewsViewController.swift */,
 				C461DE071E972454008AE663 /* ProductDetailsVC.swift */,
-				C453B00A1E96C48A0088E827 /* ProductsPerCategoryVC.swift */,
+				C453B00A1E96C48A0088E827 /* ProductsPerCategoryAnd StoryVC.swift */,
 				C453B00C1E96C55C0088E827 /* ProductCollectionViewCell.swift */,
 				C461DE091E9724DD008AE663 /* ReviewsCell.swift */,
 				C461DE0A1E9724DD008AE663 /* ReviewsCell.xib */,
@@ -688,7 +688,7 @@
 				65B734F01E9602AC00506B1F /* CartViewController.swift in Sources */,
 				65ED5F301E9AB344003DA680 /* CartTableViewCell.swift in Sources */,
 				C461DE081E972454008AE663 /* ProductDetailsVC.swift in Sources */,
-				C453B00B1E96C48A0088E827 /* ProductsPerCategoryVC.swift in Sources */,
+				C453B00B1E96C48A0088E827 /* ProductsPerCategoryAnd StoryVC.swift in Sources */,
 				65A5A6A51E9473200056D42F /* ViewController.swift in Sources */,
 				6595D9CE1E95BB97007E29FF /* MainTableViewCell.swift in Sources */,
 				E06B6AE41E97C92500E12419 /* BrowseVC.swift in Sources */,

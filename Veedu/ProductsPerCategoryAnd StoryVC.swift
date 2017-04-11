@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 
+//File Name: ProductsPerCategoryAndStory
+
 class ProductsPerCategoryVC: UIViewController {
 
     @IBOutlet weak var productCollectionView: UICollectionView!
@@ -22,8 +24,10 @@ class ProductsPerCategoryVC: UIViewController {
     fileprivate var _authHandle: FIRAuthStateDidChangeListenerHandle!
     var user: FIRUser?
     
+    //segue from browse tab
     var roomCategory: String?
     var productCategory: String?
+    //segue from home tab
     var storyCategory: String?
 
     var products = [Product]()
@@ -32,8 +36,7 @@ class ProductsPerCategoryVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.roomCategory = "livingRoom"
-        self.productCategory = "furniture"
+        print("In View Did Load")
         
         configureDatabase()
         configureStorage()
@@ -70,16 +73,34 @@ class ProductsPerCategoryVC: UIViewController {
     
     func filterBasedOnRoomCategory(_ product: [String: Any]) {
         
+        print("In filterBasedOnRoomCategory")
+        
         guard let roomCategoryInString = getRoomCategory(product) else {return}
-        guard let roomCategory = self.roomCategory else {return}
+        guard let roomCategory = self.roomCategory else {
+            print("guard - Error with room cagegory")
+            return
+        }
+        
+        print("Success with room category")
         
         for room in roomCategoryInString {
+            
+            print("Inside room for loop")
+            
             if room == roomCategory {
                 
+                print("Inside if for room category")
+                
                 guard let productCategoryInString = getProductCategory(product) else {return}
-                guard let productCategory = self.productCategory else {return}
+                guard let productCategory = self.productCategory else {
+                    print("guard - Error with product category")
+                    return
+                }
+                
+                print("Success with product category")
                 
                 if productCategoryInString[0] == productCategory {
+                    print("Inside if for product category")
                     getProductDetails(product)
                 }
                 
@@ -114,6 +135,8 @@ class ProductsPerCategoryVC: UIViewController {
     
     func getProductDetails(_ product: [String: Any]) {
         
+        print("In getProductDetails")
+        
         let productID = product[Product.ProductKeys.productID] ?? "productID"
         let name = product[Product.ProductKeys.name] ?? "[name]"
         let price = product[Product.ProductKeys.price] ?? "[price]"
@@ -137,7 +160,9 @@ class ProductsPerCategoryVC: UIViewController {
         
         //to cache the downloaded images
         let newProduct = Product(productIDAsString, nameInString, priceInDouble, imageURLInString, descriptionInString, measurementsInStringArray, reviewsInStringArray, storyCategory, roomCategory, productCategory )
+        
         self.products.append(newProduct)
+        print("added product to array")
         
         self.productCollectionView.insertItems(at: [IndexPath(row: self.products.count - 1, section: 0)])
         
@@ -160,6 +185,7 @@ extension ProductsPerCategoryVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print(products.count)
         return products.count
     }
     
