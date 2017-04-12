@@ -1,5 +1,5 @@
 {
-    "data": [{
+    "data": {
         "allProducts": [{
             "name": "Emerson Bar Chair",
             "productID": "f12648",
@@ -573,8 +573,31 @@
             "roomCategory": ["livingRoom"],
             "productCategory": ["accessories"]
         }]
-    }, {
-        "allReviews": [{
+    , "allUsers": {
+        "kevin": {
+          "firstName": "Kevin",
+          "lastName": "Tran",
+          "password": "password",
+          "billing": "123 central ave San Francisco Ca 95111",
+          "shipping": "123 central ave San Francisco Ca 95111",
+          "userName": "Kevin@gmail.com",
+          "inCart": [""],
+          "favorite": [],
+          "orderHistory": []
+        },
+        "richard": {
+          "firstName": "Richard",
+          "lastName": "Ash",
+          "password": "abc123",
+          "billing": "123 central ave San Francisco Ca 95111",
+          "shipping": "123 central ave San Francisco Ca 95111",
+          "userName": "r.ash8347@gmail.com",
+          "inCart": [],
+          "favorite": [],
+          "orderHistory": []
+        }
+      }
+      ,"allReviews": [{
             "reviewID": "rev1",
             "productID": "f12638",
             "rating": 5,
@@ -887,5 +910,5 @@
             "title": "Easy to Use!",
             "review": "The KitchenAid Blade Coffee Grinder is very easy to use and clean. It will always grind your coffee to your liking."
         }]
-    }]
+    }
 }
