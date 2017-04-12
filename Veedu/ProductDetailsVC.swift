@@ -7,11 +7,8 @@
 //
 
 import UIKit
-import Firebase
 
 class ProductDetailsVC: UIViewController {
-
-    var product: Product?
     
     //IBOutlets
     @IBOutlet weak var productImage: UIImageView!
@@ -23,6 +20,8 @@ class ProductDetailsVC: UIViewController {
     @IBOutlet weak var addToCartButton: UIButton!
     @IBOutlet weak var favoriteButton: UIButton!
     
+    var product: Product?
+
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -39,31 +38,34 @@ class ProductDetailsVC: UIViewController {
     
     @IBAction func addToCartAction(_ sender: Any) {
         
-        Authentication.shared.configureAuth(viewController: self)
+        Firebase.shared.configureAuth({
+            
+            //print("In addToCartAction ")
+            
+            if let user = User.shared {
+                
+                //print("Inside IF in addToCartAction")
+                
+                guard let product = self.product else {return}
+                user.addToCart(product.productID)
+                
+                Firebase.shared.addToCartFirebase(product.productID)
+            }
+            
+        })
         
-        if let user = User.shared {
-            
-            print("Inside IF in addToCartAction")
-            
-            guard let product = product else {return}
-            user.addToCart(product)
-
-        }
-//        else {
-//            alertForLogin()
-//        }
     }
     
     @IBAction func favoriteAction(_ sender: Any) {
         
-        if let user = User.shared {
-            guard let product = product else {return}
-            user.addToFavorite(product)
-        }
-//        else {
-//            alertForLogin()
-//        }
-        
+        Firebase.shared.configureAuth({
+            if let user = User.shared {
+                guard let product = self.product else {return}
+                user.addToFavorite(product.productID)
+                
+                Firebase.shared.addToFavoritesFirebase(data: [User.UserKeys.favorite: user.favorite])
+            }
+        })
     }
     
     @IBAction func reviews(_ sender: Any) {
@@ -72,6 +74,7 @@ class ProductDetailsVC: UIViewController {
 
     }
     
+    //not used
     func alertForLogin() {
         
         let alert = UIAlertController(title: "Hello!", message: "Please login to continue!", preferredStyle: .alert)

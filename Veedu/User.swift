@@ -19,8 +19,8 @@ class User {
     var billing: String?
     var shipping: String?
     var orderHistory: [String] = []
-    var inCart: [Product] = []
-    var favorite: [Product] = []
+    var inCart: [String] = []
+    var favorite: [String] = []
     
     private init(username: String, password: String?) {
         self.username = username
@@ -31,17 +31,20 @@ class User {
         User.shared = User(username: username, password: password)
     }
     
-    func addToFavorite(_ product: Product) {
+    func addToFavorite(_ product: String) {
         favorite.append(product)
         for i in favorite {
-            print(i.productName)
+            print("added to local: \(i)")
         }
     }
     
-    func addToCart(_ product: Product) {
+    func addToCart(_ product: String) {
+        
+        //print("In User - addToCart")
+        
         inCart.append(product)
-        for i in favorite {
-            print(i.productName)
+        for i in inCart {
+            //print("added to local: \(i)")
         }
     }
     
@@ -49,8 +52,18 @@ class User {
         orderHistory.append(orderNumber)
     }
     
-//    func setBilling(_ billing: String) {
-//        self.billing = billing
-//    }
+    struct UserKeys {
+        static let firstName = "firstName"
+        static let lastName = "lastName"
+        static let username = "username"
+        static let password = "password"
+        static let billing = "billing"
+        static let shipping = "shipping"
+        static let orderHistory = "orderHistory"
+        static let inCart = "inCart"
+        static let favorite = "favorite"
+        
+    }
+
     
 }

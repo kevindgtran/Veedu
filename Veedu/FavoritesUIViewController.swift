@@ -11,7 +11,10 @@ import CoreData
 
 class FavoritesUIViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var favoritesProductNameArray: [NSManagedObject] = []
+    //var favoritesProductNameArray: [NSManagedObject] = []
+    
+    var products: [String]?
+    var favoriteProducts: [Product]?
     
     //MARK: properties
     @IBOutlet weak var itemsAmountLabel: UILabel!
@@ -20,6 +23,17 @@ class FavoritesUIViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let productIds = self.products else {return}
+        
+        Firebase.shared.getCartItemsFromFirebase(productIds){ (products) in
+            guard let tempProducts = products else {return}
+            self.favoriteProducts = tempProducts
+            self.favoritesTableView.reloadData()
+        }
+        
+        Firebase.shared.configureStorage()
+
     }
     
     //save function
@@ -48,7 +62,17 @@ class FavoritesUIViewController: UIViewController, UITableViewDelegate, UITableV
     
     //update will appear function
     override func viewWillAppear(_ animated: Bool) {
+        
         super.viewWillAppear(animated)
+        
+        Firebase.shared.configureAuth({
+            
+            if let user = User.shared {
+                
+                self.products = user.favorite
+            }
+            
+        })
         
 //        //fetch the data from the NSManagedObject and populate when the page appears
 //        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -76,21 +100,41 @@ class FavoritesUIViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return favoritesProductNameArray.count
+        if let products = self.favoriteProducts {
+            return products.count
+        }else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = favoritesTableView.dequeueReusableCell(withIdentifier: "favoritesCell", for: indexPath) as! FavoritesTableViewCell
-        
-        let newFav: NSManagedObject = favoritesProductNameArray[indexPath.row]
-        cell.favoritesNameLabel?.text = newFav.value(forKeyPath: "name") as? String
-        return cell
+       
+        if indexPath.row != 0 {
+            let cell = favoritesTableView.dequeueReusableCell(withIdentifier: "favoritesCell", for: indexPath) as! FavoritesTableViewCell
+            
+            //update the table with the newly created NSManaged item
+            guard let product = self.favoriteProducts?[indexPath.row] else {return UITableViewCell()}
+            
+            cell.favoritesNameLabel?.text = product.productName
+            cell.favoritesImageLabel.image = product.productImage
+            cell.favoritesPriceLabel.text = String(product.productPrice)
+            
+            return cell
+        }
+        else {
+            favoritesTableView.isHidden = true
+            
+            return UITableViewCell()
+        }
+  
     }
     
     //swipe to delete and custom color
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let remove = UITableViewRowAction(style: .normal, title: "Delete") { (action, indexPath) in
-            self.favoritesProductNameArray.remove(at: indexPath.row)
+            
+            guard var products = self.favoriteProducts else {return}
+            products.remove(at: indexPath.row)
             self.favoritesTableView.reloadData()
         }
         remove.backgroundColor = UIColor(red:0.91, green:0.29, blue:0.24, alpha:1.0)
@@ -112,7 +156,9 @@ class FavoritesUIViewController: UIViewController, UITableViewDelegate, UITableV
             self.favoritesTableView.isHidden = false
             self.sadFaceImage.isHidden = true
             self.favoritesTableView.reloadData()
-            self.itemsAmountLabel.text = "\(self.favoritesProductNameArray.count)"
+            
+            guard let products = self.favoriteProducts else {return}
+            self.itemsAmountLabel.text = "\(products.count)"
             
         }
         

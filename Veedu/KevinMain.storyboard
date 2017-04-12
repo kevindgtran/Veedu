@@ -282,7 +282,7 @@
         <!--View Controller-->
         <scene sceneID="n3v-pR-RvS">
             <objects>
-                <viewController id="Y3K-3r-AJ6" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileDetailsVC" id="Y3K-3r-AJ6" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pAq-d0-rzE"/>
                         <viewControllerLayoutGuide type="bottom" id="vVO-Aq-GCz"/>

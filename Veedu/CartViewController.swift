@@ -11,7 +11,10 @@ import CoreData
 
 class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var CartProductNameArray: [NSManagedObject] = []
+    //var CartProductNameArray: [NSManagedObject] = []
+    
+    var products: [String]?
+    var cartProducts: [Product]?
     
     //MARK: properties
     @IBOutlet weak var cartItemCountLabel: UILabel!
@@ -27,11 +30,34 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let productIds = self.products else {return}
+        
+        Firebase.shared.getCartItemsFromFirebase(productIds){ (products) in
+            guard let tempProducts = products else {return}
+            self.cartProducts = tempProducts
+            self.cartTableView.reloadData()
+        }
+        
+        Firebase.shared.configureStorage()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         super.viewWillAppear(animated)
         
+        Firebase.shared.configureAuth({
+            
+            if let user = User.shared {
+                
+               self.products = user.inCart
+            }
+            
+        })
+//        if let _ = self.products {
+//            self.cartTableView.reloadData()
+//        }
+    
         //fetch the data from the NSManagedObject and populate when the page appears
 //        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
 //            return
@@ -69,23 +95,47 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return CartProductNameArray.count
+        
+        if let products = self.cartProducts {
+            return products.count
+        }else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = cartTableView.dequeueReusableCell(withIdentifier: "cartCell", for: indexPath) as! CartTableViewCell
         
-        //update the table with the newly created NSManaged item
-        let someStuff: NSManagedObject = CartProductNameArray[indexPath.row]
-        cell.cartTitleLabel?.text = someStuff.value(forKeyPath: "name") as? String
-        
-        return cell
+        if indexPath.row != 0 {
+            let cell = cartTableView.dequeueReusableCell(withIdentifier: "cartCell", for: indexPath) as! CartTableViewCell
+            
+            //update the table with the newly created NSManaged item
+            guard let product = self.cartProducts?[indexPath.row] else {return UITableViewCell()}
+            
+            cell.cartTitleLabel?.text = product.productName
+            cell.cartImage.image = product.productImage
+            cell.cartPriceLabel.text = String(product.productPrice)
+            
+            return cell
+        }
+        else {
+            cartTableView.isHidden = true
+            emptyBagImageView.isHidden = false
+            subtotalLabel.isHidden = true
+            greyBackGround.isHidden = true
+            dollarSignLabel.isHidden = true
+            subtotalTextLabel.isHidden = true
+            checkoutButtonLabel.isHidden = true
+
+            return UITableViewCell()
+        }
+       
     }
     
     //swipe to delete and custom color
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let remove = UITableViewRowAction(style: .normal, title: "Delete") { (action, indexPath) in
-            self.CartProductNameArray.remove(at: indexPath.row)
+            guard var cartProducts = self.cartProducts else {return}
+            cartProducts.remove(at: indexPath.row)
             self.cartTableView.reloadData()
         }
         remove.backgroundColor = UIColor(red:0.91, green:0.29, blue:0.24, alpha:1.0)
@@ -136,7 +186,8 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.cartTableView.isHidden = false
             self.emptyBagImageView.isHidden = true
             self.cartTableView.reloadData()
-            self.cartItemCountLabel.text = "\(self.CartProductNameArray.count)"
+            guard let cartProducts = self.cartProducts else {return}
+            self.cartItemCountLabel.text = "\(cartProducts.count)"
             
             //update the checkout section after adding new cart item
             self.subtotalLabel.isHidden = false

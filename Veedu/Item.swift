@@ -38,6 +38,10 @@ class Product {
         
     }
     
+//    var json: [String: Any] {
+//        
+//    }
+    
     static func downloadImage(_ imageURL: String, _ completion: @escaping (UIImage) -> Void) {
         
         guard let url = URL(string: imageURL) else {return}
