@@ -11,7 +11,6 @@ import UIKit
 class AddToInventoryVC: UIViewController {
     
     // MARK: IBOutlets
-    // TODO: Add IBOutlets for the Categorie Dropdowns or Switches...
     @IBOutlet weak var addedProductName: UITextField!
     @IBOutlet weak var addedDescription: UITextView!
     @IBOutlet weak var addedSpecOne: UITextField!
@@ -30,6 +29,57 @@ class AddToInventoryVC: UIViewController {
     
     // MARK: IBActions
     
+    // Story Switches. ONLY CAN SELECT ONE.
+    @IBAction func farmHouseSelected(_ sender: UISwitch) {
+    }
+    
+    @IBAction func industrialSelected(_ sender: UISwitch) {
+    }
+    
+    @IBAction func midCentModSelected(_ sender: UISwitch) {
+    }
+    
+    @IBAction func otherSelected(_ sender: UISwitch) {
+    }
+    
+    // Room Switches. ONLY CAN SELECT ONE.
+    @IBAction func livingroomSelected(_ sender: UISwitch) {
+    }
+
+    @IBAction func bedroomSelected(_ sender: UISwitch) {
+    }
+    
+    @IBAction func kitchenDiningSelected(_ sender: UISwitch) {
+    }
+    
+    @IBAction func bathroomSelected(_ sender: UISwitch) {
+    }
+    
+    // Product Category Switches.  CAN SELECT MULTIPLE.
+    
+    @IBAction func furnitureSelected(_ sender: UISwitch) {
+    }
+    
+    @IBAction func lightingSelected(_ sender: UISwitch) {
+    }
+    
+    @IBAction func accessorySelected(_ sender: UISwitch) {
+    }
+    
+    @IBAction func textileSelected(_ sender: UISwitch) {
+    }
+    
+    @IBAction func cookwareSelected(_ sender: UISwitch) {
+    }
+    
+    @IBAction func diningwareSelected(_ sender: UISwitch) {
+    }
+    
+    @IBAction func smallApplianceSelected(_ sender: UISwitch) {
+    }
+    
+    
+    // Save Button
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         //TODO: when tapped, all data added in the textfields and the imageView will be added to the firebase
         
@@ -68,14 +118,20 @@ class AddToInventoryVC: UIViewController {
 //        saveButton.isEnabled = !text.isEmpty        
         
         
-        
-        
     }
+    
+    // Camera & Image Buttons
+    @IBAction func chooseImageTapped(_ sender: UIButton) {
+    }
+    
     
     @IBAction func uploadImageTapped(_ sender: UIButton) {
         
         // Camera implementation
     }
     
+    // Cancel add data.
+    @IBAction func cancelButtonTapped(_ sender: UIButton) {
+    }
     
 }
