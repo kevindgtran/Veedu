@@ -15,11 +15,11 @@ class InventoryTVCell: UITableViewCell {
 
     @IBOutlet weak var productID: UILabel!
 
-    @IBOutlet weak var roomCategory: UILabel!
+    @IBOutlet weak var roomCategory: UILabel! // this is an array with multiple
     
     @IBOutlet weak var storyName: UILabel!
     
-    @IBOutlet weak var productCategories: UILabel!
+    @IBOutlet weak var productCategory: UILabel! // this is an array with just one
     
     @IBOutlet weak var productInventoryImage: UIImageView!
     
@@ -33,7 +33,6 @@ class InventoryTVCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 
 
 }

@@ -123,6 +123,8 @@ class InventoryVC: UIViewController {
 
     // MARK: IBActions
     @IBAction func addButtonTapped(_ sender: Any) {
+        
+        performSegue(withIdentifier: "ToAddProductSegue", sender: self)
     }
 
 }
@@ -158,11 +160,15 @@ extension InventoryVC: UITableViewDataSource {
         cell.productID.text = products[indexPath.row].productID
         cell.storyName.text = products[indexPath.row].storyCategory
         
+        // this gives lowercase.
+        
         // These categories are arrays in firebase... how to pull
 //        cell.roomCategory.text = products[indexPath.row].roomCategory
-//        cell.productCategories.text = products[indexPath.row].productCategory
 //        
-    
+//        for prodCat in products[indexPath.row].productCategory {
+//        
+//        }
+//    
         return cell
     }
     
