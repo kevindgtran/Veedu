@@ -28,6 +28,8 @@ class AddToInventoryVC: UIViewController {
     var addedRoom = String()
     var addedProductCategories = [String]()
     
+    var selectedIndexPath: IndexPath?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -141,3 +143,52 @@ extension AddToInventoryVC: UITableViewDataSource {
     }
     
 }
+
+extension AddToInventoryVC: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // checking and un checking
+        if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.checkmark {
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.none
+//            SourcesManager.shared.remove("music")
+            // removing data
+            if tableView == storyTableView {
+                addedStory = ""
+                print(addedStory)
+            } else if tableView == roomTableView {
+                addedRoom = ""
+                print(addedRoom)
+            } else {
+//                addedProductCategories.remove(at: (selectedIndexPath.row))
+                    print(addedProductCategories)
+            }
+        } else {
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark
+            
+            // adding new data
+            if tableView == storyTableView {
+                addedStory = Story.stories[indexPath.row].storyName
+                print(addedStory)
+            } else if tableView == roomTableView {
+                addedRoom = RoomCategory.rooms[indexPath.row].roomName
+                print(addedRoom)
+            } else {
+                addedProductCategories.append(StandardProductCategories.allStandardCategories[indexPath.row].name)
+                print(addedProductCategories)
+            }
+        }
+    
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
