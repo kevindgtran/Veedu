@@ -36,7 +36,7 @@ class ProductsPerCategoryVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("In View Did Load")
+       // print("In View Did Load")
         
         configureDatabase()
         configureStorage()
@@ -73,7 +73,7 @@ class ProductsPerCategoryVC: UIViewController {
     
     func filterBasedOnRoomCategory(_ product: [String: Any]) {
         
-        print("In filterBasedOnRoomCategory")
+       // print("In filterBasedOnRoomCategory")
         
         guard let roomCategoryInString = getRoomCategory(product) else {return}
         guard let roomCategory = self.roomCategory else {
@@ -81,15 +81,15 @@ class ProductsPerCategoryVC: UIViewController {
             return
         }
         
-        print("Success with room category")
+        //print("Success with room category")
         
         for room in roomCategoryInString {
             
-            print("Inside room for loop")
+           // print("Inside room for loop")
             
             if room == roomCategory {
                 
-                print("Inside if for room category")
+                //print("Inside if for room category")
                 
                 guard let productCategoryInString = getProductCategory(product) else {return}
                 guard let productCategory = self.productCategory else {
@@ -97,10 +97,10 @@ class ProductsPerCategoryVC: UIViewController {
                     return
                 }
                 
-                print("Success with product category")
+                //print("Success with product category")
                 
                 if productCategoryInString[0] == productCategory {
-                    print("Inside if for product category")
+                   // print("Inside if for product category")
                     getProductDetails(product)
                 }
                 
@@ -135,7 +135,7 @@ class ProductsPerCategoryVC: UIViewController {
     
     func getProductDetails(_ product: [String: Any]) {
         
-        print("In getProductDetails")
+        //print("In getProductDetails")
         
         let productID = product[Product.ProductKeys.productID] ?? "productID"
         let name = product[Product.ProductKeys.name] ?? "[name]"
@@ -162,7 +162,7 @@ class ProductsPerCategoryVC: UIViewController {
         let newProduct = Product(productIDAsString, nameInString, priceInDouble, imageURLInString, descriptionInString, measurementsInStringArray, reviewsInStringArray, storyCategory, roomCategory, productCategory )
         
         self.products.append(newProduct)
-        print("added product to array")
+        //print("added product to array")
         
         self.productCollectionView.insertItems(at: [IndexPath(row: self.products.count - 1, section: 0)])
         

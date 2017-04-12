@@ -39,14 +39,19 @@ class ProductDetailsVC: UIViewController {
     
     @IBAction func addToCartAction(_ sender: Any) {
         
+        Authentication.shared.configureAuth(viewController: self)
+        
         if let user = User.shared {
+            
+            print("Inside IF in addToCartAction")
+            
             guard let product = product else {return}
             user.addToCart(product)
 
         }
-        else {
-            alertForLogin()
-        }
+//        else {
+//            alertForLogin()
+//        }
     }
     
     @IBAction func favoriteAction(_ sender: Any) {
@@ -55,9 +60,9 @@ class ProductDetailsVC: UIViewController {
             guard let product = product else {return}
             user.addToFavorite(product)
         }
-        else {
-            alertForLogin()
-        }
+//        else {
+//            alertForLogin()
+//        }
         
     }
     
