@@ -39,14 +39,10 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         
-//        let storyCategory = storyCategories[indexPath.row]
-
         // Story Images in TableView
         let storyImage = self.storyCategories[indexPath.row].storyImage
         cell.storyImage.image = UIImage(named: storyImage)
-//        } else {
-//            print("***Error retrieving image from assets.***")
-//        }
+
         
         // Story Labels in TableView
         cell.storyNameLabel.text = storyCategories[indexPath.row].storyName

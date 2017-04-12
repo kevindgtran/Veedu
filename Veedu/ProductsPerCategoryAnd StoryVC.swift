@@ -33,6 +33,12 @@ class ProductsPerCategoryVC: UIViewController {
     var products = [Product]()
     var selectedIndexPath: IndexPath?
     
+    // CollectionDelegateFlowLayout constants
+    let columns: CGFloat = 2.0
+    let inset: CGFloat = 8.0
+    let spacing: CGFloat = 4.0
+    let lineSpacing: CGFloat = 8.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -231,5 +237,29 @@ extension ProductsPerCategoryVC: UICollectionViewDelegate {
                 destination.product = products[selectedIndexPath.row]
             }
         }
+    }
+}
+
+
+//// MARK: DelegateFlowLayout
+extension ProductsPerCategoryVC: UICollectionViewDelegateFlowLayout {
+    
+    // assign these functions only to the productCategoryCollectionView
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let width = Int((collectionView.frame.width / columns) -  (inset + spacing))
+        return CGSize(width: width, height: width)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return spacing
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return lineSpacing
     }
 }
