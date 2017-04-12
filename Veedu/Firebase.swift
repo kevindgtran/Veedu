@@ -68,9 +68,7 @@ class Firebase: NSObject {
                 print("Inside ELSE in configureAuth")
                 self.loginSession()
             }
-
         }
-        
     }
     
     func showProfileDetailsView() {
