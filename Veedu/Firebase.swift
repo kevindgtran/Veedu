@@ -10,7 +10,18 @@ import Foundation
 import Firebase
 import FirebaseAuthUI
 
-class Firebase {
+extension UIApplication {
+    var topViewController: UIViewController? {
+        var topController = UIApplication.shared.keyWindow?.rootViewController
+        
+        while let controller = topController?.presentedViewController {
+            topController = controller
+        }
+        return topController
+    }
+}
+
+class Firebase: NSObject {
     
     //MARK: properties
     var ref: FIRDatabaseReference = FIRDatabase.database().reference()
@@ -26,68 +37,108 @@ class Firebase {
     static let shared = Firebase()
     
     //create configure authentication function
-    func configureAuth() {
+    func configureAuth(_ completion: @escaping() -> Void) {
         
-        print("Inside configureAuth")
+        //print("Inside configureAuth")
         
         _authHandle = FIRAuth.auth()?.addStateDidChangeListener { (auth: FIRAuth, user: FIRUser?) in
             //check if current user matches the FIRUser
             if let activeUser = user {
                 
-                print("Inside FIRST IF in configureAuth")
+                //print("Inside FIRST IF in configureAuth")
                 
                 //User.configure(username: (user?.email)!)
                 
-                if self.user != activeUser {
-                    
-                    print("Inside SECOND IF in configureAuth")
-                    
-                    self.user = activeUser
-                    User.configure(username: (user?.email)!)
-                    //let name = user!.email!.components(separatedBy: "@")[0]
-                    //self.displayName = name
-                }
+//                if self.user != activeUser {
+//                    
+//                    //print("Inside SECOND IF in configureAuth")
+//                    
+//                    //let name = user!.email!.components(separatedBy: "@")[0]
+//                    //self.displayName = name
+//                } else {
+//                    
+//                }
+
+                self.user = activeUser
+                User.configure(username: (user?.email)!)
+                
+                completion()
             }
             else {
                 print("Inside ELSE in configureAuth")
                 self.loginSession()
             }
+
         }
         
+    }
+    
+    func showProfileDetailsView() {
+        let storyboard = UIStoryboard(name: "KevinMain", bundle: nil)
+        let profileDetail = storyboard.instantiateViewController(withIdentifier: "ProfileDetailsVC")
+        let topController = UIApplication.shared.topViewController
+        
+        topController?.present(profileDetail, animated: true, completion: nil)
     }
     
     //present login session
     func loginSession() {
         
-        var topController = UIApplication.shared.keyWindow?.rootViewController
-        
-        while let controller = topController?.presentedViewController {
-            topController = controller
-        }
+        let topController = UIApplication.shared.topViewController
         
         print("In loginSession")
         
         let authViewController = FUIAuth.defaultAuthUI()!.authViewController()
+        FUIAuth.defaultAuthUI()?.delegate = self
         topController?.present(authViewController, animated: true, completion: nil)
     }
     
     // MARK: Send Message
     
-    func addToCartFirebase(data: [String:[Product]]) {
+    func addToCartFirebase(_ productID: String) {
         
         //create method that pushes message to the firebase database
         
         //ref = FIRDatabase.database().reference()
         guard let username = User.shared?.username.components(separatedBy: "@")[0] else {return}
-        print("username: \(username)")
-        print("inCart: \(data["inCart"]?[0].productName)")
-        ref.child("data").child("2").child(username).childByAutoId().setValue(data)
+        
+        //print("username: \(username)")
+        //print("inCart: \(data["inCart"]?[0])")
+        print(username)
+        
+        ref.child("data").child("allUsers").child(username).observeSingleEvent(of: .value, with: { (snapshot) in
+            var itemsInCart: [String] = []
+            
+            if snapshot.hasChild(User.UserKeys.inCart), let items = (snapshot.value as? [String: Any])?[User.UserKeys.inCart] as? [String] {
+                itemsInCart = items
+            }
+            
+            print("Firebase - itemsInCart: \(itemsInCart)")
+            self.ref.child("data").child("allUsers").child(username).child(User.UserKeys.inCart).setValue(itemsInCart + [productID])
+        })
+    }
+    
+    func addToFavoritesFirebase(data: [String:[String]]) {
+        
+        //create method that pushes message to the firebase database
+        
+        //ref = FIRDatabase.database().reference()
+        guard let username = User.shared?.username.components(separatedBy: "@")[0] else {return}
+        
+        //print("username: \(username)")
+        //print("inCart: \(data["inCart"]?[0])")
+        
+        ref.child("data").child("allUsers").child(username).childByAutoId().setValue(data)
+    }
+    
+    func addUserToFirebase() {
+        
     }
     
     func getReviews(_ product: Product, _ completion: @escaping([Review]?) -> Void) {
         //ref = FIRDatabase.database().reference()
         
-        _refHandle = ref.child("data").child("1").child("allReviews").observe(.childAdded) { (snapshot: FIRDataSnapshot) in
+        _refHandle = ref.child("data").child("allReviews").observe(.childAdded) { (snapshot: FIRDataSnapshot) in
             //A Review from Firebase
             let review = snapshot.value as! [String:Any]
             
@@ -116,13 +167,50 @@ class Firebase {
         }
     }
     
-    func getCartItemsFromFirebase() {
-        //code
-    }
-    
-    func getFavoritesFromFirebase() {
+    func getCartItemsFromFirebase(_ products: [String], _ completion: @escaping([Product]?) -> Void ) {
         
-        //code
+        var cartProducts: [Product] = []
+        
+        _refHandle = Firebase.shared.ref.child("data").child("allProducts").observe(.childAdded) { (snapshot: FIRDataSnapshot) in
+            
+            //A Product from Firebase
+            let product = snapshot.value as! [String:Any]
+            
+            let productID = product[Product.ProductKeys.productID] ?? "productID"
+            guard let productIDAsString = productID as? String else {return}
+            
+            for i in products {
+                if i == productIDAsString {
+                    
+                    let name = product[Product.ProductKeys.name] ?? "[name]"
+                    let price = product[Product.ProductKeys.price] ?? "[price]"
+                    let imageURL = product[Product.ProductKeys.imageURL] ?? "[imageURL]"
+                    let description = product[Product.ProductKeys.description] ?? "[description]"
+                    let measurements = product[Product.ProductKeys.measurements] ?? "[specifications]"
+                    let reviews = product[Product.ProductKeys.productReviews] ?? "[reviews]"
+                    let newStoryCategory = product[Product.ProductKeys.storyCategory] ?? "[storyCategory]"
+                    let newRoomCategory = product[Product.ProductKeys.roomCategory] ?? "[roomCategory]"
+                    let newProductCategory = product[Product.ProductKeys.productCategory] ?? "[productCategory]"
+                    
+                    guard let nameInString = name as? String else {return}
+                    guard let priceInDouble = price as? Double else {return}
+                    guard let imageURLInString = imageURL as? String else {return}
+                    guard let descriptionInString = description as? String else {return}
+                    guard let measurementsInStringArray = measurements as? [String] else {return}
+                    let reviewsInStringArray = reviews as? [String]
+                    guard let storyCategoryInString = newStoryCategory as? String else {return}
+                    guard let roomCategoryInString = newRoomCategory as? [String] else {return}
+                    guard let productCategoryInString = newProductCategory as? [String] else {return}
+                    
+                    //to cache the downloaded products
+                    let newProduct = Product(productIDAsString, nameInString, priceInDouble, imageURLInString, descriptionInString, measurementsInStringArray, reviewsInStringArray, storyCategoryInString, roomCategoryInString, productCategoryInString )
+                    
+                    cartProducts.append(newProduct)
+                }
+            }
+        }
+        completion(cartProducts)
+            
     }
     
     func configureStorage() {
@@ -131,7 +219,7 @@ class Firebase {
     
     deinit {
         ref.child("data").removeObserver(withHandle: _refHandle)
-        //ref.child("data").child("1").child("allReviews").removeObserver(withHandle: _refHandle)
+        //ref.child("data").child("allReviews").removeObserver(withHandle: _refHandle)
     }
     
   
@@ -149,7 +237,7 @@ class Firebase {
         
         //var products: [Product]
         
-        _refHandle = ref.child("data").child("0").child("allProducts").observe(.childAdded) { (snapshot: FIRDataSnapshot) in
+        _refHandle = ref.child("data").child("allProducts").observe(.childAdded) { (snapshot: FIRDataSnapshot) in
             
             //A Product from Firebase
             let product = snapshot.value as! [String:Any]
@@ -273,4 +361,10 @@ class Firebase {
     }
 
 
+}
+
+extension Firebase: FUIAuthDelegate {
+    func authUI(_ authUI: FUIAuth, didSignInWith user: FIRUser?, error: Error?) {
+        showProfileDetailsView()
+    }
 }

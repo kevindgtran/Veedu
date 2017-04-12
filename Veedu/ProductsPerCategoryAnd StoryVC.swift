@@ -40,7 +40,7 @@ class ProductsPerCategoryVC: UIViewController {
         
         //ref = FIRDatabase.database().reference()
         
-        _refHandle = Firebase.shared.ref.child("data").child("0").child("allProducts").observe(.childAdded) { (snapshot: FIRDataSnapshot) in
+        _refHandle = Firebase.shared.ref.child("data").child("allProducts").observe(.childAdded) { (snapshot: FIRDataSnapshot) in
             
             //A Product from Firebase
             let product = snapshot.value as! [String:Any]
@@ -163,7 +163,7 @@ class ProductsPerCategoryVC: UIViewController {
     }
     
     deinit {
-        Firebase.shared.ref.child("data").child("0").child("allProducts").removeObserver(withHandle: _refHandle)
+        Firebase.shared.ref.child("data").child("allProducts").removeObserver(withHandle: _refHandle)
     }
     
 }

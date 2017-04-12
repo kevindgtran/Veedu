@@ -38,27 +38,34 @@ class ProductDetailsVC: UIViewController {
     
     @IBAction func addToCartAction(_ sender: Any) {
         
-        Firebase.shared.configureAuth()
+        Firebase.shared.configureAuth({
+            
+            //print("In addToCartAction ")
+            
+            if let user = User.shared {
+                
+                //print("Inside IF in addToCartAction")
+                
+                guard let product = self.product else {return}
+                user.addToCart(product.productID)
+                
+                Firebase.shared.addToCartFirebase(product.productID)
+            }
+            
+        })
         
-        print("In addToCartAction ")
-        
-        if let user = User.shared {
-            
-            print("Inside IF in addToCartAction")
-            
-            guard let product = product else {return}
-            user.addToCart(product)
-            
-            Firebase.shared.addToCartFirebase(data: [User.UserKeys.inCart: user.inCart])
-        }
     }
     
     @IBAction func favoriteAction(_ sender: Any) {
         
-        if let user = User.shared {
-            guard let product = product else {return}
-            user.addToFavorite(product)
-        }
+        Firebase.shared.configureAuth({
+            if let user = User.shared {
+                guard let product = self.product else {return}
+                user.addToFavorite(product.productID)
+                
+                Firebase.shared.addToFavoritesFirebase(data: [User.UserKeys.favorite: user.favorite])
+            }
+        })
     }
     
     @IBAction func reviews(_ sender: Any) {

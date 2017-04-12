@@ -19,8 +19,8 @@ class User {
     var billing: String?
     var shipping: String?
     var orderHistory: [String] = []
-    var inCart: [Product] = []
-    var favorite: [Product] = []
+    var inCart: [String] = []
+    var favorite: [String] = []
     
     private init(username: String, password: String?) {
         self.username = username
@@ -31,20 +31,20 @@ class User {
         User.shared = User(username: username, password: password)
     }
     
-    func addToFavorite(_ product: Product) {
+    func addToFavorite(_ product: String) {
         favorite.append(product)
         for i in favorite {
-            print(i.productName)
+            print("added to local: \(i)")
         }
     }
     
-    func addToCart(_ product: Product) {
+    func addToCart(_ product: String) {
         
-        print("In User - addToCart")
+        //print("In User - addToCart")
         
         inCart.append(product)
         for i in inCart {
-            print("added to local: \(i.productName)")
+            //print("added to local: \(i)")
         }
     }
     
