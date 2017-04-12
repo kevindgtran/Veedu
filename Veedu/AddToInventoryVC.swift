@@ -18,12 +18,19 @@ class AddToInventoryVC: UIViewController {
     @IBOutlet weak var addedPrice: UITextField!
     @IBOutlet weak var addedImage: UIImageView!
     
-    var addedItem = [Product]()
+    var addedItems = [Product]()
+    var addedStory = String()
+    var addedRoom = String()
+    var addedProductCategories = [String]()
+
+    var switchState = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // empty/reload textfields
+        switchState = false
+        print("Switch State at ViewDidLoad: \(switchState)")
+        // empty/reload textfields & switches
         
     }
     
@@ -31,51 +38,135 @@ class AddToInventoryVC: UIViewController {
     
     // Story Switches. ONLY CAN SELECT ONE.
     @IBAction func farmHouseSelected(_ sender: UISwitch) {
+        if sender.isOn {
+            switchState = true
+            addedStory = "farmhouse"
+//            SourcesManager.shared.add("technology")
+
+            print("Farmhouse Selected")
+        }
     }
     
     @IBAction func industrialSelected(_ sender: UISwitch) {
+        if sender.isOn {
+            switchState = true
+            addedStory = "industrial"
+            print("Industrial Selected")
+        }
     }
     
     @IBAction func midCentModSelected(_ sender: UISwitch) {
+        if sender.isOn {
+            switchState = true
+            addedStory = "midCenturyModern"
+        print("MidCenturyModern Selected")
+        }
     }
     
     @IBAction func otherSelected(_ sender: UISwitch) {
+        if sender.isOn {
+            switchState = true
+            addedStory = "other"
+        print("OtherStyle Selected")
+        }
     }
     
     // Room Switches. ONLY CAN SELECT ONE.
     @IBAction func livingroomSelected(_ sender: UISwitch) {
+        if sender.isOn {
+            switchState = true
+            addedRoom = "livingRoom"
+        print("Livingroom Selected")
+        }
     }
 
     @IBAction func bedroomSelected(_ sender: UISwitch) {
+        if sender.isOn {
+            switchState = true
+            addedRoom = "bedRoom"
+        print("Bedroom Selected")
+        }
     }
     
     @IBAction func kitchenDiningSelected(_ sender: UISwitch) {
+        if sender.isOn {
+            switchState = true
+            addedRoom = "kitchenDiningRoom"
+        print("Kitchen&Dining Selected")
+        }
     }
     
     @IBAction func bathroomSelected(_ sender: UISwitch) {
+        if sender.isOn {
+            switchState = true
+            addedRoom = "bathRoom"
+            print("Bathroom Selected")
+        }
     }
     
     // Product Category Switches.  CAN SELECT MULTIPLE.
     
     @IBAction func furnitureSelected(_ sender: UISwitch) {
+        if sender.isOn {
+            switchState = true
+            addedProductCategories.append("furniture")
+        print("Furniture Selected")
+        print(addedProductCategories)
+        }
     }
     
     @IBAction func lightingSelected(_ sender: UISwitch) {
+        if sender.isOn {
+            switchState = true
+            addedProductCategories.append("lighting")
+            print("Lighting Selected")
+            print(addedProductCategories)
+        }
     }
     
     @IBAction func accessorySelected(_ sender: UISwitch) {
+        if sender.isOn {
+            switchState = true
+            addedProductCategories.append("accessory")
+            print("Accessory Selected")
+            print(addedProductCategories)
+        }
     }
     
     @IBAction func textileSelected(_ sender: UISwitch) {
+        if sender.isOn {
+            switchState = true
+            addedProductCategories.append("textile")
+            print("Textile Selected")
+            print(addedProductCategories)
+        }
     }
     
     @IBAction func cookwareSelected(_ sender: UISwitch) {
+        if sender.isOn {
+            switchState = true
+            addedProductCategories.append("cookware")
+            print("Cookware Selected")
+            print(addedProductCategories)
+        }
     }
     
     @IBAction func diningwareSelected(_ sender: UISwitch) {
+        if sender.isOn {
+            switchState = true
+            addedProductCategories.append("diningware")
+            print("Diningware Selected")
+            print(addedProductCategories)
+        }
     }
     
     @IBAction func smallApplianceSelected(_ sender: UISwitch) {
+        if sender.isOn {
+            switchState = true
+            addedProductCategories.append("smallAppliance")
+            print("Small Appliance Selected")
+            print(addedProductCategories)
+        }
     }
     
     
@@ -132,6 +223,7 @@ class AddToInventoryVC: UIViewController {
     
     // Cancel add data.
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
     
 }

@@ -13,6 +13,9 @@ target 'Veedu' do
     pod 'FirebaseUI'
 
     pod 'PayPal-iOS-SDK'
+    
+    # Pod for tags
+    pod 'Eureka'
 
   target 'VeeduTests' do
     inherit! :search_paths

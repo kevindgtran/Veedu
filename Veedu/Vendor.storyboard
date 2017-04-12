@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ouy-v1-I1s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Chk-DF-dCp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -110,9 +110,6 @@
                                 <state key="normal" title="X">
                                     <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="cancelButtonTapped:" destination="ouy-v1-I1s" eventType="touchUpInside" id="p9L-a3-0dd"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADD PRODUCT" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lr0-hj-2Js">
                                 <rect key="frame" x="159" y="35" width="200" height="25"/>
@@ -127,8 +124,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgW-ga-Pv9">
                                 <rect key="frame" x="0.0" y="71" width="375" height="1107"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ugi-0W-Mwm" userLabel="VIEW">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1063"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ugi-0W-Mwm" userLabel="VIEW">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgD-RC-BqM" userLabel="Description_View">
                                                 <rect key="frame" x="8" y="82" width="359" height="169"/>
@@ -274,11 +271,14 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Farmhouse" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RwZ-lr-mUS">
                                                         <rect key="frame" x="8" y="13" width="92" height="20"/>
+                                                        <accessibility key="accessibilityConfiguration">
+                                                            <accessibilityTraits key="traits" button="YES" staticText="YES"/>
+                                                        </accessibility>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="92" id="IDQ-J3-kZc"/>
                                                             <constraint firstAttribute="height" constant="20" id="tgQ-th-Tsu"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -293,7 +293,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="KCa-Ly-ODP"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -309,7 +309,7 @@
                                                             <constraint firstAttribute="width" constant="95" id="N85-2p-Oms"/>
                                                             <constraint firstAttribute="height" constant="41" id="PMp-S9-u4g"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -324,7 +324,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="SfY-cA-qXF"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -386,7 +386,7 @@
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6rL-ya-Zda" userLabel="FurnSwitch">
                                                         <rect key="frame" x="119" y="8" width="51" height="31"/>
                                                         <connections>
-                                                            <action selector="furnitureSelected:" destination="ouy-v1-I1s" eventType="valueChanged" id="4jx-Kb-Nsg"/>
+                                                            <action selector="furnitureSelected:" destination="ouy-v1-I1s" eventType="valueChanged" id="6a7-Kg-TdC"/>
                                                         </connections>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Lighting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZ3-jf-9M1">
@@ -401,9 +401,6 @@
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bjh-4B-v6h" userLabel="LtgSwitch">
                                                         <rect key="frame" x="119" y="47" width="51" height="31"/>
-                                                        <connections>
-                                                            <action selector="lightingSelected:" destination="ouy-v1-I1s" eventType="valueChanged" id="CmI-0w-rNl"/>
-                                                        </connections>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Accessory" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsN-0R-HGA">
                                                         <rect key="frame" x="8" y="91" width="80" height="20"/>
@@ -417,9 +414,6 @@
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aZp-hv-pdf" userLabel="AccessorySwitch">
                                                         <rect key="frame" x="119" y="86" width="51" height="31"/>
-                                                        <connections>
-                                                            <action selector="accessorySelected:" destination="ouy-v1-I1s" eventType="valueChanged" id="xdv-EW-IBO"/>
-                                                        </connections>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Textile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqU-TU-iqr">
                                                         <rect key="frame" x="8" y="124" width="48" height="20"/>
@@ -432,9 +426,6 @@
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ABj-gF-cT0" userLabel="TextileSwitch">
                                                         <rect key="frame" x="119" y="119" width="51" height="31"/>
-                                                        <connections>
-                                                            <action selector="textileSelected:" destination="ouy-v1-I1s" eventType="valueChanged" id="NDW-lV-pOs"/>
-                                                        </connections>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Cookware" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uuf-Qf-dUf">
                                                         <rect key="frame" x="191" y="13" width="103" height="20"/>
@@ -448,9 +439,6 @@
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6CE-xB-pR4" userLabel="CookwareSwitch">
                                                         <rect key="frame" x="302" y="8" width="51" height="31"/>
-                                                        <connections>
-                                                            <action selector="cookwareSelected:" destination="ouy-v1-I1s" eventType="valueChanged" id="mM8-C4-HkR"/>
-                                                        </connections>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Diningware" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bP6-WH-dpD">
                                                         <rect key="frame" x="191" y="52" width="103" height="20"/>
@@ -464,9 +452,6 @@
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3PK-IM-uXE" userLabel="DiningwareSwitch">
                                                         <rect key="frame" x="302" y="47" width="51" height="31"/>
-                                                        <connections>
-                                                            <action selector="diningwareSelected:" destination="ouy-v1-I1s" eventType="valueChanged" id="mit-aD-P7z"/>
-                                                        </connections>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Small Appliance" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9KF-Il-oBb">
                                                         <rect key="frame" x="191" y="80" width="95" height="41"/>
@@ -481,9 +466,6 @@
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ecv-F5-CcB" userLabel="SmlApplianceSwitch">
                                                         <rect key="frame" x="302" y="86" width="51" height="31"/>
-                                                        <connections>
-                                                            <action selector="smallApplianceSelected:" destination="ouy-v1-I1s" eventType="valueChanged" id="0YE-VM-xCI"/>
-                                                        </connections>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Product Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLn-Sn-NWI">
                                                         <rect key="frame" x="8" y="158" width="343" height="20"/>
@@ -526,7 +508,7 @@
                                                             <constraint firstAttribute="height" constant="20" id="7Mp-RH-no3"/>
                                                             <constraint firstAttribute="width" constant="92" id="w0E-Vs-hPc"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -541,7 +523,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="XpT-yR-e8W"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -557,7 +539,7 @@
                                                             <constraint firstAttribute="width" constant="95" id="5Qe-dB-Rbg"/>
                                                             <constraint firstAttribute="height" constant="41" id="OWh-cw-KMf"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -572,14 +554,14 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="FFA-yz-m0g"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gD1-Fw-nkv" userLabel="BathSwitch">
                                                         <rect key="frame" x="119" y="125" width="51" height="31"/>
                                                         <connections>
-                                                            <action selector="bathroomSelected:" destination="ouy-v1-I1s" eventType="valueChanged" id="mZZ-Wc-gPr"/>
+                                                            <action selector="bathroomSelected:" destination="ouy-v1-I1s" eventType="valueChanged" id="u8A-Ay-qx4"/>
                                                         </connections>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Room" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUc-ve-Tah">
@@ -630,16 +612,10 @@
                                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wii-GW-fHg">
                                                                 <rect key="frame" x="0.0" y="0.0" width="81" height="30"/>
                                                                 <state key="normal" title="Choose File"/>
-                                                                <connections>
-                                                                    <action selector="chooseImageTapped:" destination="ouy-v1-I1s" eventType="touchUpInside" id="o8l-Ls-n6M"/>
-                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTD-o9-RPD">
                                                                 <rect key="frame" x="0.0" y="38" width="81" height="30"/>
                                                                 <state key="normal" title="Upload"/>
-                                                                <connections>
-                                                                    <action selector="uploadImageTapped:" destination="ouy-v1-I1s" eventType="touchUpInside" id="8ca-Zx-PRY"/>
-                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -677,9 +653,6 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <state key="normal" title="SAVE"/>
-                                                <connections>
-                                                    <action selector="saveButtonTapped:" destination="ouy-v1-I1s" eventType="touchUpInside" id="s0G-Ov-U0q"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.76521068810000004" blue="0.2260738015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -697,6 +670,7 @@
                                             <constraint firstAttribute="trailing" secondItem="xKc-7u-rXd" secondAttribute="trailing" constant="8" id="Qlh-CL-SRB"/>
                                             <constraint firstItem="6rL-ya-Zda" firstAttribute="centerX" secondItem="8ds-VM-Biv" secondAttribute="centerX" id="XZZ-g7-M9b"/>
                                             <constraint firstItem="rgD-RC-BqM" firstAttribute="leading" secondItem="ugi-0W-Mwm" secondAttribute="leading" constant="8" id="a6D-u3-7fx"/>
+                                            <constraint firstItem="qe7-kx-mVv" firstAttribute="width" secondItem="Np7-6T-soN" secondAttribute="width" id="aKN-WX-Szy"/>
                                             <constraint firstItem="6tg-7x-YWR" firstAttribute="top" secondItem="kUh-5i-Q1W" secondAttribute="bottom" constant="8" id="aeE-vz-ILd"/>
                                             <constraint firstAttribute="trailing" secondItem="evO-Kc-Frh" secondAttribute="trailing" constant="8" id="cFo-XF-0GV"/>
                                             <constraint firstAttribute="height" constant="1000" id="d38-mZ-3hb"/>
@@ -749,6 +723,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S1W-mS-5nA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1375" y="-1146"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="F38-T9-4mk">
+            <objects>
+                <viewController id="XCJ-Br-3oy" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y2L-B5-oBp"/>
+                        <viewControllerLayoutGuide type="bottom" id="uVm-AF-iYq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="U0x-v0-bo4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9sL-Bc-hCH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2234" y="-1182"/>
         </scene>
         <!--InventoryVC-->
         <scene sceneID="yyl-7g-pgu">
