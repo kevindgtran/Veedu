@@ -7,11 +7,8 @@
 //
 
 import UIKit
-import Firebase
 
 class ProductDetailsVC: UIViewController {
-
-    var product: Product?
     
     //IBOutlets
     @IBOutlet weak var productImage: UIImageView!
@@ -23,6 +20,8 @@ class ProductDetailsVC: UIViewController {
     @IBOutlet weak var addToCartButton: UIButton!
     @IBOutlet weak var favoriteButton: UIButton!
     
+    var product: Product?
+
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -39,7 +38,9 @@ class ProductDetailsVC: UIViewController {
     
     @IBAction func addToCartAction(_ sender: Any) {
         
-        Authentication.shared.configureAuth(viewController: self)
+        Firebase.shared.configureAuth()
+        
+        print("In addToCartAction ")
         
         if let user = User.shared {
             
@@ -47,11 +48,9 @@ class ProductDetailsVC: UIViewController {
             
             guard let product = product else {return}
             user.addToCart(product)
-
+            
+            Firebase.shared.addToCartFirebase(data: [User.UserKeys.inCart: user.inCart])
         }
-//        else {
-//            alertForLogin()
-//        }
     }
     
     @IBAction func favoriteAction(_ sender: Any) {
@@ -60,10 +59,6 @@ class ProductDetailsVC: UIViewController {
             guard let product = product else {return}
             user.addToFavorite(product)
         }
-//        else {
-//            alertForLogin()
-//        }
-        
     }
     
     @IBAction func reviews(_ sender: Any) {
@@ -72,6 +67,7 @@ class ProductDetailsVC: UIViewController {
 
     }
     
+    //not used
     func alertForLogin() {
         
         let alert = UIAlertController(title: "Hello!", message: "Please login to continue!", preferredStyle: .alert)

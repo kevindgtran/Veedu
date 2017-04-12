@@ -7,21 +7,11 @@
 //
 
 import UIKit
-import Firebase
 
 class ReviewsViewController: UIViewController {
 
     @IBOutlet weak var reviewTableView: UITableView!
     @IBOutlet weak var productName: UILabel!
-    
-    //MARK: properties
-    var ref: FIRDatabaseReference!
-    var storageRef: FIRStorageReference!
-    var remoteConfig: FIRRemoteConfig!
-    var keyboardOnScreen = false
-    fileprivate var _refHandle: FIRDatabaseHandle!
-    fileprivate var _authHandle: FIRAuthStateDidChangeListenerHandle!
-    var user: FIRUser?
     
     var product: Product?
     var reviews = [Review]()
@@ -33,53 +23,21 @@ class ReviewsViewController: UIViewController {
         
         productName.text = product.productName
         
-        getReviews()
-        configureStorage()
+        Firebase.shared.getReviews(product){ (reviews) in
+            guard let tempReviews = reviews else {return}
+            self.reviews = tempReviews
+            self.reviewTableView.reloadData()
+            
+            //print("sources list count: \(self.sourcesArray.count)")
+
+            //self.reviewTableView.beginUpdates()
+            //self.reviewTableView.insertRows(at: [IndexPath(row: self.reviews.count - 1, section: 0)], with: UITableViewRowAnimation.automatic)
+            //self.reviewTableView.endUpdates()
+        }
+
+        Firebase.shared.configureStorage()
         
         reviewTableView.register(UINib(nibName: "ReviewsCell", bundle: nil), forCellReuseIdentifier: "cellTwo")
-    }
-
-    func getReviews() {
-        ref = FIRDatabase.database().reference()
-        
-        _refHandle = ref.child("data").child("1").child("allReviews").observe(.childAdded) { (snapshot: FIRDataSnapshot) in
-            //A Review from Firebase
-            let review = snapshot.value as! [String:Any]
-            
-            let newProductID = review[Review.ReviewKeys.productID] ?? "[productID]"
-            
-            guard let productIDInString = newProductID as? String else {return}
-            guard let productID = self.product?.productID else {return}
-            
-            if productIDInString ==  productID{
-                let title = review[Review.ReviewKeys.title] ?? "[title]"
-                let content = review[Review.ReviewKeys.content] ?? "[review]"
-                let rating = review[Review.ReviewKeys.rating] ?? "[rating]"
-                
-                //Creating Review Instance
-                guard let titleInString = title as? String else {return}
-                guard let contentInString = content as? String else {return}
-                guard let ratingInDouble = rating as? Double else {return}
-                
-                //to cache the reviews
-                let newReview = Review(productIDInString, titleInString, ratingInDouble, contentInString)
-                self.reviews.append(newReview)
-                
-                self.reviewTableView.beginUpdates()
-                self.reviewTableView.insertRows(at: [IndexPath(row: self.reviews.count - 1, section: 0)], with: UITableViewRowAnimation.automatic)
-                self.reviewTableView.endUpdates()
-            }            
-            
-        }
-        
-    }
-    
-    func configureStorage() {
-        storageRef = FIRStorage.storage().reference()
-    }
-    
-    deinit {
-        ref.child("data").child("1").child("allReviews").removeObserver(withHandle: _refHandle)
     }
 
 }

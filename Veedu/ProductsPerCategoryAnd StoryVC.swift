@@ -16,13 +16,8 @@ class ProductsPerCategoryVC: UIViewController {
     @IBOutlet weak var productCollectionView: UICollectionView!
     
     //MARK: properties
-    var ref: FIRDatabaseReference!
-    var storageRef: FIRStorageReference!
-    var remoteConfig: FIRRemoteConfig!
-    var keyboardOnScreen = false
+    //var ref: FIRDatabaseReference!
     fileprivate var _refHandle: FIRDatabaseHandle!
-    fileprivate var _authHandle: FIRAuthStateDidChangeListenerHandle!
-    var user: FIRUser?
     
     //segue from browse tab
     var roomCategory: String?
@@ -36,17 +31,16 @@ class ProductsPerCategoryVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // print("In View Did Load")
-        
-        configureDatabase()
-        configureStorage()
+        //Firebase.shared.getProducts(storyCategory, roomCategory, productCategory)
+        getProducts()
+        Firebase.shared.configureStorage()
     }
     
-    func  configureDatabase() {
+    func  getProducts() {
         
-        ref = FIRDatabase.database().reference()
+        //ref = FIRDatabase.database().reference()
         
-        _refHandle = ref.child("data").child("0").child("allProducts").observe(.childAdded) { (snapshot: FIRDataSnapshot) in
+        _refHandle = Firebase.shared.ref.child("data").child("0").child("allProducts").observe(.childAdded) { (snapshot: FIRDataSnapshot) in
             
             //A Product from Firebase
             let product = snapshot.value as! [String:Any]
@@ -64,16 +58,16 @@ class ProductsPerCategoryVC: UIViewController {
         
         guard let storyCategoryInString = getStoryCategory(product) else {return}
         guard let storyCategory = self.storyCategory else {return}
-       
+        
         if storyCategoryInString == storyCategory {
             getProductDetails(product)
         }
-
+        
     }
     
     func filterBasedOnRoomCategory(_ product: [String: Any]) {
         
-       // print("In filterBasedOnRoomCategory")
+        // print("In filterBasedOnRoomCategory")
         
         guard let roomCategoryInString = getRoomCategory(product) else {return}
         guard let roomCategory = self.roomCategory else {
@@ -85,7 +79,7 @@ class ProductsPerCategoryVC: UIViewController {
         
         for room in roomCategoryInString {
             
-           // print("Inside room for loop")
+            // print("Inside room for loop")
             
             if room == roomCategory {
                 
@@ -100,7 +94,7 @@ class ProductsPerCategoryVC: UIViewController {
                 //print("Success with product category")
                 
                 if productCategoryInString[0] == productCategory {
-                   // print("Inside if for product category")
+                    // print("Inside if for product category")
                     getProductDetails(product)
                 }
                 
@@ -161,19 +155,15 @@ class ProductsPerCategoryVC: UIViewController {
         //to cache the downloaded images
         let newProduct = Product(productIDAsString, nameInString, priceInDouble, imageURLInString, descriptionInString, measurementsInStringArray, reviewsInStringArray, storyCategory, roomCategory, productCategory )
         
-        self.products.append(newProduct)
+        products.append(newProduct)
         //print("added product to array")
         
         self.productCollectionView.insertItems(at: [IndexPath(row: self.products.count - 1, section: 0)])
         
     }
     
-    func configureStorage() {
-        storageRef = FIRStorage.storage().reference()
-    }
-    
     deinit {
-        ref.child("data").child("0").child("allProducts").removeObserver(withHandle: _refHandle)
+        Firebase.shared.ref.child("data").child("0").child("allProducts").removeObserver(withHandle: _refHandle)
     }
     
 }

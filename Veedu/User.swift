@@ -39,9 +39,12 @@ class User {
     }
     
     func addToCart(_ product: Product) {
+        
+        print("In User - addToCart")
+        
         inCart.append(product)
-        for i in favorite {
-            print(i.productName)
+        for i in inCart {
+            print("added to local: \(i.productName)")
         }
     }
     
@@ -49,8 +52,18 @@ class User {
         orderHistory.append(orderNumber)
     }
     
-//    func setBilling(_ billing: String) {
-//        self.billing = billing
-//    }
+    struct UserKeys {
+        static let firstName = "firstName"
+        static let lastName = "lastName"
+        static let username = "username"
+        static let password = "password"
+        static let billing = "billing"
+        static let shipping = "shipping"
+        static let orderHistory = "orderHistory"
+        static let inCart = "inCart"
+        static let favorite = "favorite"
+        
+    }
+
     
 }

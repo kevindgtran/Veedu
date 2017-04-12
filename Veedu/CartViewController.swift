@@ -13,6 +13,8 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var CartProductNameArray: [NSManagedObject] = []
     
+    var products = User.shared?.inCart
+    
     //MARK: properties
     @IBOutlet weak var cartItemCountLabel: UILabel!
     @IBOutlet weak var cartTableView: UITableView!
@@ -27,11 +29,19 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let _ = self.products {
+            self.cartTableView.reloadData()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+    
+//        if let _ = self.products {
+//            self.cartTableView.reloadData()
+//        }
+    
         //fetch the data from the NSManagedObject and populate when the page appears
 //        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
 //            return
@@ -69,17 +79,40 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return CartProductNameArray.count
+        
+        if let products = self.products {
+            return products.count
+        }else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = cartTableView.dequeueReusableCell(withIdentifier: "cartCell", for: indexPath) as! CartTableViewCell
         
-        //update the table with the newly created NSManaged item
-        let someStuff: NSManagedObject = CartProductNameArray[indexPath.row]
-        cell.cartTitleLabel?.text = someStuff.value(forKeyPath: "name") as? String
-        
-        return cell
+        if indexPath.row != 0 {
+            let cell = cartTableView.dequeueReusableCell(withIdentifier: "cartCell", for: indexPath) as! CartTableViewCell
+            
+            //update the table with the newly created NSManaged item
+            guard let product = self.products?[indexPath.row] else {return UITableViewCell()}
+            
+            cell.cartTitleLabel?.text = product.productName
+            cell.cartImage.image = product.productImage
+            cell.cartPriceLabel.text = String(product.productPrice)
+            
+            return cell
+        }
+        else {
+            cartTableView.isHidden = true
+            emptyBagImageView.isHidden = false
+            subtotalLabel.isHidden = true
+            greyBackGround.isHidden = true
+            dollarSignLabel.isHidden = true
+            subtotalTextLabel.isHidden = true
+            checkoutButtonLabel.isHidden = true
+
+            return UITableViewCell()
+        }
+       
     }
     
     //swipe to delete and custom color
