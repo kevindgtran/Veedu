@@ -64,6 +64,9 @@
 		E0FAC8871E9D71B90046F0AE /* AddToInventoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FAC8861E9D71B90046F0AE /* AddToInventoryVC.swift */; };
 		E0FAC8891E9D85590046F0AE /* InventoryTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FAC8881E9D85590046F0AE /* InventoryTVCell.swift */; };
 		E0FAC88B1E9D86400046F0AE /* UserTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FAC88A1E9D86400046F0AE /* UserTVCell.swift */; };
+		E0FAC8921E9EB86F0046F0AE /* InventoryStoryTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FAC8911E9EB86F0046F0AE /* InventoryStoryTVCell.swift */; };
+		E0FAC8941E9EB8810046F0AE /* InventoryRoomTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FAC8931E9EB8810046F0AE /* InventoryRoomTVCell.swift */; };
+		E0FAC8961E9EB8960046F0AE /* InventoryProdCategoryTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FAC8951E9EB8960046F0AE /* InventoryProdCategoryTVCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +157,9 @@
 		E0FAC8861E9D71B90046F0AE /* AddToInventoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToInventoryVC.swift; sourceTree = "<group>"; };
 		E0FAC8881E9D85590046F0AE /* InventoryTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryTVCell.swift; sourceTree = "<group>"; };
 		E0FAC88A1E9D86400046F0AE /* UserTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTVCell.swift; sourceTree = "<group>"; };
+		E0FAC8911E9EB86F0046F0AE /* InventoryStoryTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryStoryTVCell.swift; sourceTree = "<group>"; };
+		E0FAC8931E9EB8810046F0AE /* InventoryRoomTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryRoomTVCell.swift; sourceTree = "<group>"; };
+		E0FAC8951E9EB8960046F0AE /* InventoryProdCategoryTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryProdCategoryTVCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -351,6 +357,9 @@
 				E0FAC8841E9D71890046F0AE /* InventoryVC.swift */,
 				E0FAC8881E9D85590046F0AE /* InventoryTVCell.swift */,
 				E0FAC8861E9D71B90046F0AE /* AddToInventoryVC.swift */,
+				E0FAC8911E9EB86F0046F0AE /* InventoryStoryTVCell.swift */,
+				E0FAC8931E9EB8810046F0AE /* InventoryRoomTVCell.swift */,
+				E0FAC8951E9EB8960046F0AE /* InventoryProdCategoryTVCell.swift */,
 				E0FAC88C1E9D8F6B0046F0AE /* NotUsing_Vendor */,
 			);
 			name = VendorSide;
@@ -727,6 +736,7 @@
 				C461DE0B1E9724DD008AE663 /* ReviewsCell.swift in Sources */,
 				E06B6B521E9853A300E12419 /* RoomTabCVCell.swift in Sources */,
 				C461DE661E984051008AE663 /* Review.swift in Sources */,
+				E0FAC8941E9EB8810046F0AE /* InventoryRoomTVCell.swift in Sources */,
 				65B734F01E9602AC00506B1F /* CartViewController.swift in Sources */,
 				65ED5F301E9AB344003DA680 /* CartTableViewCell.swift in Sources */,
 				E0FAC8891E9D85590046F0AE /* InventoryTVCell.swift in Sources */,
@@ -740,8 +750,10 @@
 				E06B6AE41E97C92500E12419 /* BrowseVC.swift in Sources */,
 				65B734EE1E96028B00506B1F /* FavoritesUIViewController.swift in Sources */,
 				E0FAC87F1E9D71350046F0AE /* VendorLoginVC.swift in Sources */,
+				E0FAC8961E9EB8960046F0AE /* InventoryProdCategoryTVCell.swift in Sources */,
 				655FB7B11E9C2BBC0051AA8D /* PaymentViewController.swift in Sources */,
 				E0E1C5B61E9BE77E001597E0 /* ActiveTabCVC.swift in Sources */,
+				E0FAC8921E9EB86F0046F0AE /* InventoryStoryTVCell.swift in Sources */,
 				E06B6B571E99FCB600E12419 /* ProductCategoryCVCell.swift in Sources */,
 				E06B6AE21E97C90300E12419 /* HomeVC_Joy.swift in Sources */,
 				65B734F21E9602BA00506B1F /* ProfileViewController.swift in Sources */,
