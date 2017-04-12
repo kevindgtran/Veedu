@@ -11,7 +11,7 @@ import UIKit
 class InventoryStoryTVCell: UITableViewCell {
 
     @IBOutlet weak var storyLabel: UILabel!
-    
+//    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

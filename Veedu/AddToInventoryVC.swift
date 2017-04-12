@@ -24,20 +24,17 @@ class AddToInventoryVC: UIViewController {
     @IBOutlet weak var addedImage: UIImageView!
     
     var addedItems = [Product]()
-    var addedStory = String()
-    var addedRoom = String()
-    var addedProductCategories = [String]()
+    var addedStory: Set<String> = []
+    var addedRoom: Set<String> = []
+    var addedProductCategories: Set<String> = []
     
     var selectedIndexPath: IndexPath?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         // empty/reload textfields & switches
-        
     }
-    
     
     // Save Button
     @IBAction func saveButtonTapped(_ sender: UIButton) {
@@ -137,45 +134,46 @@ extension AddToInventoryVC: UITableViewDataSource {
             }
             cell.prodCategoryLabel.text = StandardProductCategories.allStandardCategories[indexPath.row].name
             return cell
-
         }
-
     }
-    
 }
 
 extension AddToInventoryVC: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let cell = tableView.cellForRow(at: indexPath) else { return }
         
+        selectedIndexPath = indexPath
+
         // checking and un checking
         if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.checkmark {
-            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.none
-//            SourcesManager.shared.remove("music")
+            cell.accessoryType = UITableViewCellAccessoryType.none
             // removing data
             if tableView == storyTableView {
-                addedStory = ""
-                print(addedStory)
+                addedStory.remove(Story.stories[indexPath.row].storyName)
+                print("Selected Story: \(addedStory)")
             } else if tableView == roomTableView {
-                addedRoom = ""
-                print(addedRoom)
+                addedRoom.remove(RoomCategory.rooms[indexPath.row].roomName)
+                print("Selected Story: \(addedRoom)")
             } else {
-//                addedProductCategories.remove(at: (selectedIndexPath.row))
-                    print(addedProductCategories)
+                addedProductCategories.remove(StandardProductCategories.allStandardCategories[indexPath.row].name)
+                print("Selected Story: \(addedProductCategories)")
             }
         } else {
-            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark
+            
+            cell.accessoryType = UITableViewCellAccessoryType.checkmark
             
             // adding new data
             if tableView == storyTableView {
-                addedStory = Story.stories[indexPath.row].storyName
-                print(addedStory)
+                addedStory.insert(Story.stories[indexPath.row].storyName)
+                print("Selected Story: \(addedStory)")
             } else if tableView == roomTableView {
-                addedRoom = RoomCategory.rooms[indexPath.row].roomName
-                print(addedRoom)
+                addedRoom.insert(RoomCategory.rooms[indexPath.row].roomName)
+                addedRoom.remove(RoomCategory.rooms[indexPath.row].roomName)
             } else {
-                addedProductCategories.append(StandardProductCategories.allStandardCategories[indexPath.row].name)
-                print(addedProductCategories)
+                addedProductCategories.insert(StandardProductCategories.allStandardCategories[indexPath.row].name)
+                print("Selected Story: \(addedProductCategories)")
             }
         }
     
