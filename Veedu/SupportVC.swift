@@ -1,15 +1,18 @@
 //
-//  profileLoggedinViewController.swift
+//  SupportVC.swift
 //  Veedu
 //
-//  Created by Kevin Tran on 4/11/17.
+//  Created by Kevin Tran on 4/12/17.
 //  Copyright © 2017 com.example. All rights reserved.
 //
 
 import UIKit
 
-class profileLoggedinViewController: UIViewController {
+class SupportVC: UIViewController {
 
+    @IBOutlet weak var backButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,4 +35,6 @@ class profileLoggedinViewController: UIViewController {
     }
     */
 
+    @IBAction func backButton(_ sender: Any) {
+    }
 }
