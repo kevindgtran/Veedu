@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "9926CAB6B1543C0FA0270E4E0EDBED95B6D2CEB9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "9926CAB6B1543C0FA0270E4E0EDBED95B6D2CEB9" : 9223372036854775807,
+    "83BADBC5501CE21C43EFAD0B4239602133296C18" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B284BBA9-6CE7-4C92-85DC-1B55B3BC157A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "9926CAB6B1543C0FA0270E4E0EDBED95B6D2CEB9" : "Veedu\/",
+    "83BADBC5501CE21C43EFAD0B4239602133296C18" : "Veedu\/Eureka\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Veedu",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Veedu.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/xmartlabs\/Eureka.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "83BADBC5501CE21C43EFAD0B4239602133296C18"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/theycallmekevo\/Veedu.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9926CAB6B1543C0FA0270E4E0EDBED95B6D2CEB9"
+    }
+  ]
+}

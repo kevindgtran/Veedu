@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Eureka/Eureka.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Veedu.xcodeproj">
    </FileRef>
    <FileRef

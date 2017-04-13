@@ -47,6 +47,8 @@
 		C461DE661E984051008AE663 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461DE651E984051008AE663 /* Review.swift */; };
 		D5EA9E4067EC803D0C75C18E /* Pods_Veedu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADC4B53D548E43EEBBE13E1 /* Pods_Veedu.framework */; };
 		E00A9AA61E9D6E9500C75D60 /* Vendor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E00A9AA51E9D6E9500C75D60 /* Vendor.storyboard */; };
+		E02092D11E9F259D00435653 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E02092D01E9F259D00435653 /* Eureka.framework */; };
+		E02092D21E9F259D00435653 /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E02092D01E9F259D00435653 /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E05367741E9D20AC009785C5 /* BrowseMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05367731E9D20AC009785C5 /* BrowseMenuBar.swift */; };
 		E06B6AE21E97C90300E12419 /* HomeVC_Joy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6AE11E97C90300E12419 /* HomeVC_Joy.swift */; };
 		E06B6AE41E97C92500E12419 /* BrowseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6AE31E97C92500E12419 /* BrowseVC.swift */; };
@@ -85,6 +87,20 @@
 			remoteInfo = Veedu;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E02092D31E9F259E00435653 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E02092D21E9F259D00435653 /* Eureka.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0D7B1F57FAA843F3BFA327D7 /* Pods_VeeduUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VeeduUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +156,7 @@
 		C461DE651E984051008AE663 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		C68EF2E5115204607A907A9E /* Pods_VeeduTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VeeduTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E00A9AA51E9D6E9500C75D60 /* Vendor.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Vendor.storyboard; sourceTree = "<group>"; };
+		E02092D01E9F259D00435653 /* Eureka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Eureka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E05367731E9D20AC009785C5 /* BrowseMenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseMenuBar.swift; sourceTree = "<group>"; };
 		E06B6AE11E97C90300E12419 /* HomeVC_Joy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC_Joy.swift; sourceTree = "<group>"; };
 		E06B6AE31E97C92500E12419 /* BrowseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseVC.swift; sourceTree = "<group>"; };
@@ -168,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				655FB7BB1E9C2E530051AA8D /* Accelerate.framework in Frameworks */,
+				E02092D11E9F259D00435653 /* Eureka.framework in Frameworks */,
 				655FB7BC1E9C2E530051AA8D /* AudioToolbox.framework in Frameworks */,
 				655FB7BD1E9C2E530051AA8D /* AVFoundation.framework in Frameworks */,
 				655FB7BE1E9C2E530051AA8D /* CoreLocation.framework in Frameworks */,
@@ -202,6 +220,7 @@
 		65A5A6961E9473200056D42F = {
 			isa = PBXGroup;
 			children = (
+				E02092D01E9F259D00435653 /* Eureka.framework */,
 				65A5A6A11E9473200056D42F /* Veedu */,
 				65A5A6B91E9473200056D42F /* VeeduTests */,
 				65A5A6C41E9473200056D42F /* VeeduUITests */,
@@ -451,6 +470,7 @@
 				65A5A69D1E9473200056D42F /* Resources */,
 				A6540CF7E876BE4E029E6797 /* [CP] Embed Pods Frameworks */,
 				CA6F060BFC7825AC372177C0 /* [CP] Copy Pods Resources */,
+				E02092D31E9F259E00435653 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

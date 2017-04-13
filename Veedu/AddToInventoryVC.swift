@@ -26,13 +26,13 @@ class AddToInventoryVC: UIViewController {
     var addedItems = [Product]()
     var addedStory: String?
     var addedRoom: Set<String> = []
-    var addedProductCategories: Set<String> = []
+    var addedProductCategories: String?
     
-    var selected = false
-
+    //    var tagSelected: Bool
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // empty/reload textfields & switches
     }
     
@@ -107,6 +107,8 @@ extension AddToInventoryVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        tableView.allowsMultipleSelectionDuringEditing = false
+        
         
         if tableView == storyTableView {
             
@@ -125,7 +127,7 @@ extension AddToInventoryVC: UITableViewDataSource {
             }
             cell.roomLabel.text = RoomCategory.rooms[indexPath.row].roomName
             return cell
-
+            
         } else {
             
             guard let cell = prodCategoryTableView.dequeueReusableCell(withIdentifier: "ProdCategoryCell", for: indexPath) as? InventoryProdCategoryTVCell else {
@@ -139,65 +141,74 @@ extension AddToInventoryVC: UITableViewDataSource {
 }
 
 extension AddToInventoryVC: UITableViewDelegate {
-
+    
+    // TO DO: Condense code below...
+    // to add, must check one before saving...
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         guard let cell = tableView.cellForRow(at: indexPath) else { return }
-
-        // checking and un-checking
-//        if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.checkmark {
-//            cell.accessoryType = UITableViewCellAccessoryType.none
-//            
-//            // removing data
-//            if tableView == storyTableView {
-//                self.addedStory = nil
-//                print("Selected Story: \(addedRoom)")
-//
-//            } else if tableView == roomTableView {
-//                addedRoom.remove(RoomCategory.rooms[indexPath.row].roomName)
-//                print("Selected Room: \(addedRoom)")
-//            } else {
-//                addedProductCategories.remove(StandardProductCategories.allStandardCategories[indexPath.row].name)
-//                print("Selected Product Categories: \(addedProductCategories)")
-//            }
-//        } else {
-//            // add checkmark to unchecked.
-//            cell.accessoryType = UITableViewCellAccessoryType.checkmark
-//            
-//            // adding new data
-//            if tableView == storyTableView {
-//                addedStory = Story.stories[indexPath.row].storyName
-//                if let addedStory = addedStory { // if there is a story selected already, replace the variable with the new selected storyName.
-//                    // remove checkmark from last checked (only one should be checked at one time)
-//                    cell.accessoryType = UITableViewCellAccessoryType.none
-//                    self.addedStory = Story.stories[indexPath.row].storyName
-////                    cell.accessoryType = UITableViewCellAccessoryType.none
-//                    print("Selected Story: \(addedStory)")
-//
-//                }
-
-        if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.none {
-            cell.accessoryType = UITableViewCellAccessoryType.checkmark
-            addedStory = Story.stories[indexPath.row].storyName
-            if let addedStory = addedStory {
-                cell.accessoryType = UITableViewCellAccessoryType.checkmark
-
-            }
-        }
+        
+        // When tapped, if row is checked, uncheck it
+        if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.checkmark {
+            cell.accessoryType = UITableViewCellAccessoryType.none
+            // removing data
+            if tableView == storyTableView {
+                self.addedStory = nil
+                print("Selected Story: \(addedRoom)")
                 
             } else if tableView == roomTableView {
-
-                addedRoom.insert(RoomCategory.rooms[indexPath.row].roomName)
+                addedRoom.remove(RoomCategory.rooms[indexPath.row].roomName)
                 print("Selected Room: \(addedRoom)")
             } else {
-                addedProductCategories.insert(StandardProductCategories.allStandardCategories[indexPath.row].name)
+                self.addedProductCategories = nil
                 print("Selected Product Categories: \(addedProductCategories)")
             }
+        } else {
+            
+            if tableView == storyTableView {
+                
+                // removing checkmarks before adding current selection
+                let section = indexPath.section
+                let numberOfRows = tableView.numberOfRows(inSection: section)
+                for row in 0..<numberOfRows {
+                    if let cell = tableView.cellForRow(at:IndexPath(row: row, section: section)) {
+                        cell.accessoryType = row == indexPath.row ? .checkmark : .none
+                    }
+                }
+                
+                cell.accessoryType = UITableViewCellAccessoryType.checkmark
+                addedStory = Story.stories[indexPath.row].storyName
+                print("Selected Story1: \(addedStory)")
+                
+                if let addedStory = addedStory { // if there is a story selected already, replace the variable with the new selected storyName.
+                    self.addedStory = Story.stories[indexPath.row].storyName
+                    print("Selected Story1: \(addedStory)")
+                }
+            } else if tableView == roomTableView {
+                
+                cell.accessoryType = UITableViewCellAccessoryType.checkmark
+                
+                addedRoom.insert(RoomCategory.rooms[indexPath.row].roomName)
+                print("Selected Room: \(addedRoom)")
+                
+            } else {
+                let section = indexPath.section
+                let numberOfRows = tableView.numberOfRows(inSection: section)
+                for row in 0..<numberOfRows {
+                    if let cell = tableView.cellForRow(at:IndexPath(row: row, section: section)) {
+                        cell.accessoryType = row == indexPath.row ? .checkmark : .none
+                    }
+                }
+                cell.accessoryType = UITableViewCellAccessoryType.checkmark
+                addedProductCategories = StandardProductCategories.allStandardCategories[indexPath.row].name
+                if let addedProductCategories = addedProductCategories {
+                    self.addedProductCategories = StandardProductCategories.allStandardCategories[indexPath.row].name
+                    print("Selected Product Categories: \(addedProductCategories)")
+                }
+            }
         }
-    
     }
 }
-
 
 
 
