@@ -173,6 +173,7 @@
 		E06B6B511E9853A300E12419 /* RoomTabCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomTabCVCell.swift; sourceTree = "<group>"; };
 		E06B6B561E99FCB600E12419 /* ProductCategoryCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCategoryCVCell.swift; sourceTree = "<group>"; };
 		E06B6B581E9A063C00E12419 /* RoomCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomCategory.swift; sourceTree = "<group>"; };
+		E0C588841EA02C1100505177 /* Veedu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Veedu.entitlements; sourceTree = "<group>"; };
 		E0DDD96A1E9A34C3000CFB9D /* ProductCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
 		E0E1C5B51E9BE77E001597E0 /* ActiveTabCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveTabCVC.swift; sourceTree = "<group>"; };
 		E0FAC87E1E9D71350046F0AE /* VendorLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorLoginVC.swift; sourceTree = "<group>"; };
@@ -249,6 +250,7 @@
 		65A5A6A11E9473200056D42F /* Veedu */ = {
 			isa = PBXGroup;
 			children = (
+				E0C588841EA02C1100505177 /* Veedu.entitlements */,
 				6595D9CB1E95B78D007E29FF /* GoogleService-Info.plist */,
 				65A5A6A21E9473200056D42F /* AppDelegate.swift */,
 				65A5A6A41E9473200056D42F /* ViewController.swift */,
@@ -547,9 +549,14 @@
 				TargetAttributes = {
 					65A5A69E1E9473200056D42F = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = WC2JB3CT65;
+						DevelopmentTeam = L8R43DTS44;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					65A5A6B51E9473200056D42F = {
 						CreatedOnToolsVersion = 8.3;
@@ -957,15 +964,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = WC2JB3CT65;
+				CODE_SIGN_ENTITLEMENTS = Veedu/Veedu.entitlements;
+				DEVELOPMENT_TEAM = L8R43DTS44;
 				INFOPLIST_FILE = Veedu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.Veedu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.veedu.Veedu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Veedu-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -975,14 +984,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = WC2JB3CT65;
+				CODE_SIGN_ENTITLEMENTS = Veedu/Veedu.entitlements;
+				DEVELOPMENT_TEAM = L8R43DTS44;
 				INFOPLIST_FILE = Veedu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.Veedu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.veedu.Veedu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Veedu-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
