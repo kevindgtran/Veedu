@@ -56,12 +56,6 @@ extension BrowseVC: UICollectionViewDataSource {
             return productCategories.count
         }
         
-//        if collectionView == self.productCategoryCollectionView {
-//            //print("**Number of product categories: \(String(describing: count))") // add name of room in print statement
-//            return productCategories.count
-//        }
-        
-        //return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -92,9 +86,7 @@ extension BrowseVC: UICollectionViewDataSource {
             
             let prodCategoryImage = self.productCategories[indexPath.row].productCategoryImage
             cell.prodCategoryImage.image = UIImage(named: prodCategoryImage)
-//           else {
-//                print("***Error retrieving image from assets.***")
-//            }
+
             
             cell.prodCategoryLabel.text = productCategories[indexPath.row].productCategoryName
             print(cell.prodCategoryLabel.text!)
@@ -134,7 +126,7 @@ extension BrowseVC: UICollectionViewDelegate {
             previousTab = cell
         }
         
-        // MARK: Segue from Browse to ProductsPerCategory
+        // MARK: Connect Joy & Prathiba Storyboards. From Browse to ProductsPerCategory.
         if collectionView == self.productCategoryCollectionView {
             selectedIndexPath = indexPath
             
@@ -163,8 +155,6 @@ extension BrowseVC: UICollectionViewDelegate {
             }
         }
     }
-
-    
 }
 
 
@@ -193,35 +183,3 @@ extension BrowseVC: UICollectionViewDelegateFlowLayout {
     }
 }
 
-
-
-
-
-
-// MARK: Delegate
-//
-//extension BrowseVC: UICollectionViewDelegate {
-//
-//    // Delegate from Selected Product Category to Product List
-//    // To link to Prathiba's ProductsPerCategory Scene
-//    // to create data source for ProductCategoryCollectionView
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        print("***Product Category Selected: \(roomCategories[indexPath.row].productCategory)***")
-//        selectedIndexPath = indexPath
-//
-//        // Segue name may change.
-//        performSegue(withIdentifier: "ToProductPerCategoryList", sender: self)
-//    }
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        print("***Preparing to Segue to \(roomCategories[indexPath.row].productCategory)***")
-//
-//        if let destination = segue.destination as? ProductsPerCategoryVC {
-//            if let selectedIndexPath = selectedIndexPath {
-//                destination. =
-//            }
-//        }
-//    }
-//
-//
-//}

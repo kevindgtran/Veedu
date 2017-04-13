@@ -21,10 +21,11 @@ struct ProductCategory {
         ProductCategory(productCategoryName: "Furniture", productCategoryImage: "LivingFurniture", firebaseCategoryName: "furniture"),
         ProductCategory(productCategoryName: "Lighting", productCategoryImage: "LivingLighting", firebaseCategoryName: "lighting"),
         ProductCategory(productCategoryName: "Textiles", productCategoryImage: "LivingThrows", firebaseCategoryName: "textile")
-//        ProductCategory(productCategoryName: "PIllows", productCategoryImage: "LivingPillows", firebaseCategoryName: ""),
-//        ProductCategory(productCategoryName: "Rugs", productCategoryImage: "LivingRugs"),
-
-        ]
+        //        ProductCategory(productCategoryName: "PIllows", productCategoryImage: "LivingPillows", firebaseCategoryName: ""),
+        //        ProductCategory(productCategoryName: "Rugs", productCategoryImage: "LivingRugs"),
+        
+    ]
+    
     
     // Index1 - BedRoom
     static let bedroomProdCategories: [ProductCategory] = [
@@ -43,16 +44,16 @@ struct ProductCategory {
         ProductCategory(productCategoryName: "Diningware", productCategoryImage: "Diningware", firebaseCategoryName: "diningware"),
         ProductCategory(productCategoryName: "Cookware", productCategoryImage: "Cookware", firebaseCategoryName: "cookware"),
         ProductCategory(productCategoryName: "Small Appliances", productCategoryImage: "SmallAppliances", firebaseCategoryName: "smallAppliance")
-       // ProductCategory(productCategoryName: "Barware", productCategoryImage: "DiningBarware")
-
+        // ProductCategory(productCategoryName: "Barware", productCategoryImage: "DiningBarware")
         
-        ]
+        
+    ]
     
-
+    
     //Index3 - Bathroom
     static let bathroomProdCategories: [ProductCategory] = [
         // Bathroom
-     // ProductCategory(productCategoryName: "Furniture", productCategoryImage: "BathFurniture"),
+        // ProductCategory(productCategoryName: "Furniture", productCategoryImage: "BathFurniture"),
         ProductCategory(productCategoryName: "Textiles", productCategoryImage: "BathTextiles",firebaseCategoryName : "textile"),
         ProductCategory(productCategoryName: "Accessories", productCategoryImage: "BathAccessories", firebaseCategoryName: "accessory")
         
@@ -60,12 +61,19 @@ struct ProductCategory {
     
 }
 
-/*
- ["LivingFurniture":"Furniture", "LivingAccessories":"Accessories", "LivingLighting":"Lighting", "LivingThrows":"Textiles", "LivingPillows":"Pillows", "LivingRugs":"Rugs"],
- ["BedAccessories":"Accessories","BedFurniture":"Furniture", "BedLighting":"Lighting", "BedTextiles":"Bedding"],
- ["Cookware":"Cookware", "DiningFurniture":"Furniture", "Diningware":"Diningware", "DiningBarware":"Barware", "SmallAppliances":"SmallAppliances"],
- ["BathAccessories":"Accessories", "BathTextiles":"Textiles"]
- 
- */
- 
- 
+struct StandardProductCategories {
+    
+    var name: String
+    
+    static let allStandardCategories: [StandardProductCategories] = [
+        StandardProductCategories(name: "Furniture"),
+        StandardProductCategories(name: "Lighting"),
+        StandardProductCategories(name: "Textile"),
+        StandardProductCategories(name: "Accessory"),
+        StandardProductCategories(name: "Cookware"),
+        StandardProductCategories(name: "Diningware"),
+        StandardProductCategories(name: "Small Appliance")
+    ]
+}
+
+
