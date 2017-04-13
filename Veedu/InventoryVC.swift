@@ -195,6 +195,14 @@ extension InventoryVC: UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+//            products.remove(at: indexPath.row)
+            productsTest.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+    }
 }
 
 

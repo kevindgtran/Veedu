@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import AVFoundation
 
-class AddToInventoryVC: UIViewController {
+class AddToInventoryVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK: IBOutlets
     // TableView Controllers
@@ -28,71 +29,114 @@ class AddToInventoryVC: UIViewController {
     var addedRoom: Set<String> = []
     var addedProductCategories: String?
     
-    //    var tagSelected: Bool
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // empty/reload textfields & switches
+        //Encoding
+        let image = UIImage(named: "NoImage.png")
+        let imageData: NSData = UIImagePNGRepresentation(image!)! as NSData
+        //Saved Image
+        UserDefaults.standard.set(imageData, forKey: "savedImage")
+        //Decode
+        let data = UserDefaults.standard.object(forKey: "savedImage") as! NSData
+        addedImage.image = UIImage(data: data as Data)
+        //Request Authorization
+        AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo) { (authorized) in
+            authorized ? print("AUTHORIZED!") : print("NO DICE!")
+            
+        }
     }
+    
+
     
     // Save Button
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         //TODO: when tapped, all data added in the textfields and the imageView will be added to the firebase
         
-        let newProdName = addedProductName.text
-        let newProdDescription = addedDescription.text
-        let newProdSpecOne = addedSpecOne.text
-        let newProdSpecTwo = addedSpecTwo.text
-        var newProdSpecs = [String]()
-        newProdSpecs.append(newProdSpecOne!)
-        if addedSpecTwo != nil {
-            newProdSpecs.append(newProdSpecTwo!)
-        }
-        
-        let newProdPrice = addedPrice.text // Turn into a double?
-        let newProdImage = addedImage.image // turn into a string?
-        
-        //        //Creating Product Instance
-        //        guard let nameInString = newProdName as? String else {return}
-        //        guard let priceInDouble = newProdPrice as? Double else {return}
-        //        guard let imageURLInString = newProdImage as? String else {return}
-        //        guard let descriptionInString = newProdDescription as? String else {return}
-        //        guard let measurementsInStringArray = newProdSpecs as? [String] else {return}
-        //
-        //        guard let roomCategory = getRoomCategory(product) else {return}
-        //        guard let productCategory = getProductCategory(product) else {return}
-        //        guard let storyCategory = getStoryCategory(product) else {return}
-        //
-        //        //to cache the downloaded images
-        ////        let newProduct = Product(productIDAsString, nameInString, priceInDouble, imageURLInString, descriptionInString, measurementsInStringArray, reviewsInStringArray, storyCategory, roomCategory, productCategory )
-        //
-        //        self.products.append(newProduct)
-        //        print("added product to array")
-        
-        
+//        let newProdName = addedProductName.text
+//        let newProdDescription = addedDescription.text
+//        let newProdSpecOne = addedSpecOne.text
+//        let newProdSpecTwo = addedSpecTwo.text
+//        var newProdSpecs = [String]()
+//        newProdSpecs.append(newProdSpecOne!)
+//        if addedSpecTwo != nil {
+//            newProdSpecs.append(newProdSpecTwo!)
+//        }
+//        
+//        let newProdPrice = addedPrice.text // Turn into a double?
+//        let newProdImage = addedImage.image // turn into a string?
         
         //        saveButton.isEnabled = !text.isEmpty
-        
-        
     }
     
     // Camera & Image Buttons
     @IBAction func chooseImageTapped(_ sender: UIButton) {
+        // Camera Access "Take Photo"
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+            let cameraImage = UIImagePickerController()
+            cameraImage.delegate = self
+            cameraImage.sourceType = UIImagePickerControllerSourceType.camera
+            cameraImage.allowsEditing = false
+            self.present(cameraImage, animated: true, completion: nil)
+
+//            //Encoding
+//            let image = UIImage(named: cameraImage)
+//            let imageData: NSData = UIImagePNGRepresentation(image!)! as NSData
+//            //Saved Image
+//            UserDefaults.standard.set(imageData, forKey: "savedImage")
+//            //Decode
+//            let data = UserDefaults.standard.object(forKey: "savedImage") as! NSData
+//            addedImage.image = UIImage(data: data as Data)
+//            
+
+            
+            
+        }
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        dismiss(animated: true, completion: nil)
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            addedImage.image = image
+            
+            print(image)
+        } else {
+            print("error with camera image")
+        }
+//        self.dismiss(animated: true, completion: nil) 
+
+    }
+    
+//    @IBAction func saveButt(sender: AnyObject) {
+//        var imageData = UIImageJPEGRepresentation(addedImage.image!, 6.0)
+//        var compressedJPGImage = UIImage(data: imageData!)
+//        UIImageWriteToSavedPhotosAlbum(compressedJPGImage!, nil, nil, nil)
+//        
+//        var alert = UIAlertView(title: "Image Saved",
+//                                message: "Your image has been saved to Photo Library!",
+//                                delegate: nil,
+//                                cancelButtonTitle: "Ok")
+//        alert.show()
+//    }
     
     @IBAction func uploadImageTapped(_ sender: UIButton) {
-        
-        // Camera implementation
+        // Library Access "Choose Existing"
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
     }
     
-    // Cancel add data.
+    // Cancel add new product
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-    
 }
+
+
 
 extension AddToInventoryVC: UITableViewDataSource {
     
@@ -143,7 +187,6 @@ extension AddToInventoryVC: UITableViewDataSource {
 extension AddToInventoryVC: UITableViewDelegate {
     
     // TO DO: Condense code below...
-    // to add, must check one before saving...
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         guard let cell = tableView.cellForRow(at: indexPath) else { return }
@@ -161,7 +204,7 @@ extension AddToInventoryVC: UITableViewDelegate {
                 print("Selected Room: \(addedRoom)")
             } else {
                 self.addedProductCategories = nil
-                print("Selected Product Categories: \(addedProductCategories)")
+                print("Selected Product Categories: \(String(describing: addedProductCategories))")
             }
         } else {
             
@@ -178,7 +221,7 @@ extension AddToInventoryVC: UITableViewDelegate {
                 
                 cell.accessoryType = UITableViewCellAccessoryType.checkmark
                 addedStory = Story.stories[indexPath.row].storyName
-                print("Selected Story1: \(addedStory)")
+                print("Selected Story1: \(String(describing: addedStory))")
                 
                 if let addedStory = addedStory { // if there is a story selected already, replace the variable with the new selected storyName.
                     self.addedStory = Story.stories[indexPath.row].storyName

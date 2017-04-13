@@ -29,6 +29,8 @@ class InventoryTVCell: UITableViewCell {
     
     @IBOutlet weak var productInventoryImage: UIImageView!
     
+    @IBOutlet weak var qtyLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
