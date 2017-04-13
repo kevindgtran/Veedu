@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BrowseVC: UIViewController {
+class BrowseVC: UIViewController { //, UISearchResultsUpdating {
     
     // MARK: IBOUTLETS
     @IBOutlet weak var roomTabCollectionView: UICollectionView!
@@ -16,8 +16,19 @@ class BrowseVC: UIViewController {
     
     var selectedIndexPath: IndexPath?
     
-    // Instance of array of products with the selected 'room tag' && 'product category'
-    // TO DO:
+//    // instances for Browse Search.  should hold all products and filter through the properties.
+//    var browseKeywords = [Product]()
+//    var resultSearchController: UISearchController!
+//    var PRODUCTS = [Product]()
+//    
+//    // Create search bar and placement
+//    self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 50, 0)
+//    self.resultSearchController = UISearchController(searchResultsController: nil)
+//    self.resultSearchController.searchResultsUpdater = self
+//    self.resultSearchController.dimsBackgroundDuringPresentation = false
+//    self.resultSearchController.searchBar.sizeToFit()
+//    self.tableView.tableHeaderView = self.resultSearchController.searchBar
+//    self.tableView.reloadData()
     
     // Instance for Room Tab Collection View
     let textForTabs = RoomCategory.rooms
