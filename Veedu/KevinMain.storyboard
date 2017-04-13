@@ -1063,7 +1063,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="wlq-Jf-CO2">
             <objects>
-                <tabBarController id="BX6-Xk-BE6" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="KevinHomeVC" id="BX6-Xk-BE6" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="pfn-Va-N8o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1473,7 +1473,7 @@
         <!--Product Details-->
         <scene sceneID="m5q-fh-WGx">
             <objects>
-                <viewController id="0Ae-kv-dNF" customClass="ProductDetailsVC" customModule="Veedu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="productDetailsVC" id="0Ae-kv-dNF" customClass="ProductDetailsVC" customModule="Veedu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="17U-pf-3Bl"/>
                         <viewControllerLayoutGuide type="bottom" id="UBW-3m-6Cd"/>
