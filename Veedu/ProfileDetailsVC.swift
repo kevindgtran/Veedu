@@ -115,6 +115,7 @@ class ProfileDetailsVC: UIViewController {
 //    }
     
     @IBAction func backButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func saveButton(_ sender: Any) {

@@ -21,6 +21,45 @@ extension UIApplication {
     }
 }
 
+extension UIViewController: FUIAuthDelegate {
+    func showProfileDetailsView() {
+        let storyboard = UIStoryboard(name: "KevinMain", bundle: nil)
+        let profileDetail = storyboard.instantiateViewController(withIdentifier: "ProfileDetailsVC")
+        self.present(profileDetail, animated: true, completion: nil)
+    }
+    
+    //present login session
+    func loginSession() {
+        print("In loginSession")
+        
+        let authViewController = FUIAuth.defaultAuthUI()!.authViewController()
+        FUIAuth.defaultAuthUI()?.delegate = self
+        self.present(authViewController, animated: true, completion: nil)
+    }
+    
+    public func authUI(_ authUI: FUIAuth, didSignInWith user: FIRUser?, error: Error?) {
+        print("HI")
+    }
+    
+    func userNotLogedInAlert() {
+        let alertController = UIAlertController(title: "Not Logged In", message: "You need to sign in to use this page!!😄", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+            // TODO: Transition back to main VC. First page when the app is opened
+        })
+        
+        let loginAction = UIAlertAction(title: "Login", style: .default, handler: { (action) in
+            self.loginSession()
+        })
+        
+        alertController.addAction(loginAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+}
+
+
 class Firebase: NSObject {
     
     //MARK: properties
@@ -37,7 +76,7 @@ class Firebase: NSObject {
     static let shared = Firebase()
     
     //create configure authentication function
-    func configureAuth(_ completion: @escaping() -> Void) {
+    func configureAuth(controller: UIViewController, _ completion: @escaping(Bool) -> Void) {
         
         //print("Inside configureAuth")
         
@@ -62,34 +101,34 @@ class Firebase: NSObject {
                 self.user = activeUser
                 User.configure(username: (user?.email)!)
                 
-                completion()
+                completion(true)
             }
             else {
                 print("Inside ELSE in configureAuth")
-                self.loginSession()
+                completion(false)
             }
         }
     }
     
-    func showProfileDetailsView() {
-        let storyboard = UIStoryboard(name: "KevinMain", bundle: nil)
-        let profileDetail = storyboard.instantiateViewController(withIdentifier: "ProfileDetailsVC")
-        let topController = UIApplication.shared.topViewController
-        
-        topController?.present(profileDetail, animated: true, completion: nil)
-    }
-    
-    //present login session
-    func loginSession() {
-        
-        let topController = UIApplication.shared.topViewController
-        
-        print("In loginSession")
-        
-        let authViewController = FUIAuth.defaultAuthUI()!.authViewController()
-        FUIAuth.defaultAuthUI()?.delegate = self
-        topController?.present(authViewController, animated: true, completion: nil)
-    }
+//    func showProfileDetailsView() {
+//        let storyboard = UIStoryboard(name: "KevinMain", bundle: nil)
+//        let profileDetail = storyboard.instantiateViewController(withIdentifier: "ProfileDetailsVC")
+//        let topController = UIApplication.shared.topViewController
+//        
+//        topController?.present(profileDetail, animated: true, completion: nil)
+//    }
+//    
+//    //present login session
+//    func loginSession() {
+//        
+//        let topController = UIApplication.shared.topViewController
+//        
+//        print("In loginSession")
+//        
+//        let authViewController = FUIAuth.defaultAuthUI()!.authViewController()
+//        FUIAuth.defaultAuthUI()?.delegate = self
+//        topController?.present(authViewController, animated: true, completion: nil)
+//    }
     
     // MARK: Send Message
     
@@ -115,31 +154,22 @@ class Firebase: NSObject {
             print("currentUsername: \(currentUsername)")
             
             if usernameInString == currentUsername{
-                let firstName = user[User.UserKeys.firstName] ?? "[firstName]"
-                let lastName = user[User.UserKeys.lastName] ?? "[lastName]"
-                let billing = user[User.UserKeys.billing] ?? "[billing]"
-                let shipping = user[User.UserKeys.shipping] ?? "[shipping]"
-                let inCart = user[User.UserKeys.inCart] ?? "[inCart]"
-                let favorite = user[User.UserKeys.favorite] ?? "[favorite]"
-//                let orderHistory = user[User.UserKeys.orderHistory] ?? "[orderHistory]"
-                
-                //Creating User Instance
-                guard let firstNameInString = firstName as? String else {return}
-                guard let lastNameInString = lastName as? String else {return}
-                guard let billingInString = billing as? String else {return}
-                guard let shippingInString = shipping as? String else {return}
-                guard let inCartInString = inCart as? [String] else {return}
-                guard let favoriteInString = favorite as? [String] else {return}
-//                guard let orderHistoryInString = orderHistory as? [String] else {return}
+                let firstName = (user[User.UserKeys.firstName] as? String) ?? ""
+                let lastName = (user[User.UserKeys.lastName] as? String) ?? ""
+                let billing = (user[User.UserKeys.billing] as? String) ?? ""
+                let shipping = (user[User.UserKeys.shipping] as? String) ?? ""
+                let inCart = (user[User.UserKeys.inCart] as? [String]) ?? []
+                let favorite = (user[User.UserKeys.favorite] as? [String]) ?? []
+                let orderHistory = (user[User.UserKeys.orderHistory] as? [String]) ?? []
                 
                 //to cache the user
-                currentUser.firstName = firstNameInString
-                currentUser.lastName = lastNameInString
-                currentUser.billing = billingInString
-                currentUser.shipping = shippingInString
-                currentUser.inCart = inCartInString
-                currentUser.favorite = favoriteInString
-                //currentUser.orderHistory = orderHistoryInString
+                currentUser.firstName = firstName
+                currentUser.lastName = lastName
+                currentUser.billing = billing
+                currentUser.shipping = shipping
+                currentUser.inCart = inCart
+                currentUser.favorite = favorite
+                currentUser.orderHistory = orderHistory
                 
                 completion()
             }
@@ -446,8 +476,10 @@ class Firebase: NSObject {
     }
 }
 
-extension Firebase: FUIAuthDelegate {
-    func authUI(_ authUI: FUIAuth, didSignInWith user: FIRUser?, error: Error?) {
-        showProfileDetailsView()
-    }
-}
+//extension Firebase: FUIAuthDelegate {
+//    func authUI(_ authUI: FUIAuth, didSignInWith user: FIRUser?, error: Error?) {
+//        if error == nil {
+//            showProfileDetailsView()
+//        }
+//    }
+//}
