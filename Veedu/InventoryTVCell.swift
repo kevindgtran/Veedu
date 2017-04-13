@@ -17,11 +17,11 @@ class InventoryTVCell: UITableViewCell {
 
     @IBOutlet weak var roomCategory: UILabel! // pulls index0
     
-    @IBOutlet weak var roomCategoryIndex1: UILabel!
+    @IBOutlet weak var roomCategoryIndex1: UILabel! // pulls index1. Currently our json data only picks two max room categories
     
-    @IBOutlet weak var roomCategoryIndex2: UILabel!
-    
-    @IBOutlet weak var roomCategoryIndex3: UILabel!
+//    @IBOutlet weak var roomCategoryIndex2: UILabel!
+//    
+//    @IBOutlet weak var roomCategoryIndex3: UILabel!
     
     @IBOutlet weak var storyName: UILabel!
     

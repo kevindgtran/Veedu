@@ -751,37 +751,19 @@
                                                             <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bathroom" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Vv-9p-hvB">
-                                                            <rect key="frame" x="79" y="96" width="51.5" height="20"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="room cat MAIN" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Eo-4l-oZD">
+                                                            <rect key="frame" x="52" y="96" width="78.5" height="20"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="s6v-mp-HWa"/>
+                                                                <constraint firstAttribute="height" constant="20" id="KeS-Bp-73X"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                                                             <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hidden when empty" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSg-sh-fAi">
-                                                            <rect key="frame" x="28" y="120" width="102.5" height="20"/>
+                                                            <rect key="frame" x="28" y="120" width="102.5" height="68"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="oOy-cX-6Co"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
-                                                            <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hidden when empty" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8O-eT-ypX">
-                                                            <rect key="frame" x="28" y="144" width="102.5" height="20"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="ZBh-5Q-pTr"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
-                                                            <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hidden when empty" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpw-7q-Sbd">
-                                                            <rect key="frame" x="28" y="168" width="102.5" height="20"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="6zi-gw-8hF"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                                                             <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -818,10 +800,8 @@
                                             <outlet property="productInventoryImage" destination="ppW-pg-6zM" id="hmz-5u-fDc"/>
                                             <outlet property="productName" destination="HVg-KN-qRv" id="XZ0-nP-wXe"/>
                                             <outlet property="qtyLabel" destination="w3C-kr-xHW" id="shJ-Vn-XAp"/>
-                                            <outlet property="roomCategory" destination="3Vv-9p-hvB" id="hcp-nl-HIF"/>
+                                            <outlet property="roomCategory" destination="0Eo-4l-oZD" id="n9p-EU-Y97"/>
                                             <outlet property="roomCategoryIndex1" destination="QSg-sh-fAi" id="Pb9-OH-OOf"/>
-                                            <outlet property="roomCategoryIndex2" destination="z8O-eT-ypX" id="rFO-qG-3ZU"/>
-                                            <outlet property="roomCategoryIndex3" destination="kpw-7q-Sbd" id="3r1-ha-vRj"/>
                                             <outlet property="storyName" destination="2Vh-PJ-K3i" id="RYD-Lw-8Hc"/>
                                         </connections>
                                     </tableViewCell>
