@@ -115,6 +115,7 @@ class PaymentViewController: UIViewController, PayPalPaymentDelegate {
     
     //MARK: actions
     @IBAction func backButtonPress(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
     
 }

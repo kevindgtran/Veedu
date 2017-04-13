@@ -32,39 +32,50 @@ class ProductDetailsVC: UIViewController {
         productPrice.text = String(describing: product.productPrice)
         productDescription.text = product.productDescription
         productMeasurements.text = product.productSpecifications[0]
-        productMaterial.text = product.productSpecifications[1]
         
+        if product.productSpecifications.count > 1 {
+            productMaterial.text = product.productSpecifications[1]
+        }else {
+            productMaterial.text = ""
+        }
+                
     }
     
     @IBAction func addToCartAction(_ sender: Any) {
         
-        Firebase.shared.configureAuth({
-            
-            //print("In addToCartAction ")
-            
-            if let user = User.shared {
-                
-                //print("Inside IF in addToCartAction")
-                
-                guard let product = self.product else {return}
-                user.addToCart(product.productID)
-                
-                Firebase.shared.addToCartFirebase(product.productID)
+        Firebase.shared.configureAuth(controller: self) { authorized in
+            if authorized {
+                if let user = User.shared {
+                    
+                    //print("Inside IF in addToCartAction")
+                    
+                    guard let product = self.product else {return}
+                    user.addToCart(product.productID)
+                    
+                    Firebase.shared.addToCartFirebase(product.productID)
+                }
             }
-            
-        })
+            else{
+                self.userNotLogedInAlert()
+            }
+        }
         
     }
     
     @IBAction func favoriteAction(_ sender: Any) {
         
-        Firebase.shared.configureAuth({
-            if let user = User.shared {
-                guard let product = self.product else {return}
-                user.addToFavorite(product.productID)
-                
-                Firebase.shared.addToFavoritesFirebase(product.productID)
+        Firebase.shared.configureAuth(controller: self, { authorized in
+            if authorized {
+                if let user = User.shared {
+                    guard let product = self.product else {return}
+                    user.addToFavorite(product.productID)
+                    
+                    Firebase.shared.addToFavoritesFirebase(product.productID)
+                }
             }
+            else {
+                self.userNotLogedInAlert()
+            }            
         })
     }
     

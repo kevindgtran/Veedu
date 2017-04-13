@@ -15,6 +15,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var products: [String]?
     var cartProducts: [Product]?
+    var selectedIndexPath: IndexPath?
     
     //MARK: properties
     @IBOutlet weak var cartItemCountLabel: UILabel!
@@ -38,27 +39,36 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         super.viewWillAppear(animated)
         
-        if let user = User.shared {
-            if let firstName = user.firstName {
-                self.products = user.inCart
-            }
-            else {
-                Firebase.shared.getUserFromFirebase {
-
-                    self.products = user.inCart
-                    guard let productIds = self.products else {return}
-                    
-                    Firebase.shared.getCartItemsFromFirebase(productIds){ (products) in
-                        guard let tempProducts = products else {return}
-                        self.cartProducts = tempProducts
-                        if let temp = self.products {
-                            self.cartItemCountLabel.text = String(describing: temp.count)
+        Firebase.shared.configureAuth(controller: self) { authorized in
+            if authorized {
+                if let user = User.shared {
+                    if let firstName = user.firstName {
+                        self.products = user.inCart
+                    }
+                    else {
+                        Firebase.shared.getUserFromFirebase {
+                            
+                            self.products = user.inCart
+                            guard let productIds = self.products else {return}
+                            
+                            Firebase.shared.getCartItemsFromFirebase(productIds){ (products) in
+                                guard let tempProducts = products else {return}
+                                self.cartProducts = tempProducts
+                                if let temp = self.products {
+                                    self.cartItemCountLabel.text = String(describing: temp.count)
+                                }
+                                
+                                self.cartTableView.reloadData()
+                            }
                         }
-                        
-                        self.cartTableView.reloadData()
                     }
                 }
             }
+            else {
+                self.userNotLogedInAlert()
+            }
+            
+
         }
         
         //        if let _ = self.products {
@@ -104,8 +114,8 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if let products = self.cartProducts {
-            print("String Product Count in Cart: \(self.products?.count)")
-            print("Product Count in Cart: \(products.count)")
+            //print("String Product Count in Cart: \(self.products?.count)")
+           // print("Product Count in Cart: \(products.count)")
             return products.count
         }else {
             return 0
@@ -177,6 +187,23 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         //            print("Could not save product name to array")
         //        }
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndexPath = indexPath
+        
+        performSegue(withIdentifier: "CartToProductDetails", sender: self)
+        
+
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? ProductDetailsVC {
+            if let selectedIndexPath = selectedIndexPath {
+                guard let products = self.cartProducts else {return}
+                destination.product = products[selectedIndexPath.row]
+            }
+        }
     }
     
     //MARK: actions

@@ -15,6 +15,7 @@ class FavoritesUIViewController: UIViewController, UITableViewDelegate, UITableV
     
     var products: [String]?
     var favoriteProducts: [Product]?
+    var selectedIndexPath: IndexPath?
     
     //MARK: properties
     @IBOutlet weak var itemsAmountLabel: UILabel!
@@ -23,16 +24,8 @@ class FavoritesUIViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        guard let productIds = self.products else {return}
-        
-        Firebase.shared.getCartItemsFromFirebase(productIds){ (products) in
-            guard let tempProducts = products else {return}
-            self.favoriteProducts = tempProducts
-            self.favoritesTableView.reloadData()
-        }
-        
-        Firebase.shared.configureStorage()
+        //authenticateUser()
+        //Firebase.shared.configureStorage()
 
     }
     
@@ -60,19 +53,46 @@ class FavoritesUIViewController: UIViewController, UITableViewDelegate, UITableV
 //        }
     }
     
+    func authenticateUser() {
+        
+        Firebase.shared.configureAuth(controller: self) { authorized in
+            if authorized {
+                if let user = User.shared {
+                    if let firstName = user.firstName {
+                        self.products = user.favorite
+                    }
+                    else {
+                        Firebase.shared.getUserFromFirebase {
+                            
+                            self.products = user.favorite
+                            guard let productIds = self.products else {return}
+                            
+                            Firebase.shared.getCartItemsFromFirebase(productIds){ (products) in
+                                guard let tempProducts = products else {return}
+                                self.favoriteProducts = tempProducts
+                                if let temp = self.products {
+                                    self.itemsAmountLabel.text = String(describing: temp.count)
+                                }
+                                
+                                self.favoritesTableView.reloadData()
+                            }
+                        }
+                    }
+                }
+
+            }
+            else {
+                self.userNotLogedInAlert()
+            }
+        }
+
+    }
+    
     //update will appear function
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
-        
-        Firebase.shared.configureAuth({
-            
-            if let user = User.shared {
-                
-                self.products = user.favorite
-            }
-            
-        })
+        authenticateUser()
         
 //        //fetch the data from the NSManagedObject and populate when the page appears
 //        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -112,22 +132,28 @@ class FavoritesUIViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
-        if indexPath.row != 0 {
+        
             let cell = favoritesTableView.dequeueReusableCell(withIdentifier: "favoritesCell", for: indexPath) as! FavoritesTableViewCell
             
             //update the table with the newly created NSManaged item
             guard let product = self.favoriteProducts?[indexPath.row] else {return UITableViewCell()}
             
             cell.favoritesNameLabel?.text = product.productName
-            cell.favoritesImageLabel.image = product.productImage
             cell.favoritesPriceLabel.text = String(product.productPrice)
             
+            if let productImage = product.productImage {
+                cell.favoritesImageLabel.image  = productImage
+            }
+            else{
+                Product.downloadImage(product.productImageURL) { (image) in
+                    product.productImage = image
+                    DispatchQueue.main.async {
+                        cell.favoritesImageLabel.image  = product.productImage
+                    }
+                }
+            }
+          
             return cell
-        }
-        else {
-            favoritesTableView.isHidden = true
-            return UITableViewCell()
-        }
   
     }
     
@@ -146,6 +172,23 @@ class FavoritesUIViewController: UIViewController, UITableViewDelegate, UITableV
         }
         remove.backgroundColor = UIColor(red:0.91, green:0.29, blue:0.24, alpha:1.0)
         return[remove]
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndexPath = indexPath
+        
+        performSegue(withIdentifier: "FavoriteToProductDetails", sender: self)
+        
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? ProductDetailsVC {
+            if let selectedIndexPath = selectedIndexPath {
+                guard let products = self.favoriteProducts else {return}
+                destination.product = products[selectedIndexPath.row]
+            }
+        }
     }
     
     //MARK: actions

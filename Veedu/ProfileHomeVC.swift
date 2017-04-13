@@ -17,16 +17,27 @@ class ProfileHomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        Firebase.shared.configureAuth {print("in profile home successfull, successfully authenticated user")}
+        Firebase.shared.configureAuth(controller: self) { authorized in
+            if authorized {
+                print("in profile home successfull, successfully authenticated user")
+                if let user = User.shared {
+                    self.userName.text = user.username
+                }
+            } else {
+                self.userNotLogedInAlert()
+            }
+            
+        }
     }
     
     //MARK: actions
     @IBAction func logout(_ sender: Any) {
         do {
             try FIRAuth.auth()?.signOut()
+            self.userName.text = ""
         } catch {
             print("unable to sign out: \(error)")
         }
