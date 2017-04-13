@@ -16,6 +16,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     var products: [String]?
     var cartProducts: [Product]?
     var selectedIndexPath: IndexPath?
+    var subTotal = 0.0
     
     //MARK: properties
     @IBOutlet weak var cartItemCountLabel: UILabel!
@@ -55,9 +56,20 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
                                 guard let tempProducts = products else {return}
                                 self.cartProducts = tempProducts
                                 if let temp = self.products {
+                                    
                                     self.cartItemCountLabel.text = String(describing: temp.count)
+                                    
+                                    var totalCost = 0.0
+                                    for i in tempProducts {
+                                        totalCost += i.productPrice
+                                    }
+                                    self.subtotalLabel.text = String(totalCost)
+                                    self.subTotal = totalCost
+                                    
+                                }else {
+                                    self.subtotalLabel.text = "0.0"
                                 }
-                                
+                                self.cartTableView.isHidden = false
                                 self.cartTableView.reloadData()
                             }
                         }
@@ -109,6 +121,12 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         //            checkoutButtonLabel.isHidden = true
         //        }
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.cartTableView.isHidden = true
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -204,11 +222,18 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
                 destination.product = products[selectedIndexPath.row]
             }
         }
+        
+        if let destination = segue.destination as? PaymentViewController {
+            destination.subTotal = self.subTotal
+            guard let items = self.products else {return}
+            destination.itemCount = items.count
+        }
+    
     }
     
     //MARK: actions
     @IBAction func checkoutButton(_ sender: UIButton) {
-        
+        performSegue(withIdentifier: "segueFromCheckoutToPaymentVC", sender: self)
     }
     
     @IBAction func tempAddButton(_ sender: UIButton) {

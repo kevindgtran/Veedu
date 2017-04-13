@@ -73,7 +73,7 @@ class FavoritesUIViewController: UIViewController, UITableViewDelegate, UITableV
                                 if let temp = self.products {
                                     self.itemsAmountLabel.text = String(describing: temp.count)
                                 }
-                                
+                                self.favoritesTableView.isHidden = false
                                 self.favoritesTableView.reloadData()
                             }
                         }
@@ -120,6 +120,12 @@ class FavoritesUIViewController: UIViewController, UITableViewDelegate, UITableV
             }
         }
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.favoritesTableView.isHidden = true
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
