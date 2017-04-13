@@ -49,7 +49,6 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         Firebase.shared.configureAuth({
             
             if let user = User.shared {
-                
                self.products = user.inCart
             }
             
@@ -135,6 +134,11 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let remove = UITableViewRowAction(style: .normal, title: "Delete") { (action, indexPath) in
             guard var cartProducts = self.cartProducts else {return}
+            
+            let productId = cartProducts[indexPath.row].productID
+            guard let user = User.shared else {return}
+            user.removeFromCart(productId)
+            
             cartProducts.remove(at: indexPath.row)
             self.cartTableView.reloadData()
         }

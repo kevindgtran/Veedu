@@ -93,6 +93,75 @@ class Firebase: NSObject {
     
     // MARK: Send Message
     
+    func addUserToFirebase(data: [String:Any]) {
+        
+        self.ref.child("data").child("allUsers").child(data[User.UserKeys.username] as! String).setValue(data)
+    }
+    
+    func getUserFromFirebase(_ completion: @escaping() -> Void) {
+        
+        guard let currentUser = User.shared else {return}
+        let currentUsername = currentUser.username.components(separatedBy: "@")[0]
+     
+        _refHandle = ref.child("data").child("allUsers").observe(.childAdded) { (snapshot: FIRDataSnapshot) in
+            //A User from Firebase
+            let user = snapshot.value as! [String:Any]
+            
+            let username = user[User.UserKeys.username] ?? "[userName]"
+            guard let usernameInString = username as? String else {return}
+            //let newUsername = usernameInString.components(separatedBy: "@")[0]
+            
+            print("newUsername: \(usernameInString)")
+            print("currentUsername: \(currentUsername)")
+            
+            if usernameInString == currentUsername{
+                let firstName = user[User.UserKeys.firstName] ?? "[firstName]"
+                let lastName = user[User.UserKeys.lastName] ?? "[lastName]"
+                let billing = user[User.UserKeys.billing] ?? "[billing]"
+                let shipping = user[User.UserKeys.shipping] ?? "[shipping]"
+                
+                //Creating User Instance
+                guard let firstNameInString = firstName as? String else {return}
+                guard let lastNameInString = lastName as? String else {return}
+                guard let billingInString = billing as? String else {return}
+                guard let shippingInString = shipping as? String else {return}
+                
+                //to cache the user
+                currentUser.firstName = firstNameInString
+                currentUser.lastName = lastNameInString
+                currentUser.billing = billingInString
+                currentUser.shipping = shippingInString
+                
+                completion()
+            }
+        }
+
+    }
+    
+    func removeFromCartFirebase(_ productID: String) {
+        
+        //create method that pushes message to the firebase database
+        
+        //ref = FIRDatabase.database().reference()
+        guard let username = User.shared?.username.components(separatedBy: "@")[0] else {return}
+        
+        //print("username: \(username)")
+        //print("inCart: \(data["inCart"]?[0])")
+        
+        ref.child("data").child("allUsers").child(username).observeSingleEvent(of: .value, with: { (snapshot) in
+            var itemsInCart: [String] = []
+            
+            if snapshot.hasChild(User.UserKeys.inCart), let items = (snapshot.value as? [String: Any])?[User.UserKeys.inCart] as? [String] {
+                itemsInCart = items
+            }
+            
+            print("Firebase - itemsInCart: \(itemsInCart)")
+            self.ref.child("data").child("allUsers").child(username).child(User.UserKeys.inCart).removeValue()
+            
+            //setValue(itemsInCart + [productID])
+        })
+    }
+    
     func addToCartFirebase(_ productID: String) {
         
         //create method that pushes message to the firebase database
@@ -102,7 +171,6 @@ class Firebase: NSObject {
         
         //print("username: \(username)")
         //print("inCart: \(data["inCart"]?[0])")
-        print(username)
         
         ref.child("data").child("allUsers").child(username).observeSingleEvent(of: .value, with: { (snapshot) in
             var itemsInCart: [String] = []
@@ -116,7 +184,7 @@ class Firebase: NSObject {
         })
     }
     
-    func addToFavoritesFirebase(data: [String:[String]]) {
+    func addToFavoritesFirebase(_ productID: String) {
         
         //create method that pushes message to the firebase database
         
@@ -126,11 +194,18 @@ class Firebase: NSObject {
         //print("username: \(username)")
         //print("inCart: \(data["inCart"]?[0])")
         
-        ref.child("data").child("allUsers").child(username).childByAutoId().setValue(data)
-    }
-    
-    func addUserToFirebase() {
+        ref.child("data").child("allUsers").child(username).observeSingleEvent(of: .value, with: { (snapshot) in
+            var itemsInCart: [String] = []
+            
+            if snapshot.hasChild(User.UserKeys.favorite), let items = (snapshot.value as? [String: Any])?[User.UserKeys.favorite] as? [String] {
+                itemsInCart = items
+            }
+            
+            print("Firebase - itemsInCart: \(itemsInCart)")
+            self.ref.child("data").child("allUsers").child(username).child(User.UserKeys.favorite).setValue(itemsInCart + [productID])
+        })
         
+        //ref.child("data").child("allUsers").child(username).childByAutoId().setValue(data)
     }
     
     func getReviews(_ product: Product, _ completion: @escaping([Review]?) -> Void) {
@@ -357,8 +432,6 @@ class Firebase: NSObject {
         //self.productCollectionView.insertItems(at: [IndexPath(row: self.products.count - 1, section: 0)])
         
     }
-
-
 }
 
 extension Firebase: FUIAuthDelegate {

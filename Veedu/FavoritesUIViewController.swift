@@ -90,13 +90,16 @@ class FavoritesUIViewController: UIViewController, UITableViewDelegate, UITableV
 //        }
 //        
 //        //update total items counter
-//        if favoritesProductNameArray.count > 0 {
-//            self.itemsAmountLabel.text = "\(self.favoritesProductNameArray.count)"
-//        } else {
-//            self.itemsAmountLabel.text = "0"
-//            favoritesTableView.isHidden = true
-//            sadFaceImage.isHidden = false
-//        }
+        if let productStrings = self.products {
+            if productStrings.count > 0 {
+                self.itemsAmountLabel.text = "\(productStrings.count)"
+            } else {
+                self.itemsAmountLabel.text = "0"
+                favoritesTableView.isHidden = true
+                sadFaceImage.isHidden = false
+            }
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -123,7 +126,6 @@ class FavoritesUIViewController: UIViewController, UITableViewDelegate, UITableV
         }
         else {
             favoritesTableView.isHidden = true
-            
             return UITableViewCell()
         }
   
@@ -134,6 +136,11 @@ class FavoritesUIViewController: UIViewController, UITableViewDelegate, UITableV
         let remove = UITableViewRowAction(style: .normal, title: "Delete") { (action, indexPath) in
             
             guard var products = self.favoriteProducts else {return}
+            
+            let productId = products[indexPath.row].productID
+            guard let user = User.shared else {return}
+            user.removeFromFavorite(productId)
+            
             products.remove(at: indexPath.row)
             self.favoritesTableView.reloadData()
         }

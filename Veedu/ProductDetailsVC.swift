@@ -63,7 +63,7 @@ class ProductDetailsVC: UIViewController {
                 guard let product = self.product else {return}
                 user.addToFavorite(product.productID)
                 
-                Firebase.shared.addToFavoritesFirebase(data: [User.UserKeys.favorite: user.favorite])
+                Firebase.shared.addToFavoritesFirebase(product.productID)
             }
         })
     }
