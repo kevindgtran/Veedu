@@ -32,13 +32,26 @@ class ProfileDetailsVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        //guard let user = User.shared else {return}
+        
+//        if let firstName = user.firstName {
+//            setView(user)
+//        }
+//        else {
+//            Firebase.shared.getUserFromFirebase {
+//                self.setView(user)
+//            }
+//        }
+        
         Firebase.shared.getUserFromFirebase {
+            //self.setView(user)
+             guard let user = User.shared else {return}
             
-            guard let user = User.shared else {return}
             guard let firstName = user.firstName else {
                 print("User does not have first name")
                 return
             }
+            
             print("First Name: \(firstName)")
             
             guard let lastName = user.lastName else {
@@ -63,9 +76,43 @@ class ProfileDetailsVC: UIViewController {
             self.lastName.text = lastName
             self.billing.text = billing
             self.shipping.text = shipping
-            
+
         }
+        
     }
+    
+//    func setView(_ user: User) {
+//        guard let firstName = user.firstName else {
+//            print("User does not have first name")
+//            return
+//        }
+//        
+//        print("First Name: \(firstName)")
+//        
+//        guard let lastName = user.lastName else {
+//            print("User does not have last name")
+//            return
+//        }
+//        print("Last Name: \(lastName)")
+//        
+//        guard let shipping = user.shipping else {
+//            print("User does not have shipping address")
+//            return
+//        }
+//        print("shipping: \(shipping)")
+//        
+//        guard let billing = user.billing else {
+//            print("User does not have billing address")
+//            return
+//        }
+//        print("billing: \(billing)")
+//        
+//        self.firstName.text = firstName
+//        self.lastName.text = lastName
+//        self.billing.text = billing
+//        self.shipping.text = shipping
+//
+//    }
     
     @IBAction func backButton(_ sender: Any) {
     }

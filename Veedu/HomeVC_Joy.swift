@@ -60,24 +60,26 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate {
         selectedIndexPath = indexPath
         
          // connect to Prathiba's ProductsPerCategoryVC
-        let storyboard = UIStoryboard(name: "PrathibaMain", bundle: nil)
+        /*let storyboard = UIStoryboard(name: "PrathibaMain", bundle: nil)
         guard let navController = storyboard.instantiateViewController(withIdentifier: "PrathibaHomeVC") as? UINavigationController else { return }
         guard let viewController = navController.viewControllers.first as? ProductsPerCategoryVC else { return }
         
         if let selectedIndexPath = selectedIndexPath {
             viewController.storyCategory = self.storyCategories[selectedIndexPath.row].firebaseStoryName
             present(navController, animated: true, completion: nil)
-        }
-       
+        }*/
+        
+        performSegue(withIdentifier: "HomeToProductList", sender: self)
         
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let destination = segue.destination as? ProductsPerCategoryVC {
-//            if let selectedIndexPath = selectedIndexPath {
-//            }
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? ProductsPerCategoryVC {
+            if let selectedIndexPath = selectedIndexPath {
+                destination.storyCategory = self.storyCategories[selectedIndexPath.row].firebaseStoryName
+            }
+        }
+    }
     
     
     
