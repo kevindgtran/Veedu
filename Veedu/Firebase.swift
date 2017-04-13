@@ -119,18 +119,27 @@ class Firebase: NSObject {
                 let lastName = user[User.UserKeys.lastName] ?? "[lastName]"
                 let billing = user[User.UserKeys.billing] ?? "[billing]"
                 let shipping = user[User.UserKeys.shipping] ?? "[shipping]"
+                let inCart = user[User.UserKeys.inCart] ?? "[inCart]"
+                let favorite = user[User.UserKeys.favorite] ?? "[favorite]"
+//                let orderHistory = user[User.UserKeys.orderHistory] ?? "[orderHistory]"
                 
                 //Creating User Instance
                 guard let firstNameInString = firstName as? String else {return}
                 guard let lastNameInString = lastName as? String else {return}
                 guard let billingInString = billing as? String else {return}
                 guard let shippingInString = shipping as? String else {return}
+                guard let inCartInString = inCart as? [String] else {return}
+                guard let favoriteInString = favorite as? [String] else {return}
+//                guard let orderHistoryInString = orderHistory as? [String] else {return}
                 
                 //to cache the user
                 currentUser.firstName = firstNameInString
                 currentUser.lastName = lastNameInString
                 currentUser.billing = billingInString
                 currentUser.shipping = shippingInString
+                currentUser.inCart = inCartInString
+                currentUser.favorite = favoriteInString
+                //currentUser.orderHistory = orderHistoryInString
                 
                 completion()
             }
@@ -242,9 +251,11 @@ class Firebase: NSObject {
     
     func getCartItemsFromFirebase(_ products: [String], _ completion: @escaping([Product]?) -> Void ) {
         
+        print("Firebase - products: \(products)")
+        
         var cartProducts: [Product] = []
         
-        _refHandle = Firebase.shared.ref.child("data").child("allProducts").observe(.childAdded) { (snapshot: FIRDataSnapshot) in
+        _refHandle = ref.child("data").child("allProducts").observe(.childAdded) { (snapshot: FIRDataSnapshot) in
             
             //A Product from Firebase
             let product = snapshot.value as! [String:Any]
@@ -254,6 +265,8 @@ class Firebase: NSObject {
             
             for i in products {
                 if i == productIDAsString {
+                    
+                    print("product in cart: \(i)")
                     
                     let name = product[Product.ProductKeys.name] ?? "[name]"
                     let price = product[Product.ProductKeys.price] ?? "[price]"
@@ -281,9 +294,8 @@ class Firebase: NSObject {
                     cartProducts.append(newProduct)
                 }
             }
+            completion(cartProducts)
         }
-        completion(cartProducts)
-            
     }
     
     func configureStorage() {

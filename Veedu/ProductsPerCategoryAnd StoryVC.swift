@@ -157,13 +157,21 @@ class ProductsPerCategoryVC: UIViewController {
         
         products.append(newProduct)
         //print("added product to array")
+        productCollectionView.reloadData()
+//        self.productCollectionView.performBatchUpdates({ 
+//            self.productCollectionView.insertItems(at: [IndexPath(row: self.products.count - 1, section: 0)])
+//        }, completion: nil)
         
-        self.productCollectionView.insertItems(at: [IndexPath(row: self.products.count - 1, section: 0)])
+//        self.productCollectionView.insertItems(at: [IndexPath(row: self.products.count - 1, section: 0)])
         
     }
     
     deinit {
         Firebase.shared.ref.child("data").child("allProducts").removeObserver(withHandle: _refHandle)
+    }
+    
+    @IBAction func back(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
 }
@@ -211,7 +219,7 @@ extension ProductsPerCategoryVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIndexPath = indexPath
         
-        performSegue(withIdentifier: "ToProductDetails", sender: "self")
+        performSegue(withIdentifier: "ToProductDetails", sender: self)
 
     }
         

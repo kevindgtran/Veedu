@@ -138,18 +138,32 @@ extension BrowseVC: UICollectionViewDelegate {
         if collectionView == self.productCategoryCollectionView {
             selectedIndexPath = indexPath
             
-            let storyboard = UIStoryboard(name: "PrathibaMain", bundle: nil)
-            guard let navController = storyboard.instantiateViewController(withIdentifier: "PrathibaHomeVC") as? UINavigationController else { return }
-            guard let viewController = navController.viewControllers.first as? ProductsPerCategoryVC else { return }
+//            let storyboard = UIStoryboard(name: "PrathibaMain", bundle: nil)
+//            guard let navController = storyboard.instantiateViewController(withIdentifier: "PrathibaHomeVC") as? UINavigationController else { return }
+//            guard let viewController = navController.viewControllers.first as? ProductsPerCategoryVC else { return }
+//            
+//            if let selectedIndexPath = selectedIndexPath {
+//                viewController.roomCategory = self.textForTabs[selectedIndexPath.row].firebaseName
+//                viewController.productCategory = self.productCategories[selectedIndexPath.row].firebaseCategoryName
+//            
+//                present(navController, animated: true, completion: nil)
+//            
+//            
+//            }   
             
-            if let selectedIndexPath = selectedIndexPath {
-                viewController.roomCategory = self.textForTabs[selectedIndexPath.row].firebaseName
-                viewController.productCategory = self.productCategories[selectedIndexPath.row].firebaseCategoryName
-                
-                present(navController, animated: true, completion: nil)
-            }            
+            performSegue(withIdentifier: "BrowseToProductList", sender: self)
         }
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? ProductsPerCategoryVC {
+            if let selectedIndexPath = selectedIndexPath {
+                destination.roomCategory = self.textForTabs[selectedIndexPath.row].firebaseName
+                destination.productCategory = self.productCategories[selectedIndexPath.row].firebaseCategoryName
+            }
+        }
+    }
+
     
 }
 

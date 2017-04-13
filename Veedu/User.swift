@@ -22,8 +22,6 @@ class User {
     var inCart: [String] = []
     var favorite: [String] = []
     
-    
-    
     private init(username: String, password: String?) {
         self.username = username
         self.password = password

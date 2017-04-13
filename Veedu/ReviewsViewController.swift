@@ -22,7 +22,7 @@ class ReviewsViewController: UIViewController {
         guard let product = product else {return}
         
         productName.text = product.productName
-        
+
         Firebase.shared.getReviews(product){ (reviews) in
             guard let tempReviews = reviews else {return}
             self.reviews = tempReviews
@@ -38,6 +38,10 @@ class ReviewsViewController: UIViewController {
         Firebase.shared.configureStorage()
         
         reviewTableView.register(UINib(nibName: "ReviewsCell", bundle: nil), forCellReuseIdentifier: "cellTwo")
+    }
+    
+    @IBAction func back(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 
 }
