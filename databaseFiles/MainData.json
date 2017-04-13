@@ -581,8 +581,8 @@
           "password": "password",
           "billing": "123 central ave San Francisco Ca 95111",
           "shipping": "123 central ave San Francisco Ca 95111",
-          "userName": "Kevin@gmail.com",
-          "inCart": [""],
+          "userName": "kevin@gmail.com",
+          "inCart": [],
           "favorite": [],
           "orderHistory": []
         },
