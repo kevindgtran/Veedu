@@ -1,17 +1,18 @@
 {
-    "data": [{
+    "data": {
         "allProducts": [{
             "name": "Emerson Bar Chair",
             "productID": "f12648",
             "price": 120.00,
-            "description": "This Emerson Bar Chair is made from sturdy wood, hand carved and has curves and rounded shaped legs along with nail head trim with a polished footrest for comfort.",
-            "specifications": ["18in L x 18in W x 25in H · Chair extends to 30inch H", "Wood, Steel"],
+            "description": "This Emerson Bar Chair is made from sturdy wood, hand carved and has curves and rounded shaped legs along with nail head trim with a polished footrest for comfort.",                  "specifications": ["18in L x 18in W x 25in H · Chair extends to 30inch H", "Wood, Steel"],
             "reviews": [],
             "imageURL": "https://cdn.shopify.com/s/files/1/1386/1639/products/12648_grande.jpg?v=1471977535",
             "storyCategory": "industrial",
             "roomCategory": ["kitchenDiningRoom", "livingRoom"],
             "productCategory": ["furniture"]
-        }, {
+
+            },
+            {
             "name": "Watering Hole Stool",
             "productID": "f12638",
             "price": 145.00,
@@ -218,7 +219,7 @@
             "reviews": [],
             "imageURL": "http://rk.weimgs.com/weimgs/rk/images/wcm/products/201711/0060/mid-century-expandable-dining-table-o.jpg",
             "storyCategory": "midCenturyModern",
-            "roomCategory": ["kitchen"],
+            "roomCategory": ["kitchenDiningRoom"],
             "productCategory": ["furniture"]
         }, {
             "name": "Handle Me Cast Iron Cookware",
@@ -229,7 +230,7 @@
             "reviews": [],
             "imageURL": "http://www.newyorkmarkt.com/pictures/Contemporary-Cast-Iron-Cookware-for-Kitchenware-Design-Handle-Me-by-Angell-Wyller-Aarseth-1.jpg",
             "storyCategory": "midCenturyModern",
-            "roomCategory": ["kitchen"],
+            "roomCategory": ["kitchenDiningRoom"],
             "productCategory": ["cookware"]
         }, {
             "name": "4-Piece Square Place Setting",
@@ -240,7 +241,7 @@
             "reviews": [],
             "imageURL": "https://s7d9.scene7.com/is/image/BedBathandBeyond/79250246191090p",
             "storyCategory": "midCenturyModern",
-            "roomCategory": ["kitchen"],
+            "roomCategory": ["kitchenDiningRoom"],
             "productCategory": ["diningware"]
         }, {
             "name": "Bread Maker",
@@ -251,7 +252,7 @@
             "reviews": [],
             "imageURL": "https://st.hzcdn.com/simgs/5e61530407d99141_4-4738/modern-small-kitchen-appliances.jpg",
             "storyCategory": "midCenturyModern",
-            "roomCategory": ["kitchen"],
+            "roomCategory": ["kitchenDiningRoom"],
             "productCategory": ["smallAppliance"]
         }, {
             "name": "Grid-Tufted Upholstered Tapered Leg Bed",
@@ -573,8 +574,31 @@
             "roomCategory": ["livingRoom"],
             "productCategory": ["accessories"]
         }]
-    }, {
-        "allReviews": [{
+    , "allUsers": {
+        "kevin": {
+          "firstName": "Kevin",
+          "lastName": "Tran",
+          "password": "password",
+          "billing": "123 central ave San Francisco Ca 95111",
+          "shipping": "123 central ave San Francisco Ca 95111",
+          "userName": "Kevin@gmail.com",
+          "inCart": [""],
+          "favorite": [],
+          "orderHistory": []
+        },
+        "richard": {
+          "firstName": "Richard",
+          "lastName": "Ash",
+          "password": "abc123",
+          "billing": "123 central ave San Francisco Ca 95111",
+          "shipping": "123 central ave San Francisco Ca 95111",
+          "userName": "r.ash8347@gmail.com",
+          "inCart": [],
+          "favorite": [],
+          "orderHistory": []
+        }
+      }
+      ,"allReviews": [{
             "reviewID": "rev1",
             "productID": "f12638",
             "rating": 5,
@@ -887,5 +911,5 @@
             "title": "Easy to Use!",
             "review": "The KitchenAid Blade Coffee Grinder is very easy to use and clean. It will always grind your coffee to your liking."
         }]
-    }]
+    }
 }

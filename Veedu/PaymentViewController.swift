@@ -10,6 +10,22 @@ import UIKit
 
 class PaymentViewController: UIViewController, PayPalPaymentDelegate {
     
+    //MARK: properties
+    
+    @IBOutlet weak var itemsCountLabel: UILabel!
+    @IBOutlet weak var subtotalAmountLabel: UILabel!
+    @IBOutlet weak var shippingAmountLabel: UILabel!
+    @IBOutlet weak var estimatedTaxesLabel: UILabel!
+    @IBOutlet weak var orderTotalLabel: UILabel!
+    @IBOutlet weak var backButtonLabel: UIButton!
+    
+    @IBOutlet weak var tabBar: UITabBar!
+    @IBOutlet weak var homeTabBar: UITabBarItem!
+    @IBOutlet weak var browseTabBar: UITabBarItem!
+    @IBOutlet weak var favoritesTabBar: UITabBarItem!
+    @IBOutlet weak var cartTabBar: UITabBarItem!
+    @IBOutlet weak var profileTabBar: UITabBarItem!
+    
     var environment:String = PayPalEnvironmentNoNetwork {
         willSet(newEnvironment) {
             if (newEnvironment != environment) {
@@ -96,4 +112,9 @@ class PaymentViewController: UIViewController, PayPalPaymentDelegate {
             print("Here is your proof of payment:\n\n\(completedPayment.confirmation)\n\nSend this to your server for confirmation and fulfillment.")
         })
     }
+    
+    //MARK: actions
+    @IBAction func backButtonPress(_ sender: UIButton) {
+    }
+    
 }

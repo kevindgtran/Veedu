@@ -7,11 +7,8 @@
 //
 
 import UIKit
-import Firebase
 
 class ProductDetailsVC: UIViewController {
-
-    var product: Product?
     
     //IBOutlets
     @IBOutlet weak var productImage: UIImageView!
@@ -23,6 +20,8 @@ class ProductDetailsVC: UIViewController {
     @IBOutlet weak var addToCartButton: UIButton!
     @IBOutlet weak var favoriteButton: UIButton!
     
+    var product: Product?
+
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -38,14 +37,52 @@ class ProductDetailsVC: UIViewController {
     }
     
     @IBAction func addToCartAction(_ sender: Any) {
+        
+        Firebase.shared.configureAuth({
+            
+            //print("In addToCartAction ")
+            
+            if let user = User.shared {
+                
+                //print("Inside IF in addToCartAction")
+                
+                guard let product = self.product else {return}
+                user.addToCart(product.productID)
+                
+                Firebase.shared.addToCartFirebase(product.productID)
+            }
+            
+        })
+        
     }
     
     @IBAction func favoriteAction(_ sender: Any) {
+        
+        Firebase.shared.configureAuth({
+            if let user = User.shared {
+                guard let product = self.product else {return}
+                user.addToFavorite(product.productID)
+                
+                Firebase.shared.addToFavoritesFirebase(product.productID)
+            }
+        })
     }
     
     @IBAction func reviews(_ sender: Any) {
         
         performSegue(withIdentifier: "ToReviews", sender: "self")
+
+    }
+    
+    //not used
+    func alertForLogin() {
+        
+        let alert = UIAlertController(title: "Hello!", message: "Please login to continue!", preferredStyle: .alert)
+        
+        let saveAction = UIAlertAction(title: "Got it!", style: .default)
+        alert.addAction(saveAction)
+        
+        present(alert, animated: true)
 
     }
     

@@ -32,6 +32,11 @@ class ProfileViewController: UIViewController {
         _authHandle = FIRAuth.auth()?.addStateDidChangeListener { (auth: FIRAuth, user: FIRUser?) in
             //check if current user matches the FIRUser
             if let activeUser = user {
+                
+                
+                User.configure(username: (user?.email)!)
+                
+                
                 if self.user != activeUser {
                     self.user = activeUser
                     self.signedInStatus(isSignedIn: true)
