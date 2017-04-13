@@ -252,6 +252,7 @@
 				65B734EC1E95DD1600506B1F /* PrathibaFiles */,
 				E00A9AA71E9D704E00C75D60 /* VendorSide */,
 				65B734EB1E95DD0E00506B1F /* JoyFiles */,
+				E0E1C5B31E9BE72C001597E0 /* Tools */,
 				65B734EA1E95DD0100506B1F /* KevinFiles */,
 				65A5A6AC1E9473200056D42F /* Assets.xcassets */,
 				65A5A6AE1E9473200056D42F /* LaunchScreen.storyboard */,
@@ -296,7 +297,6 @@
 			isa = PBXGroup;
 			children = (
 				65B734E61E95DCBA00506B1F /* JoyMain.storyboard */,
-				E0E1C5B31E9BE72C001597E0 /* Tools */,
 				E06B6B541E99FBF200E12419 /* Home */,
 				E06B6B551E99FC2D00E12419 /* Browse */,
 			);

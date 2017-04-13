@@ -142,7 +142,6 @@ extension BrowseVC: UICollectionViewDelegate {
             }            
         }
     }
-    
 }
 
 

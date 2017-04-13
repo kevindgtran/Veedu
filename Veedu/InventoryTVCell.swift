@@ -15,7 +15,13 @@ class InventoryTVCell: UITableViewCell {
 
     @IBOutlet weak var productID: UILabel!
 
-    @IBOutlet weak var roomCategory: UILabel! // this is an array with multiple
+    @IBOutlet weak var roomCategory: UILabel! // pulls index0
+    
+    @IBOutlet weak var roomCategoryIndex1: UILabel!
+    
+    @IBOutlet weak var roomCategoryIndex2: UILabel!
+    
+    @IBOutlet weak var roomCategoryIndex3: UILabel!
     
     @IBOutlet weak var storyName: UILabel!
     
