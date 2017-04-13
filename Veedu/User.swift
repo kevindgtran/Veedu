@@ -22,6 +22,8 @@ class User {
     var inCart: [String] = []
     var favorite: [String] = []
     
+    
+    
     private init(username: String, password: String?) {
         self.username = username
         self.password = password
@@ -48,6 +50,22 @@ class User {
         }
     }
     
+    func removeFromCart(_ productId: String) {
+        for i in 0..<inCart.count {
+            if inCart[i] == productId {
+                inCart.remove(at: i)
+            }
+        }
+    }
+    
+    func removeFromFavorite(_ productId: String) {
+        for i in 0..<favorite.count {
+            if favorite[i] == productId {
+                favorite.remove(at: i)
+            }
+        }
+    }
+    
     func addOrderHistory(_ orderNumber: String) {
         orderHistory.append(orderNumber)
     }
@@ -55,7 +73,7 @@ class User {
     struct UserKeys {
         static let firstName = "firstName"
         static let lastName = "lastName"
-        static let username = "username"
+        static let username = "userName"
         static let password = "password"
         static let billing = "billing"
         static let shipping = "shipping"
