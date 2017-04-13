@@ -547,7 +547,7 @@
 				TargetAttributes = {
 					65A5A69E1E9473200056D42F = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = L8R43DTS44;
+						DevelopmentTeam = WC2JB3CT65;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -957,7 +957,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = L8R43DTS44;
+				DEVELOPMENT_TEAM = WC2JB3CT65;
 				INFOPLIST_FILE = Veedu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -975,7 +975,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = L8R43DTS44;
+				DEVELOPMENT_TEAM = WC2JB3CT65;
 				INFOPLIST_FILE = Veedu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
