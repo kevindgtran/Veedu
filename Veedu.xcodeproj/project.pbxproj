@@ -765,7 +765,6 @@
 				65B734F41E96084300506B1F /* FavoritesTableViewCell.swift in Sources */,
 				C453B00D1E96C55C0088E827 /* ProductCollectionViewCell.swift in Sources */,
 				E0FAC8871E9D71B90046F0AE /* AddToInventoryVC.swift in Sources */,
-				65A5A6AB1E9473200056D42F /* Veedu.xcdatamodeld in Sources */,
 				C461DE0B1E9724DD008AE663 /* ReviewsCell.swift in Sources */,
 				65BB13BC1E9ED26C00A30D0E /* ProfileHomeVC.swift in Sources */,
 				E06B6B521E9853A300E12419 /* RoomTabCVCell.swift in Sources */,
