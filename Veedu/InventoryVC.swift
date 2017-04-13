@@ -214,8 +214,8 @@ extension InventoryVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedIndexPath = indexPath
         
-        let storyboard = UIStoryboard(name: "PrathibaMain", bundle: nil)
-        guard let navController = storyboard.instantiateViewController(withIdentifier: "PrathibaHomeVC") as? UINavigationController else { return }
+        let storyboard = UIStoryboard(name: "KevinMain", bundle: nil)
+        guard let navController = storyboard.instantiateViewController(withIdentifier: "KevinHomeVC") as? UINavigationController else { return }
         guard let viewController = navController.viewControllers.first as? ProductDetailsVC else { return }
         
         if let selectedIndexPath = selectedIndexPath {
