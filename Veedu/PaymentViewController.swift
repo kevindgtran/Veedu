@@ -61,7 +61,7 @@ class PaymentViewController: UIViewController, PayPalPaymentDelegate {
         
         self.itemsCountLabel.text = String(self.itemCount)
         if self.subTotal > 0.0 {
-           self.subtotalAmountLabel.text = String(self.subTotal)
+            self.subtotalAmountLabel.text = String(self.subTotal)
             self.shippingAmountLabel.text = String(25.00)
             self.estimatedTaxesLabel.text = String(self.subTotal * 0.098)
             self.orderTotalLabel.text = String(self.subTotal + 25.00 + (self.subTotal * 0.098))
@@ -125,8 +125,10 @@ class PaymentViewController: UIViewController, PayPalPaymentDelegate {
     }
     
     //MARK: actions
-    @IBAction func backButtonPress(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
     
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+        
+        dismiss(animated: true, completion: nil)
+        
+    }
 }

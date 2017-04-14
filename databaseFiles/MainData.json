@@ -573,17 +573,6 @@
             "productCategory": ["accessories"]
         }]
     , "allUsers": {
-        "kevin": {
-          "firstName": "Kevin",
-          "lastName": "Tran",
-          "password": "password",
-          "billing": "123 central ave San Francisco Ca 95111",
-          "shipping": "123 central ave San Francisco Ca 95111",
-          "userName": "kevin@gmail.com",
-          "inCart": [],
-          "favorite": [],
-          "orderHistory": []
-        },
         "richard": {
           "firstName": "Richard",
           "lastName": "Ash",
