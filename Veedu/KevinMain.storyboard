@@ -450,7 +450,6 @@
                                 </state>
                                 <connections>
                                     <action selector="backButton:" destination="RfO-gy-tey" eventType="touchUpInside" id="Ex9-xB-Z7i"/>
-                                    <action selector="backButtonPress:" destination="8BZ-iB-bSJ" eventType="touchUpInside" id="5fq-84-rKp"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cJI-4e-3s8">
@@ -621,9 +620,7 @@
                                     <color key="titleColor" red="0.1803921568627451" green="0.62745098039215685" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="backButton:" destination="RfO-gy-tey" eventType="touchUpInside" id="Eb9-Jg-9mC"/>
                                     <action selector="backButton:" destination="WYm-eF-SDT" eventType="touchUpInside" id="NvG-S9-NiP"/>
-                                    <action selector="backButtonPress:" destination="8BZ-iB-bSJ" eventType="touchUpInside" id="HvP-Oo-Hmg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -736,8 +733,6 @@
                                 </state>
                                 <connections>
                                     <action selector="backButton:" destination="k3m-eN-b2Q" eventType="touchUpInside" id="M5n-g6-LnR"/>
-                                    <action selector="backButton:" destination="RfO-gy-tey" eventType="touchUpInside" id="lLN-y9-sNA"/>
-                                    <action selector="backButtonPress:" destination="8BZ-iB-bSJ" eventType="touchUpInside" id="hhc-HR-PDP"/>
                                 </connections>
                             </button>
                         </subviews>

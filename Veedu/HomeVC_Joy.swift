@@ -23,6 +23,20 @@ class HomeVC: UIViewController {
     }
 
     @IBAction func loginButtonTapped(_ sender: Any) {
+        
+        print("In Login action")
+        
+        Firebase.shared.configureAuth(controller: self) { (authenticate) in
+            if authenticate {
+                guard let user = User.shared else {return}
+                if user.username == "admin" {
+                     let storyboard = UIStoryboard(name: "VendorMain", bundle: nil)
+                     guard let viewController = storyboard.instantiateViewController(withIdentifier: "InventoryVC") as? InventoryVC else { return }
+                     self.present(viewController, animated: true, completion: nil)
+                     self.performSegue(withIdentifier: "ToInventory", sender: self)
+                }
+            }        
+        }
     }
 }
 
