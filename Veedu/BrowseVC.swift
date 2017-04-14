@@ -17,20 +17,6 @@ class BrowseVC: UIViewController { //, UISearchResultsUpdating {
     var selectedIndexPath: IndexPath?
     var selectedIndexPathTwo: IndexPath?
     
-//    // instances for Browse Search.  should hold all products and filter through the properties.
-//    var browseKeywords = [Product]()
-//    var resultSearchController: UISearchController!
-//    var PRODUCTS = [Product]()
-//    
-//    // Create search bar and placement
-//    self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 50, 0)
-//    self.resultSearchController = UISearchController(searchResultsController: nil)
-//    self.resultSearchController.searchResultsUpdater = self
-//    self.resultSearchController.dimsBackgroundDuringPresentation = false
-//    self.resultSearchController.searchBar.sizeToFit()
-//    self.tableView.tableHeaderView = self.resultSearchController.searchBar
-//    self.tableView.reloadData()
-    
     // Instance for Room Tab Collection View
     let textForTabs = RoomCategory.rooms
     
@@ -51,7 +37,9 @@ class BrowseVC: UIViewController { //, UISearchResultsUpdating {
         self.productCategories = ProductCategory.livingRoomProdCategories
         selectedIndexPathTwo = IndexPath(row: 0, section: 0)
     }
+
 }
+
 
 // MARK: DataSource
 extension BrowseVC: UICollectionViewDataSource {
@@ -81,14 +69,26 @@ extension BrowseVC: UICollectionViewDataSource {
             cell.roomTabLabel.text = textForTabs[indexPath.row].roomName
             print(cell.roomTabLabel.text!)
             
+//            if cell.isSelected {
+//                cell.roomTabLabel.textColor = UIColor.red
+//            } else {
+//                // change color back to whatever it was
+//                cell.roomTabLabel.textColor = UIColor.black
+//            }
+//            
+//            if indexPath.row == 0 {
+//                cell.roomTabLabel.textColor = UIColor.red
+//                previousTab = cell
+//            }
             // Signify first active tab is the first one.
             if indexPath.row == 0 {
-                cell.underlined()
+                cell.selectedMenuBarItem()
                 previousTab = cell // this removes the highlight on the previousTab
             }
-            return cell
+            return UICollectionViewCell()
         }
-        
+    
+    
         // DataSource for Product Categories Per Room (Images and Labels)
         if collectionView == self.productCategoryCollectionView {
             guard let cell = productCategoryCollectionView.dequeueReusableCell(withReuseIdentifier: "ProductCategoryCell", for: indexPath) as? ProductCategoryCVCell else {
@@ -109,13 +109,21 @@ extension BrowseVC: UICollectionViewDataSource {
         return UICollectionViewCell()
     }
 }
-
 // MARK: Delegates
 extension BrowseVC: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        /*
+         let cell = tableView.cellForRowAtIndexPath(indexPath) as! MPSurveyTableViewCell
+         
+         // change color back to whatever it was
+         cell.customLabel.textColor = UIColor.blackColor()
+         tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+         */
+        
         if collectionView == self.roomTabCollectionView {
             selectedIndexPathTwo = indexPath
+        
             switch indexPath.row {
             case 0:
                 productCategories = ProductCategory.livingRoomProdCategories
@@ -132,28 +140,38 @@ extension BrowseVC: UICollectionViewDelegate {
             productCategoryCollectionView.reloadData()
             
             // Active Cell is underlined and darker grey
-            let cell = collectionView.cellForItem(at: indexPath) as! ActiveCellCVC
-            cell.underlined()
-            previousTab.didDeselectCell()
+            let cell = collectionView.cellForItem(at: indexPath) as! RoomTabCVCell
+//            // change color back to whatever it was
+//            cell.roomTabLabel.textColor = UIColor.black
+//            collectionView.reloadItems(at: [indexPath])
+            
+            //([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+            
+            
+            if previousTab != cell {
+            // a different room is being selected, style change to selected room
+                previousTab.didDeselectCell()
+              cell.selectedMenuBarItem()
+//                cell.roomTabLabel.textColor = UIColor.red
+                previousTab = cell
+            } else {
+                // same room selected right after so state does not change.
+                
+            }
+            
+            
+//            cell.selectedMenuBarItem()
+//            if previousTab == cell {
+//                cell.selectedMenuBarItem()
+//            } else {
+//            previousTab.didDeselectCell()
+//            }
             previousTab = cell
         }
         
         // MARK: Connect Joy & Prathiba Storyboards. From Browse to ProductsPerCategory.
         if collectionView == self.productCategoryCollectionView {
             selectedIndexPath = indexPath
-            
-//            let storyboard = UIStoryboard(name: "PrathibaMain", bundle: nil)
-//            guard let navController = storyboard.instantiateViewController(withIdentifier: "PrathibaHomeVC") as? UINavigationController else { return }
-//            guard let viewController = navController.viewControllers.first as? ProductsPerCategoryVC else { return }
-//            
-//            if let selectedIndexPath = selectedIndexPath {
-//                viewController.roomCategory = self.textForTabs[selectedIndexPath.row].firebaseName
-//                viewController.productCategory = self.productCategories[selectedIndexPath.row].firebaseCategoryName
-//            
-//                present(navController, animated: true, completion: nil)
-//            
-//            
-//            }   
             
             performSegue(withIdentifier: "BrowseToProductList", sender: self)
         }
@@ -173,27 +191,27 @@ extension BrowseVC: UICollectionViewDelegate {
 
 
 //// MARK: DelegateFlowLayout for ProductCategoriesPerRoom
-extension BrowseVC: UICollectionViewDelegateFlowLayout {
-    
-    // assign these functions only to the productCategoryCollectionView
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-//        if collectionView == self.roomTabCollectionView {
-
-        let width = Int((productCategoryCollectionView.frame.width / columns) -  (inset + spacing))
-            return CGSize(width: width, height: width)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return spacing
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return lineSpacing
-    }
-}
+//extension BrowseVC: UICollectionViewDelegateFlowLayout {
+//    
+//    // assign these functions only to the productCategoryCollectionView
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        
+////        if collectionView == self.roomTabCollectionView {
+//
+//        let width = Int((productCategoryCollectionView.frame.width / columns) -  (inset + spacing))
+//            return CGSize(width: width, height: width)
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//        return spacing
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return lineSpacing
+//    }
+//}
 

@@ -53,7 +53,6 @@
 		C461DE661E984051008AE663 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461DE651E984051008AE663 /* Review.swift */; };
 		D5EA9E4067EC803D0C75C18E /* Pods_Veedu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADC4B53D548E43EEBBE13E1 /* Pods_Veedu.framework */; };
 		E00A9AA61E9D6E9500C75D60 /* Vendor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E00A9AA51E9D6E9500C75D60 /* Vendor.storyboard */; };
-		E05367741E9D20AC009785C5 /* BrowseMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05367731E9D20AC009785C5 /* BrowseMenuBar.swift */; };
 		E06B6AE21E97C90300E12419 /* HomeVC_Joy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6AE11E97C90300E12419 /* HomeVC_Joy.swift */; };
 		E06B6AE41E97C92500E12419 /* BrowseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6AE31E97C92500E12419 /* BrowseVC.swift */; };
 		E06B6AE61E97D8D100E12419 /* StoryTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6AE51E97D8D100E12419 /* StoryTVCell.swift */; };
@@ -61,6 +60,7 @@
 		E06B6B521E9853A300E12419 /* RoomTabCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6B511E9853A300E12419 /* RoomTabCVCell.swift */; };
 		E06B6B571E99FCB600E12419 /* ProductCategoryCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6B561E99FCB600E12419 /* ProductCategoryCVCell.swift */; };
 		E06B6B591E9A063C00E12419 /* RoomCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6B581E9A063C00E12419 /* RoomCategory.swift */; };
+		E0C588871EA08BB800505177 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C588861EA08BB800505177 /* MenuBar.swift */; };
 		E0DDD96B1E9A34C3000CFB9D /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DDD96A1E9A34C3000CFB9D /* ProductCategory.swift */; };
 		E0E1C5B61E9BE77E001597E0 /* ActiveTabCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E1C5B51E9BE77E001597E0 /* ActiveTabCVC.swift */; };
 		E0FAC87F1E9D71350046F0AE /* VendorLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FAC87E1E9D71350046F0AE /* VendorLoginVC.swift */; };
@@ -165,7 +165,6 @@
 		C461DE651E984051008AE663 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		C68EF2E5115204607A907A9E /* Pods_VeeduTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VeeduTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E00A9AA51E9D6E9500C75D60 /* Vendor.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Vendor.storyboard; sourceTree = "<group>"; };
-		E05367731E9D20AC009785C5 /* BrowseMenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseMenuBar.swift; sourceTree = "<group>"; };
 		E06B6AE11E97C90300E12419 /* HomeVC_Joy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC_Joy.swift; sourceTree = "<group>"; };
 		E06B6AE31E97C92500E12419 /* BrowseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseVC.swift; sourceTree = "<group>"; };
 		E06B6AE51E97D8D100E12419 /* StoryTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryTVCell.swift; sourceTree = "<group>"; };
@@ -174,6 +173,7 @@
 		E06B6B561E99FCB600E12419 /* ProductCategoryCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCategoryCVCell.swift; sourceTree = "<group>"; };
 		E06B6B581E9A063C00E12419 /* RoomCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomCategory.swift; sourceTree = "<group>"; };
 		E0C588841EA02C1100505177 /* Veedu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Veedu.entitlements; sourceTree = "<group>"; };
+		E0C588861EA08BB800505177 /* MenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		E0DDD96A1E9A34C3000CFB9D /* ProductCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
 		E0E1C5B51E9BE77E001597E0 /* ActiveTabCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveTabCVC.swift; sourceTree = "<group>"; };
 		E0FAC87E1E9D71350046F0AE /* VendorLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorLoginVC.swift; sourceTree = "<group>"; };
@@ -411,8 +411,8 @@
 			isa = PBXGroup;
 			children = (
 				E06B6B5D1E9A06F700E12419 /* Model_Browse */,
+				E0C588851EA08B9F00505177 /* View */,
 				E06B6B5C1E9A06EE00E12419 /* Controller_Browse */,
-				E05367731E9D20AC009785C5 /* BrowseMenuBar.swift */,
 			);
 			name = Browse;
 			sourceTree = "<group>";
@@ -451,6 +451,14 @@
 				E0DDD96A1E9A34C3000CFB9D /* ProductCategory.swift */,
 			);
 			name = Model_Browse;
+			sourceTree = "<group>";
+		};
+		E0C588851EA08B9F00505177 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E0C588861EA08BB800505177 /* MenuBar.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		E0E1C5B31E9BE72C001597E0 /* Tools */ = {
@@ -767,7 +775,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				65BB13C01E9ED90B00A30D0E /* SupportVC.swift in Sources */,
-				E05367741E9D20AC009785C5 /* BrowseMenuBar.swift in Sources */,
 				6595D9D01E95C1EA007E29FF /* Item.swift in Sources */,
 				65B734F41E96084300506B1F /* FavoritesTableViewCell.swift in Sources */,
 				C453B00D1E96C55C0088E827 /* ProductCollectionViewCell.swift in Sources */,
@@ -808,6 +815,7 @@
 				E06B6AE61E97D8D100E12419 /* StoryTVCell.swift in Sources */,
 				E06B6B591E9A063C00E12419 /* RoomCategory.swift in Sources */,
 				E06B6AE81E97DF7400E12419 /* Story_Joy.swift in Sources */,
+				E0C588871EA08BB800505177 /* MenuBar.swift in Sources */,
 				C40313621E9C1A9300108A5A /* ReviewsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

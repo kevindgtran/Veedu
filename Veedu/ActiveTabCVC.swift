@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ActiveCellCVC: UICollectionViewCell {
-     
-    func underlined(){
+class ActiveCellCVC: UILabel {
+    
+    func selectedMenuBarItem() {
         
         let border = CALayer()
         let width = CGFloat(3.0)
@@ -20,7 +20,12 @@ class ActiveCellCVC: UICollectionViewCell {
         self.layer.addSublayer(border)
         self.layer.masksToBounds = true
         
-        border.isHidden = false
+        let selectedText = UILabel()
+        selectedText.textColor = UIColor.red
+//
+//        border.isHidden = false
+//        selectedText.isEnabled = false
+        
     }
     
     func didDeselectCell(){
@@ -32,12 +37,11 @@ class ActiveCellCVC: UICollectionViewCell {
         border.borderWidth = width
         self.layer.addSublayer(border)
         self.layer.masksToBounds = true
+//        
+        let selectedText = UILabel()
+        selectedText.textColor = UIColor.lightGray
         
     }
     
-    func darkenLabel() {
-        
-        
-    }
 }
 
