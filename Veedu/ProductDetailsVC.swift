@@ -29,7 +29,7 @@ class ProductDetailsVC: UIViewController {
         
         productImage.image = product.productImage
         productName.text = product.productName
-        productPrice.text = String(describing: product.productPrice)
+        productPrice.text = "$ \(String(describing: Double(product.productPrice)))"
         productDescription.text = product.productDescription
         productMeasurements.text = product.productSpecifications[0]
         
