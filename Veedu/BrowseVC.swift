@@ -39,7 +39,7 @@ class BrowseVC: UIViewController { //, UISearchResultsUpdating {
     var productCategories = [ProductCategory]()
     
     // Temp instance for active tab cell.
-    var previousTab = RoomTabCVCell()
+    var previousTab = IndexPath(row: 0, section: 0)
     
     // CollectionDelegateFlowLayout constants
     let columns: CGFloat = 2.0
@@ -52,6 +52,7 @@ class BrowseVC: UIViewController { //, UISearchResultsUpdating {
         self.productCategories = ProductCategory.livingRoomProdCategories
         selectedIndexPathTwo = IndexPath(row: 0, section: 0)
     }
+    
 }
 
 // MARK: DataSource
@@ -84,11 +85,8 @@ extension BrowseVC: UICollectionViewDataSource {
             
             
             // Signify first active tab is the first one.
-            if indexPath.row == 0 {
+            if indexPath == previousTab {
                 cell.select()
-
-//                cell.selectedMenuBarItem()
-                previousTab = cell // this removes the highlight on the previousTab
             }
             return cell
         }
@@ -133,30 +131,16 @@ extension BrowseVC: UICollectionViewDelegate {
                 print("Error selecting array of product categories depending on room selected.")
             }
             
-            productCategoryCollectionView.reloadData()
-            
-            // Active Cell is underlined and darker grey
-            let cell = collectionView.cellForItem(at: indexPath) as! RoomTabCVCell
-            
-            // if new room is selected
-            if cell != previousTab {
-                // the new cell style changes
-                cell.select()
-                // cell.roomTabLabel.textColor = UIColor.blue
-                // previousTab changes too. deselect
-                previousTab.deselect()
-                
-                // the new cell then becomes the value of previousTab
-//                
-                previousTab = cell
-                
-                
-                
-            } else {
-                cell.select()
+            previousTab = indexPath
 
-//                cell.selectedMenuBarItem()
-            }
+            productCategoryCollectionView.reloadData()
+            roomTabCollectionView.reloadData()
+            // Active Cell is underlined and darker grey
+                // the new cell style changes
+                // previousTab changes too. deselect
+                // the new cell then becomes the value of previousTab
+ 
+
         }
         
         // MARK: Connect Joy & Prathiba Storyboards. From Browse to ProductsPerCategory.

@@ -12,7 +12,6 @@ class PurchaseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var tempArray = ["one"]
     
-    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var purchaseTableView: UITableView!
     
     override func viewDidLoad() {

@@ -16,7 +16,6 @@ class ProfileDetailsVC: UIViewController {
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var shipping: UITextView!
     @IBOutlet weak var billing: UITextView!
-    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     
     override func viewDidLoad() {

@@ -10,7 +10,6 @@ import UIKit
 
 class SupportVC: UIViewController {
 
-    @IBOutlet weak var backButton: UIButton!
     
     
     override func viewDidLoad() {
