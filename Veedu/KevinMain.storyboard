@@ -950,7 +950,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backButtonTapped" destination="tzP-i4-x3V" id="ok8-Pb-Wdg"/>
                         <outlet property="browseTabBar" destination="Bop-rD-pQ3" id="VFA-9k-b5F"/>
                         <outlet property="cartTabBar" destination="kkV-rJ-8i4" id="Oc7-RM-8Dr"/>
                         <outlet property="estimatedTaxesLabel" destination="hSx-Lv-GYw" id="XNc-cC-0gC"/>

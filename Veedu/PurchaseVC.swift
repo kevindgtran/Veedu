@@ -10,7 +10,7 @@ import UIKit
 
 class PurchaseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var tempArray = ["04/ 14/ 2017", "ZYX9523", "$200.00"]
+    var tempArray = [""]
     
     @IBOutlet weak var purchaseTableView: UITableView!
     
@@ -24,9 +24,9 @@ class PurchaseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = purchaseTableView.dequeueReusableCell(withIdentifier: "purchaseCell", for: indexPath) as! PurchaseTableViewCell
-        cell.orderDate.text = tempArray[indexPath.row]
-        cell.confirmationNumber.text = tempArray[indexPath.row]
-        cell.orderTotal.text = tempArray[indexPath.row]
+        cell.orderDate.text = "04/ 14/ 2017"
+        cell.confirmationNumber.text = "XYZ9735"
+        cell.orderTotal.text = "350.00"
         
         return cell
     }
