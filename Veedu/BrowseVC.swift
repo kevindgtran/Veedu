@@ -39,7 +39,7 @@ class BrowseVC: UIViewController { //, UISearchResultsUpdating {
     var productCategories = [ProductCategory]()
     
     // Temp instance for active tab cell.
-    var previousTab = ActiveCellCVC()
+    var previousTab = RoomTabCVCell()
     
     // CollectionDelegateFlowLayout constants
     let columns: CGFloat = 2.0
@@ -82,9 +82,12 @@ extension BrowseVC: UICollectionViewDataSource {
             cell.roomTabLabel.text = textForTabs[indexPath.row].roomName
             print(cell.roomTabLabel.text!)
             
+            
             // Signify first active tab is the first one.
             if indexPath.row == 0 {
-                cell.selectedMenuBarItem()
+                cell.select()
+
+//                cell.selectedMenuBarItem()
                 previousTab = cell // this removes the highlight on the previousTab
             }
             return cell
@@ -138,19 +141,21 @@ extension BrowseVC: UICollectionViewDelegate {
             // if new room is selected
             if cell != previousTab {
                 // the new cell style changes
-                cell.selectedMenuBarItem()
-                //                cell.roomTabLabel.textColor = UIColor.blue
-                // previousTab changes too
-                previousTab.didDeselectCell()
+                cell.select()
+                // cell.roomTabLabel.textColor = UIColor.blue
+                // previousTab changes too. deselect
+                previousTab.deselect()
                 
                 // the new cell then becomes the value of previousTab
-                //                self.previousTab.te = white
-                
+//                
                 previousTab = cell
                 
                 
+                
             } else {
-                cell.selectedMenuBarItem()
+                cell.select()
+
+//                cell.selectedMenuBarItem()
             }
         }
         
