@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ActiveCellCVC: UILabel {
+class ActiveCellCVC: UICollectionViewCell {
     
     func selectedMenuBarItem() {
         

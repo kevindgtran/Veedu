@@ -456,6 +456,7 @@
 		E0C588851EA08B9F00505177 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E0E1C5B51E9BE77E001597E0 /* ActiveTabCVC.swift */,
 				E0C588861EA08BB800505177 /* MenuBar.swift */,
 			);
 			name = View;
@@ -464,7 +465,6 @@
 		E0E1C5B31E9BE72C001597E0 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				E0E1C5B51E9BE77E001597E0 /* ActiveTabCVC.swift */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
