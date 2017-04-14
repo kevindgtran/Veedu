@@ -248,7 +248,8 @@ class Firebase: NSObject {
     }
     
     func getReviews(_ product: Product, _ completion: @escaping([Review]?) -> Void) {
-        //ref = FIRDatabase.database().reference()
+        
+        var reviews: [Review] = []
         
         _refHandle = ref.child("data").child("allReviews").observe(.childAdded) { (snapshot: FIRDataSnapshot) in
             //A Review from Firebase
@@ -271,12 +272,13 @@ class Firebase: NSObject {
                 
                 //to cache the reviews
                 let newReview = Review(productIDInString, titleInString, ratingInDouble, contentInString)
-                var reviews: [Review] = []
-                reviews.append(newReview)
-                completion(reviews)
                 
+                reviews.append(newReview)
+                                
             }
+            completion(reviews)
         }
+        
     }
     
     func getCartItemsFromFirebase(_ products: [String], _ completion: @escaping([Product]?) -> Void ) {

@@ -30,15 +30,16 @@ class ProductsPerCategoryVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //Firebase.shared.getProducts(storyCategory, roomCategory, productCategory)
+        //self.roomCategory = "bedRoom"
         getProducts()
+//            {
+//            self.productCollectionView.reloadData()
+//        }
         Firebase.shared.configureStorage()
     }
-    
+   
+    //_ completion: @escaping() -> Void
     func  getProducts() {
-        
-        //ref = FIRDatabase.database().reference()
         
         _refHandle = Firebase.shared.ref.child("data").child("allProducts").observe(.childAdded) { (snapshot: FIRDataSnapshot) in
             
@@ -52,6 +53,8 @@ class ProductsPerCategoryVC: UIViewController {
                 self.filterBasedOnStoryCategory(product)
             }
         }
+        
+        
     }
     
     func filterBasedOnStoryCategory(_ product: [String: Any]) {
@@ -61,6 +64,7 @@ class ProductsPerCategoryVC: UIViewController {
         
         if storyCategoryInString == storyCategory {
             getProductDetails(product)
+
         }
         
     }
@@ -71,11 +75,11 @@ class ProductsPerCategoryVC: UIViewController {
         
         guard let roomCategoryInString = getRoomCategory(product) else {return}
         guard let roomCategory = self.roomCategory else {
-            print("guard - Error with room cagegory")
+            print("guard - Error with room category")
             return
         }
         
-        //print("Success with room category")
+        print("room category: \(roomCategory)")
         
         for room in roomCategoryInString {
             
@@ -91,11 +95,12 @@ class ProductsPerCategoryVC: UIViewController {
                     return
                 }
                 
-                //print("Success with product category")
+                print("product category: \(productCategory)")
                 
                 if productCategoryInString[0] == productCategory {
                     // print("Inside if for product category")
                     getProductDetails(product)
+
                 }
                 
                 break
@@ -156,6 +161,8 @@ class ProductsPerCategoryVC: UIViewController {
         let newProduct = Product(productIDAsString, nameInString, priceInDouble, imageURLInString, descriptionInString, measurementsInStringArray, reviewsInStringArray, storyCategory, roomCategory, productCategory )
         
         products.append(newProduct)
+        
+        //completion()
         //print("added product to array")
         productCollectionView.reloadData()
 //        self.productCollectionView.performBatchUpdates({ 

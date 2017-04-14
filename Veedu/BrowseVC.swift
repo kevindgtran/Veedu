@@ -15,6 +15,7 @@ class BrowseVC: UIViewController {
     @IBOutlet weak var productCategoryCollectionView: UICollectionView!
     
     var selectedIndexPath: IndexPath?
+    var selectedIndexPathTwo: IndexPath?
     
     // Instance of array of products with the selected 'room tag' && 'product category'
     // TO DO:
@@ -36,8 +37,8 @@ class BrowseVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.productCategories = ProductCategory.livingRoomProdCategories
+        selectedIndexPathTwo = IndexPath(row: 0, section: 0)
     }
 }
 
@@ -111,7 +112,7 @@ extension BrowseVC: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.roomTabCollectionView {
-            
+            selectedIndexPathTwo = indexPath
             switch indexPath.row {
             case 0:
                 productCategories = ProductCategory.livingRoomProdCategories
@@ -157,9 +158,11 @@ extension BrowseVC: UICollectionViewDelegate {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ProductsPerCategoryVC {
-            if let selectedIndexPath = selectedIndexPath {
-                destination.roomCategory = self.textForTabs[selectedIndexPath.row].firebaseName
+            if let selectedIndexPath = selectedIndexPath, let selectedIndexPathTwo = selectedIndexPathTwo {
+                destination.roomCategory = self.textForTabs[selectedIndexPathTwo.row].firebaseName
+                //print("destination.roomCategory: \(destination.roomCategory)")
                 destination.productCategory = self.productCategories[selectedIndexPath.row].firebaseCategoryName
+                //print("destination.productCategory: \(destination.productCategory)")
             }
         }
     }
