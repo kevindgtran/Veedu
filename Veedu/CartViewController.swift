@@ -77,6 +77,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
                 }
             }
             else {
+                self.subtotalLabel.text = "0.0"
                 self.userNotLogedInAlert()
             }
             

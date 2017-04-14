@@ -82,9 +82,6 @@ class FavoritesUIViewController: UIViewController, UITableViewDelegate, UITableV
 
             }
             else {
-//                if let selectedIndexPath = self.selectedIndexPath {
-//                    self.favoritesTableView.deleteRows(at: [selectedIndexPath], with: .automatic)
-//                }
                 self.userNotLogedInAlert()
             }
         }

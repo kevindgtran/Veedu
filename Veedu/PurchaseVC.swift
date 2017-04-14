@@ -10,7 +10,7 @@ import UIKit
 
 class PurchaseVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var tempArray = ["one"]
+    var tempArray = ["04/ 14/ 2017", "ZYX9523", "$200.00"]
     
     @IBOutlet weak var purchaseTableView: UITableView!
     
