@@ -1278,23 +1278,26 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="285"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label  " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Lt-iz-FDo">
-                                                            <rect key="frame" x="313" y="5" width="62" height="45"/>
-                                                            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="25"/>
+                                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="45" id="nOY-d9-zRs"/>
+                                                                <constraint firstAttribute="height" constant="25" id="nOY-d9-zRs"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                             <color key="shadowColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <size key="shadowOffset" width="0.0" height="0.0"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstItem="0Lt-iz-FDo" firstAttribute="top" secondItem="XZY-VZ-gFR" secondAttribute="top" constant="5" id="AHo-Qv-FpU"/>
                                                         <constraint firstItem="qwx-4Y-d1X" firstAttribute="top" secondItem="XZY-VZ-gFR" secondAttribute="top" id="Fkg-jj-UYU"/>
                                                         <constraint firstAttribute="trailing" secondItem="0Lt-iz-FDo" secondAttribute="trailing" id="LQv-G5-qMI"/>
                                                         <constraint firstAttribute="bottom" secondItem="qwx-4Y-d1X" secondAttribute="bottom" constant="2" id="OTN-KQ-hIP"/>
+                                                        <constraint firstItem="0Lt-iz-FDo" firstAttribute="top" secondItem="XZY-VZ-gFR" secondAttribute="top" id="V5f-ne-tMN"/>
                                                         <constraint firstAttribute="trailing" secondItem="qwx-4Y-d1X" secondAttribute="trailing" id="WPx-oP-5BJ"/>
+                                                        <constraint firstItem="0Lt-iz-FDo" firstAttribute="leading" secondItem="XZY-VZ-gFR" secondAttribute="leading" id="n8o-ld-PfB"/>
                                                         <constraint firstItem="qwx-4Y-d1X" firstAttribute="leading" secondItem="XZY-VZ-gFR" secondAttribute="leading" id="zoy-ol-Kqy"/>
                                                     </constraints>
                                                 </view>
@@ -1329,12 +1332,29 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z15-ZL-vm0">
+                                                <rect key="frame" x="321" y="10" width="46" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="46" id="7yZ-9H-Vyj"/>
+                                                    <constraint firstAttribute="height" constant="30" id="HSW-sA-yHn"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="NK8-vj-6hX"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="iyE-eM-Q6R"/>
+                                                </constraints>
+                                                <state key="normal" title="Login">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="loginButtonTapped:" destination="E8s-sV-8Y5" eventType="touchUpInside" id="dcR-Ml-9Pu"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.1803921568627451" green="0.62745098039215685" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="mUX-Am-HvX" firstAttribute="top" secondItem="PwS-vR-XoP" secondAttribute="topMargin" id="24V-PO-bBh"/>
                                             <constraint firstItem="mUX-Am-HvX" firstAttribute="leading" secondItem="PwS-vR-XoP" secondAttribute="leading" constant="68" id="3IU-uf-ch3"/>
+                                            <constraint firstAttribute="trailing" secondItem="z15-ZL-vm0" secondAttribute="trailing" constant="8" id="IBE-C4-NyX"/>
                                             <constraint firstItem="mUX-Am-HvX" firstAttribute="centerX" secondItem="PwS-vR-XoP" secondAttribute="centerX" id="Rlv-qm-dT0"/>
+                                            <constraint firstItem="z15-ZL-vm0" firstAttribute="top" secondItem="PwS-vR-XoP" secondAttribute="top" constant="10" id="SwV-Jy-7qr"/>
                                             <constraint firstItem="mUX-Am-HvX" firstAttribute="centerY" secondItem="PwS-vR-XoP" secondAttribute="centerY" id="nct-3P-dfT"/>
                                         </constraints>
                                     </view>
@@ -1876,7 +1896,7 @@
         <image name="tvStandPROFILE" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EA9-4x-ACT"/>
-        <segue reference="7Dy-uJ-XTY"/>
+        <segue reference="7BZ-FQ-Zbs"/>
+        <segue reference="SuR-4l-c47"/>
     </inferredMetricsTieBreakers>
 </document>
