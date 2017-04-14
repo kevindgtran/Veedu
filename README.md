@@ -15,7 +15,7 @@ A full stack iOS Mobile App allowing users the ability to shop for home goods an
 
 ### Technologies & Tools
 
-- `Swift 3`, `xCode 8`, `Google Firebase`, `Apple Test Flight`
+- `Swift 3`, `xCode 8`, `Google Firebase`, `Apple TestFlight`
 - `Cocoapods`, `Paypal SDK`, `Trello`, `Sketch 3` 
 
 ### Team members
