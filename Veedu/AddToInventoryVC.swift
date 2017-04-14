@@ -9,6 +9,22 @@
 import UIKit
 import AVFoundation
 
+//extension Int {
+//    static func random(random: Range<Int>) -> Int {
+//        var offset = 0
+//        
+//        if range.startIndex < 0   // allow negative ranges
+//        {
+//            offset = abs(range.startIndex)
+//        }
+//        
+//        let mini = UInt32(range.startIndex + offset)
+//        let maxi = UInt32(range.endIndex   + offset)
+//        
+//        return Int(mini + arc4random_uniform(maxi - mini)) - offset
+//    }
+//}
+
 class AddToInventoryVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK: IBOutlets
@@ -17,18 +33,17 @@ class AddToInventoryVC: UIViewController, UIImagePickerControllerDelegate, UINav
     @IBOutlet weak var roomTableView: UITableView!
     @IBOutlet weak var prodCategoryTableView: UITableView!
     
-    @IBOutlet weak var addedProductName: UITextField!
-    @IBOutlet weak var addedDescription: UITextView!
-    @IBOutlet weak var addedSpecOne: UITextField!
-    @IBOutlet weak var addedSpecTwo: UITextField!
-    @IBOutlet weak var addedPrice: UITextField!
+    @IBOutlet weak var addedProductName: UITextField?
+    @IBOutlet weak var addedDescription: UITextView?
+    @IBOutlet weak var addedSpecOne: UITextField?
+    @IBOutlet weak var addedSpecTwo: UITextField?
+    @IBOutlet weak var addedPrice: UITextField?
     @IBOutlet weak var addedImage: UIImageView!
     
-    var addedItems = [Product]()
+    //var addedItems = [Product]()
     var addedStory: String?
     var addedRoom: Set<String> = []
     var addedProductCategories: String?
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,26 +62,57 @@ class AddToInventoryVC: UIViewController, UIImagePickerControllerDelegate, UINav
         }
     }
     
-
-    
     // Save Button
     @IBAction func saveButtonTapped(_ sender: UIButton) {
-        //TODO: when tapped, all data added in the textfields and the imageView will be added to the firebase
         
-//        let newProdName = addedProductName.text
-//        let newProdDescription = addedDescription.text
-//        let newProdSpecOne = addedSpecOne.text
-//        let newProdSpecTwo = addedSpecTwo.text
-//        var newProdSpecs = [String]()
-//        newProdSpecs.append(newProdSpecOne!)
-//        if addedSpecTwo != nil {
-//            newProdSpecs.append(newProdSpecTwo!)
-//        }
-//        
-//        let newProdPrice = addedPrice.text // Turn into a double?
-//        let newProdImage = addedImage.image // turn into a string?
+        //when tapped, all data added in the textfields and the imageView will be added to the firebase
+
         
-        //        saveButton.isEnabled = !text.isEmpty
+        if let productName = self.addedProductName?.text, let productDescription = self.addedDescription?.text, let productPrice = self.addedPrice?.text {
+            
+            var productSpecifications = [String]()
+            var productCategory: [String] = []
+            if let spec1 = self.addedSpecOne?.text, let spec2 = self.addedSpecTwo?.text, let productStory = self.addedStory, let productCategories = self.addedProductCategories{
+                
+                productSpecifications.append(spec1)
+                productSpecifications.append(spec2)
+                productCategory.append(productCategories)
+                let roomCategory = Array(self.addedRoom)
+                
+                var newProduct = [String: Any]()
+                
+               // var randomInt = Int.random(random: 55...500)
+                var productId = "temp" + String(10)
+                
+                newProduct[Product.ProductKeys.productID] = productId
+                newProduct[Product.ProductKeys.name] = productName
+                newProduct[Product.ProductKeys.price] = productPrice
+                newProduct[Product.ProductKeys.description] = productDescription
+                newProduct[Product.ProductKeys.measurements] = productSpecifications
+                newProduct[Product.ProductKeys.storyCategory] = productStory
+                newProduct[Product.ProductKeys.roomCategory] = roomCategory
+                newProduct[Product.ProductKeys.productCategory] = productCategory
+                
+                Firebase.shared.addProductToFirebase(data: newProduct)
+                
+            }
+            else {
+                incompleteAlert()
+            }
+            
+        }else {
+            incompleteAlert()
+        }
+
+    }
+    
+    func incompleteAlert() {
+        let alertController = UIAlertController(title: "Hi!", message: "Please complete all the fields before saving!", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        
+        self.present(alertController, animated: true, completion: nil)
     }
     
     // Camera & Image Buttons
@@ -135,7 +181,6 @@ class AddToInventoryVC: UIViewController, UIImagePickerControllerDelegate, UINav
         dismiss(animated: true, completion: nil)
     }
 }
-
 
 
 extension AddToInventoryVC: UITableViewDataSource {

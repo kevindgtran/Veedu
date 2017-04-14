@@ -23,6 +23,23 @@ class HomeVC: UIViewController {
     }
 
     @IBAction func loginButtonTapped(_ sender: Any) {
+        
+        print("In Login action")
+        
+        Firebase.shared.configureAuth(controller: self) { (authenticate) in
+            if authenticate {
+                guard let user = User.shared else {return}
+                print("username: \(user.username)")
+                if user.username == "richard@gmail.com" {
+                     let storyboard = UIStoryboard(name: "Vendor", bundle: nil)
+                     guard let viewController = storyboard.instantiateViewController(withIdentifier: "InventoryVC") as? InventoryVC else { return }
+                     self.present(viewController, animated: true, completion: nil)
+                }
+            }
+            else {
+                self.userNotLogedInAlert()
+            }
+        }
     }
 }
 

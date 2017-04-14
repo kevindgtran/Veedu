@@ -23,21 +23,7 @@ class InventoryVC: UIViewController {
     fileprivate var _authHandle: FIRAuthStateDidChangeListenerHandle!
     var user: FIRUser?
     
-    // MARK: UNCOMMENT BELOW WHEN FIREBASE DATA COMPLETE
     var products = [Product]()
-    //    var productsTest = ["*A Mighty Fine Chair*", "*ID6479gh51*", "*Mid-Century Modern*"]
-    //    var prodCategoryTest = [
-    //        ["*Furniture*", "*Lighting*", "*Textiles*", "*Accessories*"],
-    //        ["*", "b", "c", "d"],
-    //        ["9", "8", "7", "6"],
-    //        ["cat", "dog", "frog", "fish"]
-    //    ]
-    //    var roomCategoryTest = [
-    //        ["*Kitchen & Dining*", "*Livingroom*", "*Bedroom*", "*Bathroom*"],
-    //        ["*Kitchen & Dining*", "*Livingroom*", "*Bedroom*", "*Bathroom*"],
-    //        ["*Kitchen & Dining*", "*Livingroom*", "*Bedroom*", "*Bathroom*"],
-    //        ["*Kitchen & Dining*", "*Livingroom*", "*Bedroom*", "*Bathroom*"]
-    //        ]
     
     var selectedIndexPath: IndexPath?
     
@@ -48,7 +34,7 @@ class InventoryVC: UIViewController {
         
         configureDatabase()
         configureStorage()
-                print(products.count)
+        print(products.count)
         
     }
     
@@ -140,6 +126,9 @@ class InventoryVC: UIViewController {
         performSegue(withIdentifier: "ToAddProductSegue", sender: self)
     }
     
+    @IBAction func backButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 

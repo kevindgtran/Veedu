@@ -18,13 +18,19 @@ class ProductCollectionViewCell: UICollectionViewCell {
     
     //IBActions
     @IBAction func addFavorite(_ sender: Any) {
-//        Firebase.shared.configureAuth({
-//            if let user = User.shared {
-//                guard let product = self.product else {return}
-//                user.addToFavorite(product.productID)
-//                
-//                Firebase.shared.addToFavoritesFirebase(product.productID)
+//        Firebase.shared.configureAuth(controller: ProductsPerCategoryVC, { authenticate in
+//            if authenticate {
+//                if let user = User.shared {
+//                    guard let product = self.product else {return}
+//                    user.addToFavorite(product.productID)
+//                    
+//                    Firebase.shared.addToFavoritesFirebase(product.productID)
+//                }
 //            }
+//            else {
+//                ProductsPerCategoryVC.userNotLogedInAlert()
+//            }
+//            
 //        })
     }
     

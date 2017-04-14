@@ -125,7 +125,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
+        self.cartItemCountLabel.text = "0"
         self.cartTableView.isHidden = true
     }
     

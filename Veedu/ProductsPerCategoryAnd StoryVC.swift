@@ -229,6 +229,11 @@ extension ProductsPerCategoryVC: UICollectionViewDataSource {
         cell.productName.text = products[indexPath.row].productName
         cell.productPrice.text = String(products[indexPath.row].productPrice)
         
+       // cell.favoriteButton.tag = indexPath.row
+//        cell.favoriteButton.addTarget(self, addFavorite, UIControlEventsTouchUpInside)
+//        
+//        [cell.favoriteButton addTarget: self action:@selector(yourButtonClicked:) forControlEvents:UIControlEventTouchUpInside]
+        
         return cell
     }
 }
