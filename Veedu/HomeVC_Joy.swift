@@ -29,13 +29,16 @@ class HomeVC: UIViewController {
         Firebase.shared.configureAuth(controller: self) { (authenticate) in
             if authenticate {
                 guard let user = User.shared else {return}
-                if user.username == "admin" {
-                     let storyboard = UIStoryboard(name: "VendorMain", bundle: nil)
+                print("username: \(user.username)")
+                if user.username == "richard@gmail.com" {
+                     let storyboard = UIStoryboard(name: "Vendor", bundle: nil)
                      guard let viewController = storyboard.instantiateViewController(withIdentifier: "InventoryVC") as? InventoryVC else { return }
                      self.present(viewController, animated: true, completion: nil)
-                     self.performSegue(withIdentifier: "ToInventory", sender: self)
                 }
-            }        
+            }
+            else {
+                self.userNotLogedInAlert()
+            }
         }
     }
 }

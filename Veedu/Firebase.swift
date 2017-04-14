@@ -137,6 +137,10 @@ class Firebase: NSObject {
         self.ref.child("data").child("allUsers").child(data[User.UserKeys.username] as! String).setValue(data)
     }
     
+    func addProductToFirebase(data: [String: Any]) {
+        self.ref.child("data").child("allProducts").child(data[Product.ProductKeys.productID] as! String).setValue(data)
+    }
+    
     func getUserFromFirebase(_ completion: @escaping() -> Void) {
         
         guard let currentUser = User.shared else {return}

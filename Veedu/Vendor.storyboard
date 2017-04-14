@@ -612,7 +612,7 @@
         <!--InventoryVC-->
         <scene sceneID="yyl-7g-pgu">
             <objects>
-                <viewController id="Chk-DF-dCp" customClass="InventoryVC" customModule="Veedu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InventoryVC" id="Chk-DF-dCp" customClass="InventoryVC" customModule="Veedu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pqs-Wf-PqK"/>
                         <viewControllerLayoutGuide type="bottom" id="xr1-cF-xJy"/>
@@ -697,7 +697,7 @@
                                                             </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="8zx-rh-Ivm" userLabel="TagsStack View">
-                                                            <rect key="frame" x="234" y="8" width="131" height="116"/>
+                                                            <rect key="frame" x="234" y="8" width="131" height="140"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Glass Bath Container Set" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVg-KN-qRv">
                                                                     <rect key="frame" x="0.0" y="0.0" width="130.5" height="20"/>
@@ -745,7 +745,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hidden when empty" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSg-sh-fAi">
-                                                                    <rect key="frame" x="0.0" y="116" width="102.5" height="0.0"/>
+                                                                    <rect key="frame" x="0.0" y="120" width="102.5" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="oOy-cX-6Co"/>
                                                                     </constraints>
@@ -759,7 +759,7 @@
                                                             </constraints>
                                                         </stackView>
                                                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qty: 23" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3C-kr-xHW">
-                                                            <rect key="frame" x="8" y="104" width="49" height="20"/>
+                                                            <rect key="frame" x="8" y="128" width="49" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="LHg-yK-OfX"/>
                                                                 <constraint firstAttribute="width" constant="49" id="fec-EK-JWg"/>
@@ -828,6 +828,21 @@
                                 </state>
                                 <connections>
                                     <action selector="addButtonTapped:" destination="Chk-DF-dCp" eventType="touchUpInside" id="EZb-Zc-5Hm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ScN-ME-9Qt">
+                                <rect key="frame" x="16" y="46" width="30" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1GW-Mh-6V4"/>
+                                    <constraint firstAttribute="width" constant="30" id="6ck-mY-xrg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                <state key="normal" title="&lt;">
+                                    <color key="titleColor" red="0.18039215689999999" green="0.62745098040000002" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButton:" destination="Chk-DF-dCp" eventType="touchUpInside" id="UOK-k5-4hO"/>
                                 </connections>
                             </button>
                         </subviews>

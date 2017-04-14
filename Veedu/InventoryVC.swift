@@ -126,6 +126,9 @@ class InventoryVC: UIViewController {
         performSegue(withIdentifier: "ToAddProductSegue", sender: self)
     }
     
+    @IBAction func backButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 
