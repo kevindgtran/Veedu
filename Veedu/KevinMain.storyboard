@@ -919,9 +919,11 @@
                                     <tabBarItem title="Profile" image="profile" id="COS-Vq-qyp"/>
                                 </items>
                             </tabBar>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzP-i4-x3V">
-                                <rect key="frame" x="16" y="28" width="30" height="25"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzP-i4-x3V">
+                                <rect key="frame" x="16" y="28" width="30" height="30"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="Zra-Py-osf"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="gdA-n4-hoG"/>
                                     <constraint firstAttribute="height" constant="30" id="hdb-LE-wPG"/>
                                     <constraint firstAttribute="width" constant="30" id="xB2-wg-AeG"/>
                                 </constraints>
@@ -930,14 +932,18 @@
                                     <color key="titleColor" red="0.1803921568627451" green="0.62745098039215685" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="backButtonPress:" destination="8BZ-iB-bSJ" eventType="touchUpInside" id="PoO-zQ-eI6"/>
+                                    <action selector="backButtonTapped:" destination="8BZ-iB-bSJ" eventType="touchUpInside" id="Wnz-Cg-B9e"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tzP-i4-x3V" firstAttribute="top" secondItem="2oE-Vk-Uzm" secondAttribute="bottom" constant="8" id="8rB-5L-nUS"/>
+                            <constraint firstItem="tzP-i4-x3V" firstAttribute="leading" secondItem="LJX-V6-xR2" secondAttribute="leadingMargin" id="X3h-2K-6fh"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="backButtonLabel" destination="tzP-i4-x3V" id="gPZ-OA-wdz"/>
+                        <outlet property="backButtonTapped" destination="tzP-i4-x3V" id="ok8-Pb-Wdg"/>
                         <outlet property="browseTabBar" destination="Bop-rD-pQ3" id="VFA-9k-b5F"/>
                         <outlet property="cartTabBar" destination="kkV-rJ-8i4" id="Oc7-RM-8Dr"/>
                         <outlet property="estimatedTaxesLabel" destination="hSx-Lv-GYw" id="XNc-cC-0gC"/>
@@ -1194,7 +1200,7 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KITCHEN &amp; DINING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ua8-Np-3N4">
                                                                     <rect key="frame" x="2" y="14" width="131" height="17"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
-                                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -1521,7 +1527,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GSW-mH-YtV">
+                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GSW-mH-YtV">
                                                             <rect key="frame" x="172" y="8" width="20" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="Qh4-Mw-gqf"/>
@@ -1946,7 +1952,7 @@
         <image name="tvStandPROFILE" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7BZ-FQ-Zbs"/>
+        <segue reference="7Dy-uJ-XTY"/>
         <segue reference="SuR-4l-c47"/>
     </inferredMetricsTieBreakers>
 </document>
