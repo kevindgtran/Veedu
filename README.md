@@ -15,14 +15,14 @@ A full stack iOS Mobile App allowing users the ability to shop for home goods an
 
 ### Technologies & Tools
 
-- `Swift 3`, `xCode 8`, `Google Firebase`, `Apple Test Flight`
+- `Swift 3`, `xCode 8`, `Google Firebase`, `Apple TestFlight`
 - `Cocoapods`, `Paypal SDK`, `Trello`, `Sketch 3` 
 
 ### Team members
 
-- Joy Rodrigues, "Vendor Account Specialist", https://github.com/jibralta
+- Joy Rodriguez, "Vendor Account Specialist", https://github.com/jibralta
 - Prathiba Lingappan, "Database Wizard", https://github.com/lprathiba88
-- Kevin Tran, "Sketch/ Design guy", https://github.com/theycallmekevo
+- Kevin Tran, "Github guru", https://github.com/theycallmekevo
 
 
 
