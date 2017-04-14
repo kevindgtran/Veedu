@@ -1,4 +1,4 @@
-# Veedu
+# Veedu <img src="/Images/README/appLogo.png" width="50">
 
 ## iOS E-Commerce App
 
