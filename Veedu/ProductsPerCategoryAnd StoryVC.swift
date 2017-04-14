@@ -13,6 +13,8 @@ import Firebase
 
 class ProductsPerCategoryVC: UIViewController {
 
+    @IBOutlet weak var browseCategoryLabel: UILabel!
+    @IBOutlet weak var storyCategoryLabel: UILabel!
     @IBOutlet weak var productCollectionView: UICollectionView!
     
     //MARK: properties
@@ -41,6 +43,10 @@ class ProductsPerCategoryVC: UIViewController {
 //            {
 //            self.productCollectionView.reloadData()
 //        }
+        
+        browseCategoryLabel.text = roomCategory
+        storyCategoryLabel.text = storyCategory
+
         Firebase.shared.configureStorage()
     }
    
@@ -253,7 +259,7 @@ extension ProductsPerCategoryVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = Int((collectionView.frame.width / columns) -  (inset + spacing))
-        return CGSize(width: width, height: width)
+        return CGSize(width: width, height: width + 80)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

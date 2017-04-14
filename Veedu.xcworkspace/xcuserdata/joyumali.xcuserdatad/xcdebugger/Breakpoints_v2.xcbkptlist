@@ -202,12 +202,12 @@
                   moduleName = "Veedu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/joyumali/DevProjects_2017/Veedu/Veedu/InventoryVC.swift"
-                  timestampString = "513809681.624789"
+                  timestampString = "513862374.137805"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "27"
                   endingLineNumber = "27"
-                  offsetFromSymbolStart = "38">
+                  offsetFromSymbolStart = "35">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -217,12 +217,12 @@
                   moduleName = "Veedu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/joyumali/DevProjects_2017/Veedu/Veedu/InventoryVC.swift"
-                  timestampString = "513809681.626146"
+                  timestampString = "513862374.13916"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "27"
                   endingLineNumber = "27"
-                  offsetFromSymbolStart = "76">
+                  offsetFromSymbolStart = "65">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -232,12 +232,12 @@
                   moduleName = "Veedu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/joyumali/DevProjects_2017/Veedu/Veedu/InventoryVC.swift"
-                  timestampString = "513809681.627548"
+                  timestampString = "513862374.140765"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "27"
                   endingLineNumber = "27"
-                  offsetFromSymbolStart = "296">
+                  offsetFromSymbolStart = "335">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -247,12 +247,12 @@
                   moduleName = "Veedu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/joyumali/DevProjects_2017/Veedu/Veedu/InventoryVC.swift"
-                  timestampString = "513809681.628888"
+                  timestampString = "513862374.14225"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "27"
                   endingLineNumber = "27"
-                  offsetFromSymbolStart = "229">
+                  offsetFromSymbolStart = "246">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -328,12 +328,12 @@
                   moduleName = "Veedu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/joyumali/DevProjects_2017/Veedu/Veedu/InventoryVC.swift"
-                  timestampString = "513809681.648587"
+                  timestampString = "513862375.657042"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "221"
-                  endingLineNumber = "221"
-                  offsetFromSymbolStart = "890">
+                  startingLineNumber = "220"
+                  endingLineNumber = "220"
+                  offsetFromSymbolStart = "526">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -343,12 +343,12 @@
                   moduleName = "Veedu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/joyumali/DevProjects_2017/Veedu/Veedu/InventoryVC.swift"
-                  timestampString = "513809681.650044"
+                  timestampString = "513862375.658858"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "221"
-                  endingLineNumber = "221"
-                  offsetFromSymbolStart = "941">
+                  startingLineNumber = "220"
+                  endingLineNumber = "220"
+                  offsetFromSymbolStart = "581">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -367,6 +367,38 @@
             endingLineNumber = "220"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Veedu.InventoryVC.tableView (__ObjC.UITableView, didSelectRowAt : Foundation.IndexPath) -&gt; ()"
+                  moduleName = "Veedu"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joyumali/DevProjects_2017/Veedu/Veedu/InventoryVC.swift"
+                  timestampString = "513862375.686512"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "220"
+                  endingLineNumber = "220"
+                  offsetFromSymbolStart = "526">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Veedu.InventoryVC.tableView (__ObjC.UITableView, didSelectRowAt : Foundation.IndexPath) -&gt; ()"
+                  moduleName = "Veedu"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joyumali/DevProjects_2017/Veedu/Veedu/InventoryVC.swift"
+                  timestampString = "513862375.687871"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "220"
+                  endingLineNumber = "220"
+                  offsetFromSymbolStart = "581">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
