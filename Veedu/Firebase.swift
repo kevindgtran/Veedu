@@ -73,13 +73,13 @@ class Firebase: NSObject {
     fileprivate var _authHandle: FIRAuthStateDidChangeListenerHandle!
     var user: FIRUser?
     
-    static let shared = Firebase()
+    static var shared: Firebase! = Firebase()
     
     //create configure authentication function
-    func configureAuth(controller: UIViewController, _ completion: @escaping(Bool) -> Void) {
+    func configureAuth(controller: UIViewController, _ completion: @escaping (Bool) -> Void) {
+    
         
         //print("Inside configureAuth")
-        
         _authHandle = FIRAuth.auth()?.addStateDidChangeListener { (auth: FIRAuth, user: FIRUser?) in
             //check if current user matches the FIRUser
             if let activeUser = user {
@@ -102,12 +102,19 @@ class Firebase: NSObject {
                 User.configure(username: (user?.email)!)
                 
                 completion(true)
+                FIRAuth.auth()?.removeStateDidChangeListener(self._authHandle)
             }
             else {
                 print("Inside ELSE in configureAuth")
                 completion(false)
+                FIRAuth.auth()?.removeStateDidChangeListener(self._authHandle)
             }
         }
+    }
+    
+    static func reinitialize() -> Firebase {
+        Firebase.shared = nil
+        return Firebase()
     }
     
 //    func showProfileDetailsView() {
@@ -338,10 +345,10 @@ class Firebase: NSObject {
         storageRef = FIRStorage.storage().reference()
     }
     
-    deinit {
-        ref.child("data").removeObserver(withHandle: _refHandle)
-        //ref.child("data").child("allReviews").removeObserver(withHandle: _refHandle)
-    }
+//    deinit {
+////        ref.child("data").removeObserver(withHandle: _refHandle)
+//        //ref.child("data").child("allReviews").removeObserver(withHandle: _refHandle)
+//    }
     
   
     

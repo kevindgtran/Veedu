@@ -37,7 +37,9 @@ class ProfileHomeVC: UIViewController {
     @IBAction func logout(_ sender: Any) {
         do {
             try FIRAuth.auth()?.signOut()
+            Firebase.shared = Firebase.reinitialize()
             self.userName.text = ""
+            self.userNotLogedInAlert()
         } catch {
             print("unable to sign out: \(error)")
         }
