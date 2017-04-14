@@ -167,14 +167,6 @@ extension BrowseVC: UICollectionViewDelegate {
 //// MARK: DelegateFlowLayout for ProductCategoriesPerRoom
 extension BrowseVC: UICollectionViewDelegateFlowLayout {
     
-    /*    CollectionDelegateFlowLayout constants
-    let columns: CGFloat = 2.0
-    let inset: CGFloat = 8.0
-    let spacing: CGFloat = 4.0
-    let lineSpacing: CGFloat = 8.0
-    */
-    
-    // assign these functions only to the productCategoryCollectionView
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = Int((collectionView.frame.width / columns) -  (inset + spacing))
