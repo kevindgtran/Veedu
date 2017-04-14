@@ -10,6 +10,7 @@ import UIKit
 
 class ReviewsViewController: UIViewController {
 
+    @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var reviewTableView: UITableView!
     @IBOutlet weak var productName: UILabel!
     
@@ -22,6 +23,7 @@ class ReviewsViewController: UIViewController {
         guard let product = product else {return}
         
         productName.text = product.productName
+        productImage.image = product.productImage
 
         Firebase.shared.getReviews(product){ (reviews) in
             guard let tempReviews = reviews else {return}

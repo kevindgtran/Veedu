@@ -43,9 +43,9 @@ class BrowseVC: UIViewController { //, UISearchResultsUpdating {
     
     // CollectionDelegateFlowLayout constants
     let columns: CGFloat = 2.0
-    let inset: CGFloat = 8.0
-    let spacing: CGFloat = 4.0
-    let lineSpacing: CGFloat = 8.0
+    var inset: CGFloat = 8.0
+    var spacing: CGFloat = 4.0
+    var lineSpacing: CGFloat = 8.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,16 +133,22 @@ extension BrowseVC: UICollectionViewDelegate {
             productCategoryCollectionView.reloadData()
             
             // Active Cell is underlined and darker grey
-            let cell = collectionView.cellForItem(at: indexPath) as! ActiveCellCVC
-
+            let cell = collectionView.cellForItem(at: indexPath) as! RoomTabCVCell
+            
             // if new room is selected
             if cell != previousTab {
                 // the new cell style changes
                 cell.selectedMenuBarItem()
+                //                cell.roomTabLabel.textColor = UIColor.blue
                 // previousTab changes too
                 previousTab.didDeselectCell()
+                
                 // the new cell then becomes the value of previousTab
+                //                self.previousTab.te = white
+                
                 previousTab = cell
+                
+                
             } else {
                 cell.selectedMenuBarItem()
             }
@@ -172,24 +178,44 @@ extension BrowseVC: UICollectionViewDelegate {
 //// MARK: DelegateFlowLayout for ProductCategoriesPerRoom
 extension BrowseVC: UICollectionViewDelegateFlowLayout {
     
+    /*    CollectionDelegateFlowLayout constants
+    let columns: CGFloat = 2.0
+    let inset: CGFloat = 8.0
+    let spacing: CGFloat = 4.0
+    let lineSpacing: CGFloat = 8.0
+    */
+    
     // assign these functions only to the productCategoryCollectionView
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        //        if collectionView == self.roomTabCollectionView {
+        let width = Int((collectionView.frame.width / columns) -  (inset + spacing))
+        let width2 = 150
+        var size = CGSize(width: width, height: width)
+        if collectionView == self.productCategoryCollectionView {
+            
+            size = CGSize(width: width, height: width)
+        } else {
+            size = CGSize(width: width2, height: width/3)
+            
+        }
         
-        let width = Int((productCategoryCollectionView.frame.width / columns) -  (inset + spacing))
-        return CGSize(width: width, height: width)
+        return size
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+
         return UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
+
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+
         return spacing
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
         return lineSpacing
     }
 }
