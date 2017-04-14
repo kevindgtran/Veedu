@@ -2,7 +2,7 @@
 
 ## iOS E-Commerce App
 
-<img src="/Images/README/homeScreen.png" width="160"> <img src="/Images/README/browseScreen.png" width="160"> <img src="/Images/README/favoritesScreen.png" width="160"> <img src="/Images/README/paymentScreen.png" width="160"> <img src="/Images/README/loginScreen.png" width="160">
+<img src="/Images/README/homeScreen.png" width="170"> <img src="/Images/README/browseScreen.png" width="170"> <img src="/Images/README/favoritesScreen.png" width="170"> <img src="/Images/README/paymentScreen.png" width="170"> <img src="/Images/README/loginScreen.png" width="170">
 
 ### Overview
 
