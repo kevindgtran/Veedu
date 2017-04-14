@@ -10,9 +10,7 @@
             "storyCategory": "industrial",
             "roomCategory": ["kitchenDiningRoom", "livingRoom"],
             "productCategory": ["furniture"]
-
-            },
-            {
+        }, {
             "name": "Watering Hole Stool",
             "productID": "f12638",
             "price": 145.00,

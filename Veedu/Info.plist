@@ -43,11 +43,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-<<<<<<< HEAD
-	<string>KevinMain</string>
-=======
-	<string>Vendor</string>
->>>>>>> 7b4388e7fa25f143ce8e64b0fb614beecf0ffb16
+	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
