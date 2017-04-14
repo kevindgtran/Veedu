@@ -1473,7 +1473,7 @@
         <!--Product Details-->
         <scene sceneID="m5q-fh-WGx">
             <objects>
-                <viewController id="0Ae-kv-dNF" customClass="ProductDetailsVC" customModule="Veedu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="productDetailsVC" id="0Ae-kv-dNF" customClass="ProductDetailsVC" customModule="Veedu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="17U-pf-3Bl"/>
                         <viewControllerLayoutGuide type="bottom" id="UBW-3m-6Cd"/>

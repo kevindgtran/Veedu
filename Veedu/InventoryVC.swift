@@ -215,7 +215,7 @@ extension InventoryVC: UITableViewDelegate {
         selectedIndexPath = indexPath
         
         let storyboard = UIStoryboard(name: "KevinMain", bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: "KevinHomeVC") as? ProductDetailsVC else { return }
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "productDetailsVC") as? ProductDetailsVC else { return }
         
         if let selectedIndexPath = selectedIndexPath {
             // going to one product detail view
@@ -225,7 +225,6 @@ extension InventoryVC: UITableViewDelegate {
         }
     }
 }
-
 
 
 
