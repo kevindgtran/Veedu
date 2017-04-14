@@ -19,6 +19,19 @@ class FavoritesTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
 
+    @IBAction func addToCart(_ sender: Any) {
+//        if let user = User.shared {
+//            
+//            //print("Inside IF in addToCartAction")
+//            
+//            guard let product = self.product else {return}
+//            user.addToCart(product.productID)
+//            
+//            Firebase.shared.addToCartFirebase(product.productID)
+//        }
+
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }

@@ -82,6 +82,9 @@ class FavoritesUIViewController: UIViewController, UITableViewDelegate, UITableV
 
             }
             else {
+                if let selectedIndexPath = self.selectedIndexPath {
+                    self.favoritesTableView.deleteRows(at: [selectedIndexPath], with: .automatic)
+                }
                 self.userNotLogedInAlert()
             }
         }
@@ -124,7 +127,7 @@ class FavoritesUIViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
+        self.itemsAmountLabel.text = "0"
         self.favoritesTableView.isHidden = true
     }
     
