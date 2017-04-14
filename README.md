@@ -1,13 +1,14 @@
 # Veedu
 
-## E-Commerce Replica
+## iOS E-Commerce App
+
 <img src="/Images/README/homeScreen.png" width="160"> <img src="/Images/README/browseScreen.png" width="160"> <img src="/Images/README/favoritesScreen.png" width="160"> <img src="/Images/README/paymentScreen.png" width="160"> <img src="/Images/README/loginScreen.png" width="160">
 
 ### Overview
 
 A full stack iOS Mobile App allowing users the ability to shop for home goods and interior decorations. Users can search, filter, favorite, add to cart and make purchases. Venders app can upload new items and monitor inventory.
 
-#### Core Features
+### Core Features
 
 - Consumer Authentication, user data persistance, advanced data filter, Paypal payments and checkout
 - Vender Authentication and Firebase database management
