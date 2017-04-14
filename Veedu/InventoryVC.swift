@@ -215,18 +215,16 @@ extension InventoryVC: UITableViewDelegate {
         selectedIndexPath = indexPath
         
         let storyboard = UIStoryboard(name: "KevinMain", bundle: nil)
-        guard let navController = storyboard.instantiateViewController(withIdentifier: "KevinHomeVC") as? UINavigationController else { return }
-        guard let viewController = navController.viewControllers.first as? ProductDetailsVC else { return }
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "productDetailsVC") as? ProductDetailsVC else { return }
         
         if let selectedIndexPath = selectedIndexPath {
             // going to one product detail view
             viewController.product = self.products[selectedIndexPath.row]
             
-            present(navController, animated: true, completion: nil)
+            present(viewController, animated: true, completion: nil)
         }
     }
 }
-
 
 
 
