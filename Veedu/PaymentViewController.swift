@@ -36,9 +36,12 @@ class PaymentViewController: UIViewController, PayPalPaymentDelegate {
     
     var payPalConfig = PayPalConfiguration()
     
+    var subTotal = 0.0
+    var itemCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Set up payPalConfig
         payPalConfig.acceptCreditCards = false
         payPalConfig.merchantName = "Veedu Inc." //name of company
@@ -55,6 +58,14 @@ class PaymentViewController: UIViewController, PayPalPaymentDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.itemsCountLabel.text = String(self.itemCount)
+        if self.subTotal > 0.0 {
+           self.subtotalAmountLabel.text = String(self.subTotal)
+            self.shippingAmountLabel.text = String(25.00)
+            self.estimatedTaxesLabel.text = String(self.subTotal * 0.098)
+            self.orderTotalLabel.text = String(self.subTotal + 25.00 + (self.subTotal * 0.098))
+        }
         PayPalMobile.preconnect(withEnvironment: environment)
     }
     
@@ -115,6 +126,7 @@ class PaymentViewController: UIViewController, PayPalPaymentDelegate {
     
     //MARK: actions
     @IBAction func backButtonPress(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
     
 }
