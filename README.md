@@ -20,9 +20,9 @@ A full stack iOS Mobile App allowing users the ability to shop for home goods an
 
 ### Team members
 
-- Joy Rodriguez, "Vendor Account Specialist", https://github.com/jibralta
-- Prathiba Lingappan, "Database Wizard", https://github.com/lprathiba88
-- Kevin Tran, "Github guru", https://github.com/theycallmekevo
+- Joy Rodriguez, "Vendor & Constraints Specialist", https://github.com/jibralta
+- Prathiba Lingappan, "Database & Debugging Wizard", https://github.com/lprathiba88
+- Kevin Tran, "Sketch & Github Guru", https://github.com/theycallmekevo
 
 
 
