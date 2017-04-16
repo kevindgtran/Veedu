@@ -47,6 +47,13 @@ class AddToInventoryVC: UIViewController, UIImagePickerControllerDelegate, UINav
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.addedPrice?.delegate = self
+        self.addedProductName?.delegate = self
+        //self.addedDescription?.delegate = self
+        self.addedSpecOne?.delegate = self
+        self.addedSpecTwo?.delegate = self
+        
         //Encoding
         let image = UIImage(named: "NoImage.png")
         let imageData: NSData = UIImagePNGRepresentation(image!)! as NSData
@@ -295,6 +302,13 @@ extension AddToInventoryVC: UITableViewDelegate {
                 }
             }
         }
+    }
+}
+
+extension AddToInventoryVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }
 
