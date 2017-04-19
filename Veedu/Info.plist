@@ -41,7 +41,7 @@
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Veedu would like to access your photo library.</string>
 	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
+	<string>Main</string>
 	<key>UIMainStoryboardFile</key>
 	<string>KevinMain</string>
 	<key>UIRequiredDeviceCapabilities</key>
