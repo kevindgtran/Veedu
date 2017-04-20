@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CartProduct" representedClassName="CartProduct" parentEntity="Product" syncable="YES" codeGenerationType="class">
+        <attribute name="quantity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="FavoritesProduct" representedClassName="FavoritesProduct" parentEntity="Product" syncable="YES" codeGenerationType="class"/>
+    <entity name="Product" representedClassName="Product" syncable="YES">
+        <attribute name="imageData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="productCategory" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="productDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="productID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="productReviews" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="productSpecifications" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="roomCategory" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="storyCategory" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CartProduct" positionX="-218" positionY="12" width="128" height="60"/>
+        <element name="FavoritesProduct" positionX="-36" positionY="20" width="128" height="43"/>
+        <element name="Product" positionX="-126" positionY="-258" width="128" height="208"/>
+    </elements>
 </model>

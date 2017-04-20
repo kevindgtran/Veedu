@@ -1,0 +1,31 @@
+{
+    "data": [{
+        "allProducts": [{
+            "f12648": [{
+                "name": "Emerson Bar Chair",
+                "productID": "f12648",
+                "price": 120.00,
+                "description": "This Emerson Bar Chair is made from sturdy wood, hand carved and has curves and rounded shaped legs along with nail head trim with a polished footrest for comfort.",
+                "specifications": ["18in L x 18in W x 25in H · Chair extends to 30inch H", "Wood, Steel"],
+                "reviews": [],
+                "imageURL": "https://cdn.shopify.com/s/files/1/1386/1639/products/12648_grande.jpg?v=1471977535",
+                "storyCategory": "industrial",
+                "roomCategory": ["kitchenDiningRoom", "livingRoom"],
+                "productCategory": ["furniture"]
+            }], 
+            "f12638": [{
+                "name": "Watering Hole Stool",
+                "productID": "f12638",
+                "price": 145.00,
+                "description": "Industrial vintage bar stool with polished steel base with a wooden seat and back.",
+                "specifications": ["18in W x 38in H", "Seat adjusts from 25H to 30H", "Silver, Woodgrain"],
+                "reviews": ["rev1", "rev2"],
+                "imageURL": "https://cdn.shopify.com/s/files/1/0189/1672/products/12638_530x.jpg?v=1482002903",
+                "storyCategory": "industrial",
+                "roomCategory": ["kitchenDiningRoom"],
+                "productCategory": ["furniture"]
+            }]
+        }]
+    }]
+    
+}
