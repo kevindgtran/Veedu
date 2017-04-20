@@ -37,9 +37,9 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Veedu would like to access your camera.</string>
+	<string>Veedu would like to access your camera to save images to the inventory.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Veedu would like to access your photo library.</string>
+	<string>Veedu would like to access your photo library to save images to the inventory</string>
 	<key>UILaunchStoryboardName</key>
 	<string>Main</string>
 	<key>UIMainStoryboardFile</key>
