@@ -60,7 +60,6 @@
 		E06B6B521E9853A300E12419 /* RoomTabCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6B511E9853A300E12419 /* RoomTabCVCell.swift */; };
 		E06B6B571E99FCB600E12419 /* ProductCategoryCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6B561E99FCB600E12419 /* ProductCategoryCVCell.swift */; };
 		E06B6B591E9A063C00E12419 /* RoomCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B6B581E9A063C00E12419 /* RoomCategory.swift */; };
-		E0C588871EA08BB800505177 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C588861EA08BB800505177 /* MenuBar.swift */; };
 		E0DDD96B1E9A34C3000CFB9D /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DDD96A1E9A34C3000CFB9D /* ProductCategory.swift */; };
 		E0E1C5B61E9BE77E001597E0 /* ActiveTabCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E1C5B51E9BE77E001597E0 /* ActiveTabCVC.swift */; };
 		E0FAC87F1E9D71350046F0AE /* VendorLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FAC87E1E9D71350046F0AE /* VendorLoginVC.swift */; };
@@ -173,7 +172,6 @@
 		E06B6B561E99FCB600E12419 /* ProductCategoryCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCategoryCVCell.swift; sourceTree = "<group>"; };
 		E06B6B581E9A063C00E12419 /* RoomCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomCategory.swift; sourceTree = "<group>"; };
 		E0C588841EA02C1100505177 /* Veedu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Veedu.entitlements; sourceTree = "<group>"; };
-		E0C588861EA08BB800505177 /* MenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		E0DDD96A1E9A34C3000CFB9D /* ProductCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
 		E0E1C5B51E9BE77E001597E0 /* ActiveTabCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveTabCVC.swift; sourceTree = "<group>"; };
 		E0FAC87E1E9D71350046F0AE /* VendorLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorLoginVC.swift; sourceTree = "<group>"; };
@@ -457,7 +455,6 @@
 			isa = PBXGroup;
 			children = (
 				E0E1C5B51E9BE77E001597E0 /* ActiveTabCVC.swift */,
-				E0C588861EA08BB800505177 /* MenuBar.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -815,7 +812,6 @@
 				E06B6AE61E97D8D100E12419 /* StoryTVCell.swift in Sources */,
 				E06B6B591E9A063C00E12419 /* RoomCategory.swift in Sources */,
 				E06B6AE81E97DF7400E12419 /* Story_Joy.swift in Sources */,
-				E0C588871EA08BB800505177 /* MenuBar.swift in Sources */,
 				C40313621E9C1A9300108A5A /* ReviewsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -975,7 +971,7 @@
 				CODE_SIGN_ENTITLEMENTS = Veedu/Veedu.entitlements;
 				DEVELOPMENT_TEAM = L8R43DTS44;
 				INFOPLIST_FILE = Veedu/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.veedu.Veedu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -995,7 +991,7 @@
 				CODE_SIGN_ENTITLEMENTS = Veedu/Veedu.entitlements;
 				DEVELOPMENT_TEAM = L8R43DTS44;
 				INFOPLIST_FILE = Veedu/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.veedu.Veedu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
